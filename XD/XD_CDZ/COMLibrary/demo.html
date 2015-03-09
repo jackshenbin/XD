@@ -1,0 +1,69 @@
+<head>
+    <title>SDK_DEMO</title>
+</head>
+<script>
+    function switchwnd(index) {
+        //alert("VdaSwitchForm index:" + index);
+        XDSDK.VdaSwitchForm(index);
+    }
+
+    function initocx() {
+        //alert("VdaInitialization ");
+        XDSDK.VdaInitialization( "admin", "123456");
+    }
+
+
+
+</script>
+<link href="Style/css-all.css" rel="stylesheet" type="text/css" />
+
+
+<body onload="initocx()">
+    <table width="100%">
+        <tr>
+            
+            <td align="center" width="100%" style=" background-color:blue">
+                <table width="2035">
+                    <tr>
+                        <td>
+                            <div id="top">
+                                <div class="logo">
+                                    <div style="position:absolute;  left:920px;  top:47px;"><a href="login.aspx?action=logout" target="_parent">注销</a></div>
+                                    <img alt="电动汽车智能充换电服务网络运营监控系统" src="images/head.jpg" border="0" class="home" /></a>
+                                </div>
+
+                                <div id="menu">
+                                    <div class="lc"></div>
+                                    <div class="cc" id="mymenu" runat="server">
+                                        <ul>
+                                            <li class="nobg"><a onclick="switchwnd(0)" href="#">网站首页</a></li>
+                                            <li><a onclick="switchwnd(3)" href="#">充电桩管理</a></li>
+                                            <li><a onclick="switchwnd(2)" href="#">智能卡管理</a></li>
+                                            <li><a onclick="switchwnd(4)" href="#">综合查询</a></li>
+                                            <li><a onclick="switchwnd(1)" href="#">系统管理</a></li>
+                                            <li><a>服务支持</a></li>
+                                            <li><a>关于我们</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="rc"></div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">
+                <object id="XDSDK" classid="clsid:8F72B3C0-0DEF-4995-9D9C-A7108CDD21E1" width="100%"
+                        height="500">
+                    <li>控件未加载</li>
+                    <li>首次使用请先<a href="./ocx/iesetup.exe">下载IE设置工具iesetup.exe</a></li>
+                    <li>然后再<a href="./ocx/XD发布.rar">下载控件XD发布.rar</a> 解压后运行regcom.bat</li>
+                </object>
+            </td>
+        </tr>
+    </table>
+
+</body>

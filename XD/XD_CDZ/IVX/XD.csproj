@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE1430D2-AE96-4884-9082-DC0D5921A0AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOCOM.IVX</RootNamespace>
+    <AssemblyName>XD</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SHANGHAIPRODUCT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ShanghaiProduct|AnyCPU' ">
+    <OutputPath>bin\ShanghaiProduct\</OutputPath>
+    <DefineConstants>TRACE;SHANGHAIPRODUCT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|AnyCPU'">
+    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <DefineConstants>TRACE;NEUTERPRODUCT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\XD发布\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ShanghaiProduct|x86'">
+    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <DefineConstants>TRACE;SHANGHAIPRODUCT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|x86'">
+    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <DefineConstants>TRACE;NEUTERPRODUCT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ICAS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BOCOM.IVX.Program2</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>..\..\ThirdParty\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\ThirdParty\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="IPAddressControlLib">
+      <HintPath>..\..\ThirdParty\IPAddressControlLib.DLL</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\ThirdParty\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BootStrapper\CmdlineStartup.cs" />
+    <Compile Include="BootStrapper\NormalStartup.cs" />
+    <Compile Include="BootStrapper\OCXStartup.cs" />
+    <Compile Include="BootStrapper\Startup.cs" />
+    <Compile Include="BootStrapper\StartupFactory.cs" />
+    <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\Exceptions.cs" />
+    <Compile Include="Common\FTP.cs" />
+    <Compile Include="Common\SDKCallExceptionHandler.cs" />
+    <Compile Include="Common\TextUtil.cs" />
+    <Compile Include="Common\UIUtil.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Controls\ucHttpTreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHttpTreeControl.Designer.cs">
+      <DependentUpon>ucHttpTreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\ICommand.cs" />
+    <Compile Include="Framework\IEventAggregatorSubscriber.cs" />
+    <Compile Include="Framework\VVMDataBindings.cs" />
+    <Compile Include="Interfaces\IInteractionService.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCardStatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCardStatPanel.Designer.cs">
+      <DependentUpon>ucCardStatPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCardRecordPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCardRecordPanel.Designer.cs">
+      <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucTradingRecordPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucTradingRecordPanel.Designer.cs">
+      <DependentUpon>ucTradingRecordPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucDelCDZPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucDelCDZPanel.Designer.cs">
+      <DependentUpon>ucDelCDZPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCDZStatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCDZStatPanel.Designer.cs">
+      <DependentUpon>ucCDZStatPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucAddCDZPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucAddCDZPanel.Designer.cs">
+      <DependentUpon>ucAddCDZPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucGroupSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucGroupSelect.Designer.cs">
+      <DependentUpon>ucGroupSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucQuitCardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucQuitCardPanel.Designer.cs">
+      <DependentUpon>ucQuitCardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucAddCardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucAddCardPanel.Designer.cs">
+      <DependentUpon>ucAddCardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucMainPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucMainPage.Designer.cs">
+      <DependentUpon>ucMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletChargePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletChargePanel.Designer.cs">
+      <DependentUpon>ucWalletChargePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucChargePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucChargePanel.Designer.cs">
+      <DependentUpon>ucChargePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCurrUserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCurrUserPanel.Designer.cs">
+      <DependentUpon>ucCurrUserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucChangeUserPass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucChangeUserPass.Designer.cs">
+      <DependentUpon>ucChangeUserPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucAddUserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucAddUserPanel.Designer.cs">
+      <DependentUpon>ucAddUserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCardManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCardManagement.Designer.cs">
+      <DependentUpon>ucCardManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCurrentUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCurrentUser.Designer.cs">
+      <DependentUpon>ucCurrentUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\BaseStyle.cs" />
+    <Compile Include="Customization\NeuterStyle.cs" />
+    <Compile Include="Customization\ShanghaiPoliceStyle.cs" />
+    <Compile Include="Framework\CacheManager.cs" />
+    <Compile Include="Framework\Container.cs" />
+    <Compile Include="Framework\Environment.cs" />
+    <Compile Include="Framework\SearchEvent.cs" />
+    <Compile Include="Framework\UIEvent.cs" />
+    <Compile Include="Framework\VAServerEvent.cs" />
+    <Compile Include="Views\Content\ucDeviceManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucDeviceManagement.Designer.cs">
+      <DependentUpon>ucDeviceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucReportMenagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucReportMenagement.Designer.cs">
+      <DependentUpon>ucReportMenagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucUserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucUserManagement.Designer.cs">
+      <DependentUpon>ucUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Program.cs" />
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ucXDMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ucXDMain.Designer.cs">
+      <DependentUpon>ucXDMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\ucHttpTreeControl.resx">
+      <DependentUpon>ucHttpTreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCardStatPanel.resx">
+      <DependentUpon>ucCardStatPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCardRecordPanel.resx">
+      <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucTradingRecordPanel.resx">
+      <DependentUpon>ucTradingRecordPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucDelCDZPanel.resx">
+      <DependentUpon>ucDelCDZPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCDZStatPanel.resx">
+      <DependentUpon>ucCDZStatPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucAddCDZPanel.resx">
+      <DependentUpon>ucAddCDZPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucGroupSelect.resx">
+      <DependentUpon>ucGroupSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucQuitCardPanel.resx">
+      <DependentUpon>ucQuitCardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucAddCardPanel.resx">
+      <DependentUpon>ucAddCardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucMainPage.resx">
+      <DependentUpon>ucMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucWalletChargePanel.resx">
+      <DependentUpon>ucWalletChargePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucChargePanel.resx">
+      <DependentUpon>ucChargePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCurrUserPanel.resx">
+      <DependentUpon>ucCurrUserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucChangeUserPass.resx">
+      <DependentUpon>ucChangeUserPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucAddUserPanel.resx">
+      <DependentUpon>ucAddUserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCardManagement.resx">
+      <DependentUpon>ucCardManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCurrentUser.resx">
+      <DependentUpon>ucCurrentUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucDeviceManagement.resx">
+      <DependentUpon>ucDeviceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucReportMenagement.resx">
+      <DependentUpon>ucReportMenagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucUserManagement.resx">
+      <DependentUpon>ucUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ucXDMain.resx">
+      <DependentUpon>ucXDMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\231523.jpg" />
+    <None Include="Resources\bocom.png" />
+    <None Include="Resources\carSearchResult.png" />
+    <None Include="Resources\dialog_close1.png" />
+    <None Include="Resources\dialog_close2.png" />
+    <None Include="Resources\dialog_close3.png" />
+    <None Include="Resources\dialog_maxsize1.bmp" />
+    <None Include="Resources\dialog_maxsize2.bmp" />
+    <None Include="Resources\dialog_maxsize3.bmp" />
+    <None Include="Resources\dialog_minsize1.bmp" />
+    <None Include="Resources\dialog_minsize2.bmp" />
+    <None Include="Resources\dialog_minsize3.bmp" />
+    <None Include="Resources\dialog_resize1.bmp" />
+    <None Include="Resources\dialog_resize2.bmp" />
+    <None Include="Resources\dialog_resize3.bmp" />
+    <None Include="Resources\importvideo.png" />
+    <None Include="Resources\IVX.exe.config" />
+    <None Include="Resources\卡车.png" />
+    <None Include="Resources\头.png" />
+    <None Include="Resources\摘要控制.jpg" />
+    <None Include="Resources\检索-以图搜图1111.jpg" />
+    <None Include="Resources\登录2.png" />
+    <None Include="Resources\运动物.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IVX.ico" />
+    <None Include="Resources\bg_menu_cur.gif" />
+    <Content Include="Resources\loading_2.gif" />
+    <Content Include="Resources\loading_icon_small.gif" />
+    <None Include="Resources\ss.png" />
+    <None Include="Resources\userhead.jpg" />
+    <Content Include="Resources\人脸检索1.png" />
+    <Content Include="Resources\人脸检索2.png" />
+    <Content Include="Resources\人脸检索3.png" />
+    <Content Include="Resources\以图搜图1.png" />
+    <Content Include="Resources\以图搜图2.png" />
+    <Content Include="Resources\以图搜图3.png" />
+    <Content Include="Resources\导出图片2.png" />
+    <Content Include="Resources\导出图片3.png" />
+    <Content Include="Resources\导出图片4.png" />
+    <Content Include="Resources\查看详情2.png" />
+    <Content Include="Resources\查看详情3.png" />
+    <Content Include="Resources\查看详情4.png" />
+    <Content Include="Resources\检索播放2.png" />
+    <Content Include="Resources\检索播放3.png" />
+    <Content Include="Resources\检索播放4.png" />
+    <Content Include="Resources\车辆检索1.png" />
+    <Content Include="Resources\车辆检索2.png" />
+    <Content Include="Resources\车辆检索3.png" />
+    <Content Include="Resources\转到以图搜图2.png" />
+    <Content Include="Resources\转到以图搜图3.png" />
+    <Content Include="Resources\转到以图搜图4.png" />
+    <Content Include="Resources\运动物检索1.png" />
+    <Content Include="Resources\运动物检索2.png" />
+    <Content Include="Resources\运动物检索3.png" />
+    <None Include="Resources\系统配置2.png" />
+    <None Include="Resources\视频播放2.png" />
+    <None Include="Resources\用户管理.png" />
+    <None Include="Resources\进入案件2.png" />
+    <None Include="Resources\进入案件1.png" />
+    <None Include="Resources\编辑案件2.png" />
+    <None Include="Resources\编辑案件1.png" />
+    <None Include="Resources\转到以图搜图5.png" />
+    <None Include="Resources\转到以图搜图1.png" />
+    <None Include="Resources\线5.png" />
+    <None Include="Resources\线4.png" />
+    <None Include="Resources\线3.png" />
+    <None Include="Resources\线2.png" />
+    <None Include="Resources\线1.png" />
+    <None Include="Resources\目标框叠加5.png" />
+    <None Include="Resources\目标框叠加4.png" />
+    <None Include="Resources\目标框叠加3.png" />
+    <None Include="Resources\目标框叠加2.png" />
+    <None Include="Resources\目标框叠加1.png" />
+    <None Include="Resources\行为叠加5.png" />
+    <None Include="Resources\行为叠加4.png" />
+    <None Include="Resources\行为叠加3.png" />
+    <None Include="Resources\行为叠加2.png" />
+    <None Include="Resources\行为叠加1.png" />
+    <None Include="Resources\设置5.png" />
+    <None Include="Resources\设置4.png" />
+    <None Include="Resources\设置3.png" />
+    <None Include="Resources\设置2.png" />
+    <None Include="Resources\设置1.png" />
+    <None Include="Resources\CAM.CUR" />
+    <None Include="Resources\CHANGE.CUR" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\1-1.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\4-1.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\9-1.png" />
+    <None Include="Resources\Action.png" />
+    <None Include="Resources\Area.png" />
+    <None Include="Resources\MoveObj.png" />
+    <None Include="Resources\TimeObj.png" />
+    <None Include="Resources\DensityAdd.png" />
+    <None Include="Resources\DensityMinus.png" />
+    <None Include="Resources\TableHS.png" />
+    <None Include="Resources\ThumbnailView.png" />
+    <None Include="Resources\TileWindowsHorizontallyHS.png" />
+    <Content Include="Resources\VideoSrcTree.png" />
+    <None Include="Resources\任务管理2.png" />
+    <Content Include="Resources\停止1.png" />
+    <Content Include="Resources\停止2.png" />
+    <Content Include="Resources\停止3.png" />
+    <Content Include="Resources\停止4.png" />
+    <Content Include="Resources\停止5.png" />
+    <Content Include="Resources\储存1.png" />
+    <Content Include="Resources\储存2.png" />
+    <Content Include="Resources\储存3.png" />
+    <Content Include="Resources\储存4.png" />
+    <Content Include="Resources\储存5.png" />
+    <None Include="Resources\全屏.png" />
+    <None Include="Resources\全屏1.png" />
+    <None Include="Resources\删除1.png" />
+    <None Include="Resources\删除2.png" />
+    <None Include="Resources\删除3.png" />
+    <None Include="Resources\删除4.png" />
+    <None Include="Resources\删除5.png" />
+    <None Include="Resources\删除案件1.png" />
+    <None Include="Resources\删除案件2.png" />
+    <None Include="Resources\兴趣区1.png" />
+    <None Include="Resources\兴趣区2.png" />
+    <None Include="Resources\兴趣区3.png" />
+    <None Include="Resources\兴趣区4.png" />
+    <None Include="Resources\兴趣区5.png" />
+    <Content Include="Resources\前一帧1.png" />
+    <Content Include="Resources\前一帧2.png" />
+    <Content Include="Resources\前一帧3.png" />
+    <Content Include="Resources\前一帧4.png" />
+    <Content Include="Resources\前一帧5.png" />
+    <None Include="Resources\区域叠加1.png" />
+    <None Include="Resources\区域叠加2.png" />
+    <None Include="Resources\区域叠加3.png" />
+    <None Include="Resources\区域叠加4.png" />
+    <None Include="Resources\区域叠加5.png" />
+    <Content Include="Resources\后一帧1.png" />
+    <Content Include="Resources\后一帧2.png" />
+    <Content Include="Resources\后一帧3.png" />
+    <Content Include="Resources\后一帧4.png" />
+    <Content Include="Resources\后一帧5.png" />
+    <None Include="Resources\回溯1.png" />
+    <None Include="Resources\回溯2.png" />
+    <None Include="Resources\回溯3.png" />
+    <None Include="Resources\回溯4.png" />
+    <None Include="Resources\回溯5.png" />
+    <Content Include="Resources\图片置入1.png" />
+    <Content Include="Resources\图片置入2.png" />
+    <Content Include="Resources\图片置入3.png" />
+    <Content Include="Resources\图片置入4.png" />
+    <Content Include="Resources\图片置入5.png" />
+    <None Include="Resources\弹出.png" />
+    <None Include="Resources\弹出1.png" />
+    <None Include="Resources\导出1.png" />
+    <None Include="Resources\导出2.png" />
+    <None Include="Resources\导出3.png" />
+    <None Include="Resources\导出4.png" />
+    <None Include="Resources\导出5.png" />
+    <None Include="Resources\外框.png" />
+    <None Include="Resources\导出图片1.png" />
+    <None Include="Resources\导出图片5.png" />
+    <None Include="Resources\屏蔽区1.png" />
+    <None Include="Resources\屏蔽区2.png" />
+    <None Include="Resources\屏蔽区3.png" />
+    <None Include="Resources\屏蔽区4.png" />
+    <None Include="Resources\屏蔽区5.png" />
+    <Content Include="Resources\快进1.png" />
+    <Content Include="Resources\快进2.png" />
+    <Content Include="Resources\快进3.png" />
+    <Content Include="Resources\快进4.png" />
+    <Content Include="Resources\快进5.png" />
+    <Content Include="Resources\快退1.png" />
+    <Content Include="Resources\快退2.png" />
+    <Content Include="Resources\快退3.png" />
+    <Content Include="Resources\快退4.png" />
+    <Content Include="Resources\快退5.png" />
+    <Content Include="Resources\截图1.png" />
+    <Content Include="Resources\截图2.png" />
+    <Content Include="Resources\截图3.png" />
+    <Content Include="Resources\截图4.png" />
+    <Content Include="Resources\截图5.png" />
+    <Content Include="Resources\播放.png" />
+    <Content Include="Resources\播放1.png" />
+    <Content Include="Resources\播放2.png" />
+    <Content Include="Resources\播放3.png" />
+    <Content Include="Resources\播放4.png" />
+    <Content Include="Resources\播放5.png" />
+    <Content Include="Resources\播放副本.png" />
+    <Content Include="Resources\播放选中1.png" />
+    <Content Include="Resources\播放选中2.png" />
+    <Content Include="Resources\播放选中3.png" />
+    <Content Include="Resources\播放选中4.png" />
+    <Content Include="Resources\播放选中5.png" />
+    <None Include="Resources\暂停1.png" />
+    <None Include="Resources\暂停2.png" />
+    <None Include="Resources\暂停3.png" />
+    <None Include="Resources\暂停4.png" />
+    <None Include="Resources\暂停5.png" />
+    <None Include="Resources\标注1.png" />
+    <None Include="Resources\标注2.png" />
+    <None Include="Resources\标注3.png" />
+    <None Include="Resources\标注4.png" />
+    <None Include="Resources\标注5.png" />
+    <None Include="Resources\时间框叠加1.png" />
+    <None Include="Resources\时间框叠加2.png" />
+    <None Include="Resources\时间框叠加3.png" />
+    <None Include="Resources\时间框叠加4.png" />
+    <None Include="Resources\时间框叠加5.png" />
+    <None Include="Resources\框1.png" />
+    <None Include="Resources\框2.png" />
+    <None Include="Resources\框3.png" />
+    <None Include="Resources\框4.png" />
+    <None Include="Resources\框5.png" />
+    <None Include="Resources\查看详情1.png" />
+    <None Include="Resources\查看详情5.png" />
+    <None Include="Resources\检索播放1.png" />
+    <None Include="Resources\检索播放5.png" />
+    <None Include="Resources\案件管理2.png" />
+    <None Include="Resources\汇总导出2.png" />
+    <None Include="Resources\智能检索2.png" />
+    <Content Include="Resources\浓缩下载1.png" />
+    <Content Include="Resources\浓缩下载2.png" />
+    <Content Include="Resources\浓缩下载3.png" />
+    <Content Include="Resources\浓缩下载4.png" />
+    <Content Include="Resources\浓缩下载5.png" />
+    <Content Include="Resources\浓缩摘要2.png" />
+    <Content Include="Resources\浓缩摘要3.png" />
+    <Content Include="Resources\浓缩摘要4.png" />
+    <Content Include="Resources\浓缩摘要5.png" />
+    <Content Include="Resources\浓缩播放1.png" />
+    <Content Include="Resources\浓缩播放2.png" />
+    <Content Include="Resources\浓缩播放3.png" />
+    <Content Include="Resources\浓缩播放4.png" />
+    <Content Include="Resources\浓缩播放5.png" />
+    <None Include="Resources\carstyle.xml" />
+    <None Include="Resources\1565_QuestionMarkBlue.png" />
+    <None Include="Resources\工作流箭头.png" />
+    <None Include="Resources\智能检索1.png" />
+    <None Include="Resources\智能检索.png" />
+    <None Include="Resources\系统配置1.png" />
+    <None Include="Resources\系统配置.png" />
+    <None Include="Resources\视频播放1.png" />
+    <None Include="Resources\视频播放.png" />
+    <None Include="Resources\任务管理1.png" />
+    <None Include="Resources\任务管理.png" />
+    <None Include="Resources\浓缩摘要1.png" />
+    <None Include="Resources\浓缩摘要.png" />
+    <None Include="Resources\汇总导出1.png" />
+    <None Include="Resources\汇总导出.png" />
+    <None Include="Resources\案件管理1.png" />
+    <None Include="Resources\案件管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control\Controls.csproj">
+      <Project>{3DD9BD22-7FFE-4EFD-83B7-3152EA4CEBB6}</Project>
+      <Name>Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{8E287254-C9B9-49F0-8D3B-3CD59C5DBEFA}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log4Net\MyLog4Net.csproj">
+      <Project>{F0742249-3A6A-4458-86DE-372CF526A4BD}</Project>
+      <Name>MyLog4Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protocol\Protocol.csproj">
+      <Project>{440d29df-6cba-40d6-89ee-52021ba082cf}</Project>
+      <Name>Protocol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Service\" />
+    <Folder Include="UILogics\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Views\ResourceTree\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
