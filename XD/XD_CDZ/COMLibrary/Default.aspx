@@ -31,8 +31,8 @@
     </style>
 </head>
     <script type="text/javascript">
-        var ServerDBIP = "192.168.3.251";
-        var ServerClientVer = "1.0.0.8";
+        var ServerDBIP = "121.40.88.117";
+        var ServerClientVer = "1.0.0.7";
 
         function switchwnd(index) {
             //alert("VdaSwitchForm index:" + index);
@@ -43,11 +43,19 @@
             //alert("VdaInitialization " );
             try {
                 //alert("3");
+                var loginstr = "<Ret><RetMsg><ErrorCode>0</ErrorCode><Description></Description></RetMsg><RetInfo></RetInfo></Ret>";
 
-                XDSDK.VdaInitialization(ServerDBIP, us, ps);
-                //设置两个cookie 
-                document.cookie = "userPass=" + ps;
-                document.cookie = "userName=" + us;
+                var loginret = XDSDK.VdaInitialization(ServerDBIP, us, ps);
+                //alert(loginret);
+                if (loginret == loginstr) {
+                    //设置两个cookie 
+                    document.cookie = "userPass=" + ps;
+                    document.cookie = "userName=" + us;
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
             catch (e)
             {
@@ -57,10 +65,16 @@
                 document.getElementById("versionckeck").innerHTML = "<li>控件未加载</li>"
                     + "<li>首次使用请先<a href='./ocx/iesetup.exe'>下载IE设置工具iesetup.exe</a></li>"
                     + "<li>然后再<a href='./ocx/XD发布.rar'>下载控件XD发布.rar</a> 解压后运行regcom.bat</li>"
-
+                return false;
             }
         }
-
+        document.onkeydown = function (event) {
+            e = event ? event : (window.event ? window.event : null);
+            if (e.keyCode == 13) {
+                //执行的方法 
+                Button_logoin();
+            }
+        }
         function Button_logoin() {
             var username = document.getElementById("username").value
             var mypassword = document.getElementById("mypassword").value
@@ -72,7 +86,13 @@
                 document.getElementById("login").style.display = "none";
                 document.getElementById("mainpage").style.display = "";
                 if (checkVersion()) {
-                    initocx(username, mypassword);
+                    if (!initocx(username, mypassword))
+                    {
+                        document.getElementById("login").style.display = "";
+                        document.getElementById("mainpage").style.display = "none";
+                        alert("用户名或密码错误。");
+
+                    }
                 }
                 else {
                     document.getElementById("xdsdkform").style.height = 0;

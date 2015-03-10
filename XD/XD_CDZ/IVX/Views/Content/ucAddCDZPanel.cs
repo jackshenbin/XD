@@ -45,15 +45,13 @@ namespace BOCOM.IVX.Views.Content
                 +"充电桩类型：{1}"+Environment.NewLine
                 +"区域：{2}"+Environment.NewLine
                 +"厂商编号：{3}"+Environment.NewLine
-                +"软件版本号：{4}"+Environment.NewLine
-                +"SIM卡号：{5}"+Environment.NewLine
-                +"安装地址：{6}"+Environment.NewLine
-                +"备注：{7}"+Environment.NewLine
+                +"SIM卡号：{4}"+Environment.NewLine
+                +"安装地址：{5}"+Environment.NewLine
+                +"备注：{6}"+Environment.NewLine
                 ,TextBoxDevid.Text
                 ,comboBoxType.SelectedItem.ToString()
                 ,buttonGroup.Text//,comboBoxExProvince.SelectedItem.ToString()+comboBoxExCity.SelectedItem.ToString()+comboBoxExDistrict.SelectedItem.ToString()+comboBoxExCounty.SelectedItem.ToString()
                 ,TextBoxsFactoryid.Text
-                ,TextBoxsVersion.Text
                 ,TextBoxsSIM.Text
                 ,TextBoxsAddr.Text
                 ,TextBoxsPosition.Text);
@@ -72,7 +70,7 @@ namespace BOCOM.IVX.Views.Content
                 , TextBoxDevid.Text
                 , TextBoxUserid.Text
                 , TextBoxsFactoryid.Text
-                , TextBoxsVersion.Text
+                , "0"
                 , comboBoxType.SelectedIndex+1
                 , TextBoxsSIM.Text
                 , TextBoxsAddr.Text

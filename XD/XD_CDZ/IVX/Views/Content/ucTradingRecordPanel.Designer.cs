@@ -55,7 +55,11 @@
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.checkBoxFlash = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,10 +70,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.checkBoxFlash = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
@@ -142,7 +142,7 @@
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(581, 195);
+            this.chart1.Size = new System.Drawing.Size(558, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -170,7 +170,7 @@
             this.panelEx2.Controls.Add(this.labelX5);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(641, 147);
+            this.panelEx2.Size = new System.Drawing.Size(618, 147);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -440,7 +440,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(754, 806);
+            this.groupPanel1.Size = new System.Drawing.Size(737, 806);
             // 
             // 
             // 
@@ -472,6 +472,20 @@
             this.groupPanel1.TabIndex = 25;
             this.groupPanel1.Text = "交易记录查询";
             // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(21, 432);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(44, 18);
+            this.labelX2.TabIndex = 27;
+            this.labelX2.Text = "统计：";
+            // 
             // dataGridViewX1
             // 
             this.dataGridViewX1.AllowUserToAddRows = false;
@@ -490,7 +504,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -524,79 +538,8 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(641, 268);
+            this.dataGridViewX1.Size = new System.Drawing.Size(618, 268);
             this.dataGridViewX1.TabIndex = 26;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "sn_id";
-            this.Column1.HeaderText = "sn_id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "dev_id";
-            this.Column2.HeaderText = "终端机器编码";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "user_card";
-            this.Column3.HeaderText = "用户卡号";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "phy_card";
-            this.Column4.HeaderText = "物理卡号";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "start_time";
-            this.Column5.HeaderText = "开始时间";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "end_time";
-            this.Column6.HeaderText = "结束时间";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "total_pwr";
-            this.Column7.HeaderText = "总电量";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "spend_money";
-            this.Column8.HeaderText = "消费金额";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "elec_wallet_ballance";
-            this.Column9.HeaderText = "电子钱包余额";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "serial_sn";
-            this.Column10.HeaderText = "交易流水号";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
             // 
             // panelEx3
             // 
@@ -609,7 +552,7 @@
             this.panelEx3.Controls.Add(this.chart1);
             this.panelEx3.Location = new System.Drawing.Point(18, 471);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(641, 405);
+            this.panelEx3.Size = new System.Drawing.Size(618, 405);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -645,19 +588,96 @@
             this.buttonSearchGraph.Text = "查询";
             this.buttonSearchGraph.Click += new System.EventHandler(this.buttonSearchGraph_Click);
             // 
-            // labelX2
+            // Column1
             // 
-            this.labelX2.AutoSize = true;
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DataPropertyName = "sn_id";
+            this.Column1.HeaderText = "sn_id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 60;
             // 
+            // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.DataPropertyName = "dev_id";
+            this.Column2.HeaderText = "终端机器编码";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 102;
             // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(21, 432);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(44, 18);
-            this.labelX2.TabIndex = 27;
-            this.labelX2.Text = "统计：";
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.DataPropertyName = "user_card";
+            this.Column3.HeaderText = "用户卡号";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 78;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column4.DataPropertyName = "phy_card";
+            this.Column4.HeaderText = "物理卡号";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 78;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column5.DataPropertyName = "start_time";
+            this.Column5.HeaderText = "开始时间";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 78;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column6.DataPropertyName = "end_time";
+            this.Column6.HeaderText = "结束时间";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 78;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.DataPropertyName = "total_pwr";
+            this.Column7.HeaderText = "总电量";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 66;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column8.DataPropertyName = "spend_money";
+            this.Column8.HeaderText = "消费金额";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 78;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column9.DataPropertyName = "elec_wallet_ballance";
+            this.Column9.HeaderText = "电子钱包余额";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 102;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column10.DataPropertyName = "serial_sn";
+            this.Column10.HeaderText = "交易流水号";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 90;
             // 
             // ucTradingRecordPanel
             // 
@@ -665,7 +685,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucTradingRecordPanel";
-            this.Size = new System.Drawing.Size(760, 692);
+            this.Size = new System.Drawing.Size(743, 692);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx2.ResumeLayout(false);
@@ -702,6 +722,7 @@
         private DevComponents.DotNetBar.ButtonX buttonGroup;
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private DevComponents.DotNetBar.LabelX labelX2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -712,7 +733,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private DevComponents.DotNetBar.LabelX labelX2;
 
     }
 }

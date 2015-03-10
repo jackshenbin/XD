@@ -78,5 +78,10 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
+        private void expandablePanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

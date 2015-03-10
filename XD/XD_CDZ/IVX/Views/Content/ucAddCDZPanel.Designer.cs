@@ -128,7 +128,7 @@
             // 
             this.buttonAddDevice.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonAddDevice.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonAddDevice.Location = new System.Drawing.Point(178, 242);
+            this.buttonAddDevice.Location = new System.Drawing.Point(178, 215);
             this.buttonAddDevice.Name = "buttonAddDevice";
             this.buttonAddDevice.Size = new System.Drawing.Size(75, 23);
             this.buttonAddDevice.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -143,7 +143,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(105, 164);
+            this.labelX7.Location = new System.Drawing.Point(105, 137);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(50, 18);
             this.labelX7.TabIndex = 1;
@@ -196,11 +196,12 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(87, 137);
+            this.labelX10.Location = new System.Drawing.Point(33, 384);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(68, 18);
             this.labelX10.TabIndex = 1;
             this.labelX10.Text = "软件版本号";
+            this.labelX10.Visible = false;
             // 
             // labelX4
             // 
@@ -209,7 +210,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(124, 218);
+            this.labelX4.Location = new System.Drawing.Point(124, 191);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(31, 18);
             this.labelX4.TabIndex = 1;
@@ -222,7 +223,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(99, 191);
+            this.labelX11.Location = new System.Drawing.Point(99, 164);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(56, 18);
             this.labelX11.TabIndex = 1;
@@ -273,7 +274,7 @@
             // 
             this.TextBoxsAddr.Border.Class = "TextBoxBorder";
             this.TextBoxsAddr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsAddr.Location = new System.Drawing.Point(178, 188);
+            this.TextBoxsAddr.Location = new System.Drawing.Point(178, 161);
             this.TextBoxsAddr.Name = "TextBoxsAddr";
             this.TextBoxsAddr.Size = new System.Drawing.Size(407, 21);
             this.TextBoxsAddr.TabIndex = 24;
@@ -285,7 +286,7 @@
             // 
             this.TextBoxsPosition.Border.Class = "TextBoxBorder";
             this.TextBoxsPosition.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsPosition.Location = new System.Drawing.Point(178, 215);
+            this.TextBoxsPosition.Location = new System.Drawing.Point(178, 188);
             this.TextBoxsPosition.Name = "TextBoxsPosition";
             this.TextBoxsPosition.Size = new System.Drawing.Size(407, 21);
             this.TextBoxsPosition.TabIndex = 23;
@@ -297,7 +298,7 @@
             // 
             this.TextBoxsSIM.Border.Class = "TextBoxBorder";
             this.TextBoxsSIM.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsSIM.Location = new System.Drawing.Point(178, 161);
+            this.TextBoxsSIM.Location = new System.Drawing.Point(178, 134);
             this.TextBoxsSIM.Name = "TextBoxsSIM";
             this.TextBoxsSIM.Size = new System.Drawing.Size(144, 21);
             this.TextBoxsSIM.TabIndex = 21;
@@ -309,10 +310,11 @@
             // 
             this.TextBoxsVersion.Border.Class = "TextBoxBorder";
             this.TextBoxsVersion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsVersion.Location = new System.Drawing.Point(178, 134);
+            this.TextBoxsVersion.Location = new System.Drawing.Point(124, 381);
             this.TextBoxsVersion.Name = "TextBoxsVersion";
             this.TextBoxsVersion.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsVersion.TabIndex = 25;
+            this.TextBoxsVersion.Visible = false;
             // 
             // TextBoxsFactoryid
             // 
