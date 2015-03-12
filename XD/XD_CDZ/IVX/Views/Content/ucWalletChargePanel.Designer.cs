@@ -48,6 +48,7 @@
             this.buttonUnfrozen = new DevComponents.DotNetBar.ButtonX();
             this.textBoxChargeMoney = new DevComponents.Editors.DoubleInput();
             this.btnReadCardNumber = new DevComponents.DotNetBar.ButtonX();
+            this.ucCardIDTextBox1 = new BOCOM.IVX.Controls.ucCardIDTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxChargeMoney)).BeginInit();
@@ -115,6 +116,7 @@
             this.textBoxCardID.Name = "textBoxCardID";
             this.textBoxCardID.PromptChar = ' ';
             this.textBoxCardID.Size = new System.Drawing.Size(184, 25);
+            this.textBoxCardID.SkipLiterals = false;
             this.textBoxCardID.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.textBoxCardID.TabIndex = 26;
             this.textBoxCardID.Text = "";
@@ -327,10 +329,26 @@
             this.btnReadCardNumber.Text = "读卡";
             this.btnReadCardNumber.Click += new System.EventHandler(this.btnReadCardNumber_Click);
             // 
+            // ucCardIDTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.ucCardIDTextBox1.Border.Class = "TextBoxBorder";
+            this.ucCardIDTextBox1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ucCardIDTextBox1.Location = new System.Drawing.Point(380, 116);
+            this.ucCardIDTextBox1.MaxLength = 19;
+            this.ucCardIDTextBox1.Name = "ucCardIDTextBox1";
+            this.ucCardIDTextBox1.Size = new System.Drawing.Size(170, 21);
+            this.ucCardIDTextBox1.TabIndex = 42;
+            this.ucCardIDTextBox1.Value = "";
+            this.ucCardIDTextBox1.TextChanged += new System.EventHandler(this.ucCardIDTextBox1_TextChanged);
+            // 
             // ucWalletChargePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ucCardIDTextBox1);
             this.Controls.Add(this.btnReadCardNumber);
             this.Controls.Add(this.textBoxChargeMoney);
             this.Controls.Add(this.buttonUnfrozen);
@@ -353,6 +371,7 @@
             this.Controls.Add(this.labelX3);
             this.Name = "ucWalletChargePanel";
             this.Size = new System.Drawing.Size(764, 340);
+            this.Load += new System.EventHandler(this.ucWalletChargePanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxChargeMoney)).EndInit();
@@ -383,5 +402,6 @@
         private DevComponents.DotNetBar.ButtonX buttonUnfrozen;
         private DevComponents.Editors.DoubleInput textBoxChargeMoney;
         private DevComponents.DotNetBar.ButtonX btnReadCardNumber;
+        private Controls.ucCardIDTextBox ucCardIDTextBox1;
     }
 }

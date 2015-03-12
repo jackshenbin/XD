@@ -67,7 +67,7 @@ namespace BOCOM.IVX.Views.Content
 
         private void textBoxCardID_TextChanged(object sender, EventArgs e)
         {
-            GetUserInfo(textBoxCardID.Text, (int)textBoxWalletMoney.Value * 100);
+            GetUserInfo(textBoxCardID.Text, Convert.ToInt32(textBoxWalletMoney.Value * 100));
         }
 
         private void GetUserInfo(string cardid, int money)
@@ -87,7 +87,7 @@ namespace BOCOM.IVX.Views.Content
                 float oldmoney = float.Parse(sms_ds.Tables[0].Rows[0]["elec_pkg_balance"].ToString());
                 string usercardid = sms_ds.Tables[0].Rows[0]["user_card_id"].ToString();
                 string phycardid = sms_ds.Tables[0].Rows[0]["phy_card"].ToString();
-                if (money.ToString() != ((int)(oldmoney * 100)).ToString())
+                if (money.ToString() != Convert.ToInt32(oldmoney * 100).ToString())
                 {
                     string temp_sqlstr = "update user_card_list_t set elec_pkg_balance = '" + (money / 100f) + "' where  card_state=1 and user_card_id='" + cardid + "'";
                     MySqlCommand sms_comm = new MySqlCommand(temp_sqlstr, Framework.Environment.SMS_CONN);

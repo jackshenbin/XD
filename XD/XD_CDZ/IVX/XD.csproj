@@ -213,6 +213,9 @@
     <Compile Include="Common\TextUtil.cs" />
     <Compile Include="Common\UIUtil.cs" />
     <Compile Include="Common\Utils.cs" />
+    <Compile Include="Controls\ucCardIDTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ucHttpTreeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -371,6 +374,9 @@
     <Compile Include="Views\ucXDMain.Designer.cs">
       <DependentUpon>ucXDMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\ucCardIDTextBox.resx">
+      <DependentUpon>ucCardIDTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucHttpTreeControl.resx">
       <DependentUpon>ucHttpTreeControl.cs</DependentUpon>
     </EmbeddedResource>

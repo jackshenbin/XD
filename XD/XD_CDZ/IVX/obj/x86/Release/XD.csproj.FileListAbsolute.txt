@@ -29,3 +29,4 @@ C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Views.
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\XD.csproj.GenerateResource.Cache
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\XD.exe
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\XD.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Controls.ucCardIDTextBox.resources
