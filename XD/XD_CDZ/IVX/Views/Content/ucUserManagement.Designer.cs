@@ -220,8 +220,8 @@
             // superTabControlPanel1
             // 
             this.superTabControlPanel1.Controls.Add(this.dataGridViewX1);
-            this.superTabControlPanel1.Controls.Add(this.panel1);
             this.superTabControlPanel1.Controls.Add(this.bindingNavigatorEx1);
+            this.superTabControlPanel1.Controls.Add(this.panel1);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
@@ -284,6 +284,7 @@
             this.Column3.HeaderText = "密码";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
             // 
             // Column4
             // 
@@ -311,7 +312,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.ucAddUserPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 385);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(471, 181);

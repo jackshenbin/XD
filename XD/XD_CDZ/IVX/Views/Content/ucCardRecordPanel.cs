@@ -124,7 +124,7 @@ namespace BOCOM.IVX.Views.Content
             string sms_sqlstr2 = string.Format("SELECT * FROM money_change_info_t WHERE time BETWEEN '{0}' AND '{1}' and user_card_id = '{2}';"
                 , dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss")
                 , dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss")
-                , TextBoxCardSearch.Text);
+                , TextBoxCardSearch.Value);
             MySqlDataAdapter sms_da2 = new MySqlDataAdapter(sms_sqlstr2, Framework.Environment.SMS_CONN);
             DataSet sms_ds2 = new DataSet();
             sms_da2.Fill(sms_ds2, "T");
@@ -133,12 +133,18 @@ namespace BOCOM.IVX.Views.Content
             tRole.Columns.Add("r_id");
             tRole.Columns.Add("r_type");
 
-            tRole.Rows.Add(1, "充值");
-            tRole.Rows.Add(2, "扣费");
-            tRole.Rows.Add(3, "差额调整");
-            tRole.Rows.Add(4, "充电使用");
-            tRole.Rows.Add(5, "圈钱");
-            tRole.Rows.Add(6, "充正");
+            foreach (var item in Enum.GetValues(typeof( DataModel.E_MONEY_CHANGE_TYPE)))
+            {
+                tRole.Rows.Add((int)item, item.ToString());
+            }
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.充值, DataModel.E_MONEY_CHANGE_TYPE.充值.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.扣费, DataModel.E_MONEY_CHANGE_TYPE.扣费.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.差额调整, DataModel.E_MONEY_CHANGE_TYPE.差额调整.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.充电使用, DataModel.E_MONEY_CHANGE_TYPE.充电使用.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.圈存, DataModel.E_MONEY_CHANGE_TYPE.圈存.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.冲正, DataModel.E_MONEY_CHANGE_TYPE.冲正.ToString());
+            //tRole.Rows.Add((int)DataModel.E_MONEY_CHANGE_TYPE.钱包扣费, DataModel.E_MONEY_CHANGE_TYPE.钱包扣费.ToString());
+
             sms_ds2.Tables.Add(tRole);
 
             Column8.DisplayMember = "r_type";
@@ -154,7 +160,7 @@ namespace BOCOM.IVX.Views.Content
         {
             try
             {
-                TextBoxCardSearch.Text = "";
+                TextBoxCardSearch.Value = "";
                 labelRet.Text = "";
 
                 bool isold = RFIDREAD.RFIDReader.IsOldCard();
@@ -163,7 +169,7 @@ namespace BOCOM.IVX.Views.Content
                     try
                     {
                         RFIDREAD.CardInfo info = RFIDREAD.RFIDReader.ReadCardInfo();
-                        TextBoxCardSearch.Text = info.cardId; ;
+                        TextBoxCardSearch.Value = info.cardId; ;
                     }
                     catch (Exception ex)
                     {

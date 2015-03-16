@@ -39,7 +39,7 @@
             this.labelRet = new DevComponents.DotNetBar.LabelX();
             this.btnReadCardNumber = new DevComponents.DotNetBar.ButtonX();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.TextBoxCardSearch = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.TextBoxCardSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
@@ -92,7 +92,7 @@
             this.panelEx2.Controls.Add(this.labelX5);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(520, 87);
+            this.panelEx2.Size = new System.Drawing.Size(497, 87);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -180,19 +180,14 @@
             // 
             // 
             // 
-            this.TextBoxCardSearch.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxCardSearch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxCardSearch.BeepOnError = true;
-            this.TextBoxCardSearch.ButtonClear.Visible = true;
+            this.TextBoxCardSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxCardSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxCardSearch.Location = new System.Drawing.Point(113, 44);
-            this.TextBoxCardSearch.Mask = "0000 0000 0000 0000";
+            this.TextBoxCardSearch.MaxLength = 19;
             this.TextBoxCardSearch.Name = "TextBoxCardSearch";
-            this.TextBoxCardSearch.PromptChar = ' ';
-            this.TextBoxCardSearch.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxCardSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TextBoxCardSearch.Size = new System.Drawing.Size(184, 21);
             this.TextBoxCardSearch.TabIndex = 22;
-            this.TextBoxCardSearch.Text = "";
-            this.TextBoxCardSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.TextBoxCardSearch.Value = "";
             this.TextBoxCardSearch.WatermarkColor = System.Drawing.Color.SkyBlue;
             this.TextBoxCardSearch.WatermarkEnabled = false;
             this.TextBoxCardSearch.WatermarkText = "全部用户卡";
@@ -311,7 +306,7 @@
             this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(621, 617);
+            this.groupPanel1.Size = new System.Drawing.Size(604, 617);
             // 
             // 
             // 
@@ -398,7 +393,7 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(520, 296);
+            this.dataGridViewX1.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewX1.TabIndex = 26;
             // 
             // Column1
@@ -514,7 +509,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucCardRecordPanel";
-            this.Size = new System.Drawing.Size(627, 492);
+            this.Size = new System.Drawing.Size(610, 492);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
@@ -536,7 +531,7 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX18;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxCardSearch;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxCardSearch;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private DevComponents.DotNetBar.ButtonX btnReadCardNumber;

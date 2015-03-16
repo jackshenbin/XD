@@ -123,8 +123,8 @@ namespace BOCOM.IVX.Views.Content
 
             string strformat = "SELECT sum(total_pwr) as totalpwr,sum(spend_money) as spendmoney,month(start_time) as currmonth FROM pile_offline_records_t WHERE start_time BETWEEN '"
                 + dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' AND '" + dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'";
-            if (!string.IsNullOrWhiteSpace(TextBoxDevidSearch.Text)) strformat += " AND dev_id = '" + TextBoxDevidSearch.Text + "'";
-            if (!string.IsNullOrWhiteSpace(TextBoxCardSearch.Text)) strformat += " AND user_card = '" + TextBoxCardSearch.Text + "'";
+            if (!string.IsNullOrWhiteSpace(TextBoxDevidSearch.Value)) strformat += " AND dev_id = '" + TextBoxDevidSearch.Value + "'";
+            if (!string.IsNullOrWhiteSpace(TextBoxCardSearch.Value)) strformat += " AND user_card = '" + TextBoxCardSearch.Value + "'";
             strformat += "group by month(start_time)";
 
             MySqlDataAdapter sms_dav = new MySqlDataAdapter(strformat, Framework.Environment.SMS_CONN);
@@ -151,8 +151,8 @@ namespace BOCOM.IVX.Views.Content
         {
             string strformat = "SELECT distinct dev_id,user_card,phy_card,start_time,end_time,total_pwr,spend_money,elec_wallet_ballance,serial_sn FROM pile_offline_records_t WHERE start_time BETWEEN '"
                 +dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss")+"' AND '"+dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss")+"'";
-            if(!string.IsNullOrWhiteSpace(TextBoxDevidSearch.Text)) strformat += " AND dev_id = '"+TextBoxDevidSearch.Text+"'";
-            if(!string.IsNullOrWhiteSpace(TextBoxCardSearch.Text)) strformat+= " AND user_card = '"+TextBoxCardSearch.Text+"'";
+            if(!string.IsNullOrWhiteSpace(TextBoxDevidSearch.Value)) strformat += " AND dev_id = '"+TextBoxDevidSearch.Value+"'";
+            if(!string.IsNullOrWhiteSpace(TextBoxCardSearch.Value)) strformat+= " AND user_card = '"+TextBoxCardSearch.Value+"'";
 //string sms_sqlstr2 = string.Format("SELECT * FROM pile_offline_records_t WHERE"
 //           + "exch_time BETWEEN '{0}' AND '{1}' AND dev_id = '{2}' AND user_card = '{3}' AND phy_card = '{4}'";
 

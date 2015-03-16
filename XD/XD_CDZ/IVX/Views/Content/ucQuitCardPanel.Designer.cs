@@ -45,13 +45,14 @@
             this.textBoxMoney = new DevComponents.Editors.DoubleInput();
             this.textBoxWalletMoney = new DevComponents.Editors.DoubleInput();
             this.checkBoxFrozen = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxCardID = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.textBoxCardID = new BOCOM.IVX.Controls.ucCardIDTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
@@ -85,7 +86,7 @@
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(96, 23);
             this.labelX5.TabIndex = 1;
-            this.labelX5.Text = "退卡：";
+            this.labelX5.Text = "注销卡片：";
             // 
             // labelX1
             // 
@@ -109,7 +110,7 @@
             this.buttonQuitCard.Size = new System.Drawing.Size(75, 23);
             this.buttonQuitCard.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonQuitCard.TabIndex = 0;
-            this.buttonQuitCard.Text = "退卡";
+            this.buttonQuitCard.Text = "注销";
             this.buttonQuitCard.Click += new System.EventHandler(this.buttonQuitCard_Click);
             // 
             // labelX4
@@ -282,19 +283,14 @@
             // 
             // 
             // 
-            this.textBoxCardID.BackgroundStyle.Class = "TextBoxBorder";
-            this.textBoxCardID.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxCardID.BeepOnError = true;
-            this.textBoxCardID.ButtonClear.Visible = true;
+            this.textBoxCardID.Border.Class = "TextBoxBorder";
+            this.textBoxCardID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxCardID.Location = new System.Drawing.Point(178, 37);
-            this.textBoxCardID.Mask = "0000 0000 0000 0000";
+            this.textBoxCardID.MaxLength = 19;
             this.textBoxCardID.Name = "textBoxCardID";
-            this.textBoxCardID.PromptChar = ' ';
-            this.textBoxCardID.Size = new System.Drawing.Size(184, 25);
-            this.textBoxCardID.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.textBoxCardID.Size = new System.Drawing.Size(184, 21);
             this.textBoxCardID.TabIndex = 25;
-            this.textBoxCardID.Text = "";
-            this.textBoxCardID.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxCardID.Value = "";
             this.textBoxCardID.WatermarkEnabled = false;
             this.textBoxCardID.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
             // 
@@ -348,6 +344,6 @@
         private DevComponents.Editors.DoubleInput textBoxMoney;
         private DevComponents.Editors.DoubleInput textBoxWalletMoney;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFrozen;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv textBoxCardID;
+        private BOCOM.IVX.Controls.ucCardIDTextBox textBoxCardID;
     }
 }

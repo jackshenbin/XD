@@ -50,7 +50,6 @@
             this.TextBoxsSIM = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TextBoxsVersion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TextBoxsFactoryid = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.TextBoxDevid = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
@@ -72,6 +71,7 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem11 = new DevComponents.Editors.ComboItem();
             this.buttonGroup = new DevComponents.DotNetBar.ButtonX();
+            this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.SuspendLayout();
             // 
             // labelRet
@@ -80,7 +80,7 @@
             // 
             // 
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelRet.Location = new System.Drawing.Point(259, 242);
+            this.labelRet.Location = new System.Drawing.Point(275, 226);
             this.labelRet.Name = "labelRet";
             this.labelRet.Size = new System.Drawing.Size(193, 23);
             this.labelRet.TabIndex = 1;
@@ -128,7 +128,7 @@
             // 
             this.buttonAddDevice.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonAddDevice.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonAddDevice.Location = new System.Drawing.Point(178, 215);
+            this.buttonAddDevice.Location = new System.Drawing.Point(178, 226);
             this.buttonAddDevice.Name = "buttonAddDevice";
             this.buttonAddDevice.Size = new System.Drawing.Size(75, 23);
             this.buttonAddDevice.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -328,26 +328,6 @@
             this.TextBoxsFactoryid.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsFactoryid.TabIndex = 22;
             // 
-            // TextBoxDevid
-            // 
-            // 
-            // 
-            // 
-            this.TextBoxDevid.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxDevid.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevid.BeepOnError = true;
-            this.TextBoxDevid.ButtonClear.Visible = true;
-            this.TextBoxDevid.Location = new System.Drawing.Point(178, 21);
-            this.TextBoxDevid.Mask = "0000 0000 0000 0000";
-            this.TextBoxDevid.Name = "TextBoxDevid";
-            this.TextBoxDevid.PromptChar = ' ';
-            this.TextBoxDevid.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxDevid.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TextBoxDevid.TabIndex = 27;
-            this.TextBoxDevid.Text = "";
-            this.TextBoxDevid.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.TextBoxDevid.WatermarkEnabled = false;
-            // 
             // labelX3
             // 
             this.labelX3.AutoSize = true;
@@ -359,7 +339,7 @@
             this.labelX3.ForeColor = System.Drawing.Color.Red;
             this.labelX3.Location = new System.Drawing.Point(368, 26);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(13, 18);
+            this.labelX3.Size = new System.Drawing.Size(13, 16);
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "*";
             // 
@@ -374,7 +354,7 @@
             this.labelX6.ForeColor = System.Drawing.Color.Red;
             this.labelX6.Location = new System.Drawing.Point(284, 52);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(13, 18);
+            this.labelX6.Size = new System.Drawing.Size(13, 16);
             this.labelX6.TabIndex = 1;
             this.labelX6.Text = "*";
             // 
@@ -389,7 +369,7 @@
             this.labelX12.ForeColor = System.Drawing.Color.Red;
             this.labelX12.Location = new System.Drawing.Point(368, 82);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(13, 18);
+            this.labelX12.Size = new System.Drawing.Size(13, 16);
             this.labelX12.TabIndex = 1;
             this.labelX12.Text = "*";
             // 
@@ -536,6 +516,21 @@
             this.buttonGroup.Text = "请关联区域";
             this.buttonGroup.Click += new System.EventHandler(this.buttonGroup_Click);
             // 
+            // TextBoxDevid
+            // 
+            // 
+            // 
+            // 
+            this.TextBoxDevid.Border.Class = "TextBoxBorder";
+            this.TextBoxDevid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TextBoxDevid.Location = new System.Drawing.Point(178, 21);
+            this.TextBoxDevid.MaxLength = 19;
+            this.TextBoxDevid.Name = "TextBoxDevid";
+            this.TextBoxDevid.Size = new System.Drawing.Size(184, 21);
+            this.TextBoxDevid.TabIndex = 27;
+            this.TextBoxDevid.Value = "";
+            this.TextBoxDevid.WatermarkEnabled = false;
+            // 
             // ucAddCDZPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -601,7 +596,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsSIM;
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsVersion;
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsFactoryid;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxDevid;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxDevid;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX12;

@@ -1,0 +1,252 @@
+2015-03-15 14:56:19,689 [1] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:332193792,PrivateMemorySize64:34607104
+2015-03-15 14:56:19,720 [1] ERROR - Application_ThreadException:
+System.ArgumentOutOfRangeException: InvalidArgument=“0”的值对于“SelectedIndex”无效。
+参数名: SelectedIndex
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 BOCOM.IVX.Views.Content.ucAddCDZPanel.InitWnd() 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucAddCDZPanel.cs:行号 140
+   在 BOCOM.IVX.Views.Content.ucDeviceManagement.btnAddDevice_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucDeviceManagement.cs:行号 27
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 14:56:33,977 [1] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:398364672,PrivateMemorySize64:35516416
+2015-03-15 14:56:33,977 [1] ERROR - Application_ThreadException:
+System.ArgumentOutOfRangeException: InvalidArgument=“0”的值对于“SelectedIndex”无效。
+参数名: SelectedIndex
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 BOCOM.IVX.Views.Content.ucAddCDZPanel.InitWnd() 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucAddCDZPanel.cs:行号 140
+   在 BOCOM.IVX.Views.Content.ucDeviceManagement.btnAddDevice_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucDeviceManagement.cs:行号 27
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 14:56:36,078 [1] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:398364672,PrivateMemorySize64:36151296
+2015-03-15 14:56:36,078 [1] ERROR - Application_ThreadException:
+System.ArgumentOutOfRangeException: InvalidArgument=“0”的值对于“SelectedIndex”无效。
+参数名: SelectedIndex
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 BOCOM.IVX.Views.Content.ucAddCDZPanel.InitWnd() 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucAddCDZPanel.cs:行号 140
+   在 BOCOM.IVX.Views.Content.ucDeviceManagement.btnAddDevice_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucDeviceManagement.cs:行号 27
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 14:56:44,006 [1] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:397041664,PrivateMemorySize64:36737024
+2015-03-15 14:56:44,006 [1] ERROR - Application_ThreadException:
+System.ArgumentOutOfRangeException: InvalidArgument=“0”的值对于“SelectedIndex”无效。
+参数名: SelectedIndex
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 BOCOM.IVX.Views.Content.ucAddCDZPanel.InitWnd() 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucAddCDZPanel.cs:行号 140
+   在 BOCOM.IVX.Views.Content.ucDeviceManagement.btnAddDevice_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucDeviceManagement.cs:行号 27
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 14:59:41,874 [1] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:394358784,PrivateMemorySize64:37330944
+2015-03-15 14:59:41,874 [1] ERROR - Application_ThreadException:
+System.ArgumentOutOfRangeException: InvalidArgument=“0”的值对于“SelectedIndex”无效。
+参数名: SelectedIndex
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 BOCOM.IVX.Views.Content.ucAddCDZPanel.InitWnd() 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucAddCDZPanel.cs:行号 140
+   在 BOCOM.IVX.Views.Content.ucDeviceManagement.btnAddDevice_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\Content\ucDeviceManagement.cs:行号 27
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   在 DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:45,506 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:405598208,PrivateMemorySize64:53653504
+2015-03-15 15:42:45,515 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnPaint(PaintEventArgs e)
+   在 System.Windows.Forms.Control.PaintWithErrorHandling(PaintEventArgs e, Int16 layer)
+   在 System.Windows.Forms.Control.WmPaint(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:51,454 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:456830976,PrivateMemorySize64:55242752
+2015-03-15 15:42:51,454 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:55,427 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:457367552,PrivateMemorySize64:58638336
+2015-03-15 15:42:55,427 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnPaint(PaintEventArgs e)
+   在 System.Windows.Forms.Control.PaintWithErrorHandling(PaintEventArgs e, Int16 layer)
+   在 System.Windows.Forms.Control.WmPaint(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:56,742 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:457322496,PrivateMemorySize64:59678720
+2015-03-15 15:42:56,742 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:58,013 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:462548992,PrivateMemorySize64:60874752
+2015-03-15 15:42:58,013 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:42:58,983 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:459628544,PrivateMemorySize64:62554112
+2015-03-15 15:42:58,983 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:43:00,130 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:463380480,PrivateMemorySize64:61730816
+2015-03-15 15:43:00,130 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:43:01,473 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:459137024,PrivateMemorySize64:62177280
+2015-03-15 15:43:01,473 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-15 15:43:06,269 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:461291520,PrivateMemorySize64:61837312
+2015-03-15 15:43:06,269 [9] ERROR - Application_ThreadException:
+System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis(Double& minimumValue, Double& maximumValue, Boolean autoMaximum, Boolean autoMinimum)
+   在 System.Windows.Forms.DataVisualization.Charting.Axis.EstimateAxis()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetDefaultAxesValues()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.SetData(Boolean initializeAxes, Boolean checkIndexedAligned)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartArea.ReCalcInternal()
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.Paint(Graphics graph, Boolean paintTopLevelElementOnly)
+   在 System.Windows.Forms.DataVisualization.Charting.ChartPicture.PaintOffScreen()
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.HitTest(Int32 x, Int32 y, Boolean ignoreTransparent, ChartElementType[] requestedElementTypes)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.EvaluateToolTip(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Selection.Selection_MouseMove(Object sender, MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnChartMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.DataVisualization.Charting.Chart.OnMouseMove(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseMove(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)

@@ -1,26 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
+﻿using BOCOM.DataModel;
 using BOCOM.IVX.Protocol;
-using System.Diagnostics;
-using BOCOM.IVX.Framework;
-using System.Reflection;
-using System.IO;
-using System.Threading;
-using System.Text.RegularExpressions;
-using Microsoft.Practices.Prism.Events;
-using BOCOM.IVX.BootStrapper;
 using BOCOM.IVX.Views;
-using System.Runtime.Serialization;
-using System.Xml;
-using BOCOM.DataModel;
-using BOCOM.IVX.Protocol.Model;
-using System.Linq;
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace BOCOM.IVX.COMLibrary
 {
@@ -52,9 +36,29 @@ namespace BOCOM.IVX.COMLibrary
             AppDomain.CurrentDomain.SetData("OCXContainer", this);
             InitializeComponent();
             m_isInited = false;
+            Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+
             MyLog4Net.Container.Instance.Log.Debug("COMLibrary finish OcxLoader");
             Trace.WriteLine("COMLibrary finish OcxLoader");
+
+            BackColor = System.Drawing.Color.LightSkyBlue;
         }
+
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            Framework.Environment.CheckMemeryUse();
+            MyLog4Net.Container.Instance.Log.Error("Application_ThreadException:", e.Exception);
+
+            MessageBox.Show(
+                string.Format("系统出现未处理异常："
+                + Environment.NewLine + "{0}"
+                + Environment.NewLine + Environment.NewLine + "请重新启动程序，如仍旧出现此对话框请联系管理员！", e.Exception.Message)
+                , "系统未处理异常"
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
+
+        }
+
         #endregion
 
         #region Events,Handles

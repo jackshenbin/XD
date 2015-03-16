@@ -15,6 +15,17 @@ namespace BOCOM.DataModel
         SWITCH_WND_DEVICE_MENAGEMENT,
         SWITCH_WND_REPORT_MENAGEMENT,
     }
+
+    public enum E_MONEY_CHANGE_TYPE
+    {
+         充值,
+         扣费,
+         差额调整,
+         充电使用,
+         圈存,
+         冲正,
+        钱包扣费,
+    }
     public enum E_LOGIN_RESULT
     {
         LOGIN_SUCCESS = 0,		//登录成功

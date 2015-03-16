@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.labelRet = new DevComponents.DotNetBar.LabelX();
-            this.textBoxPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.textBoxUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -56,37 +55,27 @@
             this.btnReadCardNumber = new DevComponents.DotNetBar.ButtonX();
             this.textBoxCarPlant = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxPasswordable = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxCardID = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.textBoxIdentityNumber = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxCardID = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxRePassword = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelRet.Location = new System.Drawing.Point(272, 319);
+            this.labelRet.Location = new System.Drawing.Point(272, 338);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(193, 23);
+            this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 1;
-            // 
-            // textBoxPassword
-            // 
-            // 
-            // 
-            // 
-            this.textBoxPassword.Border.Class = "TextBoxBorder";
-            this.textBoxPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxPassword.Location = new System.Drawing.Point(178, 110);
-            this.textBoxPassword.MaxLength = 6;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 21);
-            this.textBoxPassword.TabIndex = 2;
             // 
             // labelX3
             // 
@@ -108,7 +97,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(104, 268);
+            this.labelX2.Location = new System.Drawing.Point(104, 287);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(68, 18);
             this.labelX2.TabIndex = 1;
@@ -137,7 +126,7 @@
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(96, 23);
             this.labelX5.TabIndex = 1;
-            this.labelX5.Text = "创建新卡：";
+            this.labelX5.Text = "发行卡片：";
             // 
             // labelX1
             // 
@@ -156,7 +145,7 @@
             // 
             this.btnAddUser.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddUser.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddUser.Location = new System.Drawing.Point(178, 319);
+            this.btnAddUser.Location = new System.Drawing.Point(178, 338);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(75, 23);
             this.btnAddUser.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -171,7 +160,7 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(128, 157);
+            this.labelX6.Location = new System.Drawing.Point(128, 176);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(44, 18);
             this.labelX6.TabIndex = 1;
@@ -187,7 +176,7 @@
             this.checkBoxMale.Checked = true;
             this.checkBoxMale.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxMale.CheckValue = "Y";
-            this.checkBoxMale.Location = new System.Drawing.Point(178, 155);
+            this.checkBoxMale.Location = new System.Drawing.Point(178, 174);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(53, 23);
             this.checkBoxMale.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -201,7 +190,7 @@
             // 
             this.checkBoxFemale.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.checkBoxFemale.CheckBoxStyle = DevComponents.DotNetBar.eCheckBoxStyle.RadioButton;
-            this.checkBoxFemale.Location = new System.Drawing.Point(237, 155);
+            this.checkBoxFemale.Location = new System.Drawing.Point(237, 174);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(53, 23);
             this.checkBoxFemale.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -215,7 +204,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(104, 214);
+            this.labelX7.Location = new System.Drawing.Point(104, 233);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(68, 18);
             this.labelX7.TabIndex = 1;
@@ -228,7 +217,7 @@
             // 
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(104, 241);
+            this.labelX8.Location = new System.Drawing.Point(104, 260);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(68, 18);
             this.labelX8.TabIndex = 1;
@@ -241,7 +230,7 @@
             // 
             this.textBoxTelephone.Border.Class = "TextBoxBorder";
             this.textBoxTelephone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxTelephone.Location = new System.Drawing.Point(178, 238);
+            this.textBoxTelephone.Location = new System.Drawing.Point(178, 257);
             this.textBoxTelephone.MaxLength = 12;
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(100, 21);
@@ -254,7 +243,7 @@
             // 
             // 
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(104, 187);
+            this.labelX9.Location = new System.Drawing.Point(104, 206);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(68, 18);
             this.labelX9.TabIndex = 1;
@@ -272,7 +261,7 @@
             this.comboItem1,
             this.comboItem5,
             this.comboItem6});
-            this.comboBoxExIdentityType.Location = new System.Drawing.Point(178, 184);
+            this.comboBoxExIdentityType.Location = new System.Drawing.Point(178, 203);
             this.comboBoxExIdentityType.Name = "comboBoxExIdentityType";
             this.comboBoxExIdentityType.Size = new System.Drawing.Size(100, 21);
             this.comboBoxExIdentityType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -301,7 +290,7 @@
             // 
             this.textBoxAddress.Border.Class = "TextBoxBorder";
             this.textBoxAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxAddress.Location = new System.Drawing.Point(178, 292);
+            this.textBoxAddress.Location = new System.Drawing.Point(178, 311);
             this.textBoxAddress.MaxLength = 64;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(417, 21);
@@ -314,7 +303,7 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(104, 295);
+            this.labelX10.Location = new System.Drawing.Point(104, 314);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(68, 18);
             this.labelX10.TabIndex = 1;
@@ -378,7 +367,7 @@
             // 
             this.textBoxCarPlant.Border.Class = "TextBoxBorder";
             this.textBoxCarPlant.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxCarPlant.Location = new System.Drawing.Point(178, 265);
+            this.textBoxCarPlant.Location = new System.Drawing.Point(178, 284);
             this.textBoxCarPlant.MaxLength = 8;
             this.textBoxCarPlant.Name = "textBoxCarPlant";
             this.textBoxCarPlant.Size = new System.Drawing.Size(100, 21);
@@ -401,26 +390,6 @@
             this.checkBoxPasswordable.Text = "密码使能";
             this.checkBoxPasswordable.CheckedChanged += new System.EventHandler(this.checkBoxPasswordable_CheckedChanged);
             // 
-            // textBoxCardID
-            // 
-            // 
-            // 
-            // 
-            this.textBoxCardID.BackgroundStyle.Class = "TextBoxBorder";
-            this.textBoxCardID.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxCardID.BeepOnError = true;
-            this.textBoxCardID.ButtonClear.Visible = true;
-            this.textBoxCardID.Location = new System.Drawing.Point(178, 79);
-            this.textBoxCardID.Mask = "0000 0000 0000 0000";
-            this.textBoxCardID.Name = "textBoxCardID";
-            this.textBoxCardID.PromptChar = ' ';
-            this.textBoxCardID.Size = new System.Drawing.Size(184, 25);
-            this.textBoxCardID.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.textBoxCardID.TabIndex = 23;
-            this.textBoxCardID.Text = "";
-            this.textBoxCardID.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.textBoxCardID.WatermarkEnabled = false;
-            // 
             // labelX12
             // 
             this.labelX12.AutoSize = true;
@@ -431,7 +400,7 @@
             this.labelX12.ForeColor = System.Drawing.Color.Red;
             this.labelX12.Location = new System.Drawing.Point(324, 28);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(13, 16);
+            this.labelX12.Size = new System.Drawing.Size(13, 18);
             this.labelX12.TabIndex = 1;
             this.labelX12.Text = "*";
             // 
@@ -445,7 +414,7 @@
             this.labelX13.ForeColor = System.Drawing.Color.Red;
             this.labelX13.Location = new System.Drawing.Point(324, 54);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(13, 16);
+            this.labelX13.Size = new System.Drawing.Size(13, 18);
             this.labelX13.TabIndex = 1;
             this.labelX13.Text = "*";
             // 
@@ -459,7 +428,7 @@
             this.labelX14.ForeColor = System.Drawing.Color.Red;
             this.labelX14.Location = new System.Drawing.Point(368, 86);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(13, 16);
+            this.labelX14.Size = new System.Drawing.Size(13, 18);
             this.labelX14.TabIndex = 1;
             this.labelX14.Text = "*";
             // 
@@ -470,16 +439,76 @@
             // 
             this.textBoxIdentityNumber.Border.Class = "TextBoxBorder";
             this.textBoxIdentityNumber.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxIdentityNumber.Location = new System.Drawing.Point(178, 211);
+            this.textBoxIdentityNumber.Location = new System.Drawing.Point(178, 230);
             this.textBoxIdentityNumber.MaxLength = 18;
             this.textBoxIdentityNumber.Name = "textBoxIdentityNumber";
             this.textBoxIdentityNumber.Size = new System.Drawing.Size(184, 21);
             this.textBoxIdentityNumber.TabIndex = 2;
             // 
+            // textBoxCardID
+            // 
+            // 
+            // 
+            // 
+            this.textBoxCardID.Border.Class = "TextBoxBorder";
+            this.textBoxCardID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxCardID.Location = new System.Drawing.Point(178, 79);
+            this.textBoxCardID.MaxLength = 19;
+            this.textBoxCardID.Name = "textBoxCardID";
+            this.textBoxCardID.Size = new System.Drawing.Size(184, 21);
+            this.textBoxCardID.TabIndex = 23;
+            this.textBoxCardID.Value = "";
+            this.textBoxCardID.WatermarkEnabled = false;
+            // 
+            // labelX15
+            // 
+            this.labelX15.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(79, 140);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(93, 18);
+            this.labelX15.TabIndex = 1;
+            this.labelX15.Text = "再次确认密码：";
+            // 
+            // textBoxPassword
+            // 
+            // 
+            // 
+            // 
+            this.textBoxPassword.Border.Class = "TextBoxBorder";
+            this.textBoxPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxPassword.Location = new System.Drawing.Point(178, 107);
+            this.textBoxPassword.MaxLength = 6;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 21);
+            this.textBoxPassword.TabIndex = 25;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxRePassword_TextChanged);
+            // 
+            // textBoxRePassword
+            // 
+            // 
+            // 
+            // 
+            this.textBoxRePassword.Border.Class = "TextBoxBorder";
+            this.textBoxRePassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxRePassword.Location = new System.Drawing.Point(178, 137);
+            this.textBoxRePassword.MaxLength = 6;
+            this.textBoxRePassword.Name = "textBoxRePassword";
+            this.textBoxRePassword.PasswordChar = '*';
+            this.textBoxRePassword.Size = new System.Drawing.Size(100, 21);
+            this.textBoxRePassword.TabIndex = 25;
+            this.textBoxRePassword.TextChanged += new System.EventHandler(this.textBoxRePassword_TextChanged);
+            // 
             // ucAddCardPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxRePassword);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxCardID);
             this.Controls.Add(this.checkBoxPasswordable);
             this.Controls.Add(this.checkBoxFemale);
@@ -496,7 +525,6 @@
             this.Controls.Add(this.textBoxIdentityNumber);
             this.Controls.Add(this.textBoxTelephone);
             this.Controls.Add(this.textBoxCardSerialNumber);
-            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelX11);
             this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.labelX4);
@@ -504,6 +532,7 @@
             this.Controls.Add(this.labelX14);
             this.Controls.Add(this.labelX13);
             this.Controls.Add(this.labelX12);
+            this.Controls.Add(this.labelX15);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.labelX10);
@@ -520,7 +549,6 @@
         #endregion
 
         private DevComponents.DotNetBar.LabelX labelRet;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxPassword;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxUserName;
@@ -547,10 +575,13 @@
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxCarPlant;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxPasswordable;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv textBoxCardID;
+        private BOCOM.IVX.Controls.ucCardIDTextBox textBoxCardID;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxIdentityNumber;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxPassword;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxRePassword;
     }
 }

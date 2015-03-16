@@ -681,7 +681,108 @@ namespace RFIDREAD
             return retCharge;
         }
 
+        public static string ChangePassword(string userpass, bool pKeyCheck)
+        {
+            Trace.WriteLine("enter ChangePassword");
 
+            int comHandle = OpenUsb();
+            GetConfig(comHandle);
+
+
+            SetConfig(comHandle);
+
+            int ret1;
+            string uid;
+            GetUID(comHandle, out ret1, out uid);
+            if (string.IsNullOrEmpty(uid))
+            {
+                GetUID(comHandle, out ret1, out uid);
+            }
+            if (string.IsNullOrEmpty(uid))
+                throw new Exception("无法获取uid");
+
+            byte[] p = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+
+            byte[] pwd = new byte[protocol.HFREADER_ISO14443A_LEN_M1_KEY];
+            Array.Copy(p, 0, pwd, 0, Math.Min(p.Length, protocol.HFREADER_ISO14443A_LEN_M1_KEY));
+
+            if (comHandle > 0)
+            {
+                byte[] pTxFrame = new byte[0x400];
+                byte[] pRxFrame = new byte[0x400];
+
+                ISO14443A_BLOCKPARAM block = new ISO14443A_BLOCKPARAM();
+                block.uid = new ISO14443A_UID();
+                block.uid.uid = new byte[10];
+
+                block.num = 1;
+
+                block.key = new byte[protocol.HFREADER_ISO14443A_LEN_M1_KEY];
+
+                if (protocol.tagMode == 0)
+                {
+                    Array.Copy(protocol.block16Key, block.key, protocol.HFREADER_ISO14443A_LEN_M1_KEY);
+                    block.keyType = 0x60;
+                }
+                else
+                {
+                    Array.Copy(protocol.block16Key, protocol.HFREADER_ISO14443A_LEN_M1BLOCK - protocol.HFREADER_ISO14443A_LEN_M1_KEY, block.key, 0, protocol.HFREADER_ISO14443A_LEN_M1_KEY);
+                    block.keyType = 0x61;
+                }
+
+                int pos = 0;
+                block.addr = 16;
+                block.block[pos++] = 0xFF;
+                block.block[pos++] = 0xFF;
+                byte[] bpass = getpassbyteFromeText(userpass);
+                bpass.CopyTo(block.block, pos);
+                pos += protocol.USER_PASSWORD_LENGTH;
+                block.block[pos++] = 0x55;
+                if (pKeyCheck)
+                {
+                    block.block[pos++] = 0xAA;
+                }
+                else
+                {
+                    block.block[pos++] = 0x55;
+                }
+                block.block[pos++] = 0x01;
+                block.block[pos++] = 0x64;
+                block.block[pos++] = 0xFF;
+                block.block[pos++] = 0xFF;
+                block.block[pos++] = 0xFF;
+                block.block[pos++] = 0xFF;
+                pTxFrame = new byte[0x400];
+                pRxFrame = new byte[0x400];
+
+                protocol.iso14443AAuthWriteM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
+                if (block.result.flag == 0)
+                {
+
+                }
+                else
+                {
+                    throw new Exception("写用户密码失败！");
+                    //QMessageBox::information(this, QString(tr("提示")), QString(tr("写用户密码失败！")));
+
+                }
+
+
+
+
+            }
+            else
+            {
+                throw new Exception("初始化HFreader失败！");
+
+            }
+            ret1 = CloseUsb(comHandle);
+            Trace.WriteLine("leave ChangePassword:" + uid);
+
+
+            return uid;
+        }
+        
         public static string QuitCard()
         {
             int comHandle = OpenUsb();

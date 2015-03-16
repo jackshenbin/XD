@@ -76,10 +76,10 @@
             this.TextBoxsVersion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TextBoxsFactoryid = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.TextBoxDevid = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
-            this.TextBoxDevidSearch = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -130,6 +130,7 @@
             this.comboBoxConnstat.DisplayMember = "Text";
             this.comboBoxConnstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxConnstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxConnstat.Enabled = false;
             this.comboBoxConnstat.FormattingEnabled = true;
             this.comboBoxConnstat.ItemHeight = 15;
             this.comboBoxConnstat.Items.AddRange(new object[] {
@@ -183,6 +184,7 @@
             this.comboBoxWorkstat.DisplayMember = "Text";
             this.comboBoxWorkstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxWorkstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWorkstat.Enabled = false;
             this.comboBoxWorkstat.FormattingEnabled = true;
             this.comboBoxWorkstat.ItemHeight = 15;
             this.comboBoxWorkstat.Items.AddRange(new object[] {
@@ -221,6 +223,7 @@
             this.comboBoxType.DisplayMember = "Text";
             this.comboBoxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxType.Enabled = false;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.ItemHeight = 15;
             this.comboBoxType.Items.AddRange(new object[] {
@@ -302,6 +305,7 @@
             this.TextBoxsOutcur.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsOutcur.Location = new System.Drawing.Point(148, 184);
             this.TextBoxsOutcur.Name = "TextBoxsOutcur";
+            this.TextBoxsOutcur.ReadOnly = true;
             this.TextBoxsOutcur.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsOutcur.TabIndex = 17;
             // 
@@ -314,6 +318,7 @@
             this.TextBoxsAddr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsAddr.Location = new System.Drawing.Point(148, 103);
             this.TextBoxsAddr.Name = "TextBoxsAddr";
+            this.TextBoxsAddr.ReadOnly = true;
             this.TextBoxsAddr.Size = new System.Drawing.Size(474, 21);
             this.TextBoxsAddr.TabIndex = 17;
             // 
@@ -326,6 +331,7 @@
             this.TextBoxsTotaldegree.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsTotaldegree.Location = new System.Drawing.Point(478, 157);
             this.TextBoxsTotaldegree.Name = "TextBoxsTotaldegree";
+            this.TextBoxsTotaldegree.ReadOnly = true;
             this.TextBoxsTotaldegree.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsTotaldegree.TabIndex = 16;
             // 
@@ -391,6 +397,7 @@
             this.TextBoxsPosition.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsPosition.Location = new System.Drawing.Point(148, 130);
             this.TextBoxsPosition.Name = "TextBoxsPosition";
+            this.TextBoxsPosition.ReadOnly = true;
             this.TextBoxsPosition.Size = new System.Drawing.Size(474, 21);
             this.TextBoxsPosition.TabIndex = 16;
             // 
@@ -535,6 +542,7 @@
             this.TextBoxsOutvol.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsOutvol.Location = new System.Drawing.Point(148, 157);
             this.TextBoxsOutvol.Name = "TextBoxsOutvol";
+            this.TextBoxsOutvol.ReadOnly = true;
             this.TextBoxsOutvol.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsOutvol.TabIndex = 19;
             // 
@@ -548,6 +556,7 @@
             this.TextBoxsSIM.Location = new System.Drawing.Point(478, 76);
             this.TextBoxsSIM.MaxLength = 11;
             this.TextBoxsSIM.Name = "TextBoxsSIM";
+            this.TextBoxsSIM.ReadOnly = true;
             this.TextBoxsSIM.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsSIM.TabIndex = 14;
             // 
@@ -560,6 +569,7 @@
             this.TextBoxsVersion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsVersion.Location = new System.Drawing.Point(478, 49);
             this.TextBoxsVersion.Name = "TextBoxsVersion";
+            this.TextBoxsVersion.ReadOnly = true;
             this.TextBoxsVersion.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsVersion.TabIndex = 19;
             // 
@@ -572,6 +582,7 @@
             this.TextBoxsFactoryid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxsFactoryid.Location = new System.Drawing.Point(478, 22);
             this.TextBoxsFactoryid.Name = "TextBoxsFactoryid";
+            this.TextBoxsFactoryid.ReadOnly = true;
             this.TextBoxsFactoryid.Size = new System.Drawing.Size(100, 21);
             this.TextBoxsFactoryid.TabIndex = 15;
             // 
@@ -614,7 +625,7 @@
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
             this.panelEx1.Location = new System.Drawing.Point(18, 70);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(702, 226);
+            this.panelEx1.Size = new System.Drawing.Size(690, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -629,20 +640,16 @@
             // 
             // 
             // 
-            this.TextBoxDevid.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxDevid.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevid.BeepOnError = true;
-            this.TextBoxDevid.ButtonClear.Visible = true;
+            this.TextBoxDevid.Border.Class = "TextBoxBorder";
+            this.TextBoxDevid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxDevid.Enabled = false;
             this.TextBoxDevid.Location = new System.Drawing.Point(148, 13);
-            this.TextBoxDevid.Mask = "0000 0000 0000 0000";
+            this.TextBoxDevid.MaxLength = 19;
             this.TextBoxDevid.Name = "TextBoxDevid";
-            this.TextBoxDevid.PromptChar = ' ';
-            this.TextBoxDevid.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxDevid.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TextBoxDevid.ReadOnly = true;
+            this.TextBoxDevid.Size = new System.Drawing.Size(184, 21);
             this.TextBoxDevid.TabIndex = 22;
-            this.TextBoxDevid.Text = "";
-            this.TextBoxDevid.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.TextBoxDevid.Value = "";
             this.TextBoxDevid.WatermarkEnabled = false;
             // 
             // panelEx2
@@ -657,7 +664,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(702, 43);
+            this.panelEx2.Size = new System.Drawing.Size(690, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -686,19 +693,14 @@
             // 
             // 
             // 
-            this.TextBoxDevidSearch.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxDevidSearch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevidSearch.BeepOnError = true;
-            this.TextBoxDevidSearch.ButtonClear.Visible = true;
+            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxDevidSearch.Location = new System.Drawing.Point(148, 10);
-            this.TextBoxDevidSearch.Mask = "0000 0000 0000 0000";
+            this.TextBoxDevidSearch.MaxLength = 19;
             this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
-            this.TextBoxDevidSearch.PromptChar = ' ';
-            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxDevidSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
             this.TextBoxDevidSearch.TabIndex = 22;
-            this.TextBoxDevidSearch.Text = "";
-            this.TextBoxDevidSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.TextBoxDevidSearch.Value = "";
             this.TextBoxDevidSearch.WatermarkEnabled = false;
             // 
             // btnSearch
@@ -775,6 +777,7 @@
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             this.labelRet.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
@@ -782,7 +785,7 @@
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelRet.Location = new System.Drawing.Point(380, 311);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(220, 23);
+            this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 25;
             // 
             // buttonDel
@@ -810,6 +813,7 @@
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
+            this.groupPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -866,8 +870,8 @@
         private DevComponents.DotNetBar.ButtonX btnSearch;
         private DevComponents.DotNetBar.LabelX labelX17;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxDevid;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxDevidSearch;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxDevid;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxDevidSearch;
         private DevComponents.DotNetBar.LabelX labelSearchStat;
         private DevComponents.DotNetBar.ButtonX buttonDel;
         private DevComponents.DotNetBar.LabelX labelRet;

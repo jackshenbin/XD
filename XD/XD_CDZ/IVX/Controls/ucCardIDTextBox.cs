@@ -18,8 +18,6 @@ namespace BOCOM.IVX.Controls
             
         }
 
-
-
         public string Value
         {
             get

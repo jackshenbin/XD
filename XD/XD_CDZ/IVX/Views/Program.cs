@@ -99,7 +99,7 @@ namespace BOCOM.IVX
                 , MessageBoxIcon.Information);
 
         }
-
+        
         // static public List<IMessageRet> FromList = new List<IMessageRet>();
 
     }

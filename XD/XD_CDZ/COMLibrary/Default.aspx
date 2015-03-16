@@ -32,7 +32,7 @@
 </head>
     <script type="text/javascript">
         var ServerDBIP = "121.40.88.117";
-        var ServerClientVer = "1.0.0.7";
+        var ServerClientVer = "1.0.0.9";
 
         function switchwnd(index) {
             //alert("VdaSwitchForm index:" + index);
@@ -64,7 +64,7 @@
                 document.getElementById("xdsdkform").style.height = 0;
                 document.getElementById("versionckeck").innerHTML = "<li>控件未加载</li>"
                     + "<li>首次使用请先<a href='./ocx/iesetup.exe'>下载IE设置工具iesetup.exe</a></li>"
-                    + "<li>然后再<a href='./ocx/XD发布.rar'>下载控件XD发布.rar</a> 解压后运行regcom.bat</li>"
+                    + "<li>然后再<a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 解压后运行regcom.bat</li>"
                 return false;
             }
         }
@@ -130,7 +130,7 @@
                 //alert("1.1");
                 document.getElementById("XDSDK").style.height = 0;
                     document.getElementById("versionckeck").innerHTML = "<li>控件版本不匹配</li>"
-                        + "<li><a href='./ocx/XD发布.rar'>请下载最新控件XD发布.rar</a> 解压后运行regcom.bat，并重启浏览器</li>"
+                        + "<li><a href='./ocx/XD_CDZ.exe'>请下载最新控件XD_CDZ.exe</a> 解压后运行regcom.bat，并重启浏览器</li>"
 return false;
                 }
                 return true;
@@ -139,7 +139,7 @@ return false;
                 document.getElementById("xdsdkform").style.height = 0;
                 document.getElementById("versionckeck").innerHTML = "<li>控件未加载</li>"
                     + "<li>首次使用请先<a href='./ocx/iesetup.exe'>下载IE设置工具iesetup.exe</a></li>"
-                    + "<li>然后再<a href='./ocx/XD发布.rar'>下载控件XD发布.rar</a> 解压后运行regcom.bat</li>"
+                    + "<li>然后再<a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 解压后运行regcom.bat</li>"
                 return false;
             }
 

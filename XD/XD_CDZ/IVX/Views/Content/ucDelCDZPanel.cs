@@ -13,7 +13,6 @@ namespace BOCOM.IVX.Views.Content
 
     public partial class ucDelCDZPanel : UserControl
     {
-        BindingSource bs;
 
 
         public event EventHandler DelDevComplete;
@@ -32,7 +31,7 @@ namespace BOCOM.IVX.Views.Content
 
             bool ret = true;
 
-            if (TextBoxDevid.Text == "")
+            if (TextBoxDevid.Value == "")
             {
                 labelRet.Text = "充电桩编号不能为空";
                 labelRet.ForeColor = Color.Red;
@@ -45,7 +44,7 @@ namespace BOCOM.IVX.Views.Content
         {
             labelSearchStat.Text = "";
 
-            TextBoxDevid.Text = "";
+            TextBoxDevid.Value = "";
             TextBoxUserid.Text = "";
             TextBoxsFactoryid.Text = "";
             TextBoxsVersion.Text = "";
@@ -64,7 +63,7 @@ namespace BOCOM.IVX.Views.Content
 
             if (row != null)
             {
-                TextBoxDevid.Text = row["dev_id"].ToString();
+                TextBoxDevid.Value = row["dev_id"].ToString();
                 TextBoxUserid.Text = row["user_id"].ToString();
                 TextBoxsFactoryid.Text = row["vender_id"].ToString();
                 TextBoxsVersion.Text = row["software_ver"].ToString();
@@ -73,7 +72,7 @@ namespace BOCOM.IVX.Views.Content
                 TextBoxsAddr.Text = row["address"].ToString();
                 TextBoxsPosition.Text = row["position"].ToString();
 
-                string sms_sqlstr2 = "SELECT * FROM pile_state_t where dev_id='" + TextBoxDevid.Text + "' order by date_time desc limit 1";
+                string sms_sqlstr2 = "SELECT * FROM pile_state_t where dev_id='" + TextBoxDevid.Value + "' order by date_time desc limit 1";
                 MySqlDataAdapter sms_da2 = new MySqlDataAdapter(sms_sqlstr2, Framework.Environment.SMS_CONN);
                 DataSet sms_ds2 = new DataSet();
                 sms_da2.Fill(sms_ds2, "T");
@@ -96,7 +95,7 @@ namespace BOCOM.IVX.Views.Content
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            string sms_sqlstr2 = "SELECT * FROM hd_pile_info_t where dev_id='" + TextBoxDevidSearch.Text + "'";
+            string sms_sqlstr2 = "SELECT * FROM hd_pile_info_t where dev_id='" + TextBoxDevidSearch.Value + "'";
             MySqlDataAdapter sms_da2 = new MySqlDataAdapter(sms_sqlstr2, Framework.Environment.SMS_CONN);
             DataSet sms_ds2 = new DataSet();
             sms_da2.Fill(sms_ds2, "T");
@@ -126,7 +125,7 @@ namespace BOCOM.IVX.Views.Content
                 + "软件版本号：{4}" + Environment.NewLine
                 + "SIM卡号：{5}" + Environment.NewLine
                 + "安装地址：{6}" + Environment.NewLine
-                , TextBoxDevid.Text
+                , TextBoxDevid.Value
                 , comboBoxType.SelectedItem.ToString()
                 , comboBoxWorkstat.SelectedItem.ToString()
                 , TextBoxsFactoryid.Text
@@ -136,7 +135,7 @@ namespace BOCOM.IVX.Views.Content
             if (MessageBox.Show(msg, "确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2) != DialogResult.OK)
                 return;
 
-            string sms_sqlstr = "delete FROM hd_pile_info_t where dev_id='" + TextBoxDevid.Text + "'";
+            string sms_sqlstr = "delete FROM hd_pile_info_t where dev_id='" + TextBoxDevid.Value + "'";
 
             MySqlCommand sms_comm = new MySqlCommand(sms_sqlstr, Framework.Environment.SMS_CONN);
             sms_comm.Connection.Open();
@@ -158,5 +157,26 @@ namespace BOCOM.IVX.Views.Content
                 DelDevComplete(null, null);
         }
 
+
+        public void InitWnd()
+        { 
+            TextBoxDevid.Value = "";
+            comboBoxType.SelectedIndex = 0;
+            comboBoxWorkstat.SelectedIndex = 0;
+            TextBoxsFactoryid.Text = "";
+            TextBoxsVersion.Text= "";
+            TextBoxsSIM.Text="";
+            TextBoxsAddr.Text = "";
+            TextBoxDevid1.Text = "";
+            TextBoxDevidSearch.Value = "";
+            TextBoxsOutcur.Text = "";
+            TextBoxsOutvol.Text = "";
+            TextBoxsPosition.Text = "";
+            TextBoxsTotaldegree.Text = "";
+            TextBoxsVersion.Text = "";
+            TextBoxUserid.Text = "";
+            labelRet.Text = "";
+
+        }
     }
 }

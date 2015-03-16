@@ -33,6 +33,7 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.labelRet = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.textBoxPassword2 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -43,7 +44,6 @@
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.buttonAddUser = new DevComponents.DotNetBar.ButtonX();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.SuspendLayout();
             // 
             // stepIndicator2
@@ -54,7 +54,6 @@
             this.stepIndicator2.Size = new System.Drawing.Size(84, 18);
             this.stepIndicator2.StepCount = 3;
             this.stepIndicator2.TabIndex = 4;
-            this.stepIndicator2.Text = "stepIndicator2";
             // 
             // comboBoxUserType
             // 
@@ -86,8 +85,13 @@
             // 
             this.comboItem3.Text = "操作员";
             // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "报表查看";
+            // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
@@ -118,6 +122,7 @@
             this.textBoxPassword2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword2.Location = new System.Drawing.Point(178, 79);
             this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(151, 21);
             this.textBoxPassword2.TabIndex = 2;
             // 
@@ -142,8 +147,10 @@
             this.textBoxPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword.Location = new System.Drawing.Point(178, 52);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(151, 21);
             this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // labelX2
             // 
@@ -204,10 +211,7 @@
             this.buttonAddUser.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonAddUser.TabIndex = 0;
             this.buttonAddUser.Text = "添加用户";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "报表查看";
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // ucAddUserPanel
             // 
@@ -228,6 +232,7 @@
             this.Name = "ucAddUserPanel";
             this.Size = new System.Drawing.Size(489, 187);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

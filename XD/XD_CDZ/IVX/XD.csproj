@@ -46,7 +46,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -76,7 +76,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|AnyCPU'">
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE;NEUTERPRODUCT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -130,7 +130,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ShanghaiProduct|x86'">
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE;SHANGHAIPRODUCT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -145,7 +145,7 @@
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|x86'">
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE;NEUTERPRODUCT</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -231,6 +231,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Content\formChangeCardPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Content\formChangeCardPass.Designer.cs">
+      <DependentUpon>formChangeCardPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\formMoneyCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Content\formMoneyCharge.Designer.cs">
+      <DependentUpon>formMoneyCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucCardStatChangePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCardStatChangePanel.Designer.cs">
+      <DependentUpon>ucCardStatChangePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Content\ucCardStatPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -242,6 +260,12 @@
     </Compile>
     <Compile Include="Views\Content\ucCardRecordPanel.Designer.cs">
       <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucReChargePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucReChargePanel.Designer.cs">
+      <DependentUpon>ucReChargePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Content\ucTradingRecordPanel.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +314,18 @@
     </Compile>
     <Compile Include="Views\Content\ucMainPage.Designer.cs">
       <DependentUpon>ucMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletChargeBackPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletChargeBackPanel.Designer.cs">
+      <DependentUpon>ucWalletChargeBackPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletReChargePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucWalletReChargePanel.Designer.cs">
+      <DependentUpon>ucWalletReChargePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Content\ucWalletChargePanel.cs">
       <SubType>UserControl</SubType>
@@ -380,11 +416,23 @@
     <EmbeddedResource Include="Controls\ucHttpTreeControl.resx">
       <DependentUpon>ucHttpTreeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\formChangeCardPass.resx">
+      <DependentUpon>formChangeCardPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\formMoneyCharge.resx">
+      <DependentUpon>formMoneyCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCardStatChangePanel.resx">
+      <DependentUpon>ucCardStatChangePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucCardStatPanel.resx">
       <DependentUpon>ucCardStatPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucCardRecordPanel.resx">
       <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucReChargePanel.resx">
+      <DependentUpon>ucReChargePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucTradingRecordPanel.resx">
       <DependentUpon>ucTradingRecordPanel.cs</DependentUpon>
@@ -409,6 +457,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucMainPage.resx">
       <DependentUpon>ucMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucWalletChargeBackPanel.resx">
+      <DependentUpon>ucWalletChargeBackPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucWalletReChargePanel.resx">
+      <DependentUpon>ucWalletReChargePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucWalletChargePanel.resx">
       <DependentUpon>ucWalletChargePanel.cs</DependentUpon>

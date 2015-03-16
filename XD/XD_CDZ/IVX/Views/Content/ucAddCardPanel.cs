@@ -25,7 +25,7 @@ namespace BOCOM.IVX.Views.Content
 
             bool ret = true;
 
-            if (textBoxCardID.Text == "")
+            if (textBoxCardID.Value == "")
             {
                 labelRet.Text = "用户卡号不能为空";
                 labelRet.ForeColor = Color.Red;
@@ -40,6 +40,12 @@ namespace BOCOM.IVX.Views.Content
             if (textBoxUserName.Text == "")
             {
                 labelRet.Text = "用户姓名不能为空";
+                labelRet.ForeColor = Color.Red;
+                ret = false;
+            }
+            if (textBoxPassword.Text != textBoxRePassword.Text)
+            {
+                labelRet.Text = "两次输入的密码不一致";
                 labelRet.ForeColor = Color.Red;
                 ret = false;
             }
@@ -70,7 +76,7 @@ namespace BOCOM.IVX.Views.Content
             + "车牌号码：{8}" + Environment.NewLine
             + "通信地址：{9}" + Environment.NewLine
             , textBoxUserName.Text
-            , textBoxCardID.Text
+            , textBoxCardID.Value
             , textBoxCardSerialNumber.Text
             , checkBoxPasswordable.Checked?"使用密码":"无需密码"
             , checkBoxMale.Checked?"男":"女"
@@ -85,12 +91,12 @@ namespace BOCOM.IVX.Views.Content
             try
             {
 
-            string ret = RFIDREAD.RFIDReader.NewCard(textBoxCardID.Text, textBoxPassword.Text,checkBoxPasswordable.Checked);
-            if (ret == textBoxCardID.Text)
+                string ret = RFIDREAD.RFIDReader.NewCard(textBoxCardID.Value, textBoxPassword.Text, checkBoxPasswordable.Checked);
+                if (ret == textBoxCardID.Value)
             {
                 string sms_sqlstr = string.Format("INSERT INTO `user_card_list_t` (`user_card_id`,`phy_card`, `master_name`,`sex`, `license_plate`,  `phone_num`, `start_time`, `id_type`, `id_num`, `home_addr`, `mail_addr`,`total_balance`,`account_balance`,`elec_pkg_balance`) "
               + "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}','{11}','{12}','{13}')"
-                , textBoxCardID.Text
+                , textBoxCardID.Value
                 , textBoxCardSerialNumber.Text
                 , textBoxUserName.Text
                 , checkBoxMale.Checked ? 0 : 1
@@ -121,7 +127,7 @@ namespace BOCOM.IVX.Views.Content
                 sms_comm.Connection.Close();
 
                 if (AddCardComplete != null)
-                    AddCardComplete(textBoxCardID.Text, null);
+                    AddCardComplete(textBoxCardID.Value, null);
             }
             else
             { 
@@ -142,7 +148,7 @@ namespace BOCOM.IVX.Views.Content
             try
             {
                 textBoxCardSerialNumber.Text = "";
-                textBoxCardID.Text = "";
+                textBoxCardID.Value = "";
                 labelRet.Text = "";
 
                 string uid = RFIDREAD.RFIDReader.ReadUID();
@@ -164,15 +170,45 @@ namespace BOCOM.IVX.Views.Content
         private void checkBoxPasswordable_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPassword.Text = checkBoxPasswordable.Checked ? "" : "666666";
+            textBoxRePassword.Text = checkBoxPasswordable.Checked ? "" : "666666";
              textBoxPassword.Enabled = checkBoxPasswordable.Checked;
+             textBoxRePassword.Enabled = checkBoxPasswordable.Checked;
        }
 
         private void ucAddCardPanel_Load(object sender, EventArgs e)
         {
-            comboBoxExIdentityType.SelectedIndex = 0;
+            //comboBoxExIdentityType.SelectedIndex = 0;
         }
 
 
+        public void InitWnd()
+        {
+            comboBoxExIdentityType.SelectedIndex = 0;
+            textBoxAddress.Text = "";
+            textBoxCardID.Value = "";
+            textBoxCardSerialNumber.Text = "";
+            textBoxCarPlant.Text = "";
+            textBoxIdentityNumber.Text = "";
+            textBoxPassword.Text = "";
+            textBoxRePassword.Text = "";
+            textBoxTelephone.Text = "";
+            textBoxUserName.Text = "";
+            labelRet.Text = "";
+
+        }
+
+        private void textBoxRePassword_TextChanged(object sender, EventArgs e)
+        {
+            string s = ((TextBox)sender).Text;
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                if (!char.IsDigit(s, i))
+                {
+                    s = s.Remove(i, 1);
+                }
+            }
+            ((TextBox)sender).Text = s;
+        }
 
     }
 }

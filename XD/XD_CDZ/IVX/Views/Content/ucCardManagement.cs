@@ -16,26 +16,28 @@ namespace BOCOM.IVX.Views.Content
             InitializeComponent();
         }
 
-        private void btnCharge_Click(object sender, EventArgs e)
+        private void btnReCharge_Click(object sender, EventArgs e)
         {
             superTabControl1.SelectedTab = superTabItem1;
+            ucReChargePanel1.InitWnd();
         }
 
         private void btnWalletCharge_Click(object sender, EventArgs e)
         {
             superTabControl1.SelectedTab = superTabItem2;
+            ucWalletChargePanel1.InitWnd();
         }
 
         private void btnAddCard_Click(object sender, EventArgs e)
         {
-            superTabControl1.SelectedTab = superTabItem3;
-
+            superTabControl1.SelectedTab = superTabItem7;
+            ucAddCardPanel1.InitWnd();
         }
 
         private void btnQuitCard_Click(object sender, EventArgs e)
         {
-            superTabControl1.SelectedTab = superTabItem4;
-
+            superTabControl1.SelectedTab = superTabItem8;
+            ucQuitCardPanel1.InitWnd();
         }
 
         private void ucCardManagement_Load(object sender, EventArgs e)
@@ -46,8 +48,8 @@ namespace BOCOM.IVX.Views.Content
 
         private void buttonCardStat_Click(object sender, EventArgs e)
         {
-            superTabControl1.SelectedTab = superTabItem5;
-
+            superTabControl1.SelectedTab = superTabItem6;
+            ucCardStatPanel1.InitWnd();
         }
         public void InitWnd()
         {
@@ -62,7 +64,7 @@ namespace BOCOM.IVX.Views.Content
                 case 3:
                 case 4:
                     btnAddCard.Enabled = false;
-                    btnCharge.Enabled = false;
+                    btnReCharge.Enabled = false;
                     btnQuitCard.Enabled = false;
                     btnWalletCharge.Enabled = false;
                     break;
@@ -74,12 +76,37 @@ namespace BOCOM.IVX.Views.Content
 
         private void btnCardRecord_Click(object sender, EventArgs e)
         {
-            superTabControl1.SelectedTab = superTabItem6;
+            superTabControl1.SelectedTab = superTabItem9;
 
         }
 
         private void expandablePanel1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnWalletChargeBack_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem3;
+            ucWalletChargeBackPanel1.InitWnd();
+        }
+
+        private void btnCharge_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem4;
+            ucChargePanel1.InitWnd();
+        }
+
+        private void btnWalletReCharge_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem5;
+            ucWalletReChargePanel1.InitWnd();
+        }
+
+        private void btnStatChanege_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem10;
+            ucCardStatChangePanel1.InitWnd();
 
         }
 

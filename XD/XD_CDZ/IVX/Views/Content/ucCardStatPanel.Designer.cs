@@ -41,11 +41,11 @@
             this.checkBoxFrozen = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.textBoxWalletMoney = new DevComponents.Editors.DoubleInput();
             this.textBoxMoney = new DevComponents.Editors.DoubleInput();
-            this.textBoxCardID = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.textBoxCardID = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.maskedTextBoxAdv1 = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
@@ -55,6 +55,7 @@
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
@@ -236,19 +237,14 @@
             // 
             // 
             // 
-            this.textBoxCardID.BackgroundStyle.Class = "TextBoxBorder";
-            this.textBoxCardID.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxCardID.BeepOnError = true;
-            this.textBoxCardID.ButtonClear.Visible = true;
+            this.textBoxCardID.Border.Class = "TextBoxBorder";
+            this.textBoxCardID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxCardID.Location = new System.Drawing.Point(127, 10);
-            this.textBoxCardID.Mask = "0000 0000 0000 0000";
+            this.textBoxCardID.MaxLength = 19;
             this.textBoxCardID.Name = "textBoxCardID";
-            this.textBoxCardID.PromptChar = ' ';
-            this.textBoxCardID.Size = new System.Drawing.Size(184, 25);
-            this.textBoxCardID.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.textBoxCardID.Size = new System.Drawing.Size(184, 21);
             this.textBoxCardID.TabIndex = 24;
-            this.textBoxCardID.Text = "";
-            this.textBoxCardID.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxCardID.Value = "";
             this.textBoxCardID.WatermarkEnabled = false;
             this.textBoxCardID.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
             // 
@@ -304,20 +300,15 @@
             // 
             // 
             // 
-            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
-            this.maskedTextBoxAdv1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.maskedTextBoxAdv1.BeepOnError = true;
-            this.maskedTextBoxAdv1.ButtonClear.Visible = true;
+            this.maskedTextBoxAdv1.Border.Class = "TextBoxBorder";
+            this.maskedTextBoxAdv1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.maskedTextBoxAdv1.Location = new System.Drawing.Point(127, 15);
-            this.maskedTextBoxAdv1.Mask = "0000 0000 0000 0000";
+            this.maskedTextBoxAdv1.MaxLength = 19;
             this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
-            this.maskedTextBoxAdv1.PromptChar = ' ';
             this.maskedTextBoxAdv1.ReadOnly = true;
-            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(184, 25);
-            this.maskedTextBoxAdv1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(184, 21);
             this.maskedTextBoxAdv1.TabIndex = 24;
-            this.maskedTextBoxAdv1.Text = "";
-            this.maskedTextBoxAdv1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBoxAdv1.Value = "";
             this.maskedTextBoxAdv1.WatermarkEnabled = false;
             this.maskedTextBoxAdv1.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
             // 
@@ -386,11 +377,11 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFrozen;
         private DevComponents.Editors.DoubleInput textBoxWalletMoney;
         private DevComponents.Editors.DoubleInput textBoxMoney;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv textBoxCardID;
+        private BOCOM.IVX.Controls.ucCardIDTextBox textBoxCardID;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv maskedTextBoxAdv1;
+        private BOCOM.IVX.Controls.ucCardIDTextBox maskedTextBoxAdv1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
     }
 }

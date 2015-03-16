@@ -38,19 +38,17 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.buttonAddMoney = new DevComponents.DotNetBar.ButtonX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.buttonDeductMoney = new DevComponents.DotNetBar.ButtonX();
-            this.buttonUnfrozen = new DevComponents.DotNetBar.ButtonX();
             this.checkBoxFrozen = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.btnReadCardNumber = new DevComponents.DotNetBar.ButtonX();
             this.textBoxWalletMoney = new DevComponents.Editors.DoubleInput();
             this.textBoxMoney = new DevComponents.Editors.DoubleInput();
             this.textBoxChargeMoney = new DevComponents.Editors.DoubleInput();
-            this.textBoxCardID = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.textBoxCardID = new BOCOM.IVX.Controls.ucCardIDTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxChargeMoney)).BeginInit();
@@ -77,13 +75,14 @@
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelRet.Location = new System.Drawing.Point(340, 249);
+            this.labelRet.Location = new System.Drawing.Point(259, 249);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(220, 23);
+            this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 1;
             // 
             // labelX4
@@ -162,7 +161,7 @@
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(121, 23);
             this.labelX5.TabIndex = 1;
-            this.labelX5.Text = "充值&&扣费：";
+            this.labelX5.Text = "账户扣费：";
             // 
             // labelX1
             // 
@@ -176,18 +175,6 @@
             this.labelX1.Size = new System.Drawing.Size(68, 18);
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "用户卡号：";
-            // 
-            // buttonAddMoney
-            // 
-            this.buttonAddMoney.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonAddMoney.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonAddMoney.Location = new System.Drawing.Point(178, 249);
-            this.buttonAddMoney.Name = "buttonAddMoney";
-            this.buttonAddMoney.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddMoney.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonAddMoney.TabIndex = 0;
-            this.buttonAddMoney.Text = "充值";
-            this.buttonAddMoney.Click += new System.EventHandler(this.buttonAddMoney_Click);
             // 
             // labelX6
             // 
@@ -235,35 +222,23 @@
             // 
             // 
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(128, 190);
+            this.labelX9.Location = new System.Drawing.Point(104, 190);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(44, 18);
+            this.labelX9.Size = new System.Drawing.Size(68, 18);
             this.labelX9.TabIndex = 1;
-            this.labelX9.Text = "金额：";
+            this.labelX9.Text = "扣费金额：";
             // 
             // buttonDeductMoney
             // 
             this.buttonDeductMoney.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonDeductMoney.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonDeductMoney.Location = new System.Drawing.Point(259, 249);
+            this.buttonDeductMoney.Location = new System.Drawing.Point(178, 249);
             this.buttonDeductMoney.Name = "buttonDeductMoney";
             this.buttonDeductMoney.Size = new System.Drawing.Size(75, 23);
             this.buttonDeductMoney.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonDeductMoney.TabIndex = 0;
             this.buttonDeductMoney.Text = "扣费";
             this.buttonDeductMoney.Click += new System.EventHandler(this.buttonDeductMoney_Click);
-            // 
-            // buttonUnfrozen
-            // 
-            this.buttonUnfrozen.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonUnfrozen.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonUnfrozen.Location = new System.Drawing.Point(203, 160);
-            this.buttonUnfrozen.Name = "buttonUnfrozen";
-            this.buttonUnfrozen.Size = new System.Drawing.Size(75, 23);
-            this.buttonUnfrozen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonUnfrozen.TabIndex = 0;
-            this.buttonUnfrozen.Text = "解冻";
-            this.buttonUnfrozen.Click += new System.EventHandler(this.buttonUnfrozen_Click);
             // 
             // checkBoxFrozen
             // 
@@ -349,19 +324,14 @@
             // 
             // 
             // 
-            this.textBoxCardID.BackgroundStyle.Class = "TextBoxBorder";
-            this.textBoxCardID.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxCardID.BeepOnError = true;
-            this.textBoxCardID.ButtonClear.Visible = true;
+            this.textBoxCardID.Border.Class = "TextBoxBorder";
+            this.textBoxCardID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxCardID.Location = new System.Drawing.Point(178, 23);
-            this.textBoxCardID.Mask = "0000 0000 0000 0000";
+            this.textBoxCardID.MaxLength = 19;
             this.textBoxCardID.Name = "textBoxCardID";
-            this.textBoxCardID.PromptChar = ' ';
-            this.textBoxCardID.Size = new System.Drawing.Size(184, 25);
-            this.textBoxCardID.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.textBoxCardID.Size = new System.Drawing.Size(184, 21);
             this.textBoxCardID.TabIndex = 24;
-            this.textBoxCardID.Text = "";
-            this.textBoxCardID.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxCardID.Value = "";
             this.textBoxCardID.WatermarkEnabled = false;
             this.textBoxCardID.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
             // 
@@ -378,9 +348,7 @@
             this.Controls.Add(this.comboBoxMoneyType);
             this.Controls.Add(this.labelX5);
             this.Controls.Add(this.labelRet);
-            this.Controls.Add(this.buttonUnfrozen);
             this.Controls.Add(this.buttonDeductMoney);
-            this.Controls.Add(this.buttonAddMoney);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX8);
             this.Controls.Add(this.labelX1);
@@ -414,18 +382,16 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.ButtonX buttonAddMoney;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.ButtonX buttonDeductMoney;
-        private DevComponents.DotNetBar.ButtonX buttonUnfrozen;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFrozen;
         private DevComponents.DotNetBar.ButtonX btnReadCardNumber;
         private DevComponents.Editors.DoubleInput textBoxWalletMoney;
         private DevComponents.Editors.DoubleInput textBoxMoney;
         private DevComponents.Editors.DoubleInput textBoxChargeMoney;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv textBoxCardID;
+        private BOCOM.IVX.Controls.ucCardIDTextBox textBoxCardID;
     }
 }

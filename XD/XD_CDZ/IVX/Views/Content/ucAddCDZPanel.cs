@@ -23,14 +23,14 @@ namespace BOCOM.IVX.Views.Content
             this.Controls.Add(group);
             group.GroupSelected+=group_GroupSelected;
             group.Visible = false;
-
+            
         }
         bool ValidateAddDevice()
         {
 
             bool ret = true;
 
-            if (TextBoxDevid.Text == "")
+            if (TextBoxDevid.Value == "")
             {
                 labelRet.Text = "充电桩编号不能为空";
                 labelRet.ForeColor = Color.Red;
@@ -48,7 +48,7 @@ namespace BOCOM.IVX.Views.Content
                 +"SIM卡号：{4}"+Environment.NewLine
                 +"安装地址：{5}"+Environment.NewLine
                 +"备注：{6}"+Environment.NewLine
-                ,TextBoxDevid.Text
+                , TextBoxDevid.Value
                 ,comboBoxType.SelectedItem.ToString()
                 ,buttonGroup.Text//,comboBoxExProvince.SelectedItem.ToString()+comboBoxExCity.SelectedItem.ToString()+comboBoxExDistrict.SelectedItem.ToString()+comboBoxExCounty.SelectedItem.ToString()
                 ,TextBoxsFactoryid.Text
@@ -67,7 +67,7 @@ namespace BOCOM.IVX.Views.Content
                 return;
 
             string sms_sqlstr = string.Format("INSERT INTO `hd_pile_info_t` VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}','{8}','{9}')"
-                , TextBoxDevid.Text
+                , TextBoxDevid.Value
                 , TextBoxUserid.Text
                 , TextBoxsFactoryid.Text
                 , "0"
@@ -128,7 +128,23 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
+        public void InitWnd()
+        {
+            TextBoxDevid.Value = "";
+            TextBoxsAddr.Text = "";
+            TextBoxsFactoryid.Text = "";
+            TextBoxsPosition.Text="";
+            TextBoxsSIM.Text = "";
+            TextBoxsVersion.Text = "";
+            TextBoxUserid.Text = "";
+            //comboBoxExCity.SelectedIndex = 0;
+            //comboBoxExCounty.SelectedIndex = 0;
+            //comboBoxExDistrict.SelectedIndex = 0;
+            //comboBoxExProvince.SelectedIndex = 0;
+            comboBoxType.SelectedIndex = 0;
+            labelRet.Text = "";
 
+        }
 
     }
 }

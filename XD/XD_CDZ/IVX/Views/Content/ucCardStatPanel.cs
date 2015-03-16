@@ -13,7 +13,6 @@ namespace BOCOM.IVX.Views.Content
 
     public partial class ucCardStatPanel : UserControl
     {
-        BindingSource bs;
 
         public event EventHandler AddUserComplete;
         public ucCardStatPanel()
@@ -31,7 +30,7 @@ namespace BOCOM.IVX.Views.Content
             try
             {
                 textBoxCardSerialNumber.Text = "";
-                textBoxCardID.Text = "";
+                textBoxCardID.Value = "";
 
                 string uid = RFIDREAD.RFIDReader.ReadUID();
                 textBoxCardSerialNumber.Text = uid;
@@ -43,8 +42,8 @@ namespace BOCOM.IVX.Views.Content
                         RFIDREAD.CardInfo info = RFIDREAD.RFIDReader.ReadCardInfo();
                         textBoxWalletMoney.Value = info.money / 100f;
                         checkBoxFrozen.Checked = info.bLockCard;
-                        textBoxCardID.Text = info.cardId;
-                        maskedTextBoxAdv1.Text = info.cardId;
+                        textBoxCardID.Value = info.cardId;
+                        maskedTextBoxAdv1.Value = info.cardId;
                     }
                     catch (Exception ex)
                     {
@@ -75,7 +74,7 @@ namespace BOCOM.IVX.Views.Content
 
         private void textBoxCardID_TextChanged(object sender, EventArgs e)
         {
-            GetUserInfo(textBoxCardID.Text, Convert.ToInt32(textBoxWalletMoney.Value * 100));
+            GetUserInfo(textBoxCardID.Value, Convert.ToInt32(textBoxWalletMoney.Value * 100));
         }
 
         private void GetUserInfo(string cardid, int money)
@@ -105,7 +104,7 @@ namespace BOCOM.IVX.Views.Content
                         labelRet.Text = "更新最新金额成功";
                         labelRet.ForeColor = Color.Blue;
                         sms_sqlstr = "INSERT INTO `money_change_info_t` (`phy_card`,`user_card_id`, `elec_pkg_balance`,`change_money`, `time`, `manager_id`, `manager_name`,`type`) "
-                            + "VALUES ('" + phycardid + "', '" + usercardid + "', '" + (money / 100f) + "', '0', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + Framework.Environment.UserID + "', '" + Framework.Environment.UserName + "', '" + 3 + "')";
+                            + "VALUES ('" + phycardid + "', '" + usercardid + "', '" + (money / 100f) + "', '0', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + Framework.Environment.UserID + "', '" + Framework.Environment.UserName + "', '" + (int)DataModel.E_MONEY_CHANGE_TYPE.差额调整 + "')";
 
                         sms_comm.CommandText = sms_sqlstr;
                         sms_comm.ExecuteNonQuery();
@@ -122,6 +121,17 @@ namespace BOCOM.IVX.Views.Content
                 }
             }
 
+
+        }
+        public void InitWnd()
+        {
+            textBoxCardID.Value = "";
+            textBoxCardSerialNumber.Text = "";
+            textBoxMoney.Value = 0;
+            textBoxUserName.Text = "";
+            textBoxWalletMoney.Value = 0;
+            maskedTextBoxAdv1.Value = "";
+            labelRet.Text = "";
 
         }
 

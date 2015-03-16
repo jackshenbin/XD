@@ -54,6 +54,7 @@
             // 
             // labelRet
             // 
+            this.labelRet.AutoSize = true;
             // 
             // 
             // 
@@ -72,6 +73,7 @@
             this.textBoxPassword2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword2.Location = new System.Drawing.Point(178, 107);
             this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(153, 21);
             this.textBoxPassword2.TabIndex = 2;
             // 
@@ -96,6 +98,7 @@
             this.textBoxPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword.Location = new System.Drawing.Point(178, 80);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(153, 21);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
@@ -171,6 +174,7 @@
             this.textBoxPasswordOld.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPasswordOld.Location = new System.Drawing.Point(178, 53);
             this.textBoxPasswordOld.Name = "textBoxPasswordOld";
+            this.textBoxPasswordOld.PasswordChar = '*';
             this.textBoxPasswordOld.Size = new System.Drawing.Size(153, 21);
             this.textBoxPasswordOld.TabIndex = 2;
             this.textBoxPasswordOld.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
@@ -207,6 +211,7 @@
             this.Size = new System.Drawing.Size(489, 187);
             this.Load += new System.EventHandler(this.ucChangeUserPass_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

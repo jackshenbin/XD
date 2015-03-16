@@ -24,13 +24,13 @@ namespace BOCOM.IVX.Views.Content
         private void btnAddDevice_Click(object sender, EventArgs e)
         {
             superTabControl1.SelectedTab = superTabItem1;
-
+            ucAddCDZPanel1.InitWnd();
         }
 
         private void btnDeviceStat_Click(object sender, EventArgs e)
         {
             superTabControl1.SelectedTab = superTabItem2;
-            //ucCDZStatPanel1.SetSelectdDevice(null);
+            ucCDZStatPanel1.InitWnd();
 
         }
 
@@ -140,7 +140,7 @@ namespace BOCOM.IVX.Views.Content
         private void btnDelDevice_Click(object sender, EventArgs e)
         {
             superTabControl1.SelectedTab = superTabItem3;
-            //ucDelCDZPanel1.SetSelectdDevice(null);
+            ucDelCDZPanel1.InitWnd();
 
         }
 

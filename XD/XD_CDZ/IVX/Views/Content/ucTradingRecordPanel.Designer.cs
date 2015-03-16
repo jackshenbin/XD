@@ -46,8 +46,8 @@
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.TextBoxCardSearch = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
-            this.TextBoxDevidSearch = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.TextBoxCardSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
@@ -57,9 +57,6 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.checkBoxFlash = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +67,9 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.checkBoxFlash = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
@@ -142,7 +142,7 @@
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(558, 195);
+            this.chart1.Size = new System.Drawing.Size(535, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -170,7 +170,7 @@
             this.panelEx2.Controls.Add(this.labelX5);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(618, 147);
+            this.panelEx2.Size = new System.Drawing.Size(595, 147);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -275,19 +275,14 @@
             // 
             // 
             // 
-            this.TextBoxCardSearch.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxCardSearch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxCardSearch.BeepOnError = true;
-            this.TextBoxCardSearch.ButtonClear.Visible = true;
+            this.TextBoxCardSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxCardSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxCardSearch.Location = new System.Drawing.Point(113, 44);
-            this.TextBoxCardSearch.Mask = "0000 0000 0000 0000";
+            this.TextBoxCardSearch.MaxLength = 19;
             this.TextBoxCardSearch.Name = "TextBoxCardSearch";
-            this.TextBoxCardSearch.PromptChar = ' ';
-            this.TextBoxCardSearch.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxCardSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TextBoxCardSearch.Size = new System.Drawing.Size(184, 21);
             this.TextBoxCardSearch.TabIndex = 22;
-            this.TextBoxCardSearch.Text = "";
-            this.TextBoxCardSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.TextBoxCardSearch.Value = "";
             this.TextBoxCardSearch.WatermarkColor = System.Drawing.Color.SkyBlue;
             this.TextBoxCardSearch.WatermarkText = "全部用户卡";
             // 
@@ -296,19 +291,14 @@
             // 
             // 
             // 
-            this.TextBoxDevidSearch.BackgroundStyle.Class = "TextBoxBorder";
-            this.TextBoxDevidSearch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevidSearch.BeepOnError = true;
-            this.TextBoxDevidSearch.ButtonClear.Visible = true;
+            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TextBoxDevidSearch.Location = new System.Drawing.Point(113, 75);
-            this.TextBoxDevidSearch.Mask = "0000 0000 0000 0000";
+            this.TextBoxDevidSearch.MaxLength = 19;
             this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
-            this.TextBoxDevidSearch.PromptChar = ' ';
-            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 25);
-            this.TextBoxDevidSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
             this.TextBoxDevidSearch.TabIndex = 22;
-            this.TextBoxDevidSearch.Text = "";
-            this.TextBoxDevidSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.TextBoxDevidSearch.Value = "";
             this.TextBoxDevidSearch.WatermarkColor = System.Drawing.Color.SkyBlue;
             this.TextBoxDevidSearch.WatermarkText = "全部充电桩";
             // 
@@ -440,7 +430,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(737, 806);
+            this.groupPanel1.Size = new System.Drawing.Size(720, 806);
             // 
             // 
             // 
@@ -538,55 +528,8 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(618, 268);
+            this.dataGridViewX1.Size = new System.Drawing.Size(595, 268);
             this.dataGridViewX1.TabIndex = 26;
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.checkBoxFlash);
-            this.panelEx3.Controls.Add(this.buttonSearchGraph);
-            this.panelEx3.Controls.Add(this.chart1);
-            this.panelEx3.Location = new System.Drawing.Point(18, 471);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(618, 405);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 25;
-            // 
-            // checkBoxFlash
-            // 
-            // 
-            // 
-            // 
-            this.checkBoxFlash.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxFlash.Location = new System.Drawing.Point(3, 5);
-            this.checkBoxFlash.Name = "checkBoxFlash";
-            this.checkBoxFlash.Size = new System.Drawing.Size(100, 23);
-            this.checkBoxFlash.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxFlash.TabIndex = 16;
-            this.checkBoxFlash.Text = "自动刷新";
-            this.checkBoxFlash.CheckedChanged += new System.EventHandler(this.checkBoxFlash_CheckedChanged);
-            // 
-            // buttonSearchGraph
-            // 
-            this.buttonSearchGraph.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSearchGraph.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonSearchGraph.Location = new System.Drawing.Point(616, 3);
-            this.buttonSearchGraph.Name = "buttonSearchGraph";
-            this.buttonSearchGraph.Size = new System.Drawing.Size(56, 23);
-            this.buttonSearchGraph.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonSearchGraph.TabIndex = 14;
-            this.buttonSearchGraph.Text = "查询";
-            this.buttonSearchGraph.Click += new System.EventHandler(this.buttonSearchGraph_Click);
             // 
             // Column1
             // 
@@ -596,7 +539,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
-            this.Column1.Width = 60;
             // 
             // Column2
             // 
@@ -679,13 +621,60 @@
             this.Column10.ReadOnly = true;
             this.Column10.Width = 90;
             // 
+            // panelEx3
+            // 
+            this.panelEx3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.checkBoxFlash);
+            this.panelEx3.Controls.Add(this.buttonSearchGraph);
+            this.panelEx3.Controls.Add(this.chart1);
+            this.panelEx3.Location = new System.Drawing.Point(18, 471);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(595, 405);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 25;
+            // 
+            // checkBoxFlash
+            // 
+            // 
+            // 
+            // 
+            this.checkBoxFlash.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.checkBoxFlash.Location = new System.Drawing.Point(3, 5);
+            this.checkBoxFlash.Name = "checkBoxFlash";
+            this.checkBoxFlash.Size = new System.Drawing.Size(100, 23);
+            this.checkBoxFlash.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.checkBoxFlash.TabIndex = 16;
+            this.checkBoxFlash.Text = "自动刷新";
+            this.checkBoxFlash.CheckedChanged += new System.EventHandler(this.checkBoxFlash_CheckedChanged);
+            // 
+            // buttonSearchGraph
+            // 
+            this.buttonSearchGraph.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSearchGraph.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonSearchGraph.Location = new System.Drawing.Point(616, 3);
+            this.buttonSearchGraph.Name = "buttonSearchGraph";
+            this.buttonSearchGraph.Size = new System.Drawing.Size(56, 23);
+            this.buttonSearchGraph.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonSearchGraph.TabIndex = 14;
+            this.buttonSearchGraph.Text = "查询";
+            this.buttonSearchGraph.Click += new System.EventHandler(this.buttonSearchGraph_Click);
+            // 
             // ucTradingRecordPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucTradingRecordPanel";
-            this.Size = new System.Drawing.Size(743, 692);
+            this.Size = new System.Drawing.Size(726, 692);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx2.ResumeLayout(false);
@@ -708,7 +697,7 @@
         private DevComponents.DotNetBar.ButtonX btnSearch;
         private DevComponents.DotNetBar.LabelX labelX17;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxDevidSearch;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxDevidSearch;
         private DevComponents.DotNetBar.LabelX labelSearchStat;
         private DevComponents.DotNetBar.PanelEx panelEx3;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
@@ -717,7 +706,7 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX18;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFlash;
-        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv TextBoxCardSearch;
+        private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxCardSearch;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX buttonGroup;
         private DevComponents.DotNetBar.LabelX labelX13;
