@@ -169,8 +169,8 @@ namespace BOCOM.IVX.Views.Content
             //tRole.Rows.Add(2, "扣费");
             //tRole.Rows.Add(3, "差额调整");
             //tRole.Rows.Add(4, "充电使用");
-            //tRole.Rows.Add(5, "圈钱");
-            //tRole.Rows.Add(6, "充正");
+            //tRole.Rows.Add(5, "圈存");
+            //tRole.Rows.Add(6, "冲正");
             //sms_ds2.Tables.Add(tRole);
 
             //Column8.DisplayMember = "r_type";

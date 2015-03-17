@@ -63,25 +63,26 @@ namespace BOCOM.IVX.Views.Content
                         m_LastUncommitMoney = info.bLockCard?GetLastUnCommitMoney(info.cardId):0;
                         textBoxCardID.Value = info.cardId;
                         maskedTextBoxAdv1.Value = info.cardId;
+                        buttonChangePass.Enabled = true;
                     }
                     catch (Exception ex)
                     {
-                        labelRet.Text = "错误：" + ex.Message;
-                        labelRet.ForeColor = Color.Red;
+                        labelRetRead.Text = "错误：" + ex.Message;
+                        labelRetRead.ForeColor = Color.Red;
 
                     }
 
                 }
                 else
                 {
-                    labelRet.Text = "未开卡，请先开卡";
-                    labelRet.ForeColor = Color.Red;
+                    labelRetRead.Text = "未开卡，请先开卡";
+                    labelRetRead.ForeColor = Color.Red;
                 }
             }
             catch (Exception ex)
-            { 
-                    labelRet.Text = "错误：" + ex.Message;
-                    labelRet.ForeColor = Color.Red;
+            {
+                labelRetRead.Text = "错误：" + ex.Message;
+                labelRetRead.ForeColor = Color.Red;
             }
 
         }
@@ -120,8 +121,8 @@ namespace BOCOM.IVX.Views.Content
                     try
                     {
                         sms_comm.ExecuteNonQuery();
-                        labelRet.Text = "更新最新金额成功";
-                        labelRet.ForeColor = Color.Blue;
+                        labelRetRead.Text = "更新最新金额成功";
+                        labelRetRead.ForeColor = Color.Blue;
                         sms_sqlstr = "INSERT INTO `money_change_info_t` (`phy_card`,`user_card_id`, `elec_pkg_balance`,`change_money`, `time`, `manager_id`, `manager_name`,`type`) "
                             + "VALUES ('" + phycardid + "', '" + usercardid + "', '" + (money / 100f) + "', '0', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + Framework.Environment.UserID + "', '" + Framework.Environment.UserName + "', '" + (int)DataModel.E_MONEY_CHANGE_TYPE.差额调整 + "')";
 
@@ -131,8 +132,8 @@ namespace BOCOM.IVX.Views.Content
                     }
                     catch (MySqlException)
                     {
-                        labelRet.Text = "更新最新金额失败";
-                        labelRet.ForeColor = Color.Red;
+                        labelRetRead.Text = "更新最新金额失败";
+                        labelRetRead.ForeColor = Color.Red;
 
                     }
                     sms_comm.Connection.Close();
@@ -243,13 +244,21 @@ namespace BOCOM.IVX.Views.Content
             buttonUnfrozen.Enabled = false;
             m_LastUncommitMoney = 0;
             labelRet.Text = "";
-
+            buttonChangePass.Enabled = false;
         }
 
-        private void buttonX3_Click(object sender, EventArgs e)
+        private void buttonChangePass_Click(object sender, EventArgs e)
         {
-            formChangeCardPass form = new formChangeCardPass();
-            form.ShowDialog();
+            if (!string.IsNullOrEmpty(textBoxCardID.Value))
+            {
+                formChangeCardPass form = new formChangeCardPass();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    labelRet.Text = "密码修改成功";
+                    labelRet.ForeColor = Color.Blue;
+
+                }
+            }
         }
 
     }

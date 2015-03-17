@@ -72,6 +72,7 @@
             this.textBoxPassword2.Border.Class = "TextBoxBorder";
             this.textBoxPassword2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword2.Location = new System.Drawing.Point(102, 73);
+            this.textBoxPassword2.MaxLength = 6;
             this.textBoxPassword2.Name = "textBoxPassword2";
             this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(153, 21);
@@ -122,10 +123,12 @@
             this.textBoxPasswordOld.Border.Class = "TextBoxBorder";
             this.textBoxPasswordOld.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPasswordOld.Location = new System.Drawing.Point(102, 19);
+            this.textBoxPasswordOld.MaxLength = 6;
             this.textBoxPasswordOld.Name = "textBoxPasswordOld";
             this.textBoxPasswordOld.PasswordChar = '*';
             this.textBoxPasswordOld.Size = new System.Drawing.Size(153, 21);
             this.textBoxPasswordOld.TabIndex = 11;
+            this.textBoxPasswordOld.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxPassword
             // 
@@ -135,6 +138,7 @@
             this.textBoxPassword.Border.Class = "TextBoxBorder";
             this.textBoxPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxPassword.Location = new System.Drawing.Point(102, 46);
+            this.textBoxPassword.MaxLength = 6;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(153, 21);
@@ -174,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 162);
+            this.ClientSize = new System.Drawing.Size(361, 162);
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.checkBoxPasswordable);
             this.Controls.Add(this.labelRet);
@@ -189,6 +193,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formChangeCardPass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改智能卡密码";
             this.ResumeLayout(false);
             this.PerformLayout();

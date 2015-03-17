@@ -20,9 +20,9 @@ namespace BOCOM.IVX.Views.Content
         {
             bool ret = true;
             RFIDREAD.CardInfo info = RFIDREAD.RFIDReader.ReadCardInfo();
-            string oldpass = "";
+            string oldpass = info.userPass;
 
-            if (true)//(oldpass == textBoxPasswordOld.Text)
+            if (oldpass == textBoxPasswordOld.Text)
             {
                 string newpass = textBoxPassword.Text;
                 string confermnewpass = textBoxPassword2.Text;
@@ -56,7 +56,7 @@ namespace BOCOM.IVX.Views.Content
             RFIDREAD.RFIDReader.ChangePassword(textBoxPassword.Text, checkBoxPasswordable.Checked);
                 labelRet.Text = "修改用户密码成功";
                 labelRet.ForeColor = Color.Blue;
-                this.Close();
+                DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace BOCOM.IVX.Views.Content
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
     }

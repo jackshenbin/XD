@@ -43,7 +43,7 @@ namespace BOCOM.IVX.Views.Content
             {
                 oldcash = Convert.ToDecimal(textBoxMoney.Value);
                 addcash = Convert.ToDecimal(textBoxChargeMoney.Value);
-                if (addcash < 0)
+                if (addcash <= 0)
                 {
                     labelRet.Text = " 充值金额错误";
                     labelRet.ForeColor = Color.Red;
@@ -61,54 +61,6 @@ namespace BOCOM.IVX.Views.Content
             return ret;
         }
 
-        bool ValidateDeductMoney()
-        {
-            bool ret = true;
-            if (textBoxCardID.Value == "")
-            {
-                labelRet.Text = "用户卡号不能为空";
-                labelRet.ForeColor = Color.Red;
-                ret = false;
-            }
-            if (textBoxCardSerialNumber.Text == "")
-            {
-                labelRet.Text = "物理卡号不能为空，请读卡获取";
-                labelRet.ForeColor = Color.Red;
-                ret = false;
-            }
-
-            decimal oldcash = 0;
-            decimal deductcash = 0;
-            try
-            {
-                oldcash = Convert.ToDecimal(textBoxMoney.Value);
-                deductcash = Convert.ToDecimal(textBoxChargeMoney.Value);
-                if (deductcash < 0)
-                {
-                    labelRet.Text = " 扣费金额错误";
-                    labelRet.ForeColor = Color.Red;
-                    ret = false;
-                }
-                else
-                {
-                    if (oldcash - deductcash < 0)
-                    {
-                        labelRet.Text = " 余额不足，请先充值";
-                        labelRet.ForeColor = Color.Red;
-                        ret = false;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                labelRet.Text = " 扣费金额错误";
-                labelRet.ForeColor = Color.Red;
-                ret = false;
-            }
-
-            return ret;
-        }
 
         private void ucChargePanel_Load(object sender, EventArgs e)
         {
@@ -161,31 +113,6 @@ namespace BOCOM.IVX.Views.Content
         {
         }
 
-        private void buttonUnfrozen_Click(object sender, EventArgs e)
-        {
-            if (textBoxCardID.Value == "")
-            {
-                labelRet.Text = "用户卡号不能为空";
-                labelRet.ForeColor = Color.Red;
-                return;
-            }
-            if (textBoxCardSerialNumber.Text == "")
-            {
-                labelRet.Text = "物理卡号不能为空，请读卡获取";
-                labelRet.ForeColor = Color.Red;
-                return;
-            }
-            try
-            {
-                RFIDREAD.RFIDReader.UnLock();
-                btnReadCardNumber_Click(null, null);
-            }
-            catch (Exception ex)
-            { 
-                labelRet.Text = "解冻卡错误：" + ex.Message;
-                labelRet.ForeColor = Color.Red;
-            }
-        }
 
         private void textBoxCardID_TextChanged(object sender, EventArgs e)
         {
@@ -276,45 +203,6 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
-        private void buttonDeductMoney_Click(object sender, EventArgs e)
-        {
-            if (!ValidateDeductMoney())
-                return;
-
-            decimal oldcash = Convert.ToDecimal(textBoxMoney.Value);
-            decimal subcash = Convert.ToDecimal(textBoxChargeMoney.Value);
-
-
-
-            decimal newcash = oldcash - subcash;
-            string sms_sqlstr = "update user_card_list_t set account_balance = " + newcash.ToString() + " where card_state=1 and user_card_id='" + textBoxCardID.Value + "'";
-            MySqlCommand sms_comm = new MySqlCommand(sms_sqlstr, Framework.Environment.SMS_CONN);
-            sms_comm.Connection.Open();
-            try
-            {
-                sms_comm.ExecuteNonQuery();
-                labelRet.Text = "扣费成功";
-                labelRet.ForeColor = Color.Blue;
-                textBoxMoney.Value = Convert.ToDouble(newcash);
-                textBoxChargeMoney.Value = 0;
-
-                sms_sqlstr = "INSERT INTO `money_change_info_t` (`phy_card`,`user_card_id`, `account_balance`,`change_money`, `time`, `manager_id`, `manager_name`,`type`) "
-                    + "VALUES ('" + textBoxCardSerialNumber.Text + "', '" + textBoxCardID.Value + "', '" + newcash + "', '" + subcash + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + Framework.Environment.UserID + "', '" + Framework.Environment.UserName + "', '" + (int)DataModel.E_MONEY_CHANGE_TYPE.扣费 + "')";
-
-                sms_comm.CommandText = sms_sqlstr;
-                sms_comm.ExecuteNonQuery();
-
-            }
-            catch (MySqlException)
-            {
-                labelRet.Text = "扣费失败";
-                labelRet.ForeColor = Color.Red;
-                newcash = 0;
-            }
-            sms_comm.Connection.Close();
-
-
-        }
         public void InitWnd()
         {
             textBoxCardID.Value = "";

@@ -12,7 +12,9 @@ namespace RFIDREAD
         public bool bLockCard;
         public bool enableKey;
         public int money;
-
+        public int factoryType;
+        public string softVersion;
+        public string userPass;
     }
     public class RFIDReader
     {
@@ -97,6 +99,9 @@ namespace RFIDREAD
             bool bLockCard;
             bool enableKey;
             int money;
+            int factoryType;
+            string softVersion;
+            string userPass;
 
             int comHandle = OpenUsb();
             GetConfig(comHandle);
@@ -136,7 +141,7 @@ namespace RFIDREAD
             protocol.iso14443AAuthReadM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
             if (block.result.flag > 0)
             {
-                throw new Exception( "读取卡号失败！");
+                throw new Exception("读取卡号失败！");
 
 
             }
@@ -177,10 +182,11 @@ namespace RFIDREAD
             protocol.iso14443AAuthReadM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
             if (block.result.flag > 0)
             {
-                throw new Exception( "读取卡状态失败！");
+                throw new Exception("读取卡状态失败！");
             }
             else
             {
+                userPass = getUserPassFromHex(block.block, 8);
                 if (block.block[8] == 0xAA)
                 {
                     bLockCard = true;
@@ -198,6 +204,8 @@ namespace RFIDREAD
                 {
                     enableKey = false;
                 }
+                factoryType = block.block[10];
+                softVersion = (Convert.ToInt32(block.block[11]) / 100f).ToString("0.00");
             }
 
             block.addr = 32;
@@ -218,7 +226,7 @@ namespace RFIDREAD
             protocol.iso14443AAuthReadM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
             if (block.result.flag > 0)
             {
-                throw new Exception( "读取卡余额失败！");
+                throw new Exception("读取卡余额失败！");
             }
             else
             {
@@ -251,7 +259,7 @@ namespace RFIDREAD
                 {
                     if (money1 != (~money2))
                     {
-                        throw new Exception( "金额错误，请先退卡！");
+                        throw new Exception("金额错误，请先退卡！");
                     }
                 }
                 else
@@ -260,17 +268,22 @@ namespace RFIDREAD
                     //UCHAR addr22 = ~addr2;
                     if ((money1 != (~money2)) || (money1 != money3) || (addr1 != 0x20) || (addr2 != 0xdf) || (addr3 != 0x20) || (addr4 != 0xdf))
                     {
-                        throw new Exception( "金额错误，请先退卡！");
+                        throw new Exception("金额错误，请先退卡！");
                     }
                 }
                 money = money1;
             }
             CloseUsb(comHandle);
-            CardInfo info = new CardInfo();
-            info.cardId = cardId;
-            info.money = money;
-            info.bLockCard = bLockCard;
-            info.enableKey = enableKey;
+            CardInfo info = new CardInfo()
+            {
+                cardId = cardId,
+                money = money,
+                bLockCard = bLockCard,
+                enableKey = enableKey,
+                factoryType = factoryType,
+                softVersion = softVersion,
+                userPass = userPass,
+            };
             return info;
         }
 
@@ -714,6 +727,7 @@ namespace RFIDREAD
                 ISO14443A_BLOCKPARAM block = new ISO14443A_BLOCKPARAM();
                 block.uid = new ISO14443A_UID();
                 block.uid.uid = new byte[10];
+                block.block = new byte[0xd0];
 
                 block.num = 1;
 
@@ -730,14 +744,24 @@ namespace RFIDREAD
                     block.keyType = 0x61;
                 }
 
-                int pos = 0;
+
+
                 block.addr = 16;
+                protocol.iso14443AAuthReadM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
+                if (block.result.flag > 0)
+                {
+                    throw new Exception("读取卡状态失败！");
+                }
+                else
+                {
+                int pos = 0;
+
                 block.block[pos++] = 0xFF;
                 block.block[pos++] = 0xFF;
                 byte[] bpass = getpassbyteFromeText(userpass);
                 bpass.CopyTo(block.block, pos);
                 pos += protocol.USER_PASSWORD_LENGTH;
-                block.block[pos++] = 0x55;
+                pos++;
                 if (pKeyCheck)
                 {
                     block.block[pos++] = 0xAA;
@@ -746,14 +770,6 @@ namespace RFIDREAD
                 {
                     block.block[pos++] = 0x55;
                 }
-                block.block[pos++] = 0x01;
-                block.block[pos++] = 0x64;
-                block.block[pos++] = 0xFF;
-                block.block[pos++] = 0xFF;
-                block.block[pos++] = 0xFF;
-                block.block[pos++] = 0xFF;
-                pTxFrame = new byte[0x400];
-                pRxFrame = new byte[0x400];
 
                 protocol.iso14443AAuthWriteM1Block(comHandle, 0, 1, ref block, IntPtr.Zero, IntPtr.Zero);
                 if (block.result.flag == 0)
@@ -764,6 +780,8 @@ namespace RFIDREAD
                 {
                     throw new Exception("写用户密码失败！");
                     //QMessageBox::information(this, QString(tr("提示")), QString(tr("写用户密码失败！")));
+
+                }
 
                 }
 
@@ -1046,7 +1064,18 @@ namespace RFIDREAD
                         b[i] = (byte)(((byte)c[i]) - 0x30);
                     } return b;
         }
+        static string getUserPassFromHex(byte[] b, uint len)
+        {
+            string ret = "";
+            for (int i = 0; i < len; i++)
+            {
+                if (b[i] == 0xff)
+                    continue;
+                ret += (char)(b[i]+0x30);
+            }
 
+            return ret;
+        }
         private static int CloseUsb(int comHandle)
         {  
             Trace.WriteLine("hfReaderCloseUsb");

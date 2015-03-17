@@ -91,6 +91,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formMoneyCharge";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formMoneyCharge";
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).EndInit();
             this.ResumeLayout(false);

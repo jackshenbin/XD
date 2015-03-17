@@ -252,7 +252,6 @@
             this.checkBoxFrozen.Size = new System.Drawing.Size(19, 23);
             this.checkBoxFrozen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxFrozen.TabIndex = 4;
-            this.checkBoxFrozen.CheckedChanged += new System.EventHandler(this.checkBoxFrozen_CheckedChanged);
             // 
             // btnReadCardNumber
             // 

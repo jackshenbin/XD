@@ -48,8 +48,9 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelLastUncommitMoney = new DevComponents.DotNetBar.LabelX();
             this.buttonUnfrozen = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonChangePass = new DevComponents.DotNetBar.ButtonX();
             this.maskedTextBoxAdv1 = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.labelRetRead = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             this.panelEx1.SuspendLayout();
@@ -63,10 +64,11 @@
             // 
             // 
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelRet.Location = new System.Drawing.Point(398, 12);
+            this.labelRet.Location = new System.Drawing.Point(323, 205);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(0, 0);
+            this.labelRet.Size = new System.Drawing.Size(19, 16);
             this.labelRet.TabIndex = 1;
+            this.labelRet.Text = " ";
             // 
             // textBoxUserName
             // 
@@ -241,10 +243,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.labelRetRead);
             this.panelEx1.Controls.Add(this.buttonX1);
             this.panelEx1.Controls.Add(this.textBoxCardID);
             this.panelEx1.Controls.Add(this.labelX10);
-            this.panelEx1.Controls.Add(this.labelRet);
             this.panelEx1.Location = new System.Drawing.Point(25, 32);
             this.panelEx1.Name = "panelEx1";
             this.panelEx1.Size = new System.Drawing.Size(646, 53);
@@ -306,7 +308,8 @@
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx2.Controls.Add(this.labelLastUncommitMoney);
             this.panelEx2.Controls.Add(this.buttonUnfrozen);
-            this.panelEx2.Controls.Add(this.buttonX3);
+            this.panelEx2.Controls.Add(this.buttonChangePass);
+            this.panelEx2.Controls.Add(this.labelRet);
             this.panelEx2.Controls.Add(this.labelX1);
             this.panelEx2.Controls.Add(this.textBoxMoney);
             this.panelEx2.Controls.Add(this.maskedTextBoxAdv1);
@@ -355,17 +358,17 @@
             this.buttonUnfrozen.Text = "解冻";
             this.buttonUnfrozen.Click += new System.EventHandler(this.buttonUnfrozen_Click);
             // 
-            // buttonX3
+            // buttonChangePass
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(236, 200);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(75, 23);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 25;
-            this.buttonX3.Text = "修改密码";
-            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            this.buttonChangePass.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonChangePass.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonChangePass.Location = new System.Drawing.Point(236, 200);
+            this.buttonChangePass.Name = "buttonChangePass";
+            this.buttonChangePass.Size = new System.Drawing.Size(75, 23);
+            this.buttonChangePass.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonChangePass.TabIndex = 25;
+            this.buttonChangePass.Text = "修改密码";
+            this.buttonChangePass.Click += new System.EventHandler(this.buttonChangePass_Click);
             // 
             // maskedTextBoxAdv1
             // 
@@ -383,6 +386,19 @@
             this.maskedTextBoxAdv1.Value = "";
             this.maskedTextBoxAdv1.WatermarkEnabled = false;
             this.maskedTextBoxAdv1.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
+            // 
+            // labelRetRead
+            // 
+            this.labelRetRead.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelRetRead.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelRetRead.Location = new System.Drawing.Point(398, 17);
+            this.labelRetRead.Name = "labelRetRead";
+            this.labelRetRead.Size = new System.Drawing.Size(19, 16);
+            this.labelRetRead.TabIndex = 25;
+            this.labelRetRead.Text = " ";
             // 
             // ucCardStatChangePanel
             // 
@@ -425,8 +441,9 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private BOCOM.IVX.Controls.ucCardIDTextBox maskedTextBoxAdv1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonChangePass;
         private DevComponents.DotNetBar.ButtonX buttonUnfrozen;
         private DevComponents.DotNetBar.LabelX labelLastUncommitMoney;
+        private DevComponents.DotNetBar.LabelX labelRetRead;
     }
 }
