@@ -31,6 +31,7 @@ namespace BOCOM.IVX.Views.Content
             {
                 textBoxCardSerialNumber.Text = "";
                 textBoxCardID.Value = "";
+                labelRet.Text = "";
 
                 string uid = RFIDREAD.RFIDReader.ReadUID();
                 textBoxCardSerialNumber.Text = uid;

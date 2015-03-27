@@ -36,7 +36,7 @@ namespace BOCOM.IVX.Views.Content
             double retval = 0;
             if (sms_ds.Tables[0].Rows.Count > 0)
             {
-                retval = Convert.ToDouble(sms_ds.Tables[0].Rows[0]["spend_monty"].ToString());
+                retval = Convert.ToDouble(sms_ds.Tables[0].Rows[0]["spend_money"].ToString());
             }
             return retval;
 
@@ -47,7 +47,7 @@ namespace BOCOM.IVX.Views.Content
             {
                 textBoxCardSerialNumber.Text = "";
                 textBoxCardID.Value = "";
-
+                labelRetRead.Text = "";
                 string uid = RFIDREAD.RFIDReader.ReadUID();
                 textBoxCardSerialNumber.Text = uid;
                 bool isold = RFIDREAD.RFIDReader.IsOldCard();

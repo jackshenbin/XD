@@ -1,0 +1,5 @@
+C:\Users\jack\jack_shenbin_7512\jack_shenbin_7512\MyProgram\XDTCPTest\XDTCPProtocol\bin\Debug\XDTCPProtocol.dll
+C:\Users\jack\jack_shenbin_7512\jack_shenbin_7512\MyProgram\XDTCPTest\XDTCPProtocol\bin\Debug\XDTCPProtocol.pdb
+C:\Users\jack\jack_shenbin_7512\jack_shenbin_7512\MyProgram\XDTCPTest\XDTCPProtocol\obj\Debug\XDTCPProtocol.csprojResolveAssemblyReference.cache
+C:\Users\jack\jack_shenbin_7512\jack_shenbin_7512\MyProgram\XDTCPTest\XDTCPProtocol\obj\Debug\XDTCPProtocol.dll
+C:\Users\jack\jack_shenbin_7512\jack_shenbin_7512\MyProgram\XDTCPTest\XDTCPProtocol\obj\Debug\XDTCPProtocol.pdb

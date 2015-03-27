@@ -34,8 +34,8 @@ namespace BOCOM.IVX.Views.Content
         private void ucCDZStatPanel_Load(object sender, EventArgs e)
         {
             //FillDevice();
-            //dateTimeInput1.Value = DateTime.Today.AddSeconds(-1);
-            //dateTimeInput2.Value = DateTime.Today.AddDays(1).AddSeconds(-1) ;
+            dateTimeInput1.Value = DateTime.Today.AddSeconds(-1);
+            dateTimeInput2.Value = DateTime.Today.AddDays(1).AddSeconds(-1);
         }
 
         //private void FillDevice()
@@ -148,7 +148,7 @@ namespace BOCOM.IVX.Views.Content
             if (maxval == minval)
             { 
                 maxval += 10;
-                minval -= 10;
+                minval -= 0;
             }
             chart3.ChartAreas[0].AxisY.Maximum = maxval;
             chart3.ChartAreas[0].AxisY.Minimum = minval;
@@ -235,7 +235,7 @@ namespace BOCOM.IVX.Views.Content
             if (maxval == minval)
             {
                 maxval += 10;
-                minval -= 10;
+                minval -= 0;
             }
 
             chart2.ChartAreas[0].AxisY.Maximum = maxval;
@@ -277,7 +277,7 @@ namespace BOCOM.IVX.Views.Content
             if (maxval == minval)
             {
                 maxval += 10;
-                minval -= 10;
+                minval -= 0;
             }
             chart1.ChartAreas[0].AxisY.Maximum = maxval;
             chart1.ChartAreas[0].AxisY.Minimum = minval;

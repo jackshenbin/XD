@@ -664,7 +664,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(619, 195);
+            this.chart1.Size = new System.Drawing.Size(655, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -711,7 +711,7 @@
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
             this.panelEx1.Location = new System.Drawing.Point(18, 70);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(679, 226);
+            this.panelEx1.Size = new System.Drawing.Size(715, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -749,7 +749,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(679, 43);
+            this.panelEx2.Size = new System.Drawing.Size(715, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -854,7 +854,7 @@
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(619, 195);
+            this.chart2.Size = new System.Drawing.Size(655, 195);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart1";
             title2.Name = "Title1";
@@ -902,7 +902,7 @@
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(619, 195);
+            this.chart3.Size = new System.Drawing.Size(655, 195);
             this.chart3.TabIndex = 0;
             this.chart3.Text = "chart1";
             title3.Name = "Title1";
@@ -949,9 +949,9 @@
             series4.ShadowOffset = 1;
             series4.ToolTip = "#VAL";
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(619, 195);
+            this.chart4.Size = new System.Drawing.Size(655, 195);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart1";
             title4.Name = "Title1";
@@ -998,9 +998,9 @@
             series5.ShadowOffset = 1;
             series5.ToolTip = "#VAL";
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart5.Series.Add(series5);
-            this.chart5.Size = new System.Drawing.Size(619, 195);
+            this.chart5.Size = new System.Drawing.Size(655, 195);
             this.chart5.TabIndex = 0;
             this.chart5.Text = "chart1";
             title5.Name = "Title1";
@@ -1022,7 +1022,7 @@
             this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(792, 1403);
+            this.groupPanel1.Size = new System.Drawing.Size(758, 1403);
             // 
             // 
             // 
@@ -1073,7 +1073,7 @@
             this.panelEx3.Controls.Add(this.chart2);
             this.panelEx3.Location = new System.Drawing.Point(18, 313);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(679, 1056);
+            this.panelEx3.Size = new System.Drawing.Size(715, 1056);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -1241,7 +1241,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucCDZStatPanel";
-            this.Size = new System.Drawing.Size(798, 610);
+            this.Size = new System.Drawing.Size(764, 610);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx1.ResumeLayout(false);

@@ -49,11 +49,11 @@
             this.btnAddDevice = new DevComponents.DotNetBar.ButtonX();
             this.ucCurrentUser1 = new BOCOM.IVX.Views.Content.ucCurrentUser();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucDelCDZPanel1 = new BOCOM.IVX.Views.Content.ucDelCDZPanel();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucCDZStatPanel1 = new BOCOM.IVX.Views.Content.ucCDZStatPanel();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
@@ -66,6 +66,10 @@
             this.superTabControlPanel7 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.btnRealtimeStat = new DevComponents.DotNetBar.ButtonX();
+            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucCDZRuntimeStatPanel1 = new BOCOM.IVX.Views.Content.ucCDZRuntimeStatPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,6 +81,7 @@
             this.superTabControlPanel9.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
+            this.superTabControlPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -115,7 +120,7 @@
             this.advTree1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advTree1.ExpandWidth = 4;
             this.advTree1.ImageList = this.imageList1;
-            this.advTree1.Location = new System.Drawing.Point(0, 208);
+            this.advTree1.Location = new System.Drawing.Point(0, 246);
             this.advTree1.Name = "advTree1";
             this.advTree1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
             this.node1,
@@ -125,7 +130,7 @@
             this.advTree1.NodesConnector = this.nodeConnector1;
             this.advTree1.NodeStyle = this.elementStyle4;
             this.advTree1.PathSeparator = ";";
-            this.advTree1.Size = new System.Drawing.Size(185, 299);
+            this.advTree1.Size = new System.Drawing.Size(185, 261);
             this.advTree1.Styles.Add(this.elementStyle4);
             this.advTree1.Styles.Add(this.elementStyle1);
             this.advTree1.TabIndex = 6;
@@ -249,12 +254,13 @@
             this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.expandablePanel1.Controls.Add(this.btnSearchDeviceStat);
+            this.expandablePanel1.Controls.Add(this.btnRealtimeStat);
             this.expandablePanel1.Controls.Add(this.buttonDelDevice);
             this.expandablePanel1.Controls.Add(this.btnAddDevice);
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.expandablePanel1.Location = new System.Drawing.Point(0, 59);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(185, 149);
+            this.expandablePanel1.Size = new System.Drawing.Size(185, 187);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -336,8 +342,9 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel0);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel10);
             this.superTabControl1.Controls.Add(this.superTabControlPanel9);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel0);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
@@ -360,35 +367,10 @@
             this.superTabItem0,
             this.superTabItem1,
             this.superTabItem2,
-            this.superTabItem3});
+            this.superTabItem3,
+            this.superTabItem4});
             this.superTabControl1.TabsVisible = false;
             this.superTabControl1.Text = "superTabControl1";
-            // 
-            // superTabControlPanel9
-            // 
-            this.superTabControlPanel9.Controls.Add(this.ucDelCDZPanel1);
-            this.superTabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel9.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel9.Name = "superTabControlPanel9";
-            this.superTabControlPanel9.Size = new System.Drawing.Size(682, 507);
-            this.superTabControlPanel9.TabIndex = 0;
-            this.superTabControlPanel9.TabItem = this.superTabItem3;
-            // 
-            // ucDelCDZPanel1
-            // 
-            this.ucDelCDZPanel1.AutoScroll = true;
-            this.ucDelCDZPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDelCDZPanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucDelCDZPanel1.Name = "ucDelCDZPanel1";
-            this.ucDelCDZPanel1.Size = new System.Drawing.Size(682, 507);
-            this.ucDelCDZPanel1.TabIndex = 0;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel9;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "superTabItem3";
             // 
             // superTabControlPanel0
             // 
@@ -405,6 +387,32 @@
             this.superTabItem0.GlobalItem = false;
             this.superTabItem0.Name = "superTabItem0";
             this.superTabItem0.Text = "superTabItem0";
+            // 
+            // superTabControlPanel9
+            // 
+            this.superTabControlPanel9.Controls.Add(this.ucDelCDZPanel1);
+            this.superTabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel9.Location = new System.Drawing.Point(0, 26);
+            this.superTabControlPanel9.Name = "superTabControlPanel9";
+            this.superTabControlPanel9.Size = new System.Drawing.Size(682, 481);
+            this.superTabControlPanel9.TabIndex = 0;
+            this.superTabControlPanel9.TabItem = this.superTabItem3;
+            // 
+            // ucDelCDZPanel1
+            // 
+            this.ucDelCDZPanel1.AutoScroll = true;
+            this.ucDelCDZPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDelCDZPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucDelCDZPanel1.Name = "ucDelCDZPanel1";
+            this.ucDelCDZPanel1.Size = new System.Drawing.Size(682, 481);
+            this.ucDelCDZPanel1.TabIndex = 0;
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel9;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "superTabItem3";
             // 
             // superTabControlPanel2
             // 
@@ -505,6 +513,44 @@
             this.superTabControlPanel5.Size = new System.Drawing.Size(682, 507);
             this.superTabControlPanel5.TabIndex = 0;
             // 
+            // btnRealtimeStat
+            // 
+            this.btnRealtimeStat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRealtimeStat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnRealtimeStat.Location = new System.Drawing.Point(29, 145);
+            this.btnRealtimeStat.Name = "btnRealtimeStat";
+            this.btnRealtimeStat.Size = new System.Drawing.Size(113, 28);
+            this.btnRealtimeStat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRealtimeStat.TabIndex = 1;
+            this.btnRealtimeStat.Text = "充电桩实时状态";
+            this.btnRealtimeStat.Click += new System.EventHandler(this.btnRealtimeStat_Click);
+            // 
+            // superTabItem4
+            // 
+            this.superTabItem4.AttachedControl = this.superTabControlPanel10;
+            this.superTabItem4.GlobalItem = false;
+            this.superTabItem4.Name = "superTabItem4";
+            this.superTabItem4.Text = "superTabItem4";
+            // 
+            // superTabControlPanel10
+            // 
+            this.superTabControlPanel10.Controls.Add(this.ucCDZRuntimeStatPanel1);
+            this.superTabControlPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel10.Location = new System.Drawing.Point(0, 26);
+            this.superTabControlPanel10.Name = "superTabControlPanel10";
+            this.superTabControlPanel10.Size = new System.Drawing.Size(682, 481);
+            this.superTabControlPanel10.TabIndex = 2;
+            this.superTabControlPanel10.TabItem = this.superTabItem4;
+            // 
+            // ucCDZRuntimeStatPanel1
+            // 
+            this.ucCDZRuntimeStatPanel1.AutoScroll = true;
+            this.ucCDZRuntimeStatPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCDZRuntimeStatPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucCDZRuntimeStatPanel1.Name = "ucCDZRuntimeStatPanel1";
+            this.ucCDZRuntimeStatPanel1.Size = new System.Drawing.Size(682, 481);
+            this.ucCDZRuntimeStatPanel1.TabIndex = 0;
+            // 
             // ucDeviceManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -524,6 +570,7 @@
             this.superTabControlPanel9.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
+            this.superTabControlPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -566,5 +613,9 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel9;
         private DevComponents.DotNetBar.SuperTabItem superTabItem3;
         private ucDelCDZPanel ucDelCDZPanel1;
+        private DevComponents.DotNetBar.ButtonX btnRealtimeStat;
+        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel10;
+        private ucCDZRuntimeStatPanel ucCDZRuntimeStatPanel1;
+        private DevComponents.DotNetBar.SuperTabItem superTabItem4;
     }
 }

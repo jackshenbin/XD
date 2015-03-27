@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bar1 = new DevComponents.DotNetBar.Bar();
+            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this.textBoxItemIP = new DevComponents.DotNetBar.TextBoxItem();
+            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
+            this.textBoxItemUser = new DevComponents.DotNetBar.TextBoxItem();
+            this.labelItem3 = new DevComponents.DotNetBar.LabelItem();
+            this.textBoxItemPass = new DevComponents.DotNetBar.TextBoxItem();
             this.btnLogin = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
@@ -38,12 +44,6 @@
             this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxItemIP = new DevComponents.DotNetBar.TextBoxItem();
-            this.textBoxItemUser = new DevComponents.DotNetBar.TextBoxItem();
-            this.textBoxItemPass = new DevComponents.DotNetBar.TextBoxItem();
-            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
-            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
-            this.labelItem3 = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +73,40 @@
             this.bar1.TabIndex = 0;
             this.bar1.TabStop = false;
             this.bar1.Text = "bar1";
+            // 
+            // labelItem1
+            // 
+            this.labelItem1.Name = "labelItem1";
+            this.labelItem1.Text = "IP";
+            // 
+            // textBoxItemIP
+            // 
+            this.textBoxItemIP.Name = "textBoxItemIP";
+            this.textBoxItemIP.Text = "192.168.3.251";
+            this.textBoxItemIP.TextBoxWidth = 100;
+            this.textBoxItemIP.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            // 
+            // labelItem2
+            // 
+            this.labelItem2.Name = "labelItem2";
+            this.labelItem2.Text = "User";
+            // 
+            // textBoxItemUser
+            // 
+            this.textBoxItemUser.Name = "textBoxItemUser";
+            this.textBoxItemUser.Text = "admin";
+            this.textBoxItemUser.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            // 
+            // labelItem3
+            // 
+            this.labelItem3.Name = "labelItem3";
+            this.labelItem3.Text = "Pass";
+            // 
+            // textBoxItemPass
+            // 
+            this.textBoxItemPass.Name = "textBoxItemPass";
+            this.textBoxItemPass.Text = "123456";
+            this.textBoxItemPass.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 
             // btnLogin
             // 
@@ -124,40 +158,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 626);
             this.panel1.TabIndex = 1;
-            // 
-            // textBoxItemIP
-            // 
-            this.textBoxItemIP.Name = "textBoxItemIP";
-            this.textBoxItemIP.Text = "121.40.88.117";
-            this.textBoxItemIP.TextBoxWidth = 100;
-            this.textBoxItemIP.WatermarkColor = System.Drawing.SystemColors.GrayText;
-            // 
-            // textBoxItemUser
-            // 
-            this.textBoxItemUser.Name = "textBoxItemUser";
-            this.textBoxItemUser.Text = "admin";
-            this.textBoxItemUser.WatermarkColor = System.Drawing.SystemColors.GrayText;
-            // 
-            // textBoxItemPass
-            // 
-            this.textBoxItemPass.Name = "textBoxItemPass";
-            this.textBoxItemPass.Text = "123456";
-            this.textBoxItemPass.WatermarkColor = System.Drawing.SystemColors.GrayText;
-            // 
-            // labelItem1
-            // 
-            this.labelItem1.Name = "labelItem1";
-            this.labelItem1.Text = "IP";
-            // 
-            // labelItem2
-            // 
-            this.labelItem2.Name = "labelItem2";
-            this.labelItem2.Text = "User";
-            // 
-            // labelItem3
-            // 
-            this.labelItem3.Name = "labelItem3";
-            this.labelItem3.Text = "Pass";
             // 
             // MainForm
             // 

@@ -54,6 +54,7 @@ namespace BOCOM.IVX.Framework
 
         private static MySqlConnection m_sms_conn;
         private static string sms_dbconn = "Host={0};UserName=rootcdz;Password=rootcdz;Database=xd_data;Port=3306;CharSet=gbk;Allow Zero Datetime=true";
+
         #endregion
 
         #region Properties

@@ -42,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,6 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>
@@ -74,6 +76,7 @@
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|AnyCPU'">
     <OutputPath>..\..\XD发布\</OutputPath>
@@ -90,6 +93,7 @@
     <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -110,6 +114,7 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>..\..\XD发布\</OutputPath>
@@ -128,6 +133,7 @@
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ShanghaiProduct|x86'">
     <OutputPath>..\..\XD发布\</OutputPath>
@@ -143,6 +149,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NeuterProduct|x86'">
     <OutputPath>..\..\XD发布\</OutputPath>
@@ -159,6 +166,7 @@
     <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>BOCOM.IVX.Program2</StartupObject>
@@ -231,6 +239,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service\DevStateService.cs" />
     <Compile Include="Views\Content\formChangeCardPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,11 +270,23 @@
     <Compile Include="Views\Content\ucCardRecordPanel.Designer.cs">
       <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Content\ucCDZRuntimeStatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucCDZRuntimeStatPanel.Designer.cs">
+      <DependentUpon>ucCDZRuntimeStatPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Content\ucReChargePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Content\ucReChargePanel.Designer.cs">
       <DependentUpon>ucReChargePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\ucRegionStatRecordPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Content\ucRegionStatRecordPanel.Designer.cs">
+      <DependentUpon>ucRegionStatRecordPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Content\ucTradingRecordPanel.cs">
       <SubType>UserControl</SubType>
@@ -431,8 +452,14 @@
     <EmbeddedResource Include="Views\Content\ucCardRecordPanel.resx">
       <DependentUpon>ucCardRecordPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucCDZRuntimeStatPanel.resx">
+      <DependentUpon>ucCDZRuntimeStatPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucReChargePanel.resx">
       <DependentUpon>ucReChargePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\ucRegionStatRecordPanel.resx">
+      <DependentUpon>ucRegionStatRecordPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\ucTradingRecordPanel.resx">
       <DependentUpon>ucTradingRecordPanel.cs</DependentUpon>
@@ -809,10 +836,13 @@
       <Project>{440d29df-6cba-40d6-89ee-52021ba082cf}</Project>
       <Name>Protocol</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XDTCPProtocol\XDTCPProtocol.csproj">
+      <Project>{cba8b876-d54a-458f-8f34-e612dc0073d5}</Project>
+      <Name>XDTCPProtocol</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Service\" />
     <Folder Include="UILogics\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Views\ResourceTree\" />

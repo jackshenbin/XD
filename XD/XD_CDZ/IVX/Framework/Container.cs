@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using BOCOM.DataModel;
 using BOCOM.IVX.Protocol;
 using BOCOM.IVX.Common;
+using BOCOM.IVX.Service;
 
 namespace BOCOM.IVX.Framework
 {
@@ -39,9 +40,22 @@ namespace BOCOM.IVX.Framework
 
 
         private Common.FtpWeb m_ftpService = null;
+        private  DevStateService m_DevStateService;
+
         #endregion
 
         #region Properties
+        public  DevStateService DevStateService
+        {
+            get
+            {
+                if (m_DevStateService == null)
+                {
+                    m_DevStateService = new DevStateService();
+                }
+                return m_DevStateService;
+            }
+        }
 
         public CaseInfo EnteredCase { get; set; }
 
@@ -221,6 +235,7 @@ namespace BOCOM.IVX.Framework
 
             var cataLog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             m_MEFContainer = new CompositionContainer(cataLog);
+
             
             try
             {
@@ -317,7 +332,9 @@ namespace BOCOM.IVX.Framework
                 
                 if (m_vvmDataBindings != null)
                     m_vvmDataBindings.RemoveBindings();
-                
+                DevStateService.Stop();
+                m_DevStateService = null;
+
                 EnteredCase = null;
                 Framework.Environment.Reset();
             }

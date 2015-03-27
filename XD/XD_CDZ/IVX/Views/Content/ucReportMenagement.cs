@@ -50,5 +50,11 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
+        private void btnRegionStat_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem2;
+            ucRegionStatRecordPanel1.InitWnd();
+        }
+
     }
 }

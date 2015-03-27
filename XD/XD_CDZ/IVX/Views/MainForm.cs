@@ -46,9 +46,10 @@ namespace BOCOM.IVX
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // 退出程序要通过总线消息通知，关闭后台服务
-            // 这里分两种情况，一种是第一次进来，需要先发消息，
-            // 另一种是已经发消息第二次进来
+            this.Controls.Clear();
+            c = null;
+            Framework.Container.Instance.Cleanup();
+
         }
 
         #endregion

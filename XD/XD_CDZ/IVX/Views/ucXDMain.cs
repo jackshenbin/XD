@@ -78,6 +78,7 @@ namespace BOCOM.IVX.Views
                 cmd.Connection.Close();
                 
                 Framework.Environment.ReadXDConfig();
+                Framework.Container.Instance.DevStateService.Start();
                 return true;
             }
             else

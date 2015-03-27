@@ -123,6 +123,7 @@
     <Compile Include="VehicleTypeInfo.cs" />
     <Compile Include="VideoAnalyseInfo.cs" />
     <Compile Include="VideoPictureResource.cs" />
+    <Compile Include="CDZDevStatusInfo.cs" />
     <Compile Include="VideoStatusInfo.cs" />
     <Compile Include="VideoSupplierDeviceInfo.cs" />
     <Compile Include="VodInfo.cs" />

@@ -250,3 +250,192 @@ System.InvalidOperationException: 轴对象 - 自动间隔没有正确的值。
    在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
    在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
    在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-21 17:29:57,860 [1] INFO  - Container.Cleanup ...
+2015-03-21 17:29:57,888 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 17:29:57,891 [1] INFO  - Container.Cleanup ...
+2015-03-21 17:50:30,404 [1] INFO  - Container.Cleanup ...
+2015-03-21 17:50:30,414 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 17:50:30,416 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:06:51,632 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:06:51,645 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 18:06:51,646 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:08:10,678 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:08:10,690 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 18:08:10,693 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:13:03,726 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:13:03,740 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 18:13:03,743 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:26:48,777 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:26:48,800 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 18:26:48,813 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:44:53,679 [1] INFO  - Container.Cleanup ...
+2015-03-21 18:44:53,708 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 18:44:53,710 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:12:07,563 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:12:07,581 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:12:07,610 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:17:42,905 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:17:42,916 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:17:42,918 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:45:49,622 [9] INFO  - Container.Cleanup ...
+2015-03-21 19:45:49,703 [9] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:45:49,837 [9] INFO  - Container.Cleanup ...
+2015-03-21 19:52:41,085 [9] INFO  - Container.Cleanup ...
+2015-03-21 19:52:41,174 [9] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:52:43,124 [9] INFO  - Container.Cleanup ...
+2015-03-21 19:55:57,141 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:55:57,152 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:55:57,154 [1] INFO  - Container.Cleanup ...
+2015-03-21 19:56:55,337 [8] INFO  - Container.Cleanup ...
+2015-03-21 19:56:55,345 [8] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:59:08,875 [9] INFO  - Container.Cleanup ...
+2015-03-21 19:59:08,888 [9] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 19:59:10,209 [9] INFO  - Container.Cleanup ...
+2015-03-21 20:00:35,015 [1] INFO  - Container.Cleanup ...
+2015-03-21 20:00:35,024 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 20:00:35,026 [1] INFO  - Container.Cleanup ...
+2015-03-21 20:19:18,268 [8] INFO  - Container.Cleanup ...
+2015-03-21 20:19:18,302 [8] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 20:19:19,709 [8] INFO  - Container.Cleanup ...
+2015-03-21 20:26:46,314 [1] INFO  - Container.Cleanup ...
+2015-03-21 20:26:46,324 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-21 20:26:46,326 [1] INFO  - Container.Cleanup ...
+2015-03-27 21:57:27,701 [8] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:496390144,PrivateMemorySize64:48742400
+2015-03-27 21:57:27,755 [8] ERROR - Application_ThreadException:
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Exception: 引发类型为“System.Exception”的异常。
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 BOCOM.IVX.Views.ucXDMain.LoginWnd(String serverIP, String username, String password) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\ucXDMain.cs:行号 68
+   在 BOCOM.IVX.MainForm.btnLogin_Click(Object sender, EventArgs e) 位置 c:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\Views\MainForm.cs:行号 83
+   在 DevComponents.DotNetBar.BaseItem.RaiseClick(eEventSource source)
+   在 DevComponents.DotNetBar.BaseItem.InternalMouseUp(MouseEventArgs objArg)
+   在 DevComponents.DotNetBar.PopupItem.InternalMouseUp(MouseEventArgs objArg)
+   在 DevComponents.DotNetBar.ButtonItem.InternalMouseUp(MouseEventArgs objArg)
+   在 DevComponents.DotNetBar.BaseItem.InternalMouseUp(MouseEventArgs objArg)
+   在 DevComponents.DotNetBar.GenericItemContainer.InternalMouseUp(MouseEventArgs objArg)
+   在 DevComponents.DotNetBar.Bar.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevComponents.DotNetBar.Bar.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:36:57,096 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:631537664,PrivateMemorySize64:63098880
+2015-03-27 22:36:57,115 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.SetAndSelectCurrentCellAddress(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick, Boolean clearSelection, Boolean forceCurrentCellSelection)
+   在 System.Windows.Forms.DataGridView.MakeFirstDisplayedCellCurrentCell(Boolean includeNewRow)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:39:51,652 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:550526976,PrivateMemorySize64:82825216
+2015-03-27 22:39:51,663 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.OnRowHeaderMouseDown(HitTestInfo hti, Boolean isShiftDown, Boolean isControlDown)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:40:18,729 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:597753856,PrivateMemorySize64:83128320
+2015-03-27 22:40:18,729 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.SetAndSelectCurrentCellAddress(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick, Boolean clearSelection, Boolean forceCurrentCellSelection)
+   在 System.Windows.Forms.DataGridView.MakeFirstDisplayedCellCurrentCell(Boolean includeNewRow)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:40:21,575 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:599076864,PrivateMemorySize64:83877888
+2015-03-27 22:40:21,575 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(HitTestInfo hti, Boolean isShiftDown, Boolean isControlDown)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:40:23,414 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:599080960,PrivateMemorySize64:84557824
+2015-03-27 22:40:23,415 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(HitTestInfo hti, Boolean isShiftDown, Boolean isControlDown)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:40:25,731 [9] DEBUG - CheckMemeryUse ret=True,VirtualMemorySize64:599080960,PrivateMemorySize64:85364736
+2015-03-27 22:40:25,731 [9] ERROR - Application_ThreadException:
+System.IndexOutOfRangeException: 索引 -1 没有值。
+   在 System.Windows.Forms.CurrencyManager.get_Item(Int32 index)
+   在 System.Windows.Forms.CurrencyManager.get_Current()
+   在 System.Windows.Forms.DataGridView.DataGridViewDataConnection.OnRowEnter(DataGridViewCellEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnRowEnter(DataGridViewCell& dataGridViewCell, Int32 columnIndex, Int32 rowIndex, Boolean canCreateNewRow, Boolean validationFailureOccurred)
+   在 System.Windows.Forms.DataGridView.SetCurrentCellAddressCore(Int32 columnIndex, Int32 rowIndex, Boolean setAnchorCellAddress, Boolean validateCurrentCell, Boolean throughMouseClick)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(HitTestInfo hti, Boolean isShiftDown, Boolean isControlDown)
+   在 System.Windows.Forms.DataGridView.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 DevComponents.DotNetBar.Controls.DataGridViewX.OnCellMouseDown(DataGridViewCellMouseEventArgs e)
+   在 System.Windows.Forms.DataGridView.OnMouseDown(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseDown(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.DataGridView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2015-03-27 22:40:30,544 [9] INFO  - Container.Cleanup ...
+2015-03-27 22:40:30,544 [9] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2015-03-27 22:40:30,683 [9] INFO  - Container.Cleanup ...

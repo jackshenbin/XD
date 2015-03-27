@@ -179,6 +179,13 @@ namespace BOCOM.IVX.Views.Content
             FillDevice(null);
         }
 
+        private void btnRealtimeStat_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItem4;
+            ucCDZRuntimeStatPanel1.InitWnd();
+
+        }
+
 
     }
 }

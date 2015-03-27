@@ -142,7 +142,7 @@
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(535, 195);
+            this.chart1.Size = new System.Drawing.Size(594, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -170,7 +170,7 @@
             this.panelEx2.Controls.Add(this.labelX5);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(595, 147);
+            this.panelEx2.Size = new System.Drawing.Size(654, 147);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -430,7 +430,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(720, 806);
+            this.groupPanel1.Size = new System.Drawing.Size(703, 806);
             // 
             // 
             // 
@@ -528,7 +528,7 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(595, 268);
+            this.dataGridViewX1.Size = new System.Drawing.Size(654, 268);
             this.dataGridViewX1.TabIndex = 26;
             // 
             // Column1
@@ -632,7 +632,7 @@
             this.panelEx3.Controls.Add(this.chart1);
             this.panelEx3.Location = new System.Drawing.Point(18, 471);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(595, 405);
+            this.panelEx3.Size = new System.Drawing.Size(654, 405);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -674,7 +674,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucTradingRecordPanel";
-            this.Size = new System.Drawing.Size(726, 692);
+            this.Size = new System.Drawing.Size(709, 692);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx2.ResumeLayout(false);

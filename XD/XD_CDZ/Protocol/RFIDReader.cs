@@ -597,7 +597,7 @@ namespace RFIDREAD
             //获取充值金额
             string retCharge = chargeMoney.ToString();
 
-            if (chargeMoney > 0)
+            if (chargeMoney >= 0)
             {
                 int comHandle = OpenUsb();
                 GetConfig(comHandle);
