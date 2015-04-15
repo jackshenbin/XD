@@ -457,12 +457,6 @@ namespace XDTCPProtocol
             return !bError;
         }
 
-
-        /// <summary>
-        /// 发送数据
-        /// 异步发送
-        /// </summary>
-        /// <param name="data"></param>
         public void SendData(byte[] data)
         {
             if (!this._isConnected)
@@ -474,6 +468,62 @@ namespace XDTCPProtocol
 
             try
             {
+
+                this._client.Client.Send(
+                    data
+                    , data.Length
+                    , SocketFlags.None);
+
+                bError = false;
+            }
+            catch (SocketException sex)
+            {
+                Trace.WriteLine(string.Format("发送数据时SocketException：{0}", sex));
+            }
+            catch (ObjectDisposedException oex)
+            {
+                Trace.WriteLine(string.Format("发送数据时ObjectDisposedException：{0}", oex));
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(string.Format("发送数据时：{0}", ex));
+            }
+
+            if (bError)
+            {
+                this._isConnected = false;
+                if (this.OnConnectFail != null)
+                {
+                    try
+                    {
+                        this.OnConnectFail(this, new TcpClientEventArgs("连接断开"));
+                    }
+                    catch (Exception ex1)
+                    {
+                        Trace.WriteLine(string.Format("调用连接失败事件时错：{0}", ex1));
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 发送数据
+        /// 异步发送
+        /// </summary>
+        /// <param name="data"></param>
+        public void BeginSendData(byte[] data)
+        {
+            if (!this._isConnected)
+            {
+                return;
+            }
+
+            bool bError = true;
+
+            try
+            {
+                
                 this._client.Client.BeginSend(
                     data
                     , 0

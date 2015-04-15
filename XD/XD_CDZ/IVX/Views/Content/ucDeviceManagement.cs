@@ -62,7 +62,7 @@ namespace BOCOM.IVX.Views.Content
                     if (level == 1)
                     {
                         DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(row["node_name"].ToString());
-                        n.ImageIndex = 3;
+                        n.ImageIndex = 4;
                         n.Tag = row;
                         FillDevice(n);
 
@@ -89,12 +89,20 @@ namespace BOCOM.IVX.Views.Content
                             DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(item["dev_id"].ToString());
                             n.Tag = item;
                             //n.Value = item["dev_id"].ToString();
-                            if (item["pile_type"].ToString() == "2")
-                                n.ImageIndex = 1;
-                            else if (item["pile_type"].ToString() == "3")
-                                n.ImageIndex = 2;
+                            string sms_sqlstr3 = "SELECT * FROM pile_state_t where dev_id='" + item["dev_id"].ToString() + "' order by date_time desc limit 1";
+                            MySqlDataAdapter sms_da3 = new MySqlDataAdapter(sms_sqlstr3, Framework.Environment.SMS_CONN);
+                            DataSet sms_ds3 = new DataSet();
+                            sms_da3.Fill(sms_ds3, "T");
+                            if (sms_ds3.Tables[0].Rows.Count > 0)
+                            {
+                                DataRow r3 = sms_ds3.Tables[0].Rows[0];
+                                n.ImageIndex = int.Parse(r3["work_state"].ToString()) + 7;
+                            }
                             else
-                                n.ImageIndex = 0;
+                            {
+                                n.ImageIndex = 7;
+
+                            }
 
                             n.NodeClick += n_NodeClick;
                             parentNode.Nodes.Add(n);
@@ -109,7 +117,10 @@ namespace BOCOM.IVX.Views.Content
                             if (r["node_id"].ToString() == item["parent_id"].ToString())
                             {
                                 DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(item["node_name"].ToString());
-                                n.ImageIndex = 3;
+                                if (level == 3)
+                                    n.ImageIndex = 6;
+                                else
+                                    n.ImageIndex = 5;
                                 n.Tag = item;
                                 FillDevice(n);
                                 parentNode.Nodes.Add(n);

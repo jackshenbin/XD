@@ -1,7 +1,9 @@
 ﻿using BOCOM.DataModel;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using XDTCPProtocol;
@@ -11,6 +13,86 @@ namespace BOCOM.IVX.Service
     public class DevStateService
     {
         XdTcpHelper xd;
+        public event EventHandler OnSetParamRet;
+        public event EventHandler OnGetParamRet;
+        public event EventHandler OnSetChargePriceRet;
+        public event EventHandler OnGetChargePriceRet;
+
+        DataTable m_devStatTable;
+
+        public DataTable DevStatTable
+        {
+            get 
+            {
+                if (m_devStatTable == null)
+                {
+                    m_devStatTable = new DataTable("DevStat");
+                    DataColumn col= m_devStatTable.Columns.Add("DevID");
+                    m_devStatTable.PrimaryKey = new DataColumn[] { col };
+                    m_devStatTable.Columns.Add("UserID");
+                    m_devStatTable.Columns.Add("IsOnline",typeof(bool));
+                    m_devStatTable.Columns.Add("ServiceStat", typeof(byte));
+                    m_devStatTable.Columns.Add("ChongDianShuChuDianYa", typeof(double));
+                    m_devStatTable.Columns.Add("ChongDianShuChuDianLiu", typeof(double));
+                    m_devStatTable.Columns.Add("ShuChuJiDianQiZhuangTai", typeof(bool));
+                    m_devStatTable.Columns.Add("LianJieQueRenKaiGuanZhuangTai", typeof(bool));
+                    m_devStatTable.Columns.Add("ShiFouLianJieDianChi", typeof(bool));
+                    m_devStatTable.Columns.Add("WorkStat", typeof(UInt16));
+                    m_devStatTable.Columns.Add("DevType", typeof(byte));
+                    m_devStatTable.Columns.Add("YouGongZongDianDu", typeof(double));
+                    m_devStatTable.Columns.Add("FactoryID");
+                    m_devStatTable.Columns.Add("DevSoftVersion");
+                    m_devStatTable.Columns.Add("CRC", typeof(Int32));
+
+                    FillAllDevStat();
+
+                }
+                return m_devStatTable; 
+            }
+            set { m_devStatTable = value; }
+        }
+
+        private void FillAllDevStat()
+        {
+            if (m_devStatTable == null)
+                return;
+
+            m_devStatTable.Rows.Clear();
+
+            string sms_sqlstr = "select * from hd_pile_info_t ";
+
+            MySqlDataAdapter sms_da = new MySqlDataAdapter(sms_sqlstr, Framework.Environment.SMS_CONN);
+            DataSet sms_ds = new DataSet();
+            sms_da.Fill(sms_ds, "T");
+
+            try
+            {
+                foreach (DataRow item in sms_ds.Tables[0].Rows)
+                {
+                    m_devStatTable.Rows.Add(item["dev_id"].ToString()//DevID
+                               , item["user_id"].ToString()//UserID
+                               , false//IsOnline
+                               , 0//ServiceStat
+                               , 0//ChongDianShuChuDianYa
+                               , 0//ChongDianShuChuDianLiu
+                               , false//ShuChuJiDianQiZhuangTai
+                               , false//LianJieQueRenKaiGuanZhuangTai
+                               , false//ShiFouLianJieDianChi
+                               , 0//WorkStat
+                               , 0//DevType
+                               , 0//YouGongZongDianDu
+                               , item["vender_id"].ToString()//FactoryID
+                               , item["software_ver"].ToString()//DevSoftVersion
+                               , 0//CRC
+                               );
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.SDKCallExceptionHandler.Handle(ex, "获取全部设备");
+            }
+        }
 
         public void Start()
         {
@@ -18,8 +100,8 @@ namespace BOCOM.IVX.Service
             xd.OnConnected += xd_OnConnected;
             xd.OnDisConnected += xd_OnDisConnected;
             xd.OnReceiveData += xd_OnReceiveData;
-            //xd.Open("192.168.3.250", 5188);
-            xd.Open("127.0.0.1", 9999);
+            xd.Open(Framework.Environment.TCPIP, Framework.Environment.TCPPORT);
+            //xd.Open("127.0.0.1", 9999);
             xd.OnReceiveLogin += xd_OnReceiveLogin;
             xd.OnReceiveGetDevChargeInfo += xd_OnReceiveGetDevChargeInfo;
             xd.OnReceiveGetDevVersion += xd_OnReceiveGetDevVersion;
@@ -27,14 +109,40 @@ namespace BOCOM.IVX.Service
             xd.OnReceiveNoteDevStatus += xd_OnReceiveNoteDevStatus;
             xd.OnReceiveSubscribrDevChargeStatus += xd_OnReceiveSubscribrDevChargeStatus;
             xd.OnReceiveSubscribrDevStatus += xd_OnReceiveSubscribrDevStatus;
-
+            xd.OnReceiveSetDevParam += xd_OnReceiveSetDevParamRet;
+            xd.OnReceiveGetDevParam += xd_OnReceiveGetDevParam;
+            xd.OnReceiveGetChargePrice += xd_OnReceiveGetChargePrice;
+            xd.OnReceiveSetChargePrice += xd_OnReceiveSetChargePrice;
             Login();
 
-            SubscibeDevStat();
+        }
+
+        void xd_OnReceiveSetChargePrice(SetChargePriceRet obj)
+        {
+            if (OnSetChargePriceRet != null)
+                OnSetChargePriceRet(obj, null);
+        }
+
+        void xd_OnReceiveGetChargePrice(GetChargePriceRet obj)
+        {
+            if (OnGetChargePriceRet != null)
+                OnGetChargePriceRet(obj, null);
+        }
+
+        void xd_OnReceiveGetDevParam(GetDevParamRet obj)
+        {
+            if (OnGetParamRet != null)
+                OnGetParamRet(obj, null);
+        }
+
+        void xd_OnReceiveSetDevParamRet(SetDevParamRet obj)
+        {
+            if (OnSetParamRet != null)
+                OnSetParamRet(obj, null);
         }
         void xd_OnReceiveData(object sender, EventArgs e)
         {
-            System.Diagnostics.Trace.WriteLine( sender + System.Environment.NewLine);
+            System.Diagnostics.Trace.WriteLine(sender + System.Environment.NewLine);
         }
 
         void xd_OnReceiveSubscribrDevStatus(SubscribeDevStatusRet obj)
@@ -47,11 +155,26 @@ namespace BOCOM.IVX.Service
 
         void xd_OnReceiveNoteDevStatus(DevStatusNote obj)
         {
-            CDZDevStatusInfo cdz = m_CDZList.Find(item => item.DevID == new string(obj.DevID));
-            if (cdz == null)
+            DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
+            if (row == null)
             {
-                cdz = new CDZDevStatusInfo() { DevID = new string(obj.DevID), };
-                m_CDZList.Add(cdz);
+                row = m_devStatTable.Rows.Add(new string(obj.DevID)//DevID
+                   , ""//UserID
+                   , false//IsOnline
+                   , 0//ServiceStat
+                   , 0//ChongDianShuChuDianYa
+                   , 0//ChongDianShuChuDianLiu
+                   , false//ShuChuJiDianQiZhuangTai
+                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , false//ShiFouLianJieDianChi
+                   , 0//WorkStat
+                   , 0//DevType
+                   , 0//YouGongZongDianDu
+                   , ""//FactoryID
+                   , ""//DevSoftVersion
+                   , 0//CRC
+                   );
+
             }
 
             string msg = string.Format("xd_OnReceiveNoteDevStatus devID:{0}"
@@ -64,18 +187,33 @@ namespace BOCOM.IVX.Service
                     , obj.UserID
                     );
             System.Diagnostics.Trace.WriteLine(msg + System.Environment.NewLine);
-            cdz.IsOnline = obj.IsOnline;
-            cdz.ServiceStat = obj.ServiceStat;
-            cdz.UserID = new string(obj.UserID);
+            row["IsOnline"] = obj.IsOnline;
+            row["ServiceStat"] = obj.ServiceStat;
+            row["UserID"] = new string(obj.UserID);
         }
 
         void xd_OnReceiveNoteDevChargeStatus(DevChargeStatusNote obj)
         {
-            CDZDevStatusInfo cdz = m_CDZList.Find(item => item.DevID == new string(obj.DevID));
-            if (cdz == null)
+            DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
+            if (row == null)
             {
-                cdz = new CDZDevStatusInfo() { DevID = new string(obj.DevID), };
-                m_CDZList.Add(cdz);
+                row = m_devStatTable.Rows.Add(new string(obj.DevID)//DevID
+                   , ""//UserID
+                   , false//IsOnline
+                   , 0//ServiceStat
+                   , 0//ChongDianShuChuDianYa
+                   , 0//ChongDianShuChuDianLiu
+                   , false//ShuChuJiDianQiZhuangTai
+                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , false//ShiFouLianJieDianChi
+                   , 0//WorkStat
+                   , 0//DevType
+                   , 0//YouGongZongDianDu
+                   , ""//FactoryID
+                   , ""//DevSoftVersion
+                   , 0//CRC
+                   );
+
             }
 
             string msg = string.Format("xd_OnReceiveNoteDevChargeStatus devID:{0}"
@@ -96,22 +234,37 @@ namespace BOCOM.IVX.Service
                 , obj.YouGongZongDianDu
                 );
             System.Diagnostics.Trace.WriteLine(msg + System.Environment.NewLine);
-            cdz.ChongDianShuChuDianLiu =  obj.ChongDianShuChuDianLiu/100d;
-            cdz.ChongDianShuChuDianYa = obj.ChongDianShuChuDianYa/10d;
-            cdz.LianJieQueRenKaiGuanZhuangTai = obj.LianJieQueRenKaiGuanZhuangTai==1;
-            cdz.ShiFouLianJieDianChi = obj.ShiFouLianJieDianChi==1;
-            cdz.ShuChuJiDianQiZhuangTai = obj.ShuChuJiDianQiZhuangTai==1;
-            cdz.WorkStat = obj.WorkStat;
-            cdz.YouGongZongDianDu = obj.YouGongZongDianDu/10d;
+            row["ChongDianShuChuDianLiu"] = obj.ChongDianShuChuDianLiu / 100d;
+            row["ChongDianShuChuDianYa"] = obj.ChongDianShuChuDianYa / 10d;
+            row["LianJieQueRenKaiGuanZhuangTai"] = obj.LianJieQueRenKaiGuanZhuangTai == 1;
+            row["ShiFouLianJieDianChi"] = obj.ShiFouLianJieDianChi == 1;
+            row["ShuChuJiDianQiZhuangTai"] = obj.ShuChuJiDianQiZhuangTai == 1;
+            row["WorkStat"] = obj.WorkStat;
+            row["YouGongZongDianDu"] = obj.YouGongZongDianDu / 10d;
         }
 
         void xd_OnReceiveGetDevVersion(GetDevVersionRet obj)
         {
-            CDZDevStatusInfo cdz = m_CDZList.Find(item => item.DevID == new string(obj.DevID));
-            if (cdz == null)
+            DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
+            if (row == null)
             {
-                cdz = new CDZDevStatusInfo() { DevID = new string(obj.DevID), };
-                m_CDZList.Add(cdz);
+                row = m_devStatTable.Rows.Add(new string(obj.DevID)//DevID
+                   , ""//UserID
+                   , false//IsOnline
+                   , 0//ServiceStat
+                   , 0//ChongDianShuChuDianYa
+                   , 0//ChongDianShuChuDianLiu
+                   , false//ShuChuJiDianQiZhuangTai
+                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , false//ShiFouLianJieDianChi
+                   , 0//WorkStat
+                   , 0//DevType
+                   , 0//YouGongZongDianDu
+                   , ""//FactoryID
+                   , ""//DevSoftVersion
+                   , 0//CRC
+                   );
+
             }
 
             string msg = string.Format("xd_OnReceiveGetDevVersion devID:{0}"
@@ -124,20 +277,35 @@ namespace BOCOM.IVX.Service
                 , obj.CRC
                 );
             System.Diagnostics.Trace.WriteLine(msg + System.Environment.NewLine);
-            cdz.FactoryID = new string(obj.FactoryID);
-            cdz.DevSoftVersion = new string(obj.DevSoftVersion);
-            cdz.CRC = obj.CRC;
-
+            row["FactoryID"]= new string(obj.FactoryID);
+            row["DevSoftVersion"] = new string(obj.DevSoftVersion);
+            row["CRC"] = obj.CRC;
         }
 
         void xd_OnReceiveGetDevChargeInfo(GetDevChargeInfoRet obj)
         {
-            CDZDevStatusInfo cdz = m_CDZList.Find(item => item.DevID == new string(obj.DevID));
-            if (cdz == null)
+            DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
+            if (row == null)
             {
-                cdz = new CDZDevStatusInfo() { DevID = new string(obj.DevID), };
-                m_CDZList.Add(cdz);
+                m_devStatTable.Rows.Add(new string(obj.DevID)//DevID
+                   , ""//UserID
+                   , false//IsOnline
+                   , 0//ServiceStat
+                   , 0//ChongDianShuChuDianYa
+                   , 0//ChongDianShuChuDianLiu
+                   , false//ShuChuJiDianQiZhuangTai
+                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , false//ShiFouLianJieDianChi
+                   , 0//WorkStat
+                   , 0//DevType
+                   , 0//YouGongZongDianDu
+                   , ""//FactoryID
+                   , ""//DevSoftVersion
+                   , 0//CRC
+                   );
+
             }
+
 
             string msg = string.Format("xd_OnReceiveGetDevChargeInfo devID:{0}"
                 + ",DevType:{1}"
@@ -194,6 +362,8 @@ namespace BOCOM.IVX.Service
         void xd_OnDisConnected(object sender, EventArgs e)
         {
             System.Diagnostics.Trace.WriteLine("xd_OnDisConnected :" + sender + System.Environment.NewLine);
+            System.Threading.Thread.Sleep(30 * 1000);
+            Start();
         }
 
         void xd_OnConnected(object sender, EventArgs e)
@@ -205,6 +375,10 @@ namespace BOCOM.IVX.Service
         {
             float a = 0f;
             a = xd.Convert2Float(obj.ClientType, 3);
+            
+            if(obj.ret == 0)
+                SubscibeDevStat();
+
             System.Diagnostics.Trace.WriteLine("xd_OnReceiveLogin ClientName:" + obj.ClientName + ",ClientType:" + obj.ClientType + ",ret:" + obj.ret + System.Environment.NewLine);
         }
         public void Stop()
@@ -216,13 +390,13 @@ namespace BOCOM.IVX.Service
             }
         }
 
-        private List<CDZDevStatusInfo> m_CDZList = new List<CDZDevStatusInfo>();
+        //private List<CDZDevStatusInfo> m_CDZList = new List<CDZDevStatusInfo>();
 
-        public List<CDZDevStatusInfo> CDZList
-        {
-            get { return m_CDZList; }
-            set { m_CDZList = value; }
-        }
+        //public List<CDZDevStatusInfo> CDZList
+        //{
+        //    get { return m_CDZList; }
+        //    set { m_CDZList = value; }
+        //}
 
         private bool Login()
         {
@@ -234,6 +408,257 @@ namespace BOCOM.IVX.Service
         {
             xd.SendSubscribeDevStatus();
             xd.SendSubscribeDevChargeStatus();
+            return true;
+        }
+
+        public bool SetDevParamDevAddr(string devID, Int16 addr)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+                DevAddr = addr,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 1,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamStation(string devID, Int16 station)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Station = station,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 1,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamControl(string devID, byte control)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Control = control,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 1,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamELock(string devID, byte elock)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                ELock = elock,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 1,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamRatio(string devID, byte ratio)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Ratio = ratio,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 1,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamPassword(string devID, string pass)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Password = pass.ToCharArray(XDTCPProtocol.Common.MAX_PASSWORD_LEN),
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 1,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamModel(string devID, byte model)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Model = model,
+                BackLightEnable = 0,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 1,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamContrast(string devID, byte contrast)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                Contrast = contrast,
+                BackLightEnable = 0,
+                ContrastEnable = 1,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+        public bool SetDevParamBackLight(string devID, byte backLight)
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+
+                BackLight = backLight,
+                BackLightEnable = 1,
+                ContrastEnable = 0,
+                ControlEnable = 0,
+                DevAddrEnable = 0,
+                ELockEnable = 0,
+                ModelEnable = 0,
+                PasswordEnable = 0,
+                RatioEnable = 0,
+                StationEnable = 0,
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+        }
+
+        public bool SetDevParam(string devID, 
+            Int16 addr, bool addrEnable,
+            Int16 station, bool stationEnable,
+            bool control, bool controlEnable,
+            byte elock, bool elockEnable,
+            float ratio, bool ratioEnable,
+            string pass, bool passEnable,
+            bool model, bool modelEnable,
+            byte contrast, bool contrastEnable,
+            byte backLight, bool backLightEnable
+            )
+        {
+            SetDevParamReq msg = new SetDevParamReq()
+            {
+                DevID = devID.ToCharArray(XDTCPProtocol.Common.MAX_DEV_ID_LEN),
+                DevAddr = addr,
+                Station = station,
+                Control = (byte)(control?1:0),
+                ELock = elock,
+                Ratio = Convert.ToInt16( ratio*100),
+                Password = pass.ToCharArray(XDTCPProtocol.Common.MAX_PASSWORD_LEN),
+                Model = (byte)(model?1:0),
+                Contrast = contrast,
+                BackLight = backLight,
+
+                BackLightEnable = (byte)(backLightEnable ? 1 : 0),
+                ContrastEnable = (byte)(contrastEnable ? 1 : 0),
+                ControlEnable = (byte)(controlEnable ? 1 : 0),
+                DevAddrEnable = (byte)(addrEnable?1:0),
+                ELockEnable = (byte)(elockEnable ? 1 : 0),
+                ModelEnable = (byte)(modelEnable ? 1 : 0),
+                PasswordEnable = (byte)(passEnable ? 1 : 0),
+                RatioEnable = (byte)(ratioEnable ? 1 : 0),
+                StationEnable = (byte)(stationEnable ? 1 : 0),
+
+            };
+            xd.SendSetDevParam(msg);
+            return true;
+
+        }
+
+        public bool GetDevParam(string devID)
+        {
+            xd.SendGetDevParam(devID);
+            return true;
+        }
+
+        public bool GetChargePrice(string devID)
+        {
+            xd.SendGetChargePrice(devID);
+            return true;
+        }
+        public bool SetChargePrice(string devID, float TaperPrice, float PeakPrice, float FlatPrice, float ValleyPrice)
+        {
+            xd.SendSetChargePrice(devID,
+                Convert.ToUInt32( TaperPrice*100000),
+                Convert.ToUInt32( PeakPrice*100000),
+                Convert.ToUInt32( FlatPrice*100000),
+                Convert.ToUInt32( ValleyPrice*100000));
             return true;
         }
     }

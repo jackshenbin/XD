@@ -197,6 +197,9 @@ namespace BOCOM.IVX.Framework
             }
         }
 
+        public static string TCPIP { get; set; }
+
+        public static int TCPPORT { get; set; }
         public static bool IsSearchMixedMode
         {
             get
@@ -520,6 +523,12 @@ namespace BOCOM.IVX.Framework
                         break;
                     case "tagMode":
                         RFIDREAD.protocol.tagMode = int.Parse(item["value"].ToString());
+                        break;
+                    case "tcpip":
+                        TCPIP = item["value"].ToString();
+                        break;
+                    case "tcpport":
+                        TCPPORT = int.Parse(item["value"].ToString());
                         break;
 		            default:
                         break;

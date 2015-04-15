@@ -28,6 +28,10 @@ namespace XDTCPProtocol
         public event Action<DevChargeStatusNote> OnReceiveNoteDevChargeStatus;
         public event Action<GetDevChargeInfoRet> OnReceiveGetDevChargeInfo;
         public event Action<GetDevVersionRet> OnReceiveGetDevVersion;
+        public event Action<SetDevParamRet> OnReceiveSetDevParam;
+        public event Action<GetDevParamRet> OnReceiveGetDevParam;
+        public event Action<SetChargePriceRet> OnReceiveSetChargePrice;
+        public event Action<GetChargePriceRet> OnReceiveGetChargePrice;
 
 
         public void Open(string ip, int port)
@@ -59,16 +63,36 @@ namespace XDTCPProtocol
             if (OnReceiveData != null)
                 OnReceiveData(sb.ToString(), null);
 
-            IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(HEAD)));
-            Marshal.Copy(e.Data, 0, pdata, Marshal.SizeOf(typeof(HEAD)));
-            HEAD hd = (HEAD)Marshal.PtrToStructure(pdata, typeof(HEAD));
-            if (!CheckCRC(e.Data))
+            int index = 0;
+            while (true)
             {
-                return;
+                if (index > e.DataSize - 1)
+                    break;
+
+                if (e.Data[index] == 0x58 && e.Data[index + 1] == 0x44)
+                {
+                    IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(HEAD)));
+                    Marshal.Copy(e.Data, 0, pdata, Marshal.SizeOf(typeof(HEAD)));
+                    HEAD hd = (HEAD)Marshal.PtrToStructure(pdata, typeof(HEAD));
+                    if (!CheckCRC(e.Data))
+                    {
+                        return;
+                    }
+                    int len = e.Data[index+3] + (e.Data[index+4] << 8) - 8;
+                    byte[] body = new byte[len];
+                    Array.Copy(e.Data, index+11, body, 0, len);
+                    ProcessProtocol(hd, body);
+                    index = index + 11 + len+2;
+                }
+                else
+                {
+                    index++; 
+                }
             }
-            int len = e.Data[3] + (e.Data[4] << 8) - 8;
-            byte[] body = new byte[len];
-            Array.Copy(e.Data, 11, body, 0, len);
+            
+        }
+        void ProcessProtocol(HEAD hd, byte[] body)
+        {
             switch ((EnumProtocolType)hd.messagetype)
             {
                 case EnumProtocolType.RET_HEART_BEAT:
@@ -95,9 +119,54 @@ namespace XDTCPProtocol
                 case EnumProtocolType.RET_GET_DEV_VERSION:
                     OnReceiveData_GetDevVersion(body);
                     break;
-
+                case EnumProtocolType.RET_SET_DEV_PARAM:
+                    OnReceiveData_SetDevParam(body);
+                    break;
+                case EnumProtocolType.RET_GET_DEV_PARAM:
+                    OnReceiveData_GetDevParam(body);
+                    break;
+                case EnumProtocolType.RET_GET_CHARGE_PRICE:
+                    OnReceiveData_GetChargePrice(body);
+                    break;
+                case EnumProtocolType.RET_SET_CHARGE_PRICE:
+                    OnReceiveData_SetChargePrice(body);
+                    break;
                 default:
                     break;
+            }
+        }
+
+        private void OnReceiveData_SetChargePrice(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SetChargePriceRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(SetChargePriceRet)));
+                SetChargePriceRet msg = (SetChargePriceRet)Marshal.PtrToStructure(pdata, typeof(SetChargePriceRet));
+
+                if (OnReceiveSetChargePrice != null)
+                    OnReceiveSetChargePrice(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
+
+        private void OnReceiveData_GetChargePrice(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(GetChargePriceRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(GetChargePriceRet)));
+                GetChargePriceRet msg = (GetChargePriceRet)Marshal.PtrToStructure(pdata, typeof(GetChargePriceRet));
+
+                if (OnReceiveGetChargePrice != null)
+                    OnReceiveGetChargePrice(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
             }
         }
 
@@ -111,6 +180,39 @@ namespace XDTCPProtocol
 
                 if (OnReceiveGetDevVersion != null)
                     OnReceiveGetDevVersion(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
+
+        private void OnReceiveData_SetDevParam(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SetDevParamRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(SetDevParamRet)));
+                SetDevParamRet msg = (SetDevParamRet)Marshal.PtrToStructure(pdata, typeof(SetDevParamRet));
+
+                if (OnReceiveSetDevParam != null)
+                    OnReceiveSetDevParam(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
+        private void OnReceiveData_GetDevParam(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(GetDevParamRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(GetDevParamRet)));
+                GetDevParamRet msg = (GetDevParamRet)Marshal.PtrToStructure(pdata, typeof(GetDevParamRet));
+
+                if (OnReceiveGetDevParam != null)
+                    OnReceiveGetDevParam(msg);
             }
             catch (Exception ex)
             {
@@ -303,7 +405,7 @@ namespace XDTCPProtocol
             //Marshal.Copy(plogin, blogin, 0, Marshal.SizeOf(login));
             //Marshal.FreeHGlobal(plogin);
             Send(login, typeof(LoginReq), EnumProtocolType.REQ_USER_LOGIN);
-            System.Diagnostics.Trace.WriteLine("SendLogin username:"+userName+",usertype:"+userType);
+            System.Diagnostics.Trace.WriteLine("SendLogin username:" + userName + ",usertype:" + userType);
 
         }
 
@@ -327,14 +429,48 @@ namespace XDTCPProtocol
         {
             GetDevChargeInfoReq msg = new GetDevChargeInfoReq { DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN) };
             Send(msg, typeof(GetDevChargeInfoReq), EnumProtocolType.REQ_GET_DEV_CHARGE_INFO);
-            System.Diagnostics.Trace.WriteLine("SendGetDevChargeInfo devid:"+devID);
+            System.Diagnostics.Trace.WriteLine("SendGetDevChargeInfo devid:" + devID);
         }
 
         public void SendGetDevVersion(string devID)
         {
             GetDevVersionReq msg = new GetDevVersionReq { DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN) };
             Send(msg, typeof(GetDevVersionReq), EnumProtocolType.REQ_GET_DEV_VERSION);
-            System.Diagnostics.Trace.WriteLine("SendGetDevVersion devid:"+devID);
+            System.Diagnostics.Trace.WriteLine("SendGetDevVersion devid:" + devID);
+        }
+
+        public void SendSetDevParam(SetDevParamReq param)
+        {
+            Send(param, typeof(SetDevParamReq), EnumProtocolType.REQ_SET_DEV_PARAM);
+            System.Diagnostics.Trace.WriteLine("SendSetDevParam devid:" + param.DevID);
+
+        }
+        public void SendGetDevParam(string devID)
+        {
+            GetDevParamReq msg = new GetDevParamReq { DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN) };
+            Send(msg, typeof(GetDevParamReq), EnumProtocolType.REQ_GET_DEV_PARAM);
+            System.Diagnostics.Trace.WriteLine("SendGetDevParam devid:" + devID);
+        }
+
+        public void SendGetChargePrice(string devID)
+        {
+            GetChargePriceReq msg = new GetChargePriceReq { DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN) };
+            Send(msg, typeof(GetChargePriceReq), EnumProtocolType.REQ_GET_CHARGE_PRICE);
+            System.Diagnostics.Trace.WriteLine("SendGetChargePrice devid:" + devID);
+        }
+
+        public void SendSetChargePrice(string devID,  UInt32 TaperPrice, UInt32 PeakPrice, UInt32 FlatPrice, UInt32 ValleyPrice)
+        {
+            SetChargePriceReq msg = new SetChargePriceReq
+            {
+                DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN),
+                FlatPrice = FlatPrice,
+                PeakPrice = PeakPrice,
+                TaperPrice = TaperPrice,
+                ValleyPrice = ValleyPrice,
+            };
+            Send(msg, typeof(SetChargePriceReq), EnumProtocolType.REQ_SET_CHARGE_PRICE);
+            System.Diagnostics.Trace.WriteLine("SendSetChargePrice devid:" + devID);
         }
 
 
@@ -421,6 +557,7 @@ namespace XDTCPProtocol
             return (float)(val / beichushu);
         }
 
+
     }
     public static class IStringExtension
     {
@@ -436,7 +573,7 @@ namespace XDTCPProtocol
                 Array.Copy(temp, ch, len);
                 return ch;
             }
-            else 
+            else
             {
                 Array.Copy(temp, ch, temp.Length);
                 return ch;
@@ -448,6 +585,7 @@ namespace XDTCPProtocol
         public const int MAX_NAME_LEN = 16;
         public const int MAX_DEV_ID_LEN = 16;
         public const int MAX_USER_ID_LEN = 32;
+        public const int MAX_PASSWORD_LEN = 6;
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -575,6 +713,110 @@ namespace XDTCPProtocol
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_NAME_LEN)]
         public char[] DevSoftVersion;//软件版本号
         public Int32 CRC;//唯一CRC校验码
+    }
+
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevParamReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public byte DevAddrEnable;//设备地址使能 0-参数无效，1-设置该参数
+        public Int16 DevAddr;
+        public byte StationEnable;					//站级地址使能(0:无效1:有效)
+        public Int16 Station;						//站级地址(默认填0x000A)
+        public byte ControlEnable;					//控制引导使能(0:无效1:有效)
+        public byte Control;							//控制引导 (0:不使用1:使用)
+        public byte ELockEnable;						//电子锁使能(0:无效1:有效)
+        public byte ELock;							//电子锁 (0:全部不用1:门锁用2:插头用3:全部用)
+        public byte RatioEnable;					//占空比使能(0:无效1:有效)
+        public Int16 Ratio;							//占空比 (精确到小数点后两位)
+        public byte PasswordEnable;					//维护密码使能(0:无效1:有效)
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_PASSWORD_LEN)]
+        public char[] Password;						//维护密码 (0~9ascii码)(6位编码字符串，最后一位补0)
+        public byte ModelEnable;					//账户模式使能(0:无效1:有效)
+        public byte Model;							//账户模式 (0:本地模式1:账户模式)
+        public byte ContrastEnable;					//对比度使能(0:无效1:有效)
+        public byte Contrast;						//对比度 (默认填52)
+        public byte BackLightEnable;				//背光时间使能(0:无效1:有效)
+        public byte BackLight;						//背光时间 (单位分钟默认填1分钟)
+
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevParamRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public byte DevAddrEnable;//设备地址使能 0-参数无效，1-设置该参数
+        public byte StationEnable;					//站级地址使能(0：成功，1：失败)
+        public byte ControlEnable;					//控制引导使能(0：成功，1：失败)
+        public byte ELockEnable;						//电子锁使能(0：成功，1：失败)
+        public byte RatioEnable;					//占空比使能(0：成功，1：失败)
+        public byte PasswordEnable;					//维护密码使能(0：成功，1：失败)
+        public byte ModelEnable;					//账户模式使能(0：成功，1：失败)
+        public byte ContrastEnable;					//对比度使能(0：成功，1：失败)
+        public byte BackLightEnable;				//背光时间使能(0：成功，1：失败)
+
+    }
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct GetDevParamReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct GetDevParamRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public Int16 DevAddr;
+        public Int16 Station;						//站级地址(默认填0x000A)
+        public byte Control;							//控制引导 (0:不使用1:使用)
+        public byte ELock;							//电子锁 (0:全部不用1:门锁用2:插头用3:全部用)
+        public Int16 Ratio;							//占空比 (精确到小数点后两位)
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_PASSWORD_LEN)]
+        public char[] Password;						//维护密码 (0~9ascii码)(6位编码字符串，最后一位补0)
+        public byte Model;							//账户模式 (0:本地模式1:账户模式)
+        public byte Contrast;						//对比度 (默认填52)
+        public byte BackLight;						//背光时间 (单位分钟默认填1分钟)
+
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct GetChargePriceRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public UInt32 TaperPrice;
+        public UInt32 PeakPrice;
+        public UInt32 FlatPrice;
+        public UInt32 ValleyPrice;
+    };
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetChargePriceReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public UInt32 TaperPrice;
+        public UInt32 PeakPrice;
+        public UInt32 FlatPrice;
+        public UInt32 ValleyPrice;
+    };
+    public struct GetChargePriceReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+
+    }
+
+    public struct SetChargePriceRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public byte RetFlag;//成功标识 0：成功，1：失败
     }
 
 }

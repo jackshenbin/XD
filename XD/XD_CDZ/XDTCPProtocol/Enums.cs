@@ -24,6 +24,16 @@ namespace XDTCPProtocol
         REQ_GET_DEV_VERSION = 0x0008,//获取充电桩软件版本
         RET_GET_DEV_VERSION = 0x0088,
 
+        REQ_GET_DEV_PARAM = 0x0009,//获取充电桩参数
+        RET_GET_DEV_PARAM = 0x0089,
+        REQ_SET_DEV_PARAM = 0x0021,
+        RET_SET_DEV_PARAM = 0x00A1,
+
+        REQ_GET_CHARGE_PRICE = 0x000A,//获取充电桩费率
+        RET_GET_CHARGE_PRICE = 0x008A,
+        REQ_SET_CHARGE_PRICE = 0x0022,
+        RET_SET_CHARGE_PRICE = 0x00A2,
+
         TIMEOUT = 0xEEEE,
     }
 

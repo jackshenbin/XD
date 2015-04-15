@@ -41,7 +41,7 @@ namespace BOCOM.IVX.COMLibrary
             MyLog4Net.Container.Instance.Log.Debug("COMLibrary finish OcxLoader");
             Trace.WriteLine("COMLibrary finish OcxLoader");
 
-            BackColor = System.Drawing.Color.LightSkyBlue;
+            BackColor = System.Drawing.Color.DarkBlue;
         }
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
