@@ -32,6 +32,9 @@ namespace XDTCPProtocol
         public event Action<GetDevParamRet> OnReceiveGetDevParam;
         public event Action<SetChargePriceRet> OnReceiveSetChargePrice;
         public event Action<GetChargePriceRet> OnReceiveGetChargePrice;
+        public event Action<SetDevBlackListRet> OnReceiveSetBlackList;
+        public event Action<SetDevIDRet> OnReceiveSetDevID;
+        public event Action<SetServiceStateRet> OnReceiveSetServiceState;
 
 
         public void Open(string ip, int port)
@@ -78,18 +81,18 @@ namespace XDTCPProtocol
                     {
                         return;
                     }
-                    int len = e.Data[index+3] + (e.Data[index+4] << 8) - 8;
+                    int len = e.Data[index + 3] + (e.Data[index + 4] << 8) - 8;
                     byte[] body = new byte[len];
-                    Array.Copy(e.Data, index+11, body, 0, len);
+                    Array.Copy(e.Data, index + 11, body, 0, len);
                     ProcessProtocol(hd, body);
-                    index = index + 11 + len+2;
+                    index = index + 11 + len + 2;
                 }
                 else
                 {
-                    index++; 
+                    index++;
                 }
             }
-            
+
         }
         void ProcessProtocol(HEAD hd, byte[] body)
         {
@@ -131,11 +134,68 @@ namespace XDTCPProtocol
                 case EnumProtocolType.RET_SET_CHARGE_PRICE:
                     OnReceiveData_SetChargePrice(body);
                     break;
+                case EnumProtocolType.RET_SET_BLACK_LIST:
+                    OnReceiveData_SetBlackList(body);
+                    break;
+                case EnumProtocolType.RET_SET_DEV_ID:
+                    OnReceiveData_SetDevID(body);
+                    break;
+                case EnumProtocolType.RET_SET_SERVICE_STATE:
+                    OnReceiveData_SetServiceState(body);
+                    break;
                 default:
                     break;
             }
         }
 
+        private void OnReceiveData_SetServiceState(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SetServiceStateRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(SetServiceStateRet)));
+                SetServiceStateRet msg = (SetServiceStateRet)Marshal.PtrToStructure(pdata, typeof(SetServiceStateRet));
+
+                if (OnReceiveSetServiceState != null)
+                    OnReceiveSetServiceState(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
+        private void OnReceiveData_SetDevID(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SetDevIDRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(SetDevIDRet)));
+                SetDevIDRet msg = (SetDevIDRet)Marshal.PtrToStructure(pdata, typeof(SetDevIDRet));
+
+                if (OnReceiveSetDevID != null)
+                    OnReceiveSetDevID(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
+        private void OnReceiveData_SetBlackList(byte[] body)
+        {
+            try
+            {
+                IntPtr pdata = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SetDevBlackListRet)));
+                Marshal.Copy(body, 0, pdata, Marshal.SizeOf(typeof(SetDevBlackListRet)));
+                SetDevBlackListRet msg = (SetDevBlackListRet)Marshal.PtrToStructure(pdata, typeof(SetDevBlackListRet));
+
+                if (OnReceiveSetBlackList != null)
+                    OnReceiveSetBlackList(msg);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex.ToString());
+            }
+        }
         private void OnReceiveData_SetChargePrice(byte[] body)
         {
             try
@@ -459,7 +519,7 @@ namespace XDTCPProtocol
             System.Diagnostics.Trace.WriteLine("SendGetChargePrice devid:" + devID);
         }
 
-        public void SendSetChargePrice(string devID,  UInt32 TaperPrice, UInt32 PeakPrice, UInt32 FlatPrice, UInt32 ValleyPrice)
+        public void SendSetChargePrice(string devID, UInt32 TaperPrice, UInt32 PeakPrice, UInt32 FlatPrice, UInt32 ValleyPrice)
         {
             SetChargePriceReq msg = new SetChargePriceReq
             {
@@ -472,6 +532,48 @@ namespace XDTCPProtocol
             Send(msg, typeof(SetChargePriceReq), EnumProtocolType.REQ_SET_CHARGE_PRICE);
             System.Diagnostics.Trace.WriteLine("SendSetChargePrice devid:" + devID);
         }
+
+        public void SendSetBlackList(string devID,List<string> blackList)
+        {
+            SetDevBlackListReq msg = new SetDevBlackListReq
+            {
+                DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN), 
+                 BlackNum = (byte)blackList.Count,
+                Timestamp = ("31" + DateTime.Now.ToString("yyyyMMddHHmmssff")).ToCharArray(Common.MAX_TIMESTAMP_LEN),
+            };
+            msg.BlackList = new BlackList[Common.MAX_BLACK_LIST_COUNT];
+            for (int i = 0; i < blackList.Count; i++)
+            {
+                msg.BlackList[i].CardID = blackList[i].ToCharArray(Common.MAX_CARD_ID_LEN);
+                msg.BlackList[i].State = 1;
+            }
+            Send(msg, typeof(SetDevBlackListReq), EnumProtocolType.REQ_SET_BLACK_LIST);
+            System.Diagnostics.Trace.WriteLine("SendSetChargePrice devid:" + devID);
+        }
+
+        public void SendSetServiceState(string devID,int serviceState)
+        {
+            SetServiceStateReq msg = new SetServiceStateReq
+            {
+                DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN),
+                ServiceState = (byte)serviceState,
+            };
+            Send(msg, typeof(SetServiceStateReq), EnumProtocolType.REQ_SET_SERVICE_STATE);
+            System.Diagnostics.Trace.WriteLine("SendSetServiceState devid:" + devID + ",serviceState:" + serviceState);
+        }
+
+        public void SendSetDevID(string devID, string newDevID)
+        {
+            SetDevIDReq msg = new SetDevIDReq
+            {
+                DevID = devID.ToCharArray(Common.MAX_DEV_ID_LEN),
+                NewDevID = newDevID.ToCharArray(Common.MAX_DEV_ID_LEN),
+            };
+            Send(msg, typeof(SetDevIDReq), EnumProtocolType.REQ_SET_DEV_ID);
+            System.Diagnostics.Trace.WriteLine("SendSetDevID devid:" + devID + ",newDevID:" + newDevID);
+        }
+
+        
 
 
         private void Send(object st, Type sttype, EnumProtocolType protocoltype)
@@ -532,18 +634,18 @@ namespace XDTCPProtocol
         private static string GetMacAddress()
         {
             string mac = "10BF483ED5AC";
-            //System.Management.ManagementClass mc = new System.Management.ManagementClass("Win32_NetworkAdapterConfiguration");
-            //System.Management.ManagementObjectCollection moc = mc.GetInstances();
-            //foreach (System.Management.ManagementObject item in moc)
-            //{
-            //    if ((bool)item["IPEnable"])
-            //    {
-            //        mac = item["MacAddress"].ToString();
-            //        break;
-            //    }
-            //}
-            //moc = null;
-            //mc = null;
+            System.Management.ManagementClass mc = new System.Management.ManagementClass("Win32_NetworkAdapterConfiguration");
+            System.Management.ManagementObjectCollection moc = mc.GetInstances();
+            foreach (System.Management.ManagementObject item in moc)
+            {
+                if ((bool)item["IPEnable"])
+                {
+                    mac = item["MacAddress"].ToString();
+                    break;
+                }
+            }
+            moc = null;
+            mc = null;
             return mac;
         }
 
@@ -584,8 +686,11 @@ namespace XDTCPProtocol
     {
         public const int MAX_NAME_LEN = 16;
         public const int MAX_DEV_ID_LEN = 16;
+        public const int MAX_CARD_ID_LEN = 16;
         public const int MAX_USER_ID_LEN = 32;
         public const int MAX_PASSWORD_LEN = 6;
+        public const int MAX_TIMESTAMP_LEN = 18;
+        public const int MAX_BLACK_LIST_COUNT = 25;
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -805,6 +910,8 @@ namespace XDTCPProtocol
         public UInt32 FlatPrice;
         public UInt32 ValleyPrice;
     };
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct GetChargePriceReq
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
@@ -812,11 +919,86 @@ namespace XDTCPProtocol
 
     }
 
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct SetChargePriceRet
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
         public char[] DevID;//充电桩编号
         public byte RetFlag;//成功标识 0：成功，1：失败
     }
+
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevBlackListReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_TIMESTAMP_LEN)]
+        public char[] Timestamp;//充电桩编号
+        public byte BlackNum;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_BLACK_LIST_COUNT)]
+        public BlackList[] BlackList;
+    }
+
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct BlackList
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_CARD_ID_LEN)]
+        public char[] CardID;
+        public byte State;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevBlackListRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_TIMESTAMP_LEN)]
+        public char[] Timestamp;//充电桩编号
+        public byte RetFlag;//成功标识 0：成功，1：失败
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetServiceStateReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public byte ServiceState;//0-不修改;1-服务状态;2-暂停服务;3-维护状态;4-测试状态;5-重启;6-恢复出厂设置
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetServiceStateRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        public byte ServiceState;//0-不修改;1-服务状态;2-暂停服务;3-维护状态;4-测试状态;5-重启;6-恢复出厂设置
+        public byte RetFlag;//成功标识 0：成功，1：失败
+    }
+
+    
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevIDReq
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] NewDevID;//充电桩编号
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct SetDevIDRet
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] DevID;//充电桩编号
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_DEV_ID_LEN)]
+        public char[] NewDevID;//充电桩编号
+        public byte RetFlag;//成功标识 0：成功，1：失败
+    }
+
+
+
+
 
 }

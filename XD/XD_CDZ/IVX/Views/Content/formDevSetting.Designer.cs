@@ -1,16 +1,16 @@
 ﻿namespace BOCOM.IVX.Views.Content
 {
-    partial class ucCDZRuntimeStatPanel
+    partial class formDevSetting
     {
-        /// <summary> 
-        /// 必需的设计器变量。
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,19 +20,14 @@
             base.Dispose(disposing);
         }
 
-        #region 组件设计器生成的代码
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// 设计器支持所需的方法 - 不要
-        /// 使用代码编辑器修改此方法的内容。
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.labelRet2 = new DevComponents.DotNetBar.LabelX();
@@ -85,24 +80,35 @@
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
             this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.buttonFlash = new DevComponents.DotNetBar.ButtonX();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.DevID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsOnline = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.ServiceStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChongDianShuChuDianYa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChongDianShuChuDianLiu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShuChuJiDianQiZhuangTai = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.LianJieQueRenKaiGuanZhuangTai = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.ShiFouLianJieDianChi = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.WorkStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DevType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.YouGongZongDianDu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DevSoftVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CRC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupPanel1.SuspendLayout();
+            this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
+            this.comboItem6 = new DevComponents.Editors.ComboItem();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
+            this.comboItem8 = new DevComponents.Editors.ComboItem();
+            this.panelEx5 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+            this.ucCardIDTextBox1 = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.panelEx6 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.advTree1 = new DevComponents.AdvTree.AdvTree();
+            this.node1 = new DevComponents.AdvTree.Node();
+            this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
+            this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
+            this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader2 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader3 = new DevComponents.AdvTree.ColumnHeader();
+            this.ucCardIDTextBox2 = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.node2 = new DevComponents.AdvTree.Node();
+            this.columnHeader4 = new DevComponents.AdvTree.ColumnHeader();
             this.panelEx2.SuspendLayout();
             this.panelEx3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doubleInputValleyPrice)).BeginInit();
@@ -115,69 +121,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.integerInputContrast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInputStation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInputDevAddr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            this.panelEx4.SuspendLayout();
+            this.panelEx5.SuspendLayout();
+            this.panelEx6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupPanel1
-            // 
-            this.groupPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.panelEx2);
-            this.groupPanel1.Controls.Add(this.buttonFlash);
-            this.groupPanel1.Controls.Add(this.dataGridViewX1);
-            this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupPanel1.IsShadowEnabled = true;
-            this.groupPanel1.Location = new System.Drawing.Point(3, 3);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(847, 986);
-            // 
-            // 
-            // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "充电桩信息";
             // 
             // panelEx2
             // 
-            this.panelEx2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.panelEx6);
+            this.panelEx2.Controls.Add(this.panelEx5);
+            this.panelEx2.Controls.Add(this.panelEx4);
             this.panelEx2.Controls.Add(this.panelEx3);
             this.panelEx2.Controls.Add(this.panelEx1);
             this.panelEx2.Controls.Add(this.labelSearchStat);
             this.panelEx2.Controls.Add(this.TextBoxDevidSearch);
             this.panelEx2.Controls.Add(this.labelX17);
-            this.panelEx2.Location = new System.Drawing.Point(5, 506);
+            this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx2.Location = new System.Drawing.Point(0, 0);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(750, 373);
+            this.panelEx2.Size = new System.Drawing.Size(695, 698);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -185,7 +150,7 @@
             this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
-            this.panelEx2.TabIndex = 29;
+            this.panelEx2.TabIndex = 30;
             // 
             // panelEx3
             // 
@@ -195,7 +160,6 @@
             this.panelEx3.Controls.Add(this.labelX13);
             this.panelEx3.Controls.Add(this.labelX10);
             this.panelEx3.Controls.Add(this.labelX11);
-            this.panelEx3.Controls.Add(this.buttonGetPrice);
             this.panelEx3.Controls.Add(this.labelX12);
             this.panelEx3.Controls.Add(this.doubleInputValleyPrice);
             this.panelEx3.Controls.Add(this.doubleInputFlatPrice);
@@ -269,13 +233,12 @@
             // 
             this.buttonGetPrice.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonGetPrice.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonGetPrice.Location = new System.Drawing.Point(37, 74);
+            this.buttonGetPrice.Location = new System.Drawing.Point(37, 149);
             this.buttonGetPrice.Name = "buttonGetPrice";
             this.buttonGetPrice.Size = new System.Drawing.Size(74, 23);
             this.buttonGetPrice.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonGetPrice.TabIndex = 14;
             this.buttonGetPrice.Text = "获取参数";
-            this.buttonGetPrice.Click += new System.EventHandler(this.buttonGetPrice_Click);
             // 
             // labelX12
             // 
@@ -368,7 +331,6 @@
             this.buttonSetChargeValue.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonSetChargeValue.TabIndex = 24;
             this.buttonSetChargeValue.Text = "全部修改";
-            this.buttonSetChargeValue.Click += new System.EventHandler(this.buttonSetChargeValue_Click);
             // 
             // panelEx1
             // 
@@ -428,7 +390,6 @@
             this.checkBoxPasswordEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxPasswordEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxPasswordEnable.TabIndex = 31;
-            this.checkBoxPasswordEnable.CheckedChanged += new System.EventHandler(this.checkBoxPasswordEnable_CheckedChanged);
             // 
             // checkBoxModelEnable
             // 
@@ -441,7 +402,6 @@
             this.checkBoxModelEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxModelEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxModelEnable.TabIndex = 31;
-            this.checkBoxModelEnable.CheckedChanged += new System.EventHandler(this.checkBoxModelEnable_CheckedChanged);
             // 
             // checkBoxContrastEnable
             // 
@@ -454,7 +414,6 @@
             this.checkBoxContrastEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxContrastEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxContrastEnable.TabIndex = 31;
-            this.checkBoxContrastEnable.CheckedChanged += new System.EventHandler(this.checkBoxContrastEnable_CheckedChanged);
             // 
             // checkBoxAll
             // 
@@ -468,7 +427,6 @@
             this.checkBoxAll.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxAll.TabIndex = 31;
             this.checkBoxAll.Text = "全选";
-            this.checkBoxAll.CheckedChanged += new System.EventHandler(this.checkBoxAll_CheckedChanged);
             // 
             // btnGetParam
             // 
@@ -480,7 +438,6 @@
             this.btnGetParam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnGetParam.TabIndex = 14;
             this.btnGetParam.Text = "获取参数";
-            this.btnGetParam.Click += new System.EventHandler(this.btnGetParam_Click);
             // 
             // checkBoxBackLightEnable
             // 
@@ -493,7 +450,6 @@
             this.checkBoxBackLightEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxBackLightEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxBackLightEnable.TabIndex = 31;
-            this.checkBoxBackLightEnable.CheckedChanged += new System.EventHandler(this.checkBoxBackLightEnable_CheckedChanged);
             // 
             // checkBoxRatioEnable
             // 
@@ -506,7 +462,6 @@
             this.checkBoxRatioEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxRatioEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxRatioEnable.TabIndex = 31;
-            this.checkBoxRatioEnable.CheckedChanged += new System.EventHandler(this.checkBoxRatioEnable_CheckedChanged);
             // 
             // checkBoxELockEnable
             // 
@@ -519,7 +474,6 @@
             this.checkBoxELockEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxELockEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxELockEnable.TabIndex = 31;
-            this.checkBoxELockEnable.CheckedChanged += new System.EventHandler(this.checkBoxELockEnable_CheckedChanged);
             // 
             // checkBoxControlEnable
             // 
@@ -532,7 +486,6 @@
             this.checkBoxControlEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxControlEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxControlEnable.TabIndex = 31;
-            this.checkBoxControlEnable.CheckedChanged += new System.EventHandler(this.checkBoxControlEnable_CheckedChanged);
             // 
             // checkBoxStationEnable
             // 
@@ -545,7 +498,6 @@
             this.checkBoxStationEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxStationEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxStationEnable.TabIndex = 31;
-            this.checkBoxStationEnable.CheckedChanged += new System.EventHandler(this.checkBoxStationEnable_CheckedChanged);
             // 
             // checkBoxDevAddrEnable
             // 
@@ -558,7 +510,6 @@
             this.checkBoxDevAddrEnable.Size = new System.Drawing.Size(27, 23);
             this.checkBoxDevAddrEnable.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxDevAddrEnable.TabIndex = 31;
-            this.checkBoxDevAddrEnable.CheckedChanged += new System.EventHandler(this.checkBoxDevAddrEnable_CheckedChanged);
             // 
             // labelRet
             // 
@@ -746,7 +697,6 @@
             this.buttonSetAllParam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonSetAllParam.TabIndex = 24;
             this.buttonSetAllParam.Text = "全部修改";
-            this.buttonSetAllParam.Click += new System.EventHandler(this.buttonSetAllParam_Click);
             // 
             // labelX5
             // 
@@ -907,235 +857,341 @@
             this.labelX17.TabIndex = 6;
             this.labelX17.Text = "充电桩编号";
             // 
-            // buttonFlash
+            // panelEx4
             // 
-            this.buttonFlash.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonFlash.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonFlash.Location = new System.Drawing.Point(5, 3);
-            this.buttonFlash.Name = "buttonFlash";
-            this.buttonFlash.Size = new System.Drawing.Size(70, 25);
-            this.buttonFlash.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonFlash.TabIndex = 28;
-            this.buttonFlash.Text = "刷新";
-            this.buttonFlash.Click += new System.EventHandler(this.buttonFlash_Click);
+            this.panelEx4.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx4.Controls.Add(this.labelX14);
+            this.panelEx4.Controls.Add(this.labelX18);
+            this.panelEx4.Controls.Add(this.buttonX2);
+            this.panelEx4.Controls.Add(this.comboBoxEx1);
+            this.panelEx4.Location = new System.Drawing.Point(20, 367);
+            this.panelEx4.Name = "panelEx4";
+            this.panelEx4.Size = new System.Drawing.Size(654, 51);
+            this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx4.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx4.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx4.Style.GradientAngle = 90;
+            this.panelEx4.TabIndex = 33;
             // 
-            // dataGridViewX1
+            // labelX14
             // 
-            this.dataGridViewX1.AllowUserToAddRows = false;
-            this.dataGridViewX1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dataGridViewX1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewX1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewX1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DevID,
-            this.UserID,
-            this.IsOnline,
-            this.ServiceStat,
-            this.ChongDianShuChuDianYa,
-            this.ChongDianShuChuDianLiu,
-            this.ShuChuJiDianQiZhuangTai,
-            this.LianJieQueRenKaiGuanZhuangTai,
-            this.ShiFouLianJieDianChi,
-            this.WorkStat,
-            this.DevType,
-            this.YouGongZongDianDu,
-            this.FactoryID,
-            this.DevSoftVersion,
-            this.CRC});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(5, 40);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewX1.RowTemplate.Height = 23;
-            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(750, 450);
-            this.dataGridViewX1.TabIndex = 27;
-            this.dataGridViewX1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewX1_CellMouseDoubleClick);
-            this.dataGridViewX1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewX1_DataError);
-            this.dataGridViewX1.SelectionChanged += new System.EventHandler(this.dataGridViewX1_SelectionChanged);
+            this.labelX14.AutoSize = true;
             // 
-            // DevID
             // 
-            this.DevID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DevID.DataPropertyName = "DevID";
-            this.DevID.HeaderText = "终端机器编码";
-            this.DevID.Name = "DevID";
-            this.DevID.ReadOnly = true;
-            this.DevID.Width = 102;
             // 
-            // UserID
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Location = new System.Drawing.Point(454, 22);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(0, 0);
+            this.labelX14.TabIndex = 31;
             // 
-            this.UserID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "用户编号";
-            this.UserID.Name = "UserID";
-            this.UserID.ReadOnly = true;
-            this.UserID.Width = 78;
+            // labelX18
             // 
-            // IsOnline
+            this.labelX18.AutoSize = true;
             // 
-            this.IsOnline.Checked = true;
-            this.IsOnline.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.IsOnline.CheckValue = "N";
-            this.IsOnline.DataPropertyName = "IsOnline";
-            this.IsOnline.HeaderText = "在线状态";
-            this.IsOnline.Name = "IsOnline";
-            this.IsOnline.ReadOnly = true;
-            this.IsOnline.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IsOnline.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // ServiceStat
             // 
-            this.ServiceStat.DataPropertyName = "ServiceStat";
-            this.ServiceStat.HeaderText = "服务状态";
-            this.ServiceStat.Name = "ServiceStat";
-            this.ServiceStat.ReadOnly = true;
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Location = new System.Drawing.Point(12, 16);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(93, 18);
+            this.labelX18.TabIndex = 6;
+            this.labelX18.Text = "充电桩服务状态";
             // 
-            // ChongDianShuChuDianYa
+            // buttonX2
             // 
-            this.ChongDianShuChuDianYa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ChongDianShuChuDianYa.DataPropertyName = "ChongDianShuChuDianYa";
-            this.ChongDianShuChuDianYa.HeaderText = "充电输出电压";
-            this.ChongDianShuChuDianYa.Name = "ChongDianShuChuDianYa";
-            this.ChongDianShuChuDianYa.ReadOnly = true;
-            this.ChongDianShuChuDianYa.Width = 102;
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(347, 13);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(75, 23);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 24;
+            this.buttonX2.Text = "全部修改";
             // 
-            // ChongDianShuChuDianLiu
+            // comboBoxEx1
             // 
-            this.ChongDianShuChuDianLiu.DataPropertyName = "ChongDianShuChuDianLiu";
-            this.ChongDianShuChuDianLiu.HeaderText = "充电输出电流";
-            this.ChongDianShuChuDianLiu.Name = "ChongDianShuChuDianLiu";
-            this.ChongDianShuChuDianLiu.ReadOnly = true;
+            this.comboBoxEx1.DisplayMember = "Text";
+            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx1.Enabled = false;
+            this.comboBoxEx1.FormattingEnabled = true;
+            this.comboBoxEx1.ItemHeight = 15;
+            this.comboBoxEx1.Items.AddRange(new object[] {
+            this.comboItem5,
+            this.comboItem6,
+            this.comboItem7,
+            this.comboItem8});
+            this.comboBoxEx1.Location = new System.Drawing.Point(128, 13);
+            this.comboBoxEx1.Name = "comboBoxEx1";
+            this.comboBoxEx1.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx1.TabIndex = 27;
             // 
-            // ShuChuJiDianQiZhuangTai
+            // comboItem5
             // 
-            this.ShuChuJiDianQiZhuangTai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ShuChuJiDianQiZhuangTai.Checked = true;
-            this.ShuChuJiDianQiZhuangTai.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.ShuChuJiDianQiZhuangTai.CheckValue = "N";
-            this.ShuChuJiDianQiZhuangTai.DataPropertyName = "ShuChuJiDianQiZhuangTai";
-            this.ShuChuJiDianQiZhuangTai.HeaderText = "输出继电器状态";
-            this.ShuChuJiDianQiZhuangTai.Name = "ShuChuJiDianQiZhuangTai";
-            this.ShuChuJiDianQiZhuangTai.ReadOnly = true;
-            this.ShuChuJiDianQiZhuangTai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ShuChuJiDianQiZhuangTai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ShuChuJiDianQiZhuangTai.Width = 114;
+            this.comboItem5.Text = "0-全部不用";
             // 
-            // LianJieQueRenKaiGuanZhuangTai
+            // comboItem6
             // 
-            this.LianJieQueRenKaiGuanZhuangTai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LianJieQueRenKaiGuanZhuangTai.Checked = true;
-            this.LianJieQueRenKaiGuanZhuangTai.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.LianJieQueRenKaiGuanZhuangTai.CheckValue = "N";
-            this.LianJieQueRenKaiGuanZhuangTai.DataPropertyName = "LianJieQueRenKaiGuanZhuangTai";
-            this.LianJieQueRenKaiGuanZhuangTai.HeaderText = "连接确认开关状态";
-            this.LianJieQueRenKaiGuanZhuangTai.Name = "LianJieQueRenKaiGuanZhuangTai";
-            this.LianJieQueRenKaiGuanZhuangTai.ReadOnly = true;
-            this.LianJieQueRenKaiGuanZhuangTai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.LianJieQueRenKaiGuanZhuangTai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.LianJieQueRenKaiGuanZhuangTai.Width = 126;
+            this.comboItem6.Text = "1-只门锁用";
             // 
-            // ShiFouLianJieDianChi
+            // comboItem7
             // 
-            this.ShiFouLianJieDianChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ShiFouLianJieDianChi.Checked = true;
-            this.ShiFouLianJieDianChi.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.ShiFouLianJieDianChi.CheckValue = "N";
-            this.ShiFouLianJieDianChi.DataPropertyName = "ShiFouLianJieDianChi";
-            this.ShiFouLianJieDianChi.HeaderText = "是否连接电池";
-            this.ShiFouLianJieDianChi.Name = "ShiFouLianJieDianChi";
-            this.ShiFouLianJieDianChi.ReadOnly = true;
-            this.ShiFouLianJieDianChi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ShiFouLianJieDianChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ShiFouLianJieDianChi.Width = 102;
+            this.comboItem7.Text = "2-只插头锁用";
             // 
-            // WorkStat
+            // comboItem8
             // 
-            this.WorkStat.DataPropertyName = "WorkStat";
-            this.WorkStat.HeaderText = "当前状态";
-            this.WorkStat.Name = "WorkStat";
-            this.WorkStat.ReadOnly = true;
+            this.comboItem8.Text = "3-全部都用";
             // 
-            // DevType
+            // panelEx5
             // 
-            this.DevType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DevType.DataPropertyName = "DevType";
-            this.DevType.HeaderText = "充电桩类型";
-            this.DevType.Name = "DevType";
-            this.DevType.ReadOnly = true;
-            this.DevType.Width = 90;
+            this.panelEx5.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx5.Controls.Add(this.labelX15);
+            this.panelEx5.Controls.Add(this.labelX16);
+            this.panelEx5.Controls.Add(this.buttonX4);
+            this.panelEx5.Controls.Add(this.ucCardIDTextBox1);
+            this.panelEx5.Location = new System.Drawing.Point(20, 424);
+            this.panelEx5.Name = "panelEx5";
+            this.panelEx5.Size = new System.Drawing.Size(654, 51);
+            this.panelEx5.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx5.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx5.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx5.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx5.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx5.Style.GradientAngle = 90;
+            this.panelEx5.TabIndex = 33;
             // 
-            // YouGongZongDianDu
+            // labelX15
             // 
-            this.YouGongZongDianDu.DataPropertyName = "YouGongZongDianDu";
-            this.YouGongZongDianDu.HeaderText = "有功总电度";
-            this.YouGongZongDianDu.Name = "YouGongZongDianDu";
-            this.YouGongZongDianDu.ReadOnly = true;
+            this.labelX15.AutoSize = true;
             // 
-            // FactoryID
             // 
-            this.FactoryID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.FactoryID.DataPropertyName = "FactoryID";
-            this.FactoryID.HeaderText = "厂商编号";
-            this.FactoryID.Name = "FactoryID";
-            this.FactoryID.ReadOnly = true;
-            this.FactoryID.Width = 78;
             // 
-            // DevSoftVersion
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(454, 25);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(0, 0);
+            this.labelX15.TabIndex = 31;
             // 
-            this.DevSoftVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DevSoftVersion.DataPropertyName = "DevSoftVersion";
-            this.DevSoftVersion.HeaderText = "软件版本";
-            this.DevSoftVersion.Name = "DevSoftVersion";
-            this.DevSoftVersion.ReadOnly = true;
-            this.DevSoftVersion.Width = 78;
+            // labelX16
             // 
-            // CRC
+            this.labelX16.AutoSize = true;
             // 
-            this.CRC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CRC.DataPropertyName = "CRC";
-            this.CRC.HeaderText = "唯一CRC校验码";
-            this.CRC.Name = "CRC";
-            this.CRC.ReadOnly = true;
-            this.CRC.Width = 108;
             // 
-            // ucCDZRuntimeStatPanel
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
-            this.Controls.Add(this.groupPanel1);
-            this.Name = "ucCDZRuntimeStatPanel";
-            this.Size = new System.Drawing.Size(853, 1001);
-            this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
-            this.groupPanel1.ResumeLayout(false);
+            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Location = new System.Drawing.Point(24, 19);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(81, 18);
+            this.labelX16.TabIndex = 6;
+            this.labelX16.Text = "新充电桩编号";
+            // 
+            // buttonX4
+            // 
+            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX4.Location = new System.Drawing.Point(347, 16);
+            this.buttonX4.Name = "buttonX4";
+            this.buttonX4.Size = new System.Drawing.Size(75, 23);
+            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX4.TabIndex = 24;
+            this.buttonX4.Text = "全部修改";
+            // 
+            // ucCardIDTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.ucCardIDTextBox1.Border.Class = "TextBoxBorder";
+            this.ucCardIDTextBox1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ucCardIDTextBox1.Location = new System.Drawing.Point(128, 16);
+            this.ucCardIDTextBox1.MaxLength = 19;
+            this.ucCardIDTextBox1.Name = "ucCardIDTextBox1";
+            this.ucCardIDTextBox1.Size = new System.Drawing.Size(184, 21);
+            this.ucCardIDTextBox1.TabIndex = 22;
+            this.ucCardIDTextBox1.Value = "";
+            this.ucCardIDTextBox1.WatermarkEnabled = false;
+            // 
+            // panelEx6
+            // 
+            this.panelEx6.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx6.Controls.Add(this.advTree1);
+            this.panelEx6.Controls.Add(this.labelX20);
+            this.panelEx6.Controls.Add(this.labelX19);
+            this.panelEx6.Controls.Add(this.buttonX3);
+            this.panelEx6.Controls.Add(this.buttonGetPrice);
+            this.panelEx6.Controls.Add(this.buttonX1);
+            this.panelEx6.Controls.Add(this.ucCardIDTextBox2);
+            this.panelEx6.Location = new System.Drawing.Point(20, 481);
+            this.panelEx6.Name = "panelEx6";
+            this.panelEx6.Size = new System.Drawing.Size(654, 191);
+            this.panelEx6.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx6.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx6.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx6.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx6.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx6.Style.GradientAngle = 90;
+            this.panelEx6.TabIndex = 33;
+            // 
+            // labelX19
+            // 
+            this.labelX19.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Location = new System.Drawing.Point(236, 158);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(0, 0);
+            this.labelX19.TabIndex = 31;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(129, 149);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(75, 23);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 24;
+            this.buttonX1.Text = "全部修改";
+            // 
+            // advTree1
+            // 
+            this.advTree1.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
+            this.advTree1.AllowDrop = true;
+            this.advTree1.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.advTree1.BackgroundStyle.Class = "TreeBorderKey";
+            this.advTree1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.advTree1.Columns.Add(this.columnHeader1);
+            this.advTree1.Columns.Add(this.columnHeader2);
+            this.advTree1.Columns.Add(this.columnHeader3);
+            this.advTree1.Columns.Add(this.columnHeader4);
+            this.advTree1.ExpandWidth = 0;
+            this.advTree1.Location = new System.Drawing.Point(24, 40);
+            this.advTree1.Name = "advTree1";
+            this.advTree1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
+            this.node1,
+            this.node2});
+            this.advTree1.NodesConnector = this.nodeConnector1;
+            this.advTree1.NodeStyle = this.elementStyle1;
+            this.advTree1.PathSeparator = ";";
+            this.advTree1.SelectionBoxStyle = DevComponents.AdvTree.eSelectionStyle.FullRowSelect;
+            this.advTree1.Size = new System.Drawing.Size(507, 93);
+            this.advTree1.Styles.Add(this.elementStyle1);
+            this.advTree1.TabIndex = 32;
+            this.advTree1.Text = "advTree1";
+            // 
+            // node1
+            // 
+            this.node1.Expanded = true;
+            this.node1.FullRowBackground = true;
+            this.node1.Name = "node1";
+            this.node1.Text = "node1";
+            // 
+            // nodeConnector1
+            // 
+            this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
+            // 
+            // elementStyle1
+            // 
+            this.elementStyle1.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.elementStyle1.Name = "elementStyle1";
+            this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Name = "columnHeader1";
+            this.columnHeader1.Text = "序号";
+            this.columnHeader1.Width.Absolute = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Name = "columnHeader2";
+            this.columnHeader2.Text = "物理卡号";
+            this.columnHeader2.Width.Absolute = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Name = "columnHeader3";
+            this.columnHeader3.Text = "状态";
+            this.columnHeader3.Width.Absolute = 150;
+            // 
+            // ucCardIDTextBox2
+            // 
+            // 
+            // 
+            // 
+            this.ucCardIDTextBox2.Border.Class = "TextBoxBorder";
+            this.ucCardIDTextBox2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ucCardIDTextBox2.Location = new System.Drawing.Point(128, 15);
+            this.ucCardIDTextBox2.MaxLength = 19;
+            this.ucCardIDTextBox2.Name = "ucCardIDTextBox2";
+            this.ucCardIDTextBox2.Size = new System.Drawing.Size(184, 21);
+            this.ucCardIDTextBox2.TabIndex = 22;
+            this.ucCardIDTextBox2.Value = "";
+            this.ucCardIDTextBox2.WatermarkEnabled = false;
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Location = new System.Drawing.Point(347, 13);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(75, 23);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 24;
+            this.buttonX3.Text = "全部修改";
+            // 
+            // labelX20
+            // 
+            this.labelX20.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX20.Location = new System.Drawing.Point(37, 15);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(68, 18);
+            this.labelX20.TabIndex = 6;
+            this.labelX20.Text = "增加黑名单";
+            // 
+            // node2
+            // 
+            this.node2.Expanded = true;
+            this.node2.FullRowBackground = true;
+            this.node2.Name = "node2";
+            this.node2.Text = "node2";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Name = "columnHeader4";
+            this.columnHeader4.Text = "删除";
+            this.columnHeader4.Width.Absolute = 150;
+            // 
+            // formDevSetting
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(695, 698);
+            this.Controls.Add(this.panelEx2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "formDevSetting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "修改充电桩相关参数";
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
             this.panelEx3.ResumeLayout(false);
@@ -1151,17 +1207,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.integerInputContrast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInputStation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInputDevAddr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            this.panelEx4.ResumeLayout(false);
+            this.panelEx4.PerformLayout();
+            this.panelEx5.ResumeLayout(false);
+            this.panelEx5.PerformLayout();
+            this.panelEx6.ResumeLayout(false);
+            this.panelEx6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advTree1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private DevComponents.DotNetBar.ButtonX buttonFlash;
         private DevComponents.DotNetBar.PanelEx panelEx2;
+        private DevComponents.DotNetBar.PanelEx panelEx5;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.LabelX labelX16;
+        private DevComponents.DotNetBar.ButtonX buttonX4;
+        private Controls.ucCardIDTextBox ucCardIDTextBox1;
+        private DevComponents.DotNetBar.PanelEx panelEx4;
+        private DevComponents.DotNetBar.LabelX labelX14;
+        private DevComponents.DotNetBar.LabelX labelX18;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.Editors.ComboItem comboItem5;
+        private DevComponents.Editors.ComboItem comboItem6;
+        private DevComponents.Editors.ComboItem comboItem7;
+        private DevComponents.Editors.ComboItem comboItem8;
+        private DevComponents.DotNetBar.PanelEx panelEx3;
+        private DevComponents.DotNetBar.LabelX labelRet2;
+        private DevComponents.DotNetBar.LabelX labelX13;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.ButtonX buttonGetPrice;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.Editors.DoubleInput doubleInputValleyPrice;
+        private DevComponents.Editors.DoubleInput doubleInputFlatPrice;
+        private DevComponents.Editors.DoubleInput doubleInputPeakPrice;
+        private DevComponents.Editors.DoubleInput doubleInputTaperPrice;
+        private DevComponents.DotNetBar.ButtonX buttonSetChargeValue;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxPasswordEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxModelEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxContrastEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxAll;
+        private DevComponents.DotNetBar.ButtonX btnGetParam;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxBackLightEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxRatioEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxELockEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxControlEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxStationEnable;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxDevAddrEnable;
+        private DevComponents.DotNetBar.LabelX labelRet;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxXPassword;
         private DevComponents.Editors.DoubleInput doubleInputRatio;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxExElock;
@@ -1176,9 +1274,6 @@
         private DevComponents.Editors.IntegerInput integerInputStation;
         private DevComponents.Editors.IntegerInput integerInputDevAddr;
         private DevComponents.DotNetBar.ButtonX buttonSetAllParam;
-        private DevComponents.DotNetBar.LabelX labelSearchStat;
-        private Controls.ucCardIDTextBox TextBoxDevidSearch;
-        private DevComponents.DotNetBar.ButtonX btnGetParam;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX4;
@@ -1188,46 +1283,24 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX labelSearchStat;
+        private Controls.ucCardIDTextBox TextBoxDevidSearch;
         private DevComponents.DotNetBar.LabelX labelX17;
-        private DevComponents.DotNetBar.LabelX labelRet;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxDevAddrEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxPasswordEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxModelEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxContrastEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxBackLightEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxRatioEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxELockEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxControlEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxStationEnable;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn IsOnline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceStat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianYa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianLiu;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShuChuJiDianQiZhuangTai;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn LianJieQueRenKaiGuanZhuangTai;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShiFouLianJieDianChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkStat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn YouGongZongDianDu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FactoryID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevSoftVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CRC;
-        private DevComponents.DotNetBar.PanelEx panelEx3;
-        private DevComponents.DotNetBar.LabelX labelX13;
-        private DevComponents.DotNetBar.LabelX labelX10;
-        private DevComponents.DotNetBar.LabelX labelX11;
-        private DevComponents.DotNetBar.LabelX labelX12;
-        private DevComponents.Editors.DoubleInput doubleInputValleyPrice;
-        private DevComponents.Editors.DoubleInput doubleInputFlatPrice;
-        private DevComponents.Editors.DoubleInput doubleInputPeakPrice;
-        private DevComponents.Editors.DoubleInput doubleInputTaperPrice;
-        private DevComponents.DotNetBar.ButtonX buttonSetChargeValue;
-        private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.LabelX labelRet2;
-        private DevComponents.DotNetBar.ButtonX buttonGetPrice;
+        private DevComponents.DotNetBar.PanelEx panelEx6;
+        private DevComponents.AdvTree.AdvTree advTree1;
+        private DevComponents.AdvTree.ColumnHeader columnHeader1;
+        private DevComponents.AdvTree.ColumnHeader columnHeader2;
+        private DevComponents.AdvTree.ColumnHeader columnHeader3;
+        private DevComponents.AdvTree.ColumnHeader columnHeader4;
+        private DevComponents.AdvTree.Node node1;
+        private DevComponents.AdvTree.Node node2;
+        private DevComponents.AdvTree.NodeConnector nodeConnector1;
+        private DevComponents.DotNetBar.ElementStyle elementStyle1;
+        private DevComponents.DotNetBar.LabelX labelX20;
+        private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private Controls.ucCardIDTextBox ucCardIDTextBox2;
 
     }
 }

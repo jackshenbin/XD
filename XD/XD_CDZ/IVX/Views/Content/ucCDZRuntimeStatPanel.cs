@@ -222,6 +222,15 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
+        private void dataGridViewX1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > 0)
+            {
+                formDevSetting dev = new formDevSetting();
+                dev.ShowDialog();
+            }
+        }
+
 
     }
 }
