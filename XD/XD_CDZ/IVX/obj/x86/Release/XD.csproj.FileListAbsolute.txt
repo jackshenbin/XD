@@ -79,3 +79,5 @@ C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Mai
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Properties.Resources.resources
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Views.ucXDMain.resources
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\XD.csproj.GenerateResource.Cache
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Views.Content.formDevSetting.resources
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\IVX\obj\x86\Release\BOCOM.IVX.Controls.GridViewEx.resources

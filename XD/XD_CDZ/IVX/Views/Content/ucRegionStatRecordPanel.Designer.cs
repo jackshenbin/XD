@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRegionStatRecordPanel));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -38,7 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRegionStatRecordPanel));
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.advTree1 = new DevComponents.AdvTree.AdvTree();
@@ -52,7 +51,7 @@
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle4 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewX1 = new BOCOM.IVX.Controls.GridViewEx();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,20 +65,13 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.work_state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.panelEx3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "cdz.jpg");
-            this.imageList1.Images.SetKeyName(1, "cdz交流.jpg");
-            this.imageList1.Images.SetKeyName(2, "cdz直流.jpg");
             // 
             // chart1
             // 
@@ -125,7 +117,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(439, 394);
+            this.chart1.Size = new System.Drawing.Size(433, 394);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -319,7 +311,7 @@
             this.dataGridViewX1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewX1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(240)))));
             this.dataGridViewX1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -353,6 +345,7 @@
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(8, 423);
+            this.dataGridViewX1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -365,7 +358,7 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(690, 414);
+            this.dataGridViewX1.Size = new System.Drawing.Size(684, 414);
             this.dataGridViewX1.TabIndex = 26;
             // 
             // Column1
@@ -482,7 +475,7 @@
             this.panelEx3.Controls.Add(this.chart1);
             this.panelEx3.Location = new System.Drawing.Point(199, 3);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(499, 414);
+            this.panelEx3.Size = new System.Drawing.Size(493, 414);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -491,6 +484,23 @@
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 25;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "cdz.jpg");
+            this.imageList1.Images.SetKeyName(1, "cdz交流.jpg");
+            this.imageList1.Images.SetKeyName(2, "cdz直流.jpg");
+            this.imageList1.Images.SetKeyName(3, "department.jpg");
+            this.imageList1.Images.SetKeyName(4, "地区.png");
+            this.imageList1.Images.SetKeyName(5, "区域.png");
+            this.imageList1.Images.SetKeyName(6, "区域2.png");
+            this.imageList1.Images.SetKeyName(7, "冲电.png");
+            this.imageList1.Images.SetKeyName(8, "冲电2.png");
+            this.imageList1.Images.SetKeyName(9, "冲电3.png");
+            this.imageList1.Images.SetKeyName(10, "冲电4.png");
+            this.imageList1.Images.SetKeyName(11, "冲电5.png");
             // 
             // ucRegionStatRecordPanel
             // 
@@ -511,11 +521,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.PanelEx panelEx3;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private BOCOM.IVX.Controls.GridViewEx dataGridViewX1;
         private DevComponents.AdvTree.AdvTree advTree1;
         private DevComponents.AdvTree.ColumnHeader columnHeader1;
         private DevComponents.AdvTree.Node node1;
@@ -539,6 +548,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn work_state;
+        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

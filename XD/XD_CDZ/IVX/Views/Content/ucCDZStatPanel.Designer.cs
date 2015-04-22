@@ -97,10 +97,8 @@
             this.TextBoxsFactoryid = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
-            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -115,6 +113,8 @@
             this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -664,7 +664,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(655, 195);
+            this.chart1.Size = new System.Drawing.Size(615, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -711,7 +711,7 @@
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
             this.panelEx1.Location = new System.Drawing.Point(18, 70);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(715, 226);
+            this.panelEx1.Size = new System.Drawing.Size(675, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -720,22 +720,6 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 23;
-            // 
-            // TextBoxDevid
-            // 
-            // 
-            // 
-            // 
-            this.TextBoxDevid.Border.Class = "TextBoxBorder";
-            this.TextBoxDevid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevid.Location = new System.Drawing.Point(148, 13);
-            this.TextBoxDevid.MaxLength = 19;
-            this.TextBoxDevid.Name = "TextBoxDevid";
-            this.TextBoxDevid.ReadOnly = true;
-            this.TextBoxDevid.Size = new System.Drawing.Size(184, 21);
-            this.TextBoxDevid.TabIndex = 22;
-            this.TextBoxDevid.Value = "";
-            this.TextBoxDevid.WatermarkEnabled = false;
             // 
             // panelEx2
             // 
@@ -749,7 +733,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(18, 3);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(715, 43);
+            this.panelEx2.Size = new System.Drawing.Size(675, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -772,21 +756,6 @@
             this.labelSearchStat.Name = "labelSearchStat";
             this.labelSearchStat.Size = new System.Drawing.Size(0, 0);
             this.labelSearchStat.TabIndex = 23;
-            // 
-            // TextBoxDevidSearch
-            // 
-            // 
-            // 
-            // 
-            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
-            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevidSearch.Location = new System.Drawing.Point(148, 10);
-            this.TextBoxDevidSearch.MaxLength = 19;
-            this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
-            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
-            this.TextBoxDevidSearch.TabIndex = 22;
-            this.TextBoxDevidSearch.Value = "";
-            this.TextBoxDevidSearch.WatermarkEnabled = false;
             // 
             // btnSearch
             // 
@@ -854,7 +823,7 @@
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(655, 195);
+            this.chart2.Size = new System.Drawing.Size(615, 195);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart1";
             title2.Name = "Title1";
@@ -902,7 +871,7 @@
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(655, 195);
+            this.chart3.Size = new System.Drawing.Size(615, 195);
             this.chart3.TabIndex = 0;
             this.chart3.Text = "chart1";
             title3.Name = "Title1";
@@ -951,7 +920,7 @@
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(655, 195);
+            this.chart4.Size = new System.Drawing.Size(615, 195);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart1";
             title4.Name = "Title1";
@@ -1000,7 +969,7 @@
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart5.Series.Add(series5);
-            this.chart5.Size = new System.Drawing.Size(655, 195);
+            this.chart5.Size = new System.Drawing.Size(615, 195);
             this.chart5.TabIndex = 0;
             this.chart5.Text = "chart1";
             title5.Name = "Title1";
@@ -1022,7 +991,7 @@
             this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(758, 1403);
+            this.groupPanel1.Size = new System.Drawing.Size(724, 1403);
             // 
             // 
             // 
@@ -1073,7 +1042,7 @@
             this.panelEx3.Controls.Add(this.chart2);
             this.panelEx3.Location = new System.Drawing.Point(18, 313);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(715, 1056);
+            this.panelEx3.Size = new System.Drawing.Size(675, 1056);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -1235,13 +1204,44 @@
             this.labelX18.TabIndex = 6;
             this.labelX18.Text = "开始时间";
             // 
+            // TextBoxDevidSearch
+            // 
+            // 
+            // 
+            // 
+            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TextBoxDevidSearch.Location = new System.Drawing.Point(148, 10);
+            this.TextBoxDevidSearch.MaxLength = 19;
+            this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
+            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
+            this.TextBoxDevidSearch.TabIndex = 22;
+            this.TextBoxDevidSearch.Value = "";
+            this.TextBoxDevidSearch.WatermarkEnabled = false;
+            // 
+            // TextBoxDevid
+            // 
+            // 
+            // 
+            // 
+            this.TextBoxDevid.Border.Class = "TextBoxBorder";
+            this.TextBoxDevid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TextBoxDevid.Location = new System.Drawing.Point(148, 13);
+            this.TextBoxDevid.MaxLength = 19;
+            this.TextBoxDevid.Name = "TextBoxDevid";
+            this.TextBoxDevid.ReadOnly = true;
+            this.TextBoxDevid.Size = new System.Drawing.Size(184, 21);
+            this.TextBoxDevid.TabIndex = 22;
+            this.TextBoxDevid.Value = "";
+            this.TextBoxDevid.WatermarkEnabled = false;
+            // 
             // ucCDZStatPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucCDZStatPanel";
-            this.Size = new System.Drawing.Size(764, 610);
+            this.Size = new System.Drawing.Size(730, 610);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx1.ResumeLayout(false);

@@ -17,9 +17,41 @@ namespace BOCOM.IVX.Service
         public event EventHandler OnGetParamRet;
         public event EventHandler OnSetChargePriceRet;
         public event EventHandler OnGetChargePriceRet;
+        public event EventHandler OnSetDevID;
+        public event EventHandler OnSetServiceState;
+        public event EventHandler OnSetBlackList;
 
         DataTable m_devStatTable;
 
+        public CDZDevStatusInfo GetDevByID(string devID)
+        {
+            if (m_devStatTable == null)
+                return null;
+            DataRow r = m_devStatTable.Rows.Find(devID);
+            if (r != null)
+            {
+                return new CDZDevStatusInfo()
+                {
+                    ChongDianShuChuDianLiu = (double)(r["ChongDianShuChuDianLiu"]),
+                    ChongDianShuChuDianYa = (double)(r["ChongDianShuChuDianYa"]),
+                    CRC = (ushort)r["CRC"],
+                    DevID = r["DevID"].ToString(),
+                    DevSoftVersion = r["DevSoftVersion"].ToString(),
+                    DevType = (byte)r["DevType"],
+                    FactoryID = r["FactoryID"].ToString(),
+                    IsOnline = (byte)(((bool)r["IsOnline"])?1:0),
+                    LianJieQueRenKaiGuanZhuangTai = (bool)(r["LianJieQueRenKaiGuanZhuangTai"]),
+                    ServiceStat = (byte)r["ServiceStat"],
+                    ShiFouLianJieDianChi = (bool)(r["ShiFouLianJieDianChi"]),
+                    ShuChuJiDianQiZhuangTai = (bool)(r["ShuChuJiDianQiZhuangTai"]),
+                    UserID = r["UserID"].ToString(),
+                    WorkStat = (ushort)r["WorkStat"],
+                    YouGongZongDianDu = (double)(r["YouGongZongDianDu"]),
+                };
+            }
+            else
+                return null;
+        }
         public DataTable DevStatTable
         {
             get 
@@ -42,7 +74,7 @@ namespace BOCOM.IVX.Service
                     m_devStatTable.Columns.Add("YouGongZongDianDu", typeof(double));
                     m_devStatTable.Columns.Add("FactoryID");
                     m_devStatTable.Columns.Add("DevSoftVersion");
-                    m_devStatTable.Columns.Add("CRC", typeof(Int32));
+                    m_devStatTable.Columns.Add("CRC", typeof(UInt16));
 
                     FillAllDevStat();
 
@@ -113,8 +145,29 @@ namespace BOCOM.IVX.Service
             xd.OnReceiveGetDevParam += xd_OnReceiveGetDevParam;
             xd.OnReceiveGetChargePrice += xd_OnReceiveGetChargePrice;
             xd.OnReceiveSetChargePrice += xd_OnReceiveSetChargePrice;
+            xd.OnReceiveSetBlackList += xd_OnReceiveSetBlackList;
+            xd.OnReceiveSetDevID += xd_OnReceiveSetDevID;
+            xd.OnReceiveSetServiceState += xd_OnReceiveSetServiceState;
             Login();
 
+        }
+
+        void xd_OnReceiveSetServiceState(SetServiceStateRet obj)
+        {
+            if (OnSetServiceState != null)
+                OnSetServiceState(obj, null);
+        }
+
+        void xd_OnReceiveSetDevID(SetDevIDRet obj)
+        {
+            if (OnSetDevID != null)
+                OnSetDevID(obj, null);
+        }
+
+        void xd_OnReceiveSetBlackList(SetDevBlackListRet obj)
+        {
+            if (OnSetBlackList != null)
+                OnSetBlackList(obj, null);
         }
 
         void xd_OnReceiveSetChargePrice(SetChargePriceRet obj)
@@ -187,7 +240,7 @@ namespace BOCOM.IVX.Service
                     , obj.UserID
                     );
             System.Diagnostics.Trace.WriteLine(msg + System.Environment.NewLine);
-            row["IsOnline"] = obj.IsOnline;
+            row["IsOnline"] = obj.IsOnline==1?true:false;
             row["ServiceStat"] = obj.ServiceStat;
             row["UserID"] = new string(obj.UserID);
         }
@@ -361,6 +414,9 @@ namespace BOCOM.IVX.Service
 
         void xd_OnDisConnected(object sender, EventArgs e)
         {
+            if (Framework.Environment.IsCloseMainForm)
+                return;
+
             System.Diagnostics.Trace.WriteLine("xd_OnDisConnected :" + sender + System.Environment.NewLine);
             System.Threading.Thread.Sleep(30 * 1000);
             Start();
@@ -659,6 +715,24 @@ namespace BOCOM.IVX.Service
                 Convert.ToUInt32( PeakPrice*100000),
                 Convert.ToUInt32( FlatPrice*100000),
                 Convert.ToUInt32( ValleyPrice*100000));
+            return true;
+        }
+
+        public bool SetServiceState(string devID, int serviceState)
+        {
+            xd.SendSetServiceState(devID, serviceState);
+            return true;
+        }
+
+        public bool SetDevID(string devID, string newDevID)
+        {
+            xd.SendSetDevID(devID, newDevID);
+            return true;
+        }
+
+        public bool SetBlackList(string devID, List<string> blackList)
+        {
+            xd.SendSetBlackList(devID, blackList);
             return true;
         }
     }

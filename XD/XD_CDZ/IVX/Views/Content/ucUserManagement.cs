@@ -71,10 +71,10 @@ namespace BOCOM.IVX.Views.Content
 
         private void ucUserManagement_Load(object sender, EventArgs e)
         {
-            superTabControlPanel0.BackgroundImage = Framework.Environment.DefaultImage;
         }
         public void InitWnd()
         {
+            superTabControlPanel0.BackgroundImage = Framework.Environment.DefaultImage;
             ucCurrentUser1.InitWnd();
 
             superTabControl1.SelectedPanel = superTabControlPanel0;

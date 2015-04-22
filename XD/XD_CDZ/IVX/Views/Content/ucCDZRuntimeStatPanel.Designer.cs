@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
@@ -83,21 +84,21 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
-            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.buttonFlash = new DevComponents.DotNetBar.ButtonX();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.dataGridViewX1 = new BOCOM.IVX.Controls.GridViewEx();
             this.DevID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsOnline = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.ServiceStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceStat = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.ChongDianShuChuDianYa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChongDianShuChuDianLiu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShuChuJiDianQiZhuangTai = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.LianJieQueRenKaiGuanZhuangTai = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.ShiFouLianJieDianChi = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.WorkStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DevType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkStat = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.DevType = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.YouGongZongDianDu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DevSoftVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,7 +178,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(5, 506);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(750, 373);
+            this.panelEx2.Size = new System.Drawing.Size(732, 391);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -186,6 +187,7 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 29;
+            this.panelEx2.Visible = false;
             // 
             // panelEx3
             // 
@@ -879,21 +881,6 @@
             this.labelSearchStat.Size = new System.Drawing.Size(0, 0);
             this.labelSearchStat.TabIndex = 23;
             // 
-            // TextBoxDevidSearch
-            // 
-            // 
-            // 
-            // 
-            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
-            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevidSearch.Location = new System.Drawing.Point(148, 10);
-            this.TextBoxDevidSearch.MaxLength = 19;
-            this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
-            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
-            this.TextBoxDevidSearch.TabIndex = 22;
-            this.TextBoxDevidSearch.Value = "";
-            this.TextBoxDevidSearch.WatermarkEnabled = false;
-            // 
             // labelX17
             // 
             this.labelX17.AutoSize = true;
@@ -919,6 +906,21 @@
             this.buttonFlash.Text = "刷新";
             this.buttonFlash.Click += new System.EventHandler(this.buttonFlash_Click);
             // 
+            // TextBoxDevidSearch
+            // 
+            // 
+            // 
+            // 
+            this.TextBoxDevidSearch.Border.Class = "TextBoxBorder";
+            this.TextBoxDevidSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TextBoxDevidSearch.Location = new System.Drawing.Point(148, 10);
+            this.TextBoxDevidSearch.MaxLength = 19;
+            this.TextBoxDevidSearch.Name = "TextBoxDevidSearch";
+            this.TextBoxDevidSearch.Size = new System.Drawing.Size(184, 21);
+            this.TextBoxDevidSearch.TabIndex = 22;
+            this.TextBoxDevidSearch.Value = "";
+            this.TextBoxDevidSearch.WatermarkEnabled = false;
+            // 
             // dataGridViewX1
             // 
             this.dataGridViewX1.AllowUserToAddRows = false;
@@ -927,7 +929,7 @@
             this.dataGridViewX1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewX1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(240)))));
             this.dataGridViewX1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -954,29 +956,30 @@
             this.FactoryID,
             this.DevSoftVersion,
             this.CRC});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(5, 40);
+            this.dataGridViewX1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(750, 450);
+            this.dataGridViewX1.Size = new System.Drawing.Size(732, 450);
             this.dataGridViewX1.TabIndex = 27;
             this.dataGridViewX1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewX1_CellMouseDoubleClick);
             this.dataGridViewX1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewX1_DataError);
@@ -1015,9 +1018,17 @@
             // ServiceStat
             // 
             this.ServiceStat.DataPropertyName = "ServiceStat";
+            this.ServiceStat.DropDownHeight = 106;
+            this.ServiceStat.DropDownWidth = 121;
+            this.ServiceStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ServiceStat.HeaderText = "服务状态";
+            this.ServiceStat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ServiceStat.IntegralHeight = false;
+            this.ServiceStat.ItemHeight = 16;
             this.ServiceStat.Name = "ServiceStat";
             this.ServiceStat.ReadOnly = true;
+            this.ServiceStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceStat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // ChongDianShuChuDianYa
             // 
@@ -1080,17 +1091,32 @@
             // WorkStat
             // 
             this.WorkStat.DataPropertyName = "WorkStat";
+            this.WorkStat.DropDownHeight = 106;
+            this.WorkStat.DropDownWidth = 121;
+            this.WorkStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WorkStat.HeaderText = "当前状态";
+            this.WorkStat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.WorkStat.IntegralHeight = false;
+            this.WorkStat.ItemHeight = 16;
             this.WorkStat.Name = "WorkStat";
             this.WorkStat.ReadOnly = true;
+            this.WorkStat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkStat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // DevType
             // 
             this.DevType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DevType.DataPropertyName = "DevType";
+            this.DevType.DropDownHeight = 106;
+            this.DevType.DropDownWidth = 121;
+            this.DevType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DevType.HeaderText = "充电桩类型";
+            this.DevType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DevType.ItemHeight = 16;
             this.DevType.Name = "DevType";
             this.DevType.ReadOnly = true;
+            this.DevType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DevType.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DevType.Width = 90;
             // 
             // YouGongZongDianDu
@@ -1122,6 +1148,8 @@
             // 
             this.CRC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.CRC.DataPropertyName = "CRC";
+            dataGridViewCellStyle3.Format = "X4";
+            this.CRC.DefaultCellStyle = dataGridViewCellStyle3;
             this.CRC.HeaderText = "唯一CRC校验码";
             this.CRC.Name = "CRC";
             this.CRC.ReadOnly = true;
@@ -1159,7 +1187,7 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private BOCOM.IVX.Controls.GridViewEx dataGridViewX1;
         private DevComponents.DotNetBar.ButtonX buttonFlash;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxXPassword;
@@ -1200,21 +1228,6 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxControlEnable;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxStationEnable;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn IsOnline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceStat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianYa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianLiu;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShuChuJiDianQiZhuangTai;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn LianJieQueRenKaiGuanZhuangTai;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShiFouLianJieDianChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkStat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn YouGongZongDianDu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FactoryID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DevSoftVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CRC;
         private DevComponents.DotNetBar.PanelEx panelEx3;
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.LabelX labelX10;
@@ -1228,6 +1241,21 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.LabelX labelRet2;
         private DevComponents.DotNetBar.ButtonX buttonGetPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DevID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn IsOnline;
+        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn ServiceStat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianYa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChongDianShuChuDianLiu;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShuChuJiDianQiZhuangTai;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn LianJieQueRenKaiGuanZhuangTai;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ShiFouLianJieDianChi;
+        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn WorkStat;
+        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn DevType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YouGongZongDianDu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FactoryID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DevSoftVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CRC;
 
     }
 }

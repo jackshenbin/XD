@@ -9,6 +9,6 @@
     <StartProgram>c:\Program Files %28x86%29\Maxthon\Bin\Maxthon.exe</StartProgram>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

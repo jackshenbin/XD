@@ -46,6 +46,7 @@ namespace BOCOM.IVX
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Framework.Environment.IsCloseMainForm = true;
             this.Controls.Clear();
             c = null;
             Framework.Container.Instance.Cleanup();

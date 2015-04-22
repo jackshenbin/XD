@@ -51,17 +51,28 @@ namespace BOCOM.IVX.Views.Content
         void DevStateService_OnGetParamRet(object sender, EventArgs e)
         {
             XDTCPProtocol.GetDevParamRet ret = (XDTCPProtocol.GetDevParamRet)sender;
-            integerInputDevAddr.Value = ret.DevAddr;
-            integerInputStation.Value = ret.Station;
-            switchButtonControl.Value = ret.Control==1;
-            comboBoxExElock.SelectedIndex = ret.ELock;
-            doubleInputRatio.Value = ret.Ratio/100f;
-            textBoxXPassword.Text = new string(ret.Password);
-            switchButtonModel.Value = ret.Model==1;
-            integerInputContrast.Value = ret.Contrast;
-            integerInputBackLight.Value = ret.BackLight;
+            UpdateDevParamRet(ret);
         }
 
+        void UpdateDevParamRet(XDTCPProtocol.GetDevParamRet ret)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<XDTCPProtocol.GetDevParamRet>(UpdateDevParamRet), ret);
+            }
+            else
+            {
+                integerInputDevAddr.Value = ret.DevAddr;
+                integerInputStation.Value = ret.Station;
+                switchButtonControl.Value = ret.Control == 1;
+                comboBoxExElock.SelectedIndex = ret.ELock;
+                doubleInputRatio.Value = ret.Ratio / 100f;
+                textBoxXPassword.Text = new string(ret.Password);
+                switchButtonModel.Value = ret.Model == 1;
+                integerInputContrast.Value = ret.Contrast;
+                integerInputBackLight.Value = ret.BackLight;
+            }
+        }
         void DevStateService_OnSetParamRet(object sender, EventArgs e)
         {
             XDTCPProtocol.SetDevParamRet ret = (XDTCPProtocol.SetDevParamRet)sender;
@@ -86,6 +97,56 @@ namespace BOCOM.IVX.Views.Content
 
         private void ucCDZStatPanel_Load(object sender, EventArgs e)
         {
+            DataSet sms_ds = new DataSet();
+            DataTable tRoleServiceStat = new DataTable("tRoleServiceStat");
+            tRoleServiceStat.Columns.Add("r_id");
+            tRoleServiceStat.Columns.Add("r_type");
+
+            tRoleServiceStat.Rows.Add(0, "未知状态");
+            tRoleServiceStat.Rows.Add(1, "服务状态");
+            tRoleServiceStat.Rows.Add(2, "暂停服务");
+            tRoleServiceStat.Rows.Add(3, "维护状态");
+            tRoleServiceStat.Rows.Add(4, "测试状态");
+
+            sms_ds.Tables.Add(tRoleServiceStat);
+
+            ServiceStat.DisplayMember = "r_type";
+            ServiceStat.ValueMember = "r_id";
+            ServiceStat.DataSource = new BindingSource(sms_ds, "tRoleServiceStat");
+
+
+            DataTable tRoleWorkStat = new DataTable("tRoleWorkStat");
+            tRoleWorkStat.Columns.Add("r_id");
+            tRoleWorkStat.Columns.Add("r_type");
+
+            tRoleWorkStat.Rows.Add(0, "离线");
+            tRoleWorkStat.Rows.Add(1, "故障");
+            tRoleWorkStat.Rows.Add(2, "待机");
+            tRoleWorkStat.Rows.Add(3, "工作");
+
+            sms_ds.Tables.Add(tRoleWorkStat);
+
+            WorkStat.DisplayMember = "r_type";
+            WorkStat.ValueMember = "r_id";
+            WorkStat.DataSource = new BindingSource(sms_ds, "tRoleWorkStat");
+
+
+            DataTable tRoleDevType = new DataTable("tRoleDevType");
+            tRoleDevType.Columns.Add("r_id");
+            tRoleDevType.Columns.Add("r_type");
+
+            tRoleDevType.Rows.Add(0, "未知类型");
+            tRoleDevType.Rows.Add(2, "单相交流离散桩");
+            tRoleDevType.Rows.Add(18, "三相相交流离散桩");
+            tRoleDevType.Rows.Add(3, "三相直流离散桩");
+            tRoleDevType.Rows.Add(19, "单相直流离散桩");
+
+            sms_ds.Tables.Add(tRoleDevType);
+
+            DevType.DisplayMember = "r_type";
+            DevType.ValueMember = "r_id";
+            DevType.DataSource = new BindingSource(sms_ds, "tRoleDevType");
+
         }
 
 
@@ -224,9 +285,11 @@ namespace BOCOM.IVX.Views.Content
 
         private void dataGridViewX1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
-                formDevSetting dev = new formDevSetting();
+                string Devid = dataGridViewX1["DevID", e.RowIndex].Value.ToString();
+
+                formDevSetting dev = new formDevSetting(Devid);
                 dev.ShowDialog();
             }
         }

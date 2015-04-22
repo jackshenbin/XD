@@ -50,14 +50,14 @@
             this.btnAddDevice = new DevComponents.DotNetBar.ButtonX();
             this.ucCurrentUser1 = new BOCOM.IVX.Views.Content.ucCurrentUser();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucCDZRuntimeStatPanel1 = new BOCOM.IVX.Views.Content.ucCDZRuntimeStatPanel();
             this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucDelCDZPanel1 = new BOCOM.IVX.Views.Content.ucDelCDZPanel();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucCDZStatPanel1 = new BOCOM.IVX.Views.Content.ucCDZStatPanel();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
@@ -154,11 +154,11 @@
             this.imageList1.Images.SetKeyName(4, "地区.png");
             this.imageList1.Images.SetKeyName(5, "区域.png");
             this.imageList1.Images.SetKeyName(6, "区域2.png");
-            this.imageList1.Images.SetKeyName(7, "冲电.png");
-            this.imageList1.Images.SetKeyName(8, "冲电2.png");
-            this.imageList1.Images.SetKeyName(9, "冲电3.png");
-            this.imageList1.Images.SetKeyName(10, "冲电4.png");
-            this.imageList1.Images.SetKeyName(11, "冲电5.png");
+            this.imageList1.Images.SetKeyName(7, "充电桩充电.png");
+            this.imageList1.Images.SetKeyName(8, "充电桩待机.png");
+            this.imageList1.Images.SetKeyName(9, "充电桩故障.png");
+            this.imageList1.Images.SetKeyName(10, "充电桩离线.png");
+            this.imageList1.Images.SetKeyName(11, "充电桩暂停.png");
             // 
             // node1
             // 
@@ -392,6 +392,22 @@
             this.superTabControl1.TabsVisible = false;
             this.superTabControl1.Text = "superTabControl1";
             // 
+            // superTabControlPanel0
+            // 
+            this.superTabControlPanel0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel0.Location = new System.Drawing.Point(0, 26);
+            this.superTabControlPanel0.Name = "superTabControlPanel0";
+            this.superTabControlPanel0.Size = new System.Drawing.Size(682, 481);
+            this.superTabControlPanel0.TabIndex = 0;
+            this.superTabControlPanel0.TabItem = this.superTabItem0;
+            // 
+            // superTabItem0
+            // 
+            this.superTabItem0.AttachedControl = this.superTabControlPanel0;
+            this.superTabItem0.GlobalItem = false;
+            this.superTabItem0.Name = "superTabItem0";
+            this.superTabItem0.Text = "superTabItem0";
+            // 
             // superTabControlPanel10
             // 
             this.superTabControlPanel10.Controls.Add(this.ucCDZRuntimeStatPanel1);
@@ -443,22 +459,6 @@
             this.superTabItem3.GlobalItem = false;
             this.superTabItem3.Name = "superTabItem3";
             this.superTabItem3.Text = "superTabItem3";
-            // 
-            // superTabControlPanel0
-            // 
-            this.superTabControlPanel0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel0.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel0.Name = "superTabControlPanel0";
-            this.superTabControlPanel0.Size = new System.Drawing.Size(682, 481);
-            this.superTabControlPanel0.TabIndex = 0;
-            this.superTabControlPanel0.TabItem = this.superTabItem0;
-            // 
-            // superTabItem0
-            // 
-            this.superTabItem0.AttachedControl = this.superTabControlPanel0;
-            this.superTabItem0.GlobalItem = false;
-            this.superTabItem0.Name = "superTabItem0";
-            this.superTabItem0.Text = "superTabItem0";
             // 
             // superTabControlPanel2
             // 

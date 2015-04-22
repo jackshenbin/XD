@@ -46,9 +46,11 @@
             this.btnSubWallet = new DevComponents.DotNetBar.ButtonX();
             this.textBoxChargeMoney = new DevComponents.Editors.DoubleInput();
             this.btnReadCardNumber = new DevComponents.DotNetBar.ButtonX();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxChargeMoney)).BeginInit();
+            this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRet
@@ -297,36 +299,55 @@
             this.btnReadCardNumber.Text = "读卡";
             this.btnReadCardNumber.Click += new System.EventHandler(this.btnReadCardNumber_Click);
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.btnReadCardNumber);
+            this.panelEx1.Controls.Add(this.textBoxChargeMoney);
+            this.panelEx1.Controls.Add(this.checkBoxFrozen);
+            this.panelEx1.Controls.Add(this.textBoxMoney);
+            this.panelEx1.Controls.Add(this.textBoxWalletMoney);
+            this.panelEx1.Controls.Add(this.textBoxCardSerialNumber);
+            this.panelEx1.Controls.Add(this.labelX11);
+            this.panelEx1.Controls.Add(this.labelX14);
+            this.panelEx1.Controls.Add(this.textBoxUserName);
+            this.panelEx1.Controls.Add(this.labelX13);
+            this.panelEx1.Controls.Add(this.labelX12);
+            this.panelEx1.Controls.Add(this.textBoxCardID);
+            this.panelEx1.Controls.Add(this.labelX5);
+            this.panelEx1.Controls.Add(this.labelRet);
+            this.panelEx1.Controls.Add(this.btnSubWallet);
+            this.panelEx1.Controls.Add(this.labelX1);
+            this.panelEx1.Controls.Add(this.labelX9);
+            this.panelEx1.Controls.Add(this.labelX3);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(649, 340);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 42;
+            // 
             // ucWalletReChargePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnReadCardNumber);
-            this.Controls.Add(this.textBoxChargeMoney);
-            this.Controls.Add(this.checkBoxFrozen);
-            this.Controls.Add(this.textBoxMoney);
-            this.Controls.Add(this.textBoxWalletMoney);
-            this.Controls.Add(this.textBoxCardSerialNumber);
-            this.Controls.Add(this.labelX11);
-            this.Controls.Add(this.labelX14);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.labelX13);
-            this.Controls.Add(this.labelX12);
-            this.Controls.Add(this.textBoxCardID);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelRet);
-            this.Controls.Add(this.btnSubWallet);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.labelX9);
-            this.Controls.Add(this.labelX3);
+            this.Controls.Add(this.panelEx1);
             this.Name = "ucWalletReChargePanel";
-            this.Size = new System.Drawing.Size(764, 340);
+            this.Size = new System.Drawing.Size(649, 340);
             this.Load += new System.EventHandler(this.ucWalletChargePanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxChargeMoney)).EndInit();
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -350,5 +371,6 @@
         private DevComponents.DotNetBar.ButtonX btnSubWallet;
         private DevComponents.Editors.DoubleInput textBoxChargeMoney;
         private DevComponents.DotNetBar.ButtonX btnReadCardNumber;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
     }
 }

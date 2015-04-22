@@ -46,8 +46,10 @@
             this.textBoxWalletMoney = new DevComponents.Editors.DoubleInput();
             this.checkBoxFrozen = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.textBoxCardID = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
+            this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRet
@@ -59,7 +61,7 @@
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelRet.Location = new System.Drawing.Point(271, 239);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(193, 23);
+            this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 1;
             // 
             // textBoxUserName
@@ -294,34 +296,53 @@
             this.textBoxCardID.WatermarkEnabled = false;
             this.textBoxCardID.TextChanged += new System.EventHandler(this.textBoxCardID_TextChanged);
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.textBoxCardID);
+            this.panelEx1.Controls.Add(this.checkBoxFrozen);
+            this.panelEx1.Controls.Add(this.textBoxMoney);
+            this.panelEx1.Controls.Add(this.textBoxWalletMoney);
+            this.panelEx1.Controls.Add(this.labelX5);
+            this.panelEx1.Controls.Add(this.labelRet);
+            this.panelEx1.Controls.Add(this.btnReadCardNumber);
+            this.panelEx1.Controls.Add(this.buttonQuitCard);
+            this.panelEx1.Controls.Add(this.labelX1);
+            this.panelEx1.Controls.Add(this.textBoxCardSerialNumber);
+            this.panelEx1.Controls.Add(this.textBoxCreatDate);
+            this.panelEx1.Controls.Add(this.labelX15);
+            this.panelEx1.Controls.Add(this.labelX11);
+            this.panelEx1.Controls.Add(this.labelX14);
+            this.panelEx1.Controls.Add(this.textBoxUserName);
+            this.panelEx1.Controls.Add(this.labelX13);
+            this.panelEx1.Controls.Add(this.labelX4);
+            this.panelEx1.Controls.Add(this.labelX12);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(647, 320);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 26;
+            // 
             // ucQuitCardPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxCardID);
-            this.Controls.Add(this.checkBoxFrozen);
-            this.Controls.Add(this.textBoxMoney);
-            this.Controls.Add(this.textBoxWalletMoney);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelRet);
-            this.Controls.Add(this.btnReadCardNumber);
-            this.Controls.Add(this.buttonQuitCard);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxCardSerialNumber);
-            this.Controls.Add(this.textBoxCreatDate);
-            this.Controls.Add(this.labelX15);
-            this.Controls.Add(this.labelX11);
-            this.Controls.Add(this.labelX14);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.labelX13);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.labelX12);
+            this.Controls.Add(this.panelEx1);
             this.Name = "ucQuitCardPanel";
             this.Size = new System.Drawing.Size(647, 320);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).EndInit();
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -345,5 +366,6 @@
         private DevComponents.Editors.DoubleInput textBoxWalletMoney;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFrozen;
         private BOCOM.IVX.Controls.ucCardIDTextBox textBoxCardID;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
     }
 }

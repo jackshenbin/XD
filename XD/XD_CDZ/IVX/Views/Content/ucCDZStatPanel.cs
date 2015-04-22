@@ -151,10 +151,10 @@ namespace BOCOM.IVX.Views.Content
                 minval -= 0;
             }
             chart3.ChartAreas[0].AxisY.Maximum = maxval;
-            chart3.ChartAreas[0].AxisY.Minimum = minval;
+            chart3.ChartAreas[0].AxisY.Minimum = 0;
 
-            string sms_sqlstr = string.Format("SELECT DATE_FORMAT( date_time, '%Y-%m-%d %H:%i:%s' ) AS time, total_degree FROM pile_state_t "
-    + " WHERE dev_id = '{0}' and date_time  BETWEEN '{1}' and '{2}'"
+            string sms_sqlstr = string.Format("SELECT DATE_FORMAT( date_time, '%Y-%m-%d %H:%i:%s' ) AS time, total_degree as total_degree FROM pile_state_t "
+    + " WHERE dev_id = '{0}' and date_time  BETWEEN '{1}' and '{2}' "
     , id, dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss"), dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             //sms_sqlstr = "select DATE_FORMAT(date_time,'%Y-%m-%d %H:%i:%s') as time,total_degree  from pile_state_t where dev_id=" + id + " order by date_time limit 100";
             MySqlDataAdapter sms_da_total_degree = new MySqlDataAdapter(sms_sqlstr, Framework.Environment.SMS_CONN);
@@ -164,7 +164,6 @@ namespace BOCOM.IVX.Views.Content
             ////第二步：绑定一个数据源
             //if (sms_dsa.Tables[0].Rows.Count > 0)
             //    Chartlet2.BindChartData(sms_dsa);
-
             chart3.DataSource = sms_ds_total_degree;
             chart3.Series["Series1"].XValueMember = "time";
             chart3.Series["Series1"].YValueMembers = "total_degree";
@@ -280,10 +279,10 @@ namespace BOCOM.IVX.Views.Content
                 minval -= 0;
             }
             chart1.ChartAreas[0].AxisY.Maximum = maxval;
-            chart1.ChartAreas[0].AxisY.Minimum = minval;
+            chart1.ChartAreas[0].AxisY.Minimum = 0;
 
-            string sms_sqlstr = string.Format("SELECT DATE_FORMAT( date_time, '%Y-%m-%d %H:%i:%s' ) AS time, output_vol FROM pile_state_t "
-                + " WHERE dev_id = '{0}' and date_time  BETWEEN '{1}' and '{2}'"
+            string sms_sqlstr = string.Format("SELECT DATE_FORMAT( date_time, '%Y-%m-%d %H:%i:%s' ) AS time, output_vol as output_vol FROM pile_state_t "
+                + " WHERE dev_id = '{0}' and date_time  BETWEEN '{1}' and '{2}' "
                 , id, dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss"), dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             //string sms_sqlstr = "select DATE_FORMAT(date_time,'%Y-%m-%d %H:%i:%s') as time,output_vol  from pile_state_t where dev_id='" + id + "' order by date_time limit 100";
             MySqlDataAdapter sms_dav = new MySqlDataAdapter(sms_sqlstr, Framework.Environment.SMS_CONN);

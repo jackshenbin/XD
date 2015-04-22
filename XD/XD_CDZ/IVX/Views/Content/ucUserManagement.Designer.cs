@@ -40,7 +40,7 @@
             this.ucCurrentUser1 = new BOCOM.IVX.Views.Content.ucCurrentUser();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewX1 = new Controls.GridViewEx();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -539,7 +539,7 @@
         private DevComponents.DotNetBar.TextBoxItem bindingNavigatorPositionItem;
         private DevComponents.DotNetBar.ButtonItem bindingNavigatorMoveNextItem;
         private DevComponents.DotNetBar.ButtonItem bindingNavigatorMoveLastItem;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private Controls.GridViewEx dataGridViewX1;
         private System.Windows.Forms.Panel panel1;
         private ucAddUserPanel ucAddUserPanel1;
         private ucChangeUserPass ucChangeUserPass1;

@@ -128,7 +128,7 @@ namespace BOCOM.IVX.Views.Content
                     if (level == 1)
                     {
                         DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(row["node_name"].ToString());
-                        n.ImageIndex = 3;
+                        n.ImageIndex = 4;
                         n.Tag = row;
                         n.NodeClick += n_NodeClick;
                         FillDevice(n);
@@ -176,7 +176,10 @@ namespace BOCOM.IVX.Views.Content
                             if (r["node_id"].ToString() == item["parent_id"].ToString())
                             {
                                 DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(item["node_name"].ToString());
-                                n.ImageIndex = 3;
+                                if (level == 3)
+                                    n.ImageIndex = 6;
+                                else
+                                    n.ImageIndex = 5;
                                 n.Tag = item;
                                 n.NodeClick += n_NodeClick;
                                 FillDevice(n);

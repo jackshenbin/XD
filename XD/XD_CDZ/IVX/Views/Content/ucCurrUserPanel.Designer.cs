@@ -32,6 +32,7 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.textBoxLastTime = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -40,7 +41,8 @@
             this.textBoxUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxUserType
@@ -73,6 +75,10 @@
             // comboItem3
             // 
             this.comboItem3.Text = "操作员";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "报表查看";
             // 
             // labelX4
             // 
@@ -174,26 +180,41 @@
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "用户名";
             // 
-            // comboItem4
+            // panelEx1
             // 
-            this.comboItem4.Text = "报表查看";
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.comboBoxUserType);
+            this.panelEx1.Controls.Add(this.labelX5);
+            this.panelEx1.Controls.Add(this.labelX4);
+            this.panelEx1.Controls.Add(this.labelX1);
+            this.panelEx1.Controls.Add(this.textBoxLastTime);
+            this.panelEx1.Controls.Add(this.textBoxUserName);
+            this.panelEx1.Controls.Add(this.labelX3);
+            this.panelEx1.Controls.Add(this.labelX2);
+            this.panelEx1.Controls.Add(this.textBoxCreateTime);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(489, 187);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 4;
             // 
             // ucCurrUserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBoxUserType);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxLastTime);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.labelX3);
-            this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.textBoxCreateTime);
+            this.Controls.Add(this.panelEx1);
             this.Name = "ucCurrUserPanel";
             this.Size = new System.Drawing.Size(489, 187);
             this.Load += new System.EventHandler(this.ucCurrUserPanel_Load);
+            this.panelEx1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -213,5 +234,6 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.Editors.ComboItem comboItem4;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
     }
 }

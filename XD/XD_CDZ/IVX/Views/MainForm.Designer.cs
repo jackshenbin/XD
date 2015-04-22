@@ -165,6 +165,7 @@
             this.ClientSize = new System.Drawing.Size(1018, 652);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "XD";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

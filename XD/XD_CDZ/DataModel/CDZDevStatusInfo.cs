@@ -35,7 +35,7 @@ namespace BOCOM.DataModel
         //public Int32 GuZongDianDu { get; set; }//谷总电度 精确到小数点后一位
         public string FactoryID { get; set; }//厂商编号
         public string DevSoftVersion { get; set; }//软件版本号
-        public Int32 CRC { get; set; }//唯一CRC校验码
+        public ushort CRC { get; set; }//唯一CRC校验码
     }
 
 }

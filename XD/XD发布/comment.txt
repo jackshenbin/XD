@@ -1,0 +1,5 @@
+;下面的注释包含自解压脚本命令
+
+Path=XD\电动汽车充电系统
+Setup=regcom.bat
+Overwrite=1

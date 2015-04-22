@@ -72,6 +72,8 @@
             this.comboItem11 = new DevComponents.Editors.ComboItem();
             this.buttonGroup = new DevComponents.DotNetBar.ButtonX();
             this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRet
@@ -531,44 +533,63 @@
             this.TextBoxDevid.Value = "";
             this.TextBoxDevid.WatermarkEnabled = false;
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.buttonGroup);
+            this.panelEx1.Controls.Add(this.TextBoxDevid);
+            this.panelEx1.Controls.Add(this.comboBoxExCounty);
+            this.panelEx1.Controls.Add(this.comboBoxExDistrict);
+            this.panelEx1.Controls.Add(this.comboBoxExProvince);
+            this.panelEx1.Controls.Add(this.comboBoxExCity);
+            this.panelEx1.Controls.Add(this.comboBoxType);
+            this.panelEx1.Controls.Add(this.TextBoxsAddr);
+            this.panelEx1.Controls.Add(this.TextBoxsPosition);
+            this.panelEx1.Controls.Add(this.TextBoxsSIM);
+            this.panelEx1.Controls.Add(this.TextBoxsVersion);
+            this.panelEx1.Controls.Add(this.TextBoxsFactoryid);
+            this.panelEx1.Controls.Add(this.labelX5);
+            this.panelEx1.Controls.Add(this.labelX13);
+            this.panelEx1.Controls.Add(this.labelRet);
+            this.panelEx1.Controls.Add(this.labelX9);
+            this.panelEx1.Controls.Add(this.labelX12);
+            this.panelEx1.Controls.Add(this.buttonAddDevice);
+            this.panelEx1.Controls.Add(this.labelX6);
+            this.panelEx1.Controls.Add(this.labelX3);
+            this.panelEx1.Controls.Add(this.labelX1);
+            this.panelEx1.Controls.Add(this.TextBoxUserid);
+            this.panelEx1.Controls.Add(this.labelX11);
+            this.panelEx1.Controls.Add(this.labelX4);
+            this.panelEx1.Controls.Add(this.labelX8);
+            this.panelEx1.Controls.Add(this.labelX7);
+            this.panelEx1.Controls.Add(this.labelX10);
+            this.panelEx1.Controls.Add(this.labelX2);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(673, 423);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 29;
+            // 
             // ucAddCDZPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonGroup);
-            this.Controls.Add(this.TextBoxDevid);
-            this.Controls.Add(this.comboBoxExCounty);
-            this.Controls.Add(this.comboBoxExDistrict);
-            this.Controls.Add(this.comboBoxExProvince);
-            this.Controls.Add(this.comboBoxExCity);
-            this.Controls.Add(this.comboBoxType);
-            this.Controls.Add(this.TextBoxsAddr);
-            this.Controls.Add(this.TextBoxsPosition);
-            this.Controls.Add(this.TextBoxsSIM);
-            this.Controls.Add(this.TextBoxsVersion);
-            this.Controls.Add(this.TextBoxsFactoryid);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelX13);
-            this.Controls.Add(this.labelRet);
-            this.Controls.Add(this.labelX9);
-            this.Controls.Add(this.labelX12);
-            this.Controls.Add(this.buttonAddDevice);
-            this.Controls.Add(this.labelX6);
-            this.Controls.Add(this.labelX3);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.TextBoxUserid);
-            this.Controls.Add(this.labelX11);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.labelX8);
-            this.Controls.Add(this.labelX7);
-            this.Controls.Add(this.labelX10);
-            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.panelEx1);
             this.Name = "ucAddCDZPanel";
             this.Size = new System.Drawing.Size(673, 423);
             this.Load += new System.EventHandler(this.ucAddCDZPanel_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ucAddCDZPanel_MouseClick);
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -618,5 +639,6 @@
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem11;
         private DevComponents.DotNetBar.ButtonX buttonGroup;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
     }
 }

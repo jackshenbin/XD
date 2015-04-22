@@ -61,8 +61,10 @@ namespace XDTCPProtocol
             sb.Append("Len:" + e.DataSize + ",Data:");
             for (int i = 0; i < e.DataSize; i++)
             {
-                sb.Append(e.Data[i].ToString("X2"));
+                sb.Append(e.Data[i].ToString("X2")+" ");
             }
+
+            MyLog4Net.ILogExtension.DebugWithDebugView(MyLog4Net.Container.Instance.Log, "m_tcpManager_OnReceiveData ret:" + sb.ToString());
             if (OnReceiveData != null)
                 OnReceiveData(sb.ToString(), null);
 
@@ -309,6 +311,9 @@ namespace XDTCPProtocol
 
                 if (OnReceiveNoteDevChargeStatus != null)
                     OnReceiveNoteDevChargeStatus(msg);
+                SendGetDevVersion(new string(msg.DevID));
+                SendGetDevChargeInfo(new string(msg.DevID));
+
             }
             catch (Exception ex)
             {
@@ -346,6 +351,8 @@ namespace XDTCPProtocol
 
                 if (OnReceiveNoteDevStatus != null)
                     OnReceiveNoteDevStatus(msg);
+                SendGetDevVersion(new string(msg.DevID));
+                SendGetDevChargeInfo(new string(msg.DevID));
             }
             catch (Exception ex)
             {
@@ -365,6 +372,7 @@ namespace XDTCPProtocol
 
                 if (OnReceiveSubscribrDevStatus != null)
                     OnReceiveSubscribrDevStatus(msg);
+                
             }
             catch (Exception ex)
             {
@@ -602,7 +610,19 @@ namespace XDTCPProtocol
             protocol[protocol.Length - 2] = (byte)((crc >> 8) & 0xff);
             protocol[protocol.Length - 1] = (byte)(crc & 0xff);
             Marshal.FreeHGlobal(phd);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in protocol)
+            {
+                sb.Append(item.ToString("X2")+" ");
+            }
+            MyLog4Net.ILogExtension.DebugWithDebugView(MyLog4Net.Container.Instance.Log, "m_tcpManager_SendeData ret:" + sb.ToString());
+            
+            
             m_tcpManager.SendData(protocol);
+
+            
+
             //System.Diagnostics.Trace.WriteLine(string.Format("发送数据：{0}", protocol));
 
         }
@@ -634,18 +654,18 @@ namespace XDTCPProtocol
         private static string GetMacAddress()
         {
             string mac = "10BF483ED5AC";
-            System.Management.ManagementClass mc = new System.Management.ManagementClass("Win32_NetworkAdapterConfiguration");
-            System.Management.ManagementObjectCollection moc = mc.GetInstances();
-            foreach (System.Management.ManagementObject item in moc)
-            {
-                if ((bool)item["IPEnable"])
-                {
-                    mac = item["MacAddress"].ToString();
-                    break;
-                }
-            }
-            moc = null;
-            mc = null;
+            //System.Management.ManagementClass mc = new System.Management.ManagementClass("Win32_NetworkAdapterConfiguration");
+            //System.Management.ManagementObjectCollection moc = mc.GetInstances();
+            //foreach (System.Management.ManagementObject item in moc)
+            //{
+            //    if ((bool)item["IPEnable"])
+            //    {
+            //        mac = item["MacAddress"].ToString();
+            //        break;
+            //    }
+            //}
+            //moc = null;
+            //mc = null;
             return mac;
         }
 
@@ -817,7 +837,7 @@ namespace XDTCPProtocol
         public char[] FactoryID;//厂商编号
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Common.MAX_NAME_LEN)]
         public char[] DevSoftVersion;//软件版本号
-        public Int32 CRC;//唯一CRC校验码
+        public UInt16 CRC;//唯一CRC校验码
     }
 
 

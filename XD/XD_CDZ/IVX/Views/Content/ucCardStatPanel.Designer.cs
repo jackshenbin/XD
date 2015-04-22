@@ -47,10 +47,12 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.maskedTextBoxAdv1 = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxWalletMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMoney)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
+            this.panelEx3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRet
@@ -62,7 +64,7 @@
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelRet.Location = new System.Drawing.Point(398, 12);
             this.labelRet.Name = "labelRet";
-            this.labelRet.Size = new System.Drawing.Size(220, 23);
+            this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 1;
             // 
             // textBoxUserName
@@ -260,7 +262,7 @@
             this.panelEx1.Controls.Add(this.labelRet);
             this.panelEx1.Location = new System.Drawing.Point(25, 32);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(646, 53);
+            this.panelEx1.Size = new System.Drawing.Size(648, 53);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -332,7 +334,7 @@
             this.panelEx2.Controls.Add(this.labelX8);
             this.panelEx2.Location = new System.Drawing.Point(25, 105);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(646, 235);
+            this.panelEx2.Size = new System.Drawing.Size(648, 235);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -342,13 +344,31 @@
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 25;
             // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.panelEx2);
+            this.panelEx3.Controls.Add(this.panelEx1);
+            this.panelEx3.Controls.Add(this.labelX5);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(693, 369);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 26;
+            // 
             // ucCardStatPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelEx2);
-            this.Controls.Add(this.panelEx1);
-            this.Controls.Add(this.labelX5);
+            this.Controls.Add(this.panelEx3);
             this.Name = "ucCardStatPanel";
             this.Size = new System.Drawing.Size(693, 369);
             this.Load += new System.EventHandler(this.ucChargePanel_Load);
@@ -358,6 +378,7 @@
             this.panelEx1.PerformLayout();
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
+            this.panelEx3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -383,5 +404,6 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private BOCOM.IVX.Controls.ucCardIDTextBox maskedTextBoxAdv1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
+        private DevComponents.DotNetBar.PanelEx panelEx3;
     }
 }

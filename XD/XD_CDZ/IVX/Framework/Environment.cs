@@ -35,7 +35,6 @@ namespace BOCOM.IVX.Framework
         public static long MAX_PRIVATE_SIZE = (long)700 * 1024 * 1024;
         public static readonly int MAX_TASKUNIT_UPLOAD_COUNT = 50;
 
-        private static SearchResultDisplayMode s_SearchResultDisplayMode = DataModel.SearchResultDisplayMode.ThumbNailAllSearchItem;
 
         private static Configuration s_Config;
         private static bool s_IsSearchMixedMode = false;

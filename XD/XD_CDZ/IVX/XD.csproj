@@ -56,8 +56,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>xd.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ShanghaiProduct|AnyCPU' ">
     <OutputPath>bin\ShanghaiProduct\</OutputPath>
@@ -221,6 +220,12 @@
     <Compile Include="Common\TextUtil.cs" />
     <Compile Include="Common\UIUtil.cs" />
     <Compile Include="Common\Utils.cs" />
+    <Compile Include="Controls\GridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GridViewEx.designer.cs">
+      <DependentUpon>GridViewEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucCardIDTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -437,6 +442,9 @@
     <Compile Include="Views\ucXDMain.Designer.cs">
       <DependentUpon>ucXDMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\GridViewEx.resx">
+      <DependentUpon>GridViewEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucCardIDTextBox.resx">
       <DependentUpon>ucCardIDTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -601,6 +609,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IVX.ico" />
+    <Content Include="xd.ico" />
     <None Include="Resources\bg_menu_cur.gif" />
     <Content Include="Resources\loading_2.gif" />
     <Content Include="Resources\loading_icon_small.gif" />

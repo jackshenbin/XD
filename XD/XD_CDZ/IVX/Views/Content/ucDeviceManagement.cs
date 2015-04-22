@@ -96,11 +96,34 @@ namespace BOCOM.IVX.Views.Content
                             if (sms_ds3.Tables[0].Rows.Count > 0)
                             {
                                 DataRow r3 = sms_ds3.Tables[0].Rows[0];
-                                n.ImageIndex = int.Parse(r3["work_state"].ToString()) + 7;
+                                int workstate = int.Parse(r3["work_state"].ToString());
+                                switch (workstate)
+                                {
+                                    case 0://离线，
+                                        n.ImageIndex = 10;
+                                        break;
+                                    case 1://故障
+                                        n.ImageIndex = 9;
+                                        break;
+
+                                    case 2://待机，
+                                        n.ImageIndex = 8;
+                                        break;
+
+                                    case 3://工作
+                                        n.ImageIndex = 7;
+                                        break;
+
+                                    default:
+                                        n.ImageIndex = 10;
+                                        break;
+
+                                }
+                                //n.ImageIndex = int.Parse(r3["work_state"].ToString()) + 7;
                             }
                             else
                             {
-                                n.ImageIndex = 7;
+                                n.ImageIndex = 10;
 
                             }
 

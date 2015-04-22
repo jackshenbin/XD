@@ -43,24 +43,6 @@ namespace MyLog4Net
             }
         }
 
-        public ILog OperateLog
-        {
-            get
-            {
-                if (m_OperateLog == null)
-                {
-                    Assembly asm = Assembly.GetCallingAssembly();
-
-                    string configFile = Path.Combine(Directory.GetParent(asm.Location).FullName, "XD.exe.config");
-                    FileInfo fi = new FileInfo(configFile);
-
-                    log4net.Config.XmlConfigurator.Configure(fi);
-                    m_OperateLog = LogManager.GetLogger("OperateLog");
-                }
-                return m_OperateLog;
-            }
-        }
-
     }
 
     public static class ILogExtension

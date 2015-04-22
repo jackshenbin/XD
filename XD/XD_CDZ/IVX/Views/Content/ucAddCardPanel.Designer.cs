@@ -63,6 +63,8 @@
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.textBoxPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxRePassword = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRet
@@ -400,7 +402,7 @@
             this.labelX12.ForeColor = System.Drawing.Color.Red;
             this.labelX12.Location = new System.Drawing.Point(324, 28);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(13, 18);
+            this.labelX12.Size = new System.Drawing.Size(13, 16);
             this.labelX12.TabIndex = 1;
             this.labelX12.Text = "*";
             // 
@@ -414,7 +416,7 @@
             this.labelX13.ForeColor = System.Drawing.Color.Red;
             this.labelX13.Location = new System.Drawing.Point(324, 54);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(13, 18);
+            this.labelX13.Size = new System.Drawing.Size(13, 16);
             this.labelX13.TabIndex = 1;
             this.labelX13.Text = "*";
             // 
@@ -428,7 +430,7 @@
             this.labelX14.ForeColor = System.Drawing.Color.Red;
             this.labelX14.Location = new System.Drawing.Point(368, 86);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(13, 18);
+            this.labelX14.Size = new System.Drawing.Size(13, 16);
             this.labelX14.TabIndex = 1;
             this.labelX14.Text = "*";
             // 
@@ -503,46 +505,65 @@
             this.textBoxRePassword.TabIndex = 25;
             this.textBoxRePassword.TextChanged += new System.EventHandler(this.textBoxRePassword_TextChanged);
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.textBoxRePassword);
+            this.panelEx1.Controls.Add(this.textBoxPassword);
+            this.panelEx1.Controls.Add(this.textBoxCardID);
+            this.panelEx1.Controls.Add(this.checkBoxPasswordable);
+            this.panelEx1.Controls.Add(this.checkBoxFemale);
+            this.panelEx1.Controls.Add(this.checkBoxMale);
+            this.panelEx1.Controls.Add(this.comboBoxExIdentityType);
+            this.panelEx1.Controls.Add(this.labelX5);
+            this.panelEx1.Controls.Add(this.labelRet);
+            this.panelEx1.Controls.Add(this.labelX9);
+            this.panelEx1.Controls.Add(this.btnReadCardNumber);
+            this.panelEx1.Controls.Add(this.btnAddUser);
+            this.panelEx1.Controls.Add(this.labelX6);
+            this.panelEx1.Controls.Add(this.labelX1);
+            this.panelEx1.Controls.Add(this.textBoxCarPlant);
+            this.panelEx1.Controls.Add(this.textBoxIdentityNumber);
+            this.panelEx1.Controls.Add(this.textBoxTelephone);
+            this.panelEx1.Controls.Add(this.textBoxCardSerialNumber);
+            this.panelEx1.Controls.Add(this.labelX11);
+            this.panelEx1.Controls.Add(this.textBoxUserName);
+            this.panelEx1.Controls.Add(this.labelX4);
+            this.panelEx1.Controls.Add(this.labelX8);
+            this.panelEx1.Controls.Add(this.labelX14);
+            this.panelEx1.Controls.Add(this.labelX13);
+            this.panelEx1.Controls.Add(this.labelX12);
+            this.panelEx1.Controls.Add(this.labelX15);
+            this.panelEx1.Controls.Add(this.labelX3);
+            this.panelEx1.Controls.Add(this.labelX7);
+            this.panelEx1.Controls.Add(this.labelX10);
+            this.panelEx1.Controls.Add(this.labelX2);
+            this.panelEx1.Controls.Add(this.textBoxAddress);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(673, 423);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 26;
+            // 
             // ucAddCardPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxRePassword);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxCardID);
-            this.Controls.Add(this.checkBoxPasswordable);
-            this.Controls.Add(this.checkBoxFemale);
-            this.Controls.Add(this.checkBoxMale);
-            this.Controls.Add(this.comboBoxExIdentityType);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelRet);
-            this.Controls.Add(this.labelX9);
-            this.Controls.Add(this.btnReadCardNumber);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.labelX6);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxCarPlant);
-            this.Controls.Add(this.textBoxIdentityNumber);
-            this.Controls.Add(this.textBoxTelephone);
-            this.Controls.Add(this.textBoxCardSerialNumber);
-            this.Controls.Add(this.labelX11);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.labelX8);
-            this.Controls.Add(this.labelX14);
-            this.Controls.Add(this.labelX13);
-            this.Controls.Add(this.labelX12);
-            this.Controls.Add(this.labelX15);
-            this.Controls.Add(this.labelX3);
-            this.Controls.Add(this.labelX7);
-            this.Controls.Add(this.labelX10);
-            this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.textBoxAddress);
+            this.Controls.Add(this.panelEx1);
             this.Name = "ucAddCardPanel";
             this.Size = new System.Drawing.Size(673, 423);
             this.Load += new System.EventHandler(this.ucAddCardPanel_Load);
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -583,5 +604,6 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxPassword;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxRePassword;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
     }
 }

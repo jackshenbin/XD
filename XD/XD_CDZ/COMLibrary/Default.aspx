@@ -32,7 +32,7 @@
 </head>
     <script type="text/javascript">
         var ServerDBIP = "121.40.88.117";
-        var ServerClientVer = "1.0.0.9";
+        var ServerClientVer = "1.0.0.10";
 
         function switchwnd(index) {
             //alert("VdaSwitchForm index:" + index);
@@ -40,7 +40,7 @@
         }
 
         function initocx(us, ps) {
-            //alert("VdaInitialization " );
+            //alert("VdaInitialization ip"+ServerDBIP+";us"+us+";ps"+ps );
             try {
                 //alert("3");
                 var loginstr = "<Ret><RetMsg><ErrorCode>0</ErrorCode><Description></Description></RetMsg><RetInfo></RetInfo></Ret>";

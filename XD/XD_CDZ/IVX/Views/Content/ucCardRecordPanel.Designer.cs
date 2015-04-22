@@ -46,7 +46,7 @@
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewX1 = new BOCOM.IVX.Controls.GridViewEx();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -533,7 +533,7 @@
         private DevComponents.DotNetBar.LabelX labelX18;
         private BOCOM.IVX.Controls.ucCardIDTextBox TextBoxCardSearch;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private BOCOM.IVX.Controls.GridViewEx dataGridViewX1;
         private DevComponents.DotNetBar.ButtonX btnReadCardNumber;
         private DevComponents.DotNetBar.LabelX labelRet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
