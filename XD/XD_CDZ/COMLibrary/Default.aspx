@@ -126,7 +126,7 @@
                 //alert("1");
                 ocxversiion = XDSDK.VdaGetVersion();
                 //alert(ocxversiion +"\n"+version);
-                if (ocxversiion < version) {
+                if (ocxversiion != version) {
                 //alert("1.1");
                 document.getElementById("XDSDK").style.height = 0;
                     document.getElementById("versionckeck").innerHTML = "<li>控件版本不匹配</li>"
