@@ -20,7 +20,6 @@ namespace BOCOM.IVX.Controls
             this.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) | AnchorStyles.Left) | AnchorStyles.Right)));
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
-            //this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.BackgroundColor = System.Drawing.SystemColors.Control;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 
@@ -28,7 +27,7 @@ namespace BOCOM.IVX.Controls
             this.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(240)))));
             
@@ -37,7 +36,6 @@ namespace BOCOM.IVX.Controls
             RowHeadersDefaultCellStyle.Font = new Font(SystemFonts.CaptionFont, FontStyle.Bold);
             RowHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.RoyalBlue;
             
-          //  CallCellAddEx+=new EventHandler(ca.CellAddEx);
             this.KeyDown += new KeyEventHandler(GridViewEx_KeyDown);
             
         }

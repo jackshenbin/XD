@@ -83,6 +83,7 @@
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelRet = new DevComponents.DotNetBar.LabelX();
             this.buttonDel = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
@@ -623,9 +624,9 @@
             this.panelEx1.Controls.Add(this.labelX13);
             this.panelEx1.Controls.Add(this.labelX15);
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
-            this.panelEx1.Location = new System.Drawing.Point(18, 70);
+            this.panelEx1.Location = new System.Drawing.Point(18, 92);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(690, 226);
+            this.panelEx1.Size = new System.Drawing.Size(686, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -662,9 +663,9 @@
             this.panelEx2.Controls.Add(this.TextBoxDevidSearch);
             this.panelEx2.Controls.Add(this.btnSearch);
             this.panelEx2.Controls.Add(this.labelX17);
-            this.panelEx2.Location = new System.Drawing.Point(18, 3);
+            this.panelEx2.Location = new System.Drawing.Point(18, 32);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(690, 43);
+            this.panelEx2.Size = new System.Drawing.Size(686, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -735,12 +736,12 @@
             this.groupPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelX19);
             this.groupPanel1.Controls.Add(this.labelRet);
             this.groupPanel1.Controls.Add(this.panelEx2);
             this.groupPanel1.Controls.Add(this.panelEx1);
             this.groupPanel1.Controls.Add(this.buttonDel);
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(756, 375);
@@ -760,7 +761,7 @@
             this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderTopWidth = 1;
             this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
@@ -773,7 +774,20 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "充电桩信息";
+            // 
+            // labelX19
+            // 
+            this.labelX19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX19.Location = new System.Drawing.Point(0, 0);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(121, 23);
+            this.labelX19.TabIndex = 27;
+            this.labelX19.Text = "充电桩注销：";
             // 
             // labelRet
             // 
@@ -783,7 +797,7 @@
             // 
             // 
             this.labelRet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelRet.Location = new System.Drawing.Point(380, 311);
+            this.labelRet.Location = new System.Drawing.Point(399, 336);
             this.labelRet.Name = "labelRet";
             this.labelRet.Size = new System.Drawing.Size(0, 0);
             this.labelRet.TabIndex = 25;
@@ -792,7 +806,7 @@
             // 
             this.buttonDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonDel.Location = new System.Drawing.Point(294, 311);
+            this.buttonDel.Location = new System.Drawing.Point(294, 331);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(80, 23);
             this.buttonDel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -875,6 +889,7 @@
         private DevComponents.DotNetBar.LabelX labelSearchStat;
         private DevComponents.DotNetBar.ButtonX buttonDel;
         private DevComponents.DotNetBar.LabelX labelRet;
+        private DevComponents.DotNetBar.LabelX labelX19;
 
     }
 }

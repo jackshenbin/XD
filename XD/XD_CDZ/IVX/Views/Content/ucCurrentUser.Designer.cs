@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -42,16 +44,27 @@
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BOCOM.IVX.Properties.Resources.userhead;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucCurrentUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BOCOM.IVX.Properties.Resources.userhead;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "ucCurrentUser";
-            this.Size = new System.Drawing.Size(185, 59);
+            this.Size = new System.Drawing.Size(405, 59);
             this.Load += new System.EventHandler(this.ucCurrentUser_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -1,10 +1,10 @@
-C:\Users\jack\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.dll
-C:\Users\jack\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.pdb
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.dll
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.pdb
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.csprojResolveAssemblyReference.cache
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.dll
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.pdb
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.csprojResolveAssemblyReference.cache
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.dll
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\XDTCPProtocol.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.csprojResolveAssemblyReference.cache
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\XDTCPProtocol\obj\x86\Release\XDTCPProtocol.pdb

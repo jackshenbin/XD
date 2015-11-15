@@ -1,0 +1,5 @@
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\DataModel.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\DataModel.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\DataModel\obj\Release\DataModel.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\DataModel\obj\Release\DataModel.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\DataModel\obj\Release\DataModel.csprojResolveAssemblyReference.cache

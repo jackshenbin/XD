@@ -148,8 +148,8 @@
   <data name="车辆检索3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\车辆检索3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="任务管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\任务管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IVX_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IVX.exe.config;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="全列表3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\全列表3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,9 +159,6 @@
   </data>
   <data name="汇总导出1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\汇总导出1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dialog_resize3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dialog_resize3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="车辆检索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\车辆检索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +181,14 @@
   <data name="清空4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\清空4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="智能检索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\智能检索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="人脸检索1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人脸检索1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="图片分组1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\图片分组1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="案件管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\案件管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="人脸检索3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\人脸检索3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +247,8 @@
   <data name="排序2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\排序2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="编辑案件1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\编辑案件1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_menu_cur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_menu_cur.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="编辑案件2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\编辑案件2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,8 +292,8 @@
   <data name="案件管理1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\案件管理1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IVX_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IVX.exe.config;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="智能检索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\智能检索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="浓缩摘要" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\浓缩摘要.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -303,6 +303,9 @@
   </data>
   <data name="bocom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bocom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="任务管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\任务管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="摘要控制" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\摘要控制.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,8 +325,8 @@
   <data name="排序1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\排序1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="案件管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\案件管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="编辑案件1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\编辑案件1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dialog_close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dialog_close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,11 +337,11 @@
   <data name="全图片1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\全图片1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dialog_resize3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dialog_resize3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="进入案件1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\进入案件1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TileWindowsHorizontallyHS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TileWindowsHorizontallyHS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="进入案件2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\进入案件2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -348,6 +351,9 @@
   </data>
   <data name="ThumbnailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThumbnailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TileWindowsHorizontallyHS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TileWindowsHorizontallyHS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dialog_close3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dialog_close3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,14 +388,14 @@
   <data name="汇总导出2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\汇总导出2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="运动物检索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\运动物检索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="运动物" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\运动物.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="人脸检索1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\人脸检索1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="userheadbk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userheadbk.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="运动物检索2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\运动物检索2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="排序3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\排序3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -415,7 +421,16 @@
   <data name="TextUtil_Msg_InvalidInput2" xml:space="preserve">
     <value>{0} 输入有误，输入字符串只能包含文字(中文占两个字符长度)、字母、数字、'_'、'.'等，长度介于{1}-{2}</value>
   </data>
-  <data name="bg_menu_cur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_menu_cur.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="充电桩充电" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\充电桩充电.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="充电桩待机" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\充电桩待机.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="充电桩故障" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\充电桩故障.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="充电桩离线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\充电桩离线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -65,7 +65,15 @@ namespace BOCOM.IVX.Views
             MySqlCommand cmd = new MySqlCommand(sqlstr, Framework.Environment.SMS_CONN);
             cmd.Parameters.Add(new MySqlParameter("?password", MySqlDbType.VarChar, 50));
             cmd.Parameters["?password"].Value = str_pwd;
+            try
+            {
             cmd.Connection.Open();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("无法连接数据服务器！" );
+
+            }
 
             MySqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read() == true)
@@ -97,6 +105,15 @@ namespace BOCOM.IVX.Views
             ucMainPage1.InitWnd();
             ucReportMenagement1.InitWnd();
             ucUserConfig1.InitWnd();
+        }
+
+        private void ucXDMain_Resize(object sender, EventArgs e)
+        {
+        }
+
+        private void ucXDMain_SizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

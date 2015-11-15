@@ -1,0 +1,8 @@
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\Release\COMLibrary.csprojResolveAssemblyReference.cache
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\Release\BOCOM.IVX.COMLibrary.OcxLoader.resources
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\Release\COMLibrary.csproj.GenerateResource.Cache
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\demo.html
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\ComInterface.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\ComInterface.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\Release\ComInterface.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\Release\ComInterface.pdb

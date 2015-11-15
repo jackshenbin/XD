@@ -19,6 +19,9 @@ namespace BOCOM.IVX.Views.Content
         private void ucCurrentUser_Load(object sender, EventArgs e)
         {
             //label1.Text = "您好！"+Framework.Environment.UserName;
+            this.BackgroundImage = global::BOCOM.IVX.Properties.Resources.userheadbk;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+
         }
 
         public void InitWnd()

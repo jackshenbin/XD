@@ -56,7 +56,9 @@
             this.bindingNavigatorMovePreviousItem = new DevComponents.DotNetBar.ButtonItem();
             this.bindingNavigatorPositionItem = new DevComponents.DotNetBar.TextBoxItem();
             this.bindingNavigatorMoveNextItem = new DevComponents.DotNetBar.ButtonItem();
+            this.bindingNavigatorUserInfo = new DevComponents.DotNetBar.ButtonItem();
             this.bindingNavigatorMoveLastItem = new DevComponents.DotNetBar.ButtonItem();
+            this.bindingNavigatorRetInfo = new DevComponents.DotNetBar.LabelItem();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
@@ -94,13 +96,13 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.expandablePanel1);
             this.splitContainer1.Panel1.Controls.Add(this.ucCurrentUser1);
-            this.splitContainer1.Panel1MinSize = 185;
+            this.splitContainer1.Panel1MinSize = 250;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.superTabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(660, 592);
-            this.splitContainer1.SplitterDistance = 185;
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 0;
             // 
             // expandablePanel1
@@ -129,7 +131,7 @@
             this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
-            this.expandablePanel1.TitleText = "权限管理";
+            this.expandablePanel1.TitleText = "系统管理";
             // 
             // btnUserInfo
             // 
@@ -137,7 +139,7 @@
             this.btnUserInfo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnUserInfo.Location = new System.Drawing.Point(29, 111);
             this.btnUserInfo.Name = "btnUserInfo";
-            this.btnUserInfo.Size = new System.Drawing.Size(113, 28);
+            this.btnUserInfo.Size = new System.Drawing.Size(190, 28);
             this.btnUserInfo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnUserInfo.TabIndex = 1;
             this.btnUserInfo.Text = "查看个人信息";
@@ -149,10 +151,10 @@
             this.btnChangePass.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnChangePass.Location = new System.Drawing.Point(29, 77);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(113, 28);
+            this.btnChangePass.Size = new System.Drawing.Size(190, 28);
             this.btnChangePass.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnChangePass.TabIndex = 1;
-            this.btnChangePass.Text = "修改密码";
+            this.btnChangePass.Text = "修改个人密码";
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnAddUser
@@ -161,7 +163,7 @@
             this.btnAddUser.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddUser.Location = new System.Drawing.Point(29, 43);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(113, 28);
+            this.btnAddUser.Size = new System.Drawing.Size(190, 28);
             this.btnAddUser.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "用户管理";
@@ -169,8 +171,6 @@
             // 
             // ucCurrentUser1
             // 
-            this.ucCurrentUser1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucCurrentUser1.BackgroundImage")));
-            this.ucCurrentUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ucCurrentUser1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucCurrentUser1.Location = new System.Drawing.Point(0, 0);
             this.ucCurrentUser1.Name = "ucCurrentUser1";
@@ -262,6 +262,7 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(471, 360);
             this.dataGridViewX1.TabIndex = 0;
             this.dataGridViewX1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewX1_DataError);
+            this.dataGridViewX1.CellDoubleClick += dataGridViewX1_CellDoubleClick;
             // 
             // Column1
             // 
@@ -344,7 +345,9 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorUserInfo,
+            this.bindingNavigatorRetInfo});
             this.bindingNavigatorEx1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigatorEx1.MoveFirstButton = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorEx1.MoveLastButton = this.bindingNavigatorMoveLastItem;
@@ -411,6 +414,17 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorUserInfo
+            // 
+            this.bindingNavigatorUserInfo.Name = "bindingNavigatorUserInfo";
+            this.bindingNavigatorUserInfo.Text = "查看用户";
+            this.bindingNavigatorUserInfo.Click += bindingNavigatorUserInfo_Click;
+            // 
+            // bindingNavigatorRetInfo
+            // 
+            this.bindingNavigatorRetInfo.Name = "bindingNavigatorRetInfo";
+            this.bindingNavigatorRetInfo.Text = "";
             // 
             // superTabItem1
             // 
@@ -519,6 +533,8 @@
 
         }
 
+
+
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -539,6 +555,8 @@
         private DevComponents.DotNetBar.TextBoxItem bindingNavigatorPositionItem;
         private DevComponents.DotNetBar.ButtonItem bindingNavigatorMoveNextItem;
         private DevComponents.DotNetBar.ButtonItem bindingNavigatorMoveLastItem;
+        private DevComponents.DotNetBar.ButtonItem bindingNavigatorUserInfo;
+        private DevComponents.DotNetBar.LabelItem bindingNavigatorRetInfo;
         private Controls.GridViewEx dataGridViewX1;
         private System.Windows.Forms.Panel panel1;
         private ucAddUserPanel ucAddUserPanel1;

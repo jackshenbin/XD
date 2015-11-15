@@ -27,6 +27,7 @@ namespace BOCOM.IVX.Views.Content
             timerFlash.Tick += timerFlash_Tick;
         }
 
+
         void timerFlash_Tick(object sender, EventArgs e)
         {
             //DrawChart(TextBoxDevid.Text);
@@ -189,6 +190,21 @@ namespace BOCOM.IVX.Views.Content
         private void checkBoxFlash_CheckedChanged(object sender, EventArgs e)
         {
             timerFlash.Enabled = checkBoxFlash.Checked;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Excel files (*.xls)|*.xls";
+            dlg.FilterIndex = 0;
+            dlg.RestoreDirectory = true;
+            dlg.CreatePrompt = true;
+            dlg.FileName = null;
+            dlg.Title = "选择保存文件的路径";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Common.ExcelExport.ReportToExcel(dataGridViewX1, dlg.FileName);
+            }
         }
 
     }

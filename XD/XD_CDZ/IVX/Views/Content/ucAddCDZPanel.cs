@@ -23,7 +23,6 @@ namespace BOCOM.IVX.Views.Content
             this.Controls.Add(group);
             group.GroupSelected+=group_GroupSelected;
             group.Visible = false;
-            
         }
         bool ValidateAddDevice()
         {
@@ -35,6 +34,13 @@ namespace BOCOM.IVX.Views.Content
                 labelRet.Text = "充电桩编号不能为空";
                 labelRet.ForeColor = Color.Red;
                 ret = false;
+            }
+            if (buttonGroup.Tag.ToString() == "0")
+            {
+                labelRet.Text = "请选择充电桩区域";
+                labelRet.ForeColor = Color.Red;
+                ret = false;
+
             }
             return ret;
         }
@@ -141,8 +147,17 @@ namespace BOCOM.IVX.Views.Content
             //comboBoxExCounty.SelectedIndex = 0;
             //comboBoxExDistrict.SelectedIndex = 0;
             //comboBoxExProvince.SelectedIndex = 0;
-            comboBoxType.SelectedIndex = 0;
+            comboBoxType.SelectedIndex = 1;
             labelRet.Text = "";
+
+            buttonGroup.Tag = "0";
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+            if (group.Visible)
+                group.Visible = false;
 
         }
 

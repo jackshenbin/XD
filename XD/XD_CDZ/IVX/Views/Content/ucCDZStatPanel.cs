@@ -73,7 +73,7 @@ namespace BOCOM.IVX.Views.Content
             TextBoxUserid.Text = "";
             TextBoxsFactoryid.Text = "";
             TextBoxsVersion.Text = "";
-            comboBoxType.SelectedIndex = 0;
+            comboBoxType.SelectedIndex = 1;
             TextBoxsSIM.Text = "";
             TextBoxsAddr.Text = "";
             TextBoxsPosition.Text = "";
@@ -111,10 +111,14 @@ namespace BOCOM.IVX.Views.Content
                     comboBoxConnstat.SelectedIndex = int.Parse(r["conn_state"].ToString());
                     TextBoxsTotaldegree.Text = r["total_degree"].ToString();
                     comboBoxBattery.SelectedIndex = int.Parse(r["battery"].ToString());
-                    comboBoxWorkstat.SelectedIndex = int.Parse(r["work_state"].ToString());
+                    //comboBoxWorkstat.SelectedIndex = int.Parse(r["work_state"].ToString());
 
 
                 }
+                            
+                BOCOM.DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(TextBoxDevid.Value);
+                if (info != null)
+                    comboBoxWorkstat.SelectedIndex = info.WorkStat;
             }
         }
 
@@ -173,7 +177,13 @@ namespace BOCOM.IVX.Views.Content
 
         private void DrawWorkStat(string id)
         {
-            chart4.ChartAreas[0].AxisY.Maximum = 6;
+            if (string.IsNullOrEmpty(id))
+            {
+                chart4.DataSource = null;
+                chart4.DataBind();
+                return;
+            }
+            chart4.ChartAreas[0].AxisY.Maximum = 5;
             chart4.ChartAreas[0].AxisY.Minimum = 0;
 
             string sms_sqlstr = string.Format("SELECT DATE_FORMAT( date_time, '%Y-%m-%d %H:%i:%s' ) AS time, work_state FROM pile_state_t "
@@ -191,12 +201,24 @@ namespace BOCOM.IVX.Views.Content
             chart4.DataSource = sms_ds_work_state;
             chart4.Series["Series1"].XValueMember = "time";
             chart4.Series["Series1"].YValueMembers = "work_state";
+            chart4.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(-0.5d, 0.5d, "离线");
+            chart4.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(0.5d, 1.5d, "故障");
+            chart4.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(1.5d, 2.5d, "待机");
+            chart4.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(2.5d, 3.5d, "工作");
+            chart4.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(3.5d, 4.5d, "充电");
             chart4.DataBind();
 
         }
 
         private void DrawConnStat(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                chart5.DataSource = null;
+                chart5.DataBind();
+                return;
+            }
+
             chart5.ChartAreas[0].AxisY.Maximum = 2;
             chart5.ChartAreas[0].AxisY.Minimum = 0;
 
@@ -215,6 +237,10 @@ namespace BOCOM.IVX.Views.Content
             chart5.DataSource = sms_ds_conn_state;
             chart5.Series["Series1"].XValueMember = "time";
             chart5.Series["Series1"].YValueMembers = "conn_state";
+            chart5.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(-0.5d, 0.5d, "未连接");
+            chart5.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(0.5d, 1.5d, "连接");
+            chart5.ChartAreas["ChartArea1"].AxisY.CustomLabels.Add(1.5d, 2.5d, "可充");
+
             chart5.DataBind();
         }
 
@@ -348,11 +374,16 @@ namespace BOCOM.IVX.Views.Content
             comboBoxBattery.SelectedIndex = 0;
             comboBoxConnstat.SelectedIndex = 0;
             comboBoxRelaystat.SelectedIndex = 0;
-            comboBoxType.SelectedIndex = 0;
+            comboBoxType.SelectedIndex = 1;
             comboBoxWorkstat.SelectedIndex = 0;
             timerFlash.Stop();
             checkBoxFlash.Checked = false;
             labelSearchStat.Text = "";
+
+        }
+
+        private void comboBoxWorkstat_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -92,7 +92,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisLogFile>bin\Release\Protocol.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
@@ -151,22 +151,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IVX_Protocol_Init.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RFIDReader.cs" />
     <Compile Include="IVXProtocol.cs" />
-    <Compile Include="IVX_Protocol_Case.cs" />
-    <Compile Include="IVX_Protocol_Init.cs" />
     <Compile Include="Model\ModelParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RFIDReaderProtocol.cs" />
     <Compile Include="SDKCallException.cs" />
-    <Compile Include="IVX_Protocol_Config.cs" />
-    <Compile Include="IVX_Protocol_Task.cs" />
-    <Compile Include="IVX_Protocol_VideoPlay.cs" />
-    <Compile Include="IVX_Protocol_Brief.cs" />
-    <Compile Include="IVX_Protocol_Search.cs" />
-    <Compile Include="IVX_Protocol_Log.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="IVX_Protocol_Draw.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataModel\DataModel.csproj">

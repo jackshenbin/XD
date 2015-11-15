@@ -57,13 +57,13 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.expandablePanel1);
             this.splitContainer1.Panel1.Controls.Add(this.ucCurrentUser1);
-            this.splitContainer1.Panel1MinSize = 185;
+            this.splitContainer1.Panel1MinSize = 250;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Size = new System.Drawing.Size(660, 592);
-            this.splitContainer1.SplitterDistance = 185;
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 0;
             // 
             // expandablePanel1
@@ -103,7 +103,7 @@
             this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX3.Location = new System.Drawing.Point(29, 213);
             this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(113, 28);
+            this.buttonX3.Size = new System.Drawing.Size(190, 28);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.TabIndex = 1;
             this.buttonX3.Text = "关于我们";
@@ -114,7 +114,7 @@
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX2.Location = new System.Drawing.Point(29, 179);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(113, 28);
+            this.buttonX2.Size = new System.Drawing.Size(190, 28);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 1;
             this.buttonX2.Text = "服务支持";
@@ -125,7 +125,7 @@
             this.btnUserMamagement.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnUserMamagement.Location = new System.Drawing.Point(29, 145);
             this.btnUserMamagement.Name = "btnUserMamagement";
-            this.btnUserMamagement.Size = new System.Drawing.Size(113, 28);
+            this.btnUserMamagement.Size = new System.Drawing.Size(190, 28);
             this.btnUserMamagement.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnUserMamagement.TabIndex = 1;
             this.btnUserMamagement.Text = "系统管理";
@@ -137,7 +137,7 @@
             this.btnReportManagement.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReportManagement.Location = new System.Drawing.Point(29, 111);
             this.btnReportManagement.Name = "btnReportManagement";
-            this.btnReportManagement.Size = new System.Drawing.Size(113, 28);
+            this.btnReportManagement.Size = new System.Drawing.Size(190, 28);
             this.btnReportManagement.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReportManagement.TabIndex = 1;
             this.btnReportManagement.Text = "综合查询";
@@ -149,7 +149,7 @@
             this.btnCardManagement.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCardManagement.Location = new System.Drawing.Point(29, 77);
             this.btnCardManagement.Name = "btnCardManagement";
-            this.btnCardManagement.Size = new System.Drawing.Size(113, 28);
+            this.btnCardManagement.Size = new System.Drawing.Size(190, 28);
             this.btnCardManagement.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCardManagement.TabIndex = 1;
             this.btnCardManagement.Text = "智能卡管理";
@@ -161,7 +161,7 @@
             this.btnDeviceManagement.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDeviceManagement.Location = new System.Drawing.Point(29, 43);
             this.btnDeviceManagement.Name = "btnDeviceManagement";
-            this.btnDeviceManagement.Size = new System.Drawing.Size(113, 28);
+            this.btnDeviceManagement.Size = new System.Drawing.Size(190, 28);
             this.btnDeviceManagement.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDeviceManagement.TabIndex = 1;
             this.btnDeviceManagement.Text = "充电桩管理";
@@ -169,8 +169,6 @@
             // 
             // ucCurrentUser1
             // 
-            this.ucCurrentUser1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucCurrentUser1.BackgroundImage")));
-            this.ucCurrentUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ucCurrentUser1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucCurrentUser1.Location = new System.Drawing.Point(0, 0);
             this.ucCurrentUser1.Name = "ucCurrentUser1";

@@ -32,24 +32,24 @@
             this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucMainPage1 = new BOCOM.IVX.Views.Content.ucMainPage();
             this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucDeviceManagement1 = new BOCOM.IVX.Views.Content.ucDeviceManagement();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucUserConfig1 = new BOCOM.IVX.Views.Content.ucUserManagement();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucCardManagement1 = new BOCOM.IVX.Views.Content.ucCardManagement();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.ucDeviceManagement1 = new BOCOM.IVX.Views.Content.ucDeviceManagement();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucReportMenagement1 = new BOCOM.IVX.Views.Content.ucReportMenagement();
             this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel0.SuspendLayout();
+            this.superTabControlPanel3.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
-            this.superTabControlPanel3.SuspendLayout();
             this.superTabControlPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,13 +120,38 @@
             this.superTabItem0.Name = "superTabItem0";
             this.superTabItem0.Text = "superTabItem0";
             // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.ucDeviceManagement1);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(647, 498);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
+            // 
+            // ucDeviceManagement1
+            // 
+            this.ucDeviceManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDeviceManagement1.Location = new System.Drawing.Point(0, 0);
+            this.ucDeviceManagement1.Name = "ucDeviceManagement1";
+            this.ucDeviceManagement1.Size = new System.Drawing.Size(647, 498);
+            this.ucDeviceManagement1.TabIndex = 0;
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "superTabItem3";
+            // 
             // superTabControlPanel1
             // 
             this.superTabControlPanel1.Controls.Add(this.ucUserConfig1);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(647, 472);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(647, 498);
             this.superTabControlPanel1.TabIndex = 0;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
@@ -135,7 +160,7 @@
             this.ucUserConfig1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucUserConfig1.Location = new System.Drawing.Point(0, 0);
             this.ucUserConfig1.Name = "ucUserConfig1";
-            this.ucUserConfig1.Size = new System.Drawing.Size(647, 472);
+            this.ucUserConfig1.Size = new System.Drawing.Size(647, 498);
             this.ucUserConfig1.TabIndex = 0;
             // 
             // superTabItem1
@@ -149,9 +174,9 @@
             // 
             this.superTabControlPanel2.Controls.Add(this.ucCardManagement1);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 26);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(647, 472);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(647, 498);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -160,7 +185,7 @@
             this.ucCardManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucCardManagement1.Location = new System.Drawing.Point(0, 0);
             this.ucCardManagement1.Name = "ucCardManagement1";
-            this.ucCardManagement1.Size = new System.Drawing.Size(647, 472);
+            this.ucCardManagement1.Size = new System.Drawing.Size(647, 498);
             this.ucCardManagement1.TabIndex = 0;
             // 
             // superTabItem2
@@ -169,31 +194,6 @@
             this.superTabItem2.GlobalItem = false;
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "superTabItem2";
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.ucDeviceManagement1);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(647, 472);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // ucDeviceManagement1
-            // 
-            this.ucDeviceManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDeviceManagement1.Location = new System.Drawing.Point(0, 0);
-            this.ucDeviceManagement1.Name = "ucDeviceManagement1";
-            this.ucDeviceManagement1.Size = new System.Drawing.Size(647, 472);
-            this.ucDeviceManagement1.TabIndex = 0;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "superTabItem3";
             // 
             // superTabControlPanel4
             // 
@@ -228,12 +228,14 @@
             this.Controls.Add(this.superTabControl1);
             this.Name = "ucXDMain";
             this.Size = new System.Drawing.Size(647, 498);
+            this.SizeChanged += new System.EventHandler(this.ucXDMain_SizeChanged);
+            this.Resize += new System.EventHandler(this.ucXDMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel0.ResumeLayout(false);
+            this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
-            this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 

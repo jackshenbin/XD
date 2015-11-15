@@ -35,7 +35,25 @@ namespace BOCOM.IVX.Views.Content
 
         private void ucCDZStatPanel_Load(object sender, EventArgs e)
         {
+            DataSet tempds = new DataSet();
+
             //FillDevice();
+            DataTable tRoleDevType = new DataTable("tRoleDevType");
+            tRoleDevType.Columns.Add("r_id");
+            tRoleDevType.Columns.Add("r_type");
+
+            tRoleDevType.Rows.Add(0, "未知类型");
+            tRoleDevType.Rows.Add(2, "单相交流离散桩");
+            tRoleDevType.Rows.Add(18, "三相相交流离散桩");
+            tRoleDevType.Rows.Add(3, "三相直流离散桩");
+            tRoleDevType.Rows.Add(19, "单相直流离散桩");
+
+            tempds.Tables.Add(tRoleDevType);
+
+            DevType.DisplayMember = "r_type";
+            DevType.ValueMember = "r_id";
+            DevType.DataSource = new BindingSource(tempds, "tRoleDevType");
+
         }
 
         private void GetDevTreeNodeByParent(int pid,ref List<int> nodelist)
@@ -72,15 +90,27 @@ namespace BOCOM.IVX.Views.Content
             string strnodelist = "";
             list.ForEach(item => strnodelist += item+",");
             strnodelist = strnodelist.TrimEnd(',');
-            string sms_sqlstr2 = "SELECT  *, case IFNULL((select work_state from pile_state_t where  pile_state_t.dev_id = hd_pile_info_t.dev_id ORDER BY pile_state_t.date_time desc LIMIT 1 ),0) when 0 then '离线' when 1 then '故障' when 2 then '待机' when 3 then '工作' end  as work_state FROM hd_pile_info_t  where node_id in (" + strnodelist + ")";
-            //string sms_sqlstr2 = "SELECT * FROM hd_pile_info_t where node_id=" + r["node_id"].ToString();
+            //string sms_sqlstr2 = "SELECT  *, case IFNULL((select work_state from pile_state_t where  pile_state_t.dev_id = hd_pile_info_t.dev_id ORDER BY pile_state_t.date_time desc LIMIT 1 ),0) when 0 then '离线' when 1 then '故障' when 2 then '待机' when 3 then '工作' end  as work_state FROM hd_pile_info_t  where node_id in (" + strnodelist + ")";
+            string sms_sqlstr2 = "SELECT  *, '离线' as work_state FROM hd_pile_info_t  where node_id in (" + strnodelist + ")";
             MySqlDataAdapter sms_da_pile = new MySqlDataAdapter(sms_sqlstr2, Framework.Environment.SMS_CONN);
             DataSet sms_ds_pile = new DataSet();
             sms_da_pile.Fill(sms_ds_pile, "T");
 
             bs = new BindingSource(sms_ds_pile, "T");
             dataGridViewX1.DataSource = bs;
-
+            foreach (DataGridViewRow item in dataGridViewX1.Rows)
+            {
+                DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(item.Cells["dev_id"].Value.ToString());
+                if (info != null)
+                {
+                    uint ws = info.WorkStat;
+                    if (ws == 0) item.Cells["work_state"].Value = "离线";
+                    if (ws == 1) item.Cells["work_state"].Value = "故障";
+                    if (ws == 2) item.Cells["work_state"].Value = "待机";
+                    if (ws == 3) item.Cells["work_state"].Value = "工作";
+                    if (ws == 4) item.Cells["work_state"].Value = "充电";
+                }
+            }
         }
         private void DrawChart(DataRow r)
         {
@@ -90,21 +120,40 @@ namespace BOCOM.IVX.Views.Content
             list.ForEach(item => strnodelist += item + ",");
             strnodelist = strnodelist.TrimEnd(',');
 
-            string strformat = "select case work_state when 0 then '离线' when 1 then '故障' when 2 then '待机' when 3 then '工作' end as work_stat,count(dev_id) as devcount from (SELECT IFNULL((select work_state from pile_state_t where  pile_state_t.dev_id = hd_pile_info_t.dev_id ORDER BY pile_state_t.date_time desc LIMIT 1 ),0)  as work_state, hd_pile_info_t.dev_id FROM hd_pile_info_t  where node_id in (" + strnodelist + ")) as t group by work_state";
-            //string strformat = "SELECT sum(total_pwr) as totalpwr,sum(spend_money) as spendmoney,month(start_time) as currmonth FROM pile_offline_records_t WHERE start_time BETWEEN '"
-            //    + dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' AND '" + dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'";
-            //if (!string.IsNullOrWhiteSpace(TextBoxDevidSearch.Value)) strformat += " AND dev_id = '" + TextBoxDevidSearch.Value + "'";
-            //if (!string.IsNullOrWhiteSpace(TextBoxCardSearch.Value)) strformat += " AND user_card = '" + TextBoxCardSearch.Value + "'";
-            //strformat += "group by month(start_time)";
+            //string strformat = "select case work_state when 0 then '离线' when 1 then '故障' when 2 then '待机' when 3 then '工作' end as work_stat,count(dev_id) as devcount from (SELECT IFNULL((select work_state from pile_state_t where  pile_state_t.dev_id = hd_pile_info_t.dev_id ORDER BY pile_state_t.date_time desc LIMIT 1 ),0)  as work_state, hd_pile_info_t.dev_id FROM hd_pile_info_t  where node_id in (" + strnodelist + ")) as t group by work_state";
+            string strformat = "select dev_id,0 as work_state FROM hd_pile_info_t  where node_id in (" + strnodelist + ")";
 
             MySqlDataAdapter sms_dav = new MySqlDataAdapter(strformat, Framework.Environment.SMS_CONN);
             DataSet sms_dsv = new DataSet();
             sms_dav.Fill(sms_dsv, "T");
+            DataTable t2 = new DataTable("t2");
+            DataColumn key= t2.Columns.Add("work_state_id", typeof(int));
+            t2.PrimaryKey = new DataColumn[]{key};
+            t2.Columns.Add("work_stat", typeof(string));
+            t2.Columns.Add("devcount", typeof(int));
+            t2.Rows.Add(0, "离线", 0);
+            t2.Rows.Add(1, "故障", 0);
+            t2.Rows.Add(2, "待机", 0);
+            t2.Rows.Add(3, "工作", 0);
+            t2.Rows.Add(4, "充电", 0);
+            foreach (DataRow item in sms_dsv.Tables[0].Rows)
+            {
+                int ws = 0;
+                DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(item["dev_id"].ToString());
+                if (info != null)
+                {
+                    ws = info.WorkStat;
+                }
+                t2.Rows.Find(ws)["devcount"] =Convert.ToInt32( t2.Rows.Find(ws)["devcount"])+1;
+            }
 
+            sms_dsv.Tables.Clear();
+            sms_dsv.Tables.Add(t2);
             ////第二步：绑定一个数据源
             //if (sms_dsv.Tables[0].Rows.Count > 0)
             //    Chartlet1.BindChartData(sms_dsv);
             chart1.DataSource = sms_dsv;
+            
             chart1.Series["Series1"].XValueMember = "work_stat";
             chart1.Series["Series1"].YValueMembers = "devcount";
            
@@ -220,6 +269,11 @@ namespace BOCOM.IVX.Views.Content
 
             advTree1.Nodes.Clear();
             FillDevice(null);
+        }
+
+        private void groupPanel1_Click(object sender, EventArgs e)
+        {
+
         }
 
 

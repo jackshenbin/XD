@@ -414,6 +414,16 @@ namespace BOCOM.IVX.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap userheadbk {
+            get {
+                object obj = ResourceManager.GetObject("userheadbk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 人脸检索1 {
             get {
                 object obj = ResourceManager.GetObject("人脸检索1", resourceCulture);
@@ -497,6 +507,46 @@ namespace BOCOM.IVX.Properties {
         internal static System.Drawing.Bitmap 任务管理2 {
             get {
                 object obj = ResourceManager.GetObject("任务管理2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 充电桩充电 {
+            get {
+                object obj = ResourceManager.GetObject("充电桩充电", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 充电桩待机 {
+            get {
+                object obj = ResourceManager.GetObject("充电桩待机", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 充电桩故障 {
+            get {
+                object obj = ResourceManager.GetObject("充电桩故障", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 充电桩离线 {
+            get {
+                object obj = ResourceManager.GetObject("充电桩离线", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

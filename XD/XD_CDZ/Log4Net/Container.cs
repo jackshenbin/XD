@@ -4,6 +4,9 @@ using System.Text;
 using log4net;
 using System.IO;
 using System.Reflection;
+using log4net.Appender;
+using System.Diagnostics;
+using System.Linq;
 
 namespace MyLog4Net
 {
@@ -37,7 +40,12 @@ namespace MyLog4Net
 
                     log4net.Config.XmlConfigurator.Configure(fi);
                     m_Log = LogManager.GetLogger("DebuggingLog");
-                    
+                    var repository = LogManager.GetRepository();
+                    var appendes = repository.GetAppenders();
+                    var targetapder = appendes.First(p => p.Name == "DebuggingRollingFileAppender") as RollingFileAppender;
+                    targetapder.File = Path.Combine(Directory.GetParent(asm.Location).FullName, "XDdebug_" + Process.GetCurrentProcess().Id + ".log");
+                    targetapder.ActivateOptions();
+
                 }
                 return m_Log;
             }

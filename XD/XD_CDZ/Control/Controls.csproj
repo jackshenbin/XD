@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\VDA-Client发布\</OutputPath>
+    <OutputPath>..\..\XD发布\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -138,14 +138,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimatorImage.cs" />
-    <Compile Include="AniPicture.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AniPicture.Designer.cs">
-      <DependentUpon>AniPicture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AniWindow.cs" />
     <Compile Include="CheckPicture.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -165,9 +157,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AniPicture.resx">
-      <DependentUpon>AniPicture.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

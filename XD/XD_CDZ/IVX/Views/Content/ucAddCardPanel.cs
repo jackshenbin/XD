@@ -31,6 +31,19 @@ namespace BOCOM.IVX.Views.Content
                 labelRet.ForeColor = Color.Red;
                 ret = false;
             }
+            else
+            {
+                string sms_sqlstr2 = string.Format("SELECT * FROM user_card_list_t WHERE card_state <> 4 and user_card_id =" + textBoxCardID.Value);
+            MySqlDataAdapter sms_da2 = new MySqlDataAdapter(sms_sqlstr2, Framework.Environment.SMS_CONN);
+            DataSet sms_ds2 = new DataSet();
+            sms_da2.Fill(sms_ds2, "T");
+            if (sms_ds2.Tables[0].Rows.Count > 0)
+            {
+                labelRet.Text = "用户卡号已经存在";
+                labelRet.ForeColor = Color.Red;
+                ret = false;
+            }
+            }
             if (textBoxCardSerialNumber.Text == "")
             {
                 labelRet.Text = "物理卡号不能为空，请读卡获取";

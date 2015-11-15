@@ -33,15 +33,17 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRegionStatRecordPanel));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRegionStatRecordPanel));
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.advTree1 = new DevComponents.AdvTree.AdvTree();
             this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.node1 = new DevComponents.AdvTree.Node();
             this.node5 = new DevComponents.AdvTree.Node();
             this.node6 = new DevComponents.AdvTree.Node();
@@ -52,20 +54,19 @@
             this.elementStyle4 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.dataGridViewX1 = new BOCOM.IVX.Controls.GridViewEx();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dev_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DevType = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.work_state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
@@ -107,7 +108,7 @@
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(65)))), ((int)(((byte)(140)))), ((int)(((byte)(240)))));
             series1.CustomProperties = "DrawingStyle=Cylinder, MaxPixelPointWidth=60";
             series1.IsValueShownAsLabel = true;
-            series1.Label = "#PERCENT{P}";
+            series1.Label = "#VAL（#PERCENT{P}）";
             series1.Legend = "Legend1";
             series1.LegendText = "#AXISLABEL";
             series1.MarkerSize = 8;
@@ -117,7 +118,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(433, 394);
+            this.chart1.Size = new System.Drawing.Size(409, 394);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -132,6 +133,7 @@
             this.groupPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelX19);
             this.groupPanel1.Controls.Add(this.advTree1);
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
             this.groupPanel1.Controls.Add(this.panelEx3);
@@ -155,7 +157,7 @@
             this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderTopWidth = 1;
             this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
@@ -168,7 +170,21 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "区域状态查询";
+            this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
+            // 
+            // labelX19
+            // 
+            this.labelX19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX19.Location = new System.Drawing.Point(0, 0);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(121, 23);
+            this.labelX19.TabIndex = 29;
+            this.labelX19.Text = "区域状态查询：";
             // 
             // advTree1
             // 
@@ -183,7 +199,7 @@
             this.advTree1.Columns.Add(this.columnHeader1);
             this.advTree1.ExpandWidth = 4;
             this.advTree1.ImageList = this.imageList1;
-            this.advTree1.Location = new System.Drawing.Point(8, 3);
+            this.advTree1.Location = new System.Drawing.Point(8, 38);
             this.advTree1.Name = "advTree1";
             this.advTree1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
             this.node1,
@@ -205,6 +221,23 @@
             this.columnHeader1.Text = "充电桩列表";
             this.columnHeader1.Width.Absolute = 150;
             this.columnHeader1.Width.AutoSize = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "cdz.jpg");
+            this.imageList1.Images.SetKeyName(1, "cdz交流.jpg");
+            this.imageList1.Images.SetKeyName(2, "cdz直流.jpg");
+            this.imageList1.Images.SetKeyName(3, "department.jpg");
+            this.imageList1.Images.SetKeyName(4, "地区.png");
+            this.imageList1.Images.SetKeyName(5, "区域.png");
+            this.imageList1.Images.SetKeyName(6, "区域2.png");
+            this.imageList1.Images.SetKeyName(7, "冲电.png");
+            this.imageList1.Images.SetKeyName(8, "冲电2.png");
+            this.imageList1.Images.SetKeyName(9, "冲电3.png");
+            this.imageList1.Images.SetKeyName(10, "冲电4.png");
+            this.imageList1.Images.SetKeyName(11, "冲电5.png");
             // 
             // node1
             // 
@@ -321,15 +354,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.address,
-            this.Column2,
+            this.dev_id,
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
+            this.DevType,
             this.Column7,
             this.Column8,
             this.Column9,
@@ -344,7 +376,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(8, 423);
+            this.dataGridViewX1.Location = new System.Drawing.Point(8, 464);
             this.dataGridViewX1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;
@@ -358,12 +390,30 @@
             this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(684, 414);
+            this.dataGridViewX1.Size = new System.Drawing.Size(660, 414);
             this.dataGridViewX1.TabIndex = 26;
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.chart1);
+            this.panelEx3.Location = new System.Drawing.Point(199, 38);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(469, 414);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 25;
             // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.DataPropertyName = "sn_id";
             this.Column1.HeaderText = "sn_id";
             this.Column1.Name = "Column1";
@@ -378,59 +428,57 @@
             this.address.ReadOnly = true;
             this.address.Visible = false;
             // 
-            // Column2
+            // dev_id
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.DataPropertyName = "dev_id";
-            this.Column2.HeaderText = "终端机器编码";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 102;
+            this.dev_id.DataPropertyName = "dev_id";
+            this.dev_id.HeaderText = "充电桩编号";
+            this.dev_id.Name = "dev_id";
+            this.dev_id.ReadOnly = true;
+            this.dev_id.Width = 150;
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.DataPropertyName = "user_id";
             this.Column3.HeaderText = "用户编号";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 78;
+            this.Column3.Width = 150;
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column4.DataPropertyName = "vender_id";
             this.Column4.HeaderText = "厂商编号";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 78;
             // 
             // Column5
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.DataPropertyName = "software_ver";
             this.Column5.HeaderText = "软件版本";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 78;
             // 
-            // Column6
+            // DevType
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.DataPropertyName = "pile_type";
-            this.Column6.HeaderText = "充电桩类型";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 90;
+            this.DevType.DataPropertyName = "pile_type";
+            this.DevType.DropDownHeight = 106;
+            this.DevType.DropDownWidth = 121;
+            this.DevType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DevType.HeaderText = "充电桩类型";
+            this.DevType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DevType.IntegralHeight = false;
+            this.DevType.ItemHeight = 16;
+            this.DevType.Name = "DevType";
+            this.DevType.ReadOnly = true;
+            this.DevType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DevType.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // Column7
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.DataPropertyName = "sim_id";
             this.Column7.HeaderText = "SIM卡号";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 72;
             // 
             // Column8
             // 
@@ -440,6 +488,7 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Visible = false;
+            this.Column8.Width = 78;
             // 
             // Column9
             // 
@@ -449,6 +498,7 @@
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             this.Column9.Visible = false;
+            this.Column9.Width = 84;
             // 
             // Column10
             // 
@@ -458,6 +508,7 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
+            this.Column10.Width = 72;
             // 
             // work_state
             // 
@@ -465,42 +516,6 @@
             this.work_state.HeaderText = "当前状态";
             this.work_state.Name = "work_state";
             this.work_state.ReadOnly = true;
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.chart1);
-            this.panelEx3.Location = new System.Drawing.Point(199, 3);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(493, 414);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 25;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "cdz.jpg");
-            this.imageList1.Images.SetKeyName(1, "cdz交流.jpg");
-            this.imageList1.Images.SetKeyName(2, "cdz直流.jpg");
-            this.imageList1.Images.SetKeyName(3, "department.jpg");
-            this.imageList1.Images.SetKeyName(4, "地区.png");
-            this.imageList1.Images.SetKeyName(5, "区域.png");
-            this.imageList1.Images.SetKeyName(6, "区域2.png");
-            this.imageList1.Images.SetKeyName(7, "冲电.png");
-            this.imageList1.Images.SetKeyName(8, "冲电2.png");
-            this.imageList1.Images.SetKeyName(9, "冲电3.png");
-            this.imageList1.Images.SetKeyName(10, "冲电4.png");
-            this.imageList1.Images.SetKeyName(11, "冲电5.png");
             // 
             // ucRegionStatRecordPanel
             // 
@@ -536,19 +551,20 @@
         private DevComponents.AdvTree.NodeConnector nodeConnector1;
         private DevComponents.DotNetBar.ElementStyle elementStyle4;
         private DevComponents.DotNetBar.ElementStyle elementStyle1;
+        private System.Windows.Forms.ImageList imageList1;
+        private DevComponents.DotNetBar.LabelX labelX19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dev_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn DevType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn work_state;
-        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

@@ -78,6 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
     <Compile Include="iIVXInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OcxLoader.cs">
@@ -117,6 +122,21 @@
   <ItemGroup>
     <None Include="demo.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Style\css-all.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

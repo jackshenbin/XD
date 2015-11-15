@@ -138,7 +138,7 @@
             this.AccessibleDescription = null;
             this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
-            this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.BackgroundImage = null;
             this.Font = null;
             this.RowTemplate.Height = 23;

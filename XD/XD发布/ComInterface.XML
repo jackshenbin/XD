@@ -61,22 +61,6 @@
             IObjectSafety接口.net定义
             </summary>
         </member>
-        <member name="M:BOCOM.IVX.COMLibrary.IObjectSafety.GetInterfaceSafetyOptions(System.Int32,System.Int32@,System.Int32@)">
-            <summary>
-            获取接口安全性
-            </summary>
-            <param name="riid"></param>
-            <param name="supportedOptions"></param>
-            <param name="enabledOptions"></param>
-        </member>
-        <member name="M:BOCOM.IVX.COMLibrary.IObjectSafety.SetInterfaceSafetyOptions(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            设置接口安全性
-            </summary>
-            <param name="riid"></param>
-            <param name="optionsSetMask"></param>
-            <param name="enabledOptions"></param>
-        </member>
         <member name="F:BOCOM.IVX.COMLibrary.OcxLoader.components">
             <summary> 
             必需的设计器变量。

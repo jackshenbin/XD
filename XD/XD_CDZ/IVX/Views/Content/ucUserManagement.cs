@@ -17,6 +17,20 @@ namespace BOCOM.IVX.Views.Content
         public ucUserManagement()
         {
             InitializeComponent();
+            ucAddUserPanel1.AddUserComplete += ucAddUserPanel1_AddUserComplete;
+        }
+        void bindingNavigatorUserInfo_Click(object sender, System.EventArgs e)
+        {
+            if (dataGridViewX1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dataGridViewX1.SelectedRows[0];
+                EditUser(r);
+            }
+        }
+
+        void ucAddUserPanel1_AddUserComplete(object sender, EventArgs e)
+        {
+            UserListInit();
         }
         public void UserListInit()
         {
@@ -37,7 +51,7 @@ namespace BOCOM.IVX.Views.Content
 
             Column4.DisplayMember = "r_type";
             Column4.ValueMember = "r_id";
-            Column4.DataSource = new BindingSource(sms_ds,"tRole");
+            Column4.DataSource = new BindingSource(sms_ds, "tRole");
             bs = new BindingSource(sms_ds, "T");
             dataGridViewX1.DataSource = bs;
             //dataGridViewX1.Columns[0].Visible = false;
@@ -51,21 +65,34 @@ namespace BOCOM.IVX.Views.Content
             bindingNavigatorEx1.BindingSource = bs;
 
         }
+        private void UnCheckAllButton()
+        {
+            btnAddUser.Checked = false;
+            btnChangePass.Checked = false;
+            btnUserInfo.Checked = false;
+
+        }
 
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnAddUser.Checked = true;
             superTabControl1.SelectedPanel = superTabControlPanel1;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnChangePass.Checked = true;
             superTabControl1.SelectedPanel = superTabControlPanel2;
 
         }
 
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnUserInfo.Checked = true;
             superTabControl1.SelectedPanel = superTabControlPanel3;
         }
 
@@ -98,6 +125,33 @@ namespace BOCOM.IVX.Views.Content
         {
 
         }
+        void dataGridViewX1_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dataGridViewX1.Rows[e.RowIndex];
+            EditUser(r);
+        }
 
+        private void EditUser(DataGridViewRow r)
+        {
+            if (r != null)
+            {
+                if (r.Cells["Column2"].Value.ToString().ToLower() == "admin")
+                {
+                    bindingNavigatorRetInfo.Text = "无法编辑系统内置用户";
+                    bindingNavigatorRetInfo.ForeColor = Color.Red;
+                    return;
+                }
+                bindingNavigatorRetInfo.Text = "";
+                bindingNavigatorRetInfo.ForeColor = Color.Blue;
+
+                formEditUserInfo info = new formEditUserInfo(Convert.ToInt32(r.Cells["Column1"].Value.ToString())
+                , r.Cells["Column2"].Value.ToString()
+                , Convert.ToInt32(r.Cells["Column4"].Value.ToString()));
+                info.ShowDialog();
+                if (info.ShowDialog() == DialogResult.OK)
+                    UserListInit();
+            }
+
+        }
     }
 }

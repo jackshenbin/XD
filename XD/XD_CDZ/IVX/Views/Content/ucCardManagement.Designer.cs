@@ -48,6 +48,21 @@
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel0 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem0 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucCardStatChangePanel1 = new BOCOM.IVX.Views.Content.ucCardStatChangePanel();
+            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucCardRecordPanel1 = new BOCOM.IVX.Views.Content.ucCardRecordPanel();
+            this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel7 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucAddCardPanel1 = new BOCOM.IVX.Views.Content.ucAddCardPanel();
+            this.superTabItem7 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel8 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucQuitCardPanel1 = new BOCOM.IVX.Views.Content.ucQuitCardPanel();
+            this.superTabItem8 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ucCardStatPanel1 = new BOCOM.IVX.Views.Content.ucCardStatPanel();
+            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.ucWalletReChargePanel1 = new BOCOM.IVX.Views.Content.ucWalletReChargePanel();
             this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
@@ -65,21 +80,6 @@
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel11 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem11 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel10 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem10 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel9 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.ucCardRecordPanel1 = new BOCOM.IVX.Views.Content.ucCardRecordPanel();
-            this.superTabItem9 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel7 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.ucAddCardPanel1 = new BOCOM.IVX.Views.Content.ucAddCardPanel();
-            this.superTabItem7 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.ucCardStatPanel1 = new BOCOM.IVX.Views.Content.ucCardStatPanel();
-            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel8 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.ucQuitCardPanel1 = new BOCOM.IVX.Views.Content.ucQuitCardPanel();
-            this.superTabItem8 = new DevComponents.DotNetBar.SuperTabItem();
-            this.ucCardStatChangePanel1 = new BOCOM.IVX.Views.Content.ucCardStatChangePanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,16 +88,16 @@
             this.expandablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
+            this.superTabControlPanel10.SuspendLayout();
+            this.superTabControlPanel9.SuspendLayout();
+            this.superTabControlPanel7.SuspendLayout();
+            this.superTabControlPanel8.SuspendLayout();
+            this.superTabControlPanel6.SuspendLayout();
             this.superTabControlPanel5.SuspendLayout();
             this.superTabControlPanel4.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
-            this.superTabControlPanel10.SuspendLayout();
-            this.superTabControlPanel9.SuspendLayout();
-            this.superTabControlPanel7.SuspendLayout();
-            this.superTabControlPanel6.SuspendLayout();
-            this.superTabControlPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,13 +113,13 @@
             this.splitContainer1.Panel1.Controls.Add(this.expandablePanel2);
             this.splitContainer1.Panel1.Controls.Add(this.expandablePanel1);
             this.splitContainer1.Panel1.Controls.Add(this.ucCurrentUser1);
-            this.splitContainer1.Panel1MinSize = 185;
+            this.splitContainer1.Panel1MinSize = 250;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.superTabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(939, 519);
-            this.splitContainer1.SplitterDistance = 185;
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 1;
             // 
             // expandablePanel2
@@ -131,7 +131,7 @@
             this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.expandablePanel2.Location = new System.Drawing.Point(0, 461);
             this.expandablePanel2.Name = "expandablePanel2";
-            this.expandablePanel2.Size = new System.Drawing.Size(185, 136);
+            this.expandablePanel2.Size = new System.Drawing.Size(250, 136);
             this.expandablePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -156,7 +156,7 @@
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX2.Location = new System.Drawing.Point(29, 77);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(113, 28);
+            this.buttonX2.Size = new System.Drawing.Size(190, 28);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 1;
             this.buttonX2.Text = "下发黑名单";
@@ -167,7 +167,7 @@
             this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX3.Location = new System.Drawing.Point(29, 43);
             this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(113, 28);
+            this.buttonX3.Size = new System.Drawing.Size(190, 28);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.TabIndex = 1;
             this.buttonX3.Text = "获取黑名单列表";
@@ -189,7 +189,7 @@
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.expandablePanel1.Location = new System.Drawing.Point(0, 59);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(185, 402);
+            this.expandablePanel1.Size = new System.Drawing.Size(250, 402);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -205,7 +205,7 @@
             this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
-            this.expandablePanel1.TitleText = "卡片管理";
+            this.expandablePanel1.TitleText = "智能卡管理";
             this.expandablePanel1.Click += new System.EventHandler(this.expandablePanel1_Click);
             // 
             // btnCardRecord
@@ -214,7 +214,7 @@
             this.btnCardRecord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCardRecord.Location = new System.Drawing.Point(29, 349);
             this.btnCardRecord.Name = "btnCardRecord";
-            this.btnCardRecord.Size = new System.Drawing.Size(113, 28);
+            this.btnCardRecord.Size = new System.Drawing.Size(190, 28);
             this.btnCardRecord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCardRecord.TabIndex = 1;
             this.btnCardRecord.Text = "操作记录查询";
@@ -226,7 +226,7 @@
             this.buttonCardStat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonCardStat.Location = new System.Drawing.Point(29, 43);
             this.buttonCardStat.Name = "buttonCardStat";
-            this.buttonCardStat.Size = new System.Drawing.Size(113, 28);
+            this.buttonCardStat.Size = new System.Drawing.Size(190, 28);
             this.buttonCardStat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonCardStat.TabIndex = 1;
             this.buttonCardStat.Text = "状态查询";
@@ -238,7 +238,7 @@
             this.btnQuitCard.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnQuitCard.Location = new System.Drawing.Point(29, 315);
             this.btnQuitCard.Name = "btnQuitCard";
-            this.btnQuitCard.Size = new System.Drawing.Size(113, 28);
+            this.btnQuitCard.Size = new System.Drawing.Size(190, 28);
             this.btnQuitCard.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnQuitCard.TabIndex = 1;
             this.btnQuitCard.Text = "注销卡片";
@@ -250,7 +250,7 @@
             this.btnAddCard.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddCard.Location = new System.Drawing.Point(29, 281);
             this.btnAddCard.Name = "btnAddCard";
-            this.btnAddCard.Size = new System.Drawing.Size(113, 28);
+            this.btnAddCard.Size = new System.Drawing.Size(190, 28);
             this.btnAddCard.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddCard.TabIndex = 1;
             this.btnAddCard.Text = "发行卡片";
@@ -262,7 +262,7 @@
             this.btnStatChanege.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnStatChanege.Location = new System.Drawing.Point(29, 247);
             this.btnStatChanege.Name = "btnStatChanege";
-            this.btnStatChanege.Size = new System.Drawing.Size(113, 28);
+            this.btnStatChanege.Size = new System.Drawing.Size(190, 28);
             this.btnStatChanege.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnStatChanege.TabIndex = 1;
             this.btnStatChanege.Text = "状态修改";
@@ -274,7 +274,7 @@
             this.btnCharge.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCharge.Location = new System.Drawing.Point(29, 179);
             this.btnCharge.Name = "btnCharge";
-            this.btnCharge.Size = new System.Drawing.Size(113, 28);
+            this.btnCharge.Size = new System.Drawing.Size(190, 28);
             this.btnCharge.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCharge.TabIndex = 1;
             this.btnCharge.Text = "账户扣费";
@@ -286,7 +286,7 @@
             this.btnWalletCharge.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnWalletCharge.Location = new System.Drawing.Point(29, 111);
             this.btnWalletCharge.Name = "btnWalletCharge";
-            this.btnWalletCharge.Size = new System.Drawing.Size(113, 28);
+            this.btnWalletCharge.Size = new System.Drawing.Size(190, 28);
             this.btnWalletCharge.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnWalletCharge.TabIndex = 1;
             this.btnWalletCharge.Text = "账户圈存";
@@ -298,7 +298,7 @@
             this.btnWalletReCharge.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnWalletReCharge.Location = new System.Drawing.Point(29, 213);
             this.btnWalletReCharge.Name = "btnWalletReCharge";
-            this.btnWalletReCharge.Size = new System.Drawing.Size(113, 28);
+            this.btnWalletReCharge.Size = new System.Drawing.Size(190, 28);
             this.btnWalletReCharge.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnWalletReCharge.TabIndex = 1;
             this.btnWalletReCharge.Text = "钱包扣费";
@@ -310,7 +310,7 @@
             this.btnWalletChargeBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnWalletChargeBack.Location = new System.Drawing.Point(29, 145);
             this.btnWalletChargeBack.Name = "btnWalletChargeBack";
-            this.btnWalletChargeBack.Size = new System.Drawing.Size(113, 28);
+            this.btnWalletChargeBack.Size = new System.Drawing.Size(190, 28);
             this.btnWalletChargeBack.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnWalletChargeBack.TabIndex = 1;
             this.btnWalletChargeBack.Text = "账户冲正";
@@ -322,7 +322,7 @@
             this.btnReCharge.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReCharge.Location = new System.Drawing.Point(29, 77);
             this.btnReCharge.Name = "btnReCharge";
-            this.btnReCharge.Size = new System.Drawing.Size(113, 28);
+            this.btnReCharge.Size = new System.Drawing.Size(190, 28);
             this.btnReCharge.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReCharge.TabIndex = 1;
             this.btnReCharge.Text = "账户充值";
@@ -331,11 +331,11 @@
             // ucCurrentUser1
             // 
             this.ucCurrentUser1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucCurrentUser1.BackgroundImage")));
-            this.ucCurrentUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ucCurrentUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ucCurrentUser1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucCurrentUser1.Location = new System.Drawing.Point(0, 0);
             this.ucCurrentUser1.Name = "ucCurrentUser1";
-            this.ucCurrentUser1.Size = new System.Drawing.Size(185, 59);
+            this.ucCurrentUser1.Size = new System.Drawing.Size(250, 59);
             this.ucCurrentUser1.TabIndex = 0;
             // 
             // superTabControl1
@@ -356,12 +356,12 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
+            this.superTabControl1.Controls.Add(this.superTabControlPanel0);
             this.superTabControl1.Controls.Add(this.superTabControlPanel10);
             this.superTabControl1.Controls.Add(this.superTabControlPanel9);
             this.superTabControl1.Controls.Add(this.superTabControlPanel7);
             this.superTabControl1.Controls.Add(this.superTabControlPanel8);
             this.superTabControl1.Controls.Add(this.superTabControlPanel6);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel0);
             this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
@@ -374,7 +374,7 @@
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(750, 519);
+            this.superTabControl1.Size = new System.Drawing.Size(685, 519);
             this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.superTabControl1.TabIndex = 1;
             this.superTabControl1.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.SingleLineFit;
@@ -399,7 +399,7 @@
             this.superTabControlPanel0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel0.Location = new System.Drawing.Point(0, 26);
             this.superTabControlPanel0.Name = "superTabControlPanel0";
-            this.superTabControlPanel0.Size = new System.Drawing.Size(750, 493);
+            this.superTabControlPanel0.Size = new System.Drawing.Size(685, 493);
             this.superTabControlPanel0.TabIndex = 0;
             this.superTabControlPanel0.TabItem = this.superTabItem0;
             // 
@@ -410,13 +410,139 @@
             this.superTabItem0.Name = "superTabItem0";
             this.superTabItem0.Text = "superTabItem0";
             // 
+            // superTabControlPanel10
+            // 
+            this.superTabControlPanel10.Controls.Add(this.ucCardStatChangePanel1);
+            this.superTabControlPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel10.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel10.Name = "superTabControlPanel10";
+            this.superTabControlPanel10.Size = new System.Drawing.Size(685, 519);
+            this.superTabControlPanel10.TabIndex = 0;
+            this.superTabControlPanel10.TabItem = this.superTabItem10;
+            // 
+            // ucCardStatChangePanel1
+            // 
+            this.ucCardStatChangePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCardStatChangePanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucCardStatChangePanel1.Name = "ucCardStatChangePanel1";
+            this.ucCardStatChangePanel1.Size = new System.Drawing.Size(685, 519);
+            this.ucCardStatChangePanel1.TabIndex = 0;
+            // 
+            // superTabItem10
+            // 
+            this.superTabItem10.AttachedControl = this.superTabControlPanel10;
+            this.superTabItem10.GlobalItem = false;
+            this.superTabItem10.Name = "superTabItem10";
+            this.superTabItem10.Text = "superTabItem10";
+            // 
+            // superTabControlPanel9
+            // 
+            this.superTabControlPanel9.Controls.Add(this.ucCardRecordPanel1);
+            this.superTabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel9.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel9.Name = "superTabControlPanel9";
+            this.superTabControlPanel9.Size = new System.Drawing.Size(685, 519);
+            this.superTabControlPanel9.TabIndex = 0;
+            this.superTabControlPanel9.TabItem = this.superTabItem9;
+            // 
+            // ucCardRecordPanel1
+            // 
+            this.ucCardRecordPanel1.AutoScroll = true;
+            this.ucCardRecordPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCardRecordPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucCardRecordPanel1.Name = "ucCardRecordPanel1";
+            this.ucCardRecordPanel1.Size = new System.Drawing.Size(685, 519);
+            this.ucCardRecordPanel1.TabIndex = 0;
+            // 
+            // superTabItem9
+            // 
+            this.superTabItem9.AttachedControl = this.superTabControlPanel9;
+            this.superTabItem9.GlobalItem = false;
+            this.superTabItem9.Name = "superTabItem9";
+            this.superTabItem9.Text = "superTabItem9";
+            // 
+            // superTabControlPanel7
+            // 
+            this.superTabControlPanel7.Controls.Add(this.ucAddCardPanel1);
+            this.superTabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel7.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel7.Name = "superTabControlPanel7";
+            this.superTabControlPanel7.Size = new System.Drawing.Size(685, 519);
+            this.superTabControlPanel7.TabIndex = 0;
+            this.superTabControlPanel7.TabItem = this.superTabItem7;
+            // 
+            // ucAddCardPanel1
+            // 
+            this.ucAddCardPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAddCardPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucAddCardPanel1.Name = "ucAddCardPanel1";
+            this.ucAddCardPanel1.Size = new System.Drawing.Size(685, 519);
+            this.ucAddCardPanel1.TabIndex = 0;
+            // 
+            // superTabItem7
+            // 
+            this.superTabItem7.AttachedControl = this.superTabControlPanel7;
+            this.superTabItem7.GlobalItem = false;
+            this.superTabItem7.Name = "superTabItem7";
+            this.superTabItem7.Text = "superTabItem7";
+            // 
+            // superTabControlPanel8
+            // 
+            this.superTabControlPanel8.Controls.Add(this.ucQuitCardPanel1);
+            this.superTabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel8.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel8.Name = "superTabControlPanel8";
+            this.superTabControlPanel8.Size = new System.Drawing.Size(685, 519);
+            this.superTabControlPanel8.TabIndex = 0;
+            this.superTabControlPanel8.TabItem = this.superTabItem8;
+            // 
+            // ucQuitCardPanel1
+            // 
+            this.ucQuitCardPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucQuitCardPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucQuitCardPanel1.Name = "ucQuitCardPanel1";
+            this.ucQuitCardPanel1.Size = new System.Drawing.Size(685, 519);
+            this.ucQuitCardPanel1.TabIndex = 0;
+            // 
+            // superTabItem8
+            // 
+            this.superTabItem8.AttachedControl = this.superTabControlPanel8;
+            this.superTabItem8.GlobalItem = false;
+            this.superTabItem8.Name = "superTabItem8";
+            this.superTabItem8.Text = "superTabItem8";
+            // 
+            // superTabControlPanel6
+            // 
+            this.superTabControlPanel6.Controls.Add(this.ucCardStatPanel1);
+            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel6.Name = "superTabControlPanel6";
+            this.superTabControlPanel6.Size = new System.Drawing.Size(685, 519);
+            this.superTabControlPanel6.TabIndex = 0;
+            this.superTabControlPanel6.TabItem = this.superTabItem6;
+            // 
+            // ucCardStatPanel1
+            // 
+            this.ucCardStatPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCardStatPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ucCardStatPanel1.Name = "ucCardStatPanel1";
+            this.ucCardStatPanel1.Size = new System.Drawing.Size(685, 519);
+            this.ucCardStatPanel1.TabIndex = 0;
+            // 
+            // superTabItem6
+            // 
+            this.superTabItem6.AttachedControl = this.superTabControlPanel6;
+            this.superTabItem6.GlobalItem = false;
+            this.superTabItem6.Name = "superTabItem6";
+            this.superTabItem6.Text = "superTabItem6";
+            // 
             // superTabControlPanel5
             // 
             this.superTabControlPanel5.Controls.Add(this.ucWalletReChargePanel1);
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel5.TabIndex = 0;
             this.superTabControlPanel5.TabItem = this.superTabItem5;
             // 
@@ -425,7 +551,7 @@
             this.ucWalletReChargePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucWalletReChargePanel1.Location = new System.Drawing.Point(0, 0);
             this.ucWalletReChargePanel1.Name = "ucWalletReChargePanel1";
-            this.ucWalletReChargePanel1.Size = new System.Drawing.Size(750, 519);
+            this.ucWalletReChargePanel1.Size = new System.Drawing.Size(685, 519);
             this.ucWalletReChargePanel1.TabIndex = 0;
             // 
             // superTabItem5
@@ -441,7 +567,7 @@
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel4.TabIndex = 0;
             this.superTabControlPanel4.TabItem = this.superTabItem4;
             // 
@@ -450,7 +576,7 @@
             this.ucChargePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucChargePanel1.Location = new System.Drawing.Point(0, 0);
             this.ucChargePanel1.Name = "ucChargePanel1";
-            this.ucChargePanel1.Size = new System.Drawing.Size(750, 519);
+            this.ucChargePanel1.Size = new System.Drawing.Size(685, 519);
             this.ucChargePanel1.TabIndex = 0;
             // 
             // superTabItem4
@@ -466,7 +592,7 @@
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             // 
@@ -475,7 +601,7 @@
             this.ucWalletChargeBackPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucWalletChargeBackPanel1.Location = new System.Drawing.Point(0, 0);
             this.ucWalletChargeBackPanel1.Name = "ucWalletChargeBackPanel1";
-            this.ucWalletChargeBackPanel1.Size = new System.Drawing.Size(750, 519);
+            this.ucWalletChargeBackPanel1.Size = new System.Drawing.Size(685, 519);
             this.ucWalletChargeBackPanel1.TabIndex = 0;
             // 
             // superTabItem3
@@ -491,7 +617,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -500,7 +626,7 @@
             this.ucWalletChargePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucWalletChargePanel1.Location = new System.Drawing.Point(0, 0);
             this.ucWalletChargePanel1.Name = "ucWalletChargePanel1";
-            this.ucWalletChargePanel1.Size = new System.Drawing.Size(750, 519);
+            this.ucWalletChargePanel1.Size = new System.Drawing.Size(685, 519);
             this.ucWalletChargePanel1.TabIndex = 0;
             // 
             // superTabItem2
@@ -516,7 +642,7 @@
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
@@ -525,7 +651,7 @@
             this.ucReChargePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucReChargePanel1.Location = new System.Drawing.Point(0, 0);
             this.ucReChargePanel1.Name = "ucReChargePanel1";
-            this.ucReChargePanel1.Size = new System.Drawing.Size(750, 519);
+            this.ucReChargePanel1.Size = new System.Drawing.Size(685, 519);
             this.ucReChargePanel1.TabIndex = 0;
             // 
             // superTabItem1
@@ -540,7 +666,7 @@
             this.superTabControlPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel11.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel11.Name = "superTabControlPanel11";
-            this.superTabControlPanel11.Size = new System.Drawing.Size(750, 519);
+            this.superTabControlPanel11.Size = new System.Drawing.Size(685, 519);
             this.superTabControlPanel11.TabIndex = 0;
             this.superTabControlPanel11.TabItem = this.superTabItem11;
             // 
@@ -550,132 +676,6 @@
             this.superTabItem11.GlobalItem = false;
             this.superTabItem11.Name = "superTabItem11";
             this.superTabItem11.Text = "superTabItem11";
-            // 
-            // superTabControlPanel10
-            // 
-            this.superTabControlPanel10.Controls.Add(this.ucCardStatChangePanel1);
-            this.superTabControlPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel10.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel10.Name = "superTabControlPanel10";
-            this.superTabControlPanel10.Size = new System.Drawing.Size(750, 493);
-            this.superTabControlPanel10.TabIndex = 0;
-            this.superTabControlPanel10.TabItem = this.superTabItem10;
-            // 
-            // superTabItem10
-            // 
-            this.superTabItem10.AttachedControl = this.superTabControlPanel10;
-            this.superTabItem10.GlobalItem = false;
-            this.superTabItem10.Name = "superTabItem10";
-            this.superTabItem10.Text = "superTabItem10";
-            // 
-            // superTabControlPanel9
-            // 
-            this.superTabControlPanel9.Controls.Add(this.ucCardRecordPanel1);
-            this.superTabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel9.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel9.Name = "superTabControlPanel9";
-            this.superTabControlPanel9.Size = new System.Drawing.Size(750, 493);
-            this.superTabControlPanel9.TabIndex = 0;
-            this.superTabControlPanel9.TabItem = this.superTabItem9;
-            // 
-            // ucCardRecordPanel1
-            // 
-            this.ucCardRecordPanel1.AutoScroll = true;
-            this.ucCardRecordPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCardRecordPanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucCardRecordPanel1.Name = "ucCardRecordPanel1";
-            this.ucCardRecordPanel1.Size = new System.Drawing.Size(750, 493);
-            this.ucCardRecordPanel1.TabIndex = 0;
-            // 
-            // superTabItem9
-            // 
-            this.superTabItem9.AttachedControl = this.superTabControlPanel9;
-            this.superTabItem9.GlobalItem = false;
-            this.superTabItem9.Name = "superTabItem9";
-            this.superTabItem9.Text = "superTabItem9";
-            // 
-            // superTabControlPanel7
-            // 
-            this.superTabControlPanel7.Controls.Add(this.ucAddCardPanel1);
-            this.superTabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel7.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(750, 493);
-            this.superTabControlPanel7.TabIndex = 0;
-            this.superTabControlPanel7.TabItem = this.superTabItem7;
-            // 
-            // ucAddCardPanel1
-            // 
-            this.ucAddCardPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAddCardPanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucAddCardPanel1.Name = "ucAddCardPanel1";
-            this.ucAddCardPanel1.Size = new System.Drawing.Size(750, 493);
-            this.ucAddCardPanel1.TabIndex = 0;
-            // 
-            // superTabItem7
-            // 
-            this.superTabItem7.AttachedControl = this.superTabControlPanel7;
-            this.superTabItem7.GlobalItem = false;
-            this.superTabItem7.Name = "superTabItem7";
-            this.superTabItem7.Text = "superTabItem7";
-            // 
-            // superTabControlPanel6
-            // 
-            this.superTabControlPanel6.Controls.Add(this.ucCardStatPanel1);
-            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(750, 493);
-            this.superTabControlPanel6.TabIndex = 0;
-            this.superTabControlPanel6.TabItem = this.superTabItem6;
-            // 
-            // ucCardStatPanel1
-            // 
-            this.ucCardStatPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCardStatPanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucCardStatPanel1.Name = "ucCardStatPanel1";
-            this.ucCardStatPanel1.Size = new System.Drawing.Size(750, 493);
-            this.ucCardStatPanel1.TabIndex = 0;
-            // 
-            // superTabItem6
-            // 
-            this.superTabItem6.AttachedControl = this.superTabControlPanel6;
-            this.superTabItem6.GlobalItem = false;
-            this.superTabItem6.Name = "superTabItem6";
-            this.superTabItem6.Text = "superTabItem6";
-            // 
-            // superTabControlPanel8
-            // 
-            this.superTabControlPanel8.Controls.Add(this.ucQuitCardPanel1);
-            this.superTabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel8.Location = new System.Drawing.Point(0, 26);
-            this.superTabControlPanel8.Name = "superTabControlPanel8";
-            this.superTabControlPanel8.Size = new System.Drawing.Size(750, 493);
-            this.superTabControlPanel8.TabIndex = 0;
-            this.superTabControlPanel8.TabItem = this.superTabItem8;
-            // 
-            // ucQuitCardPanel1
-            // 
-            this.ucQuitCardPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucQuitCardPanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucQuitCardPanel1.Name = "ucQuitCardPanel1";
-            this.ucQuitCardPanel1.Size = new System.Drawing.Size(750, 493);
-            this.ucQuitCardPanel1.TabIndex = 0;
-            // 
-            // superTabItem8
-            // 
-            this.superTabItem8.AttachedControl = this.superTabControlPanel8;
-            this.superTabItem8.GlobalItem = false;
-            this.superTabItem8.Name = "superTabItem8";
-            this.superTabItem8.Text = "superTabItem8";
-            // 
-            // ucCardStatChangePanel1
-            // 
-            this.ucCardStatChangePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCardStatChangePanel1.Location = new System.Drawing.Point(0, 0);
-            this.ucCardStatChangePanel1.Name = "ucCardStatChangePanel1";
-            this.ucCardStatChangePanel1.Size = new System.Drawing.Size(750, 493);
-            this.ucCardStatChangePanel1.TabIndex = 0;
             // 
             // ucCardManagement
             // 
@@ -693,16 +693,16 @@
             this.expandablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel10.ResumeLayout(false);
+            this.superTabControlPanel9.ResumeLayout(false);
+            this.superTabControlPanel7.ResumeLayout(false);
+            this.superTabControlPanel8.ResumeLayout(false);
+            this.superTabControlPanel6.ResumeLayout(false);
             this.superTabControlPanel5.ResumeLayout(false);
             this.superTabControlPanel4.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
-            this.superTabControlPanel10.ResumeLayout(false);
-            this.superTabControlPanel9.ResumeLayout(false);
-            this.superTabControlPanel7.ResumeLayout(false);
-            this.superTabControlPanel6.ResumeLayout(false);
-            this.superTabControlPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

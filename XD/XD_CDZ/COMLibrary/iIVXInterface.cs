@@ -78,30 +78,26 @@ namespace BOCOM.IVX.COMLibrary
 
     }
 
-
     /// <summary>
     /// IObjectSafety接口.net定义
     /// </summary>
-    [Guid("2D3CF617-6EC6-428C-A84A-481B5A2EB20C")]
-    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, GuidAttribute("CB5BDC81-93C1-11CF-8F20-00805F2CD064")]//uuid
+    [InterfaceTypeAttribute(ComInterfaceType.InterfaceIsIUnknown)]//继承了IUnknown
     public interface IObjectSafety
     {
-        /// <summary>
-        /// 获取接口安全性
-        /// </summary>
-        /// <param name="riid"></param>
-        /// <param name="supportedOptions"></param>
-        /// <param name="enabledOptions"></param>
-        void GetInterfaceSafetyOptions(int riid, out int supportedOptions, out int enabledOptions);
+        [PreserveSig]
+        int GetInterfaceSafetyOptions(
+            ref Guid riid,
+            [MarshalAs(UnmanagedType.U4)] ref int pdwSupportedOptions,
+            [MarshalAs(UnmanagedType.U4)] ref int pdwEnabledOptions);
 
-        /// <summary>
-        /// 设置接口安全性
-        /// </summary>
-        /// <param name="riid"></param>
-        /// <param name="optionsSetMask"></param>
-        /// <param name="enabledOptions"></param>
-        void SetInterfaceSafetyOptions(int riid, int optionsSetMask, int enabledOptions);
+        [PreserveSig()]
+        int SetInterfaceSafetyOptions(
+            ref Guid riid,
+            [MarshalAs(UnmanagedType.U4)] int dwOptionSetMask,
+            [MarshalAs(UnmanagedType.U4)] int dwEnabledOptions);
     }
+
 
 }
 

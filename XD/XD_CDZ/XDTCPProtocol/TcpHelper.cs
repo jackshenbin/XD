@@ -146,13 +146,13 @@ namespace XDTCPProtocol
         }
 
 
-        public void NewTcpHelper(string ipHost, int port)
+        public bool NewTcpHelper(string ipHost, int port)
         {
             IPEndPoint serverIPEndPoint = new IPEndPoint(IPAddress.Parse(ipHost), port);
             this._serverIPEndPoint = serverIPEndPoint;
             //recvFlag = true;
 
-            this.Start();
+            return this.Start();
         }
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace XDTCPProtocol
         private bool Start()
         {
             this._client = new TcpClient(new IPEndPoint(IPAddress.Any, 0));
-            this._client.ReceiveBufferSize = 1024 * 1024 * 10;
-            this._client.SendBufferSize = 1024 * 1024 * 10;
+            this._client.ReceiveBufferSize = 1024 * 512;
+            this._client.SendBufferSize = 1024 * 512 ;
 
             bool bError = true;
 

@@ -404,8 +404,6 @@ namespace BOCOM.IVX.Framework
             Framework.Environment.ReadConfig();
             Trace.WriteLine("begin Vda_Initialize");
 
-            Framework.Container.Instance.EvtAggregator.GetEvent<UserLoginEvent>().Subscribe(OnUserLoggedIn);
-            Framework.Container.Instance.EvtAggregator.GetEvent<UserLogOutEvent>().Subscribe(OnUserLogout);
             Trace.WriteLine("end Environment");
 
         }
@@ -613,6 +611,7 @@ namespace BOCOM.IVX.Framework
                 s_MainControl.Dispose();
             s_MainControl = null;
             s_Loggedin = false;
+            m_sms_conn = null;
         }
 
         #endregion

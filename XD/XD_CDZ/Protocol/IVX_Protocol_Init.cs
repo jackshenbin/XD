@@ -114,13 +114,6 @@ namespace BOCOM.IVX.Protocol
         public static extern bool VdaSdk_GetCurUserInfo(out TUSER_INFO pUserInfo);
 
 
-        /*===========================================================
-        功  能：获取登录用户信息
-        参  数：ptUserInfo：用户信息
-        返回值：成功返回TRUE，失败返回FALSE
-        ===========================================================*/
-        [DllImport(DLLPATH, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool  VdaSdk_GetLoginUserInfo( out TVDASDK_USER_INFO ptUserInfo );
 
         #endregion
         //#region 获取拓扑信息接口
@@ -326,54 +319,6 @@ namespace BOCOM.IVX.Protocol
         /// </summary>
         /// <param name="ptUserInfo"></param>
         /// <returns>用户信息</returns>
-        public UserInfo GetLoginUserInfo()
-        {
-            TVDASDK_USER_INFO ptUserInfo = new TVDASDK_USER_INFO();
-            MyLog4Net.ILogExtension.DebugWithDebugView(MyLog4Net.Container.Instance.Log,"IVXSDKProtocol VdaSdk_GetLoginUserInfo");
-
-            bool retVal = IVXSDKProtocol.VdaSdk_GetLoginUserInfo(out ptUserInfo);
-            if (!retVal)
-            {
-                // 调用失败，抛异常
-                CheckError();
-            }
-            UserInfo info = null;
-            if (retVal)
-            {
-                MyLog4Net.ILogExtension.DebugWithDebugView(MyLog4Net.Container.Instance.Log,string.Format("IVXSDKProtocol VdaSdk_GetLoginUserInfo ret:{0}"
-                    +",CreateTime:{1}"
-                    +",UpdateTime:{2}"
-                    +",UserGroupID:{3}"
-                    +",UserID:{4}"
-                    +",UserName:{5}"
-                    +",UserNickName:{6}"
-                    +",UserPwd:{7}"
-                    +",UserRoleType:{8}"
-                    , retVal
-                    , ptUserInfo.dwCreateTime
-                    , ptUserInfo.dwUpdateTime
-                    , ptUserInfo.dwUserGroupID
-                    , ptUserInfo.dwUserID
-                    , ptUserInfo.tUserBase.szUserName
-                    , ptUserInfo.tUserBase.szUserNickName
-                    , ptUserInfo.tUserBase.szUserPwd
-                    , ptUserInfo.tUserBase.dwUserRoleType
-                    ));
-                info = new UserInfo()
-                {
-                    CreateTime = Model.ModelParser.ConvertLinuxTime(ptUserInfo.dwCreateTime),
-                    UpdateTime = Model.ModelParser.ConvertLinuxTime(ptUserInfo.dwUpdateTime),
-                    UserGroupID = ptUserInfo.dwUserGroupID,
-                    UserID = ptUserInfo.dwUserID,
-                    UserName = ptUserInfo.tUserBase.szUserName,
-                    UserNickName = ptUserInfo.tUserBase.szUserNickName,
-                    UserPwd = ptUserInfo.tUserBase.szUserPwd,
-                    UserRoleType = ptUserInfo.tUserBase.dwUserRoleType,
-                };
-
-            }
-            return info;
-        }
 
         /// <summary>
         /// 获取登录中心服务器的版本

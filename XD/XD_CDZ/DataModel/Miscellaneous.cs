@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DataModel;
 using System.Drawing;
 
 namespace BOCOM.DataModel
@@ -131,36 +130,9 @@ namespace BOCOM.DataModel
         Small
     }
 
-    public struct CarTypeInfo
-    {
-        public CarType CarType { get; set; }
 
-        public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
-    }
-
-    public class VehicleBrandInfo : ModelInfoBase
-    {
-        public int ID { get; set; }
-        
-        public string ImageName { get; set; }
-    }
 
     
-    public class DownloadStatusInfo : ModelInfoBase
-    {
-        public VideoDownloadStatus DownloadStatus { get; set; }
-
-        public DownloadStatusInfo(VideoDownloadStatus status, string name)
-        {
-            DownloadStatus = status;
-            Name = name;
-        }
-    }
 
     public enum VehicleType
     {

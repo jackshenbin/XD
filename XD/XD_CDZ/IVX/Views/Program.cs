@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using BOCOM.IVX.Controls;
 using System.Text;
-using BOCOM.IVX.BootStrapper;
 
 namespace BOCOM.IVX
 {

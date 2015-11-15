@@ -82,7 +82,7 @@
             // textBoxItemIP
             // 
             this.textBoxItemIP.Name = "textBoxItemIP";
-            this.textBoxItemIP.Text = "192.168.3.251";
+            this.textBoxItemIP.Text = "121.40.88.117";
             this.textBoxItemIP.TextBoxWidth = 100;
             this.textBoxItemIP.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 

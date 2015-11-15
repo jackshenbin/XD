@@ -20,15 +20,27 @@ namespace BOCOM.IVX.Views.Content
             InitializeComponent(); 
 
         }
+        private void UnCheckAllButton()
+        {
+            buttonDelDevice.Checked = false;
+            btnAddDevice.Checked = false;
+            btnRealtimeStat.Checked = false;
+            btnSearchDeviceStat.Checked = false;
+
+        }
 
         private void btnAddDevice_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnAddDevice.Checked = true;
             superTabControl1.SelectedTab = superTabItem1;
             ucAddCDZPanel1.InitWnd();
         }
 
         private void btnDeviceStat_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnSearchDeviceStat.Checked = true;
             superTabControl1.SelectedTab = superTabItem2;
             ucCDZStatPanel1.InitWnd();
 
@@ -39,6 +51,51 @@ namespace BOCOM.IVX.Views.Content
             superTabControlPanel0.BackgroundImage = Framework.Environment.DefaultImage;
             ucAddCDZPanel1.AddDevComplete += ucAddCDZPanel1_AddDevComplete;
             ucDelCDZPanel1.DelDevComplete += ucDelCDZPanel1_DelDevComplete;
+            Framework.Container.Instance.DevStateService.OnDevStateChanged+=DevStateService_OnDevStateChanged;// += DevStateService_OnSetServiceState;
+        }
+
+        void DevStateService_OnDevStateChanged(object sender, EventArgs e)
+        {
+            string devid = sender.ToString();
+            BOCOM.DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(devid);
+            if (info != null)
+            {
+                UpdateDevServiceStatic(devid, info.WorkStat);
+            }
+        }
+
+        private void UpdateDevServiceStatic(string devid, uint workstatic)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string, uint>(UpdateDevServiceStatic), devid, workstatic);
+            }
+            else
+            {
+                switch (workstatic)
+                {
+                    case 0://离线，
+                        advTree1.FindNodeByCellText(devid).ImageIndex = 10;
+                        break;
+                    case 1://故障
+                        advTree1.FindNodeByCellText(devid).ImageIndex = 9;
+                        break;
+
+                    case 2://待机，
+                        advTree1.FindNodeByCellText(devid).ImageIndex = 8;
+                        break;
+
+                    case 3://工作
+                        advTree1.FindNodeByCellText(devid).ImageIndex = 7;
+                        break;
+
+                    default:
+                        advTree1.FindNodeByCellText(devid).ImageIndex = 10;
+                        break;
+
+                }
+
+            }
         }
 
         void ucDelCDZPanel1_DelDevComplete(object sender, EventArgs e)
@@ -88,16 +145,11 @@ namespace BOCOM.IVX.Views.Content
                         {
                             DevComponents.AdvTree.Node n = new DevComponents.AdvTree.Node(item["dev_id"].ToString());
                             n.Tag = item;
-                            //n.Value = item["dev_id"].ToString();
-                            string sms_sqlstr3 = "SELECT * FROM pile_state_t where dev_id='" + item["dev_id"].ToString() + "' order by date_time desc limit 1";
-                            MySqlDataAdapter sms_da3 = new MySqlDataAdapter(sms_sqlstr3, Framework.Environment.SMS_CONN);
-                            DataSet sms_ds3 = new DataSet();
-                            sms_da3.Fill(sms_ds3, "T");
-                            if (sms_ds3.Tables[0].Rows.Count > 0)
+                            string devid = item["dev_id"].ToString();
+                            BOCOM.DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(devid);
+                            if (info != null)
                             {
-                                DataRow r3 = sms_ds3.Tables[0].Rows[0];
-                                int workstate = int.Parse(r3["work_state"].ToString());
-                                switch (workstate)
+                                switch (info.WorkStat)
                                 {
                                     case 0://离线，
                                         n.ImageIndex = 10;
@@ -119,7 +171,6 @@ namespace BOCOM.IVX.Views.Content
                                         break;
 
                                 }
-                                //n.ImageIndex = int.Parse(r3["work_state"].ToString()) + 7;
                             }
                             else
                             {
@@ -173,6 +224,8 @@ namespace BOCOM.IVX.Views.Content
 
         private void btnDelDevice_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            buttonDelDevice.Checked = true;
             superTabControl1.SelectedTab = superTabItem3;
             ucDelCDZPanel1.InitWnd();
 
@@ -215,6 +268,8 @@ namespace BOCOM.IVX.Views.Content
 
         private void btnRealtimeStat_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnRealtimeStat.Checked = true;
             superTabControl1.SelectedTab = superTabItem4;
             ucCDZRuntimeStatPanel1.InitWnd();
 

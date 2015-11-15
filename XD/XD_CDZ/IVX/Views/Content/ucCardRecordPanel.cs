@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace BOCOM.IVX.Views.Content
-{        
+{
 
     public partial class ucCardRecordPanel : UserControl
     {
@@ -21,7 +21,7 @@ namespace BOCOM.IVX.Views.Content
         public ucCardRecordPanel()
         {
             InitializeComponent();
-            
+
             timerFlash.Interval = 10 * 1000;
             timerFlash.Stop();
             timerFlash.Tick += timerFlash_Tick;
@@ -133,7 +133,7 @@ namespace BOCOM.IVX.Views.Content
             tRole.Columns.Add("r_id");
             tRole.Columns.Add("r_type");
 
-            foreach (var item in Enum.GetValues(typeof( DataModel.E_MONEY_CHANGE_TYPE)))
+            foreach (var item in Enum.GetValues(typeof(DataModel.E_MONEY_CHANGE_TYPE)))
             {
                 tRole.Rows.Add((int)item, item.ToString());
             }
@@ -193,6 +193,30 @@ namespace BOCOM.IVX.Views.Content
 
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Excel files (*.xls)|*.xls";
+            dlg.FilterIndex = 0;
+            dlg.RestoreDirectory = true;
+            dlg.CreatePrompt = true;
+            dlg.FileName = null;
+            dlg.Title = "选择保存文件的路径";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Common.ExcelExport.ReportToExcel(dataGridViewX1, dlg.FileName);
+                //string file = Common.ExcelExport.ExportToCVS(dataGridViewX1);
+                //if (!string.IsNullOrEmpty(file))
+                //    System.IO.File.WriteAllText(dlg.FileName, file,Encoding.GetEncoding("gbk"));
+            }
+        }
+
+        private void dataGridViewX1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
     }
+
+    
 }

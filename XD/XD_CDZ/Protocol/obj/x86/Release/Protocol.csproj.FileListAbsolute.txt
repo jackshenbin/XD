@@ -1,10 +1,10 @@
-C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Protocol.dll
-C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Protocol.pdb
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.csprojResolveAssemblyReference.cache
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.dll
-C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.pdb
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD发布\Protocol.dll
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD发布\Protocol.pdb
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.csprojResolveAssemblyReference.cache
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.dll
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Protocol.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Protocol.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.csprojResolveAssemblyReference.cache
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.dll
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Protocol\obj\x86\Release\Protocol.pdb

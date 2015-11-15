@@ -16,3 +16,7 @@ C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\x86\Release\BOCOM.
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\x86\Release\COMLibrary.csproj.GenerateResource.Cache
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\x86\Release\ComInterface.dll
 C:\Users\shenbin\Documents\GitHub\XD\XD\XD_CDZ\COMLibrary\obj\x86\Release\ComInterface.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Default.aspx.cs
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Default.aspx
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\Style\css-all.css
+C:\Users\jack\Documents\GitHub\XD\XD\XD发布\config.js

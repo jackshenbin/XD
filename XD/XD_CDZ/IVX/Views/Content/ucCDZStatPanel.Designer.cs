@@ -57,6 +57,7 @@
             this.comboBoxConnstat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem10 = new DevComponents.Editors.ComboItem();
             this.comboItem11 = new DevComponents.Editors.ComboItem();
+            this.comboItem12 = new DevComponents.Editors.ComboItem();
             this.comboBoxBattery = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem8 = new DevComponents.Editors.ComboItem();
@@ -97,6 +98,16 @@
             this.TextBoxsFactoryid = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelSearchStat = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
@@ -106,6 +117,7 @@
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.checkBoxFlash = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -117,6 +129,12 @@
             this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelEx1.SuspendLayout();
+            this.groupPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
@@ -146,7 +164,7 @@
             this.comboBoxRelaystat.Items.AddRange(new object[] {
             this.comboItem13,
             this.comboItem14});
-            this.comboBoxRelaystat.Location = new System.Drawing.Point(638, 39);
+            this.comboBoxRelaystat.Location = new System.Drawing.Point(744, 46);
             this.comboBoxRelaystat.Name = "comboBoxRelaystat";
             this.comboBoxRelaystat.Size = new System.Drawing.Size(100, 21);
             this.comboBoxRelaystat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -167,14 +185,17 @@
             // 
             this.comboBoxConnstat.DisplayMember = "Text";
             this.comboBoxConnstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxConnstat.DropDownHeight = 1;
             this.comboBoxConnstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxConnstat.Enabled = false;
             this.comboBoxConnstat.FormattingEnabled = true;
+            this.comboBoxConnstat.IntegralHeight = false;
             this.comboBoxConnstat.ItemHeight = 15;
             this.comboBoxConnstat.Items.AddRange(new object[] {
             this.comboItem10,
-            this.comboItem11});
-            this.comboBoxConnstat.Location = new System.Drawing.Point(522, 182);
+            this.comboItem11,
+            this.comboItem12});
+            this.comboBoxConnstat.Location = new System.Drawing.Point(522, 125);
             this.comboBoxConnstat.Name = "comboBoxConnstat";
             this.comboBoxConnstat.Size = new System.Drawing.Size(100, 21);
             this.comboBoxConnstat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -182,13 +203,18 @@
             // 
             // comboItem10
             // 
-            this.comboItem10.Text = "关（未好）";
+            this.comboItem10.Text = "未连";
             this.comboItem10.Value = "0";
             // 
             // comboItem11
             // 
-            this.comboItem11.Text = "开（好）";
+            this.comboItem11.Text = "连接";
             this.comboItem11.Value = "1";
+            // 
+            // comboItem12
+            // 
+            this.comboItem12.Text = "可充";
+            this.comboItem12.Value = "2";
             // 
             // comboBoxBattery
             // 
@@ -200,7 +226,7 @@
             this.comboBoxBattery.Items.AddRange(new object[] {
             this.comboItem7,
             this.comboItem8});
-            this.comboBoxBattery.Location = new System.Drawing.Point(638, 87);
+            this.comboBoxBattery.Location = new System.Drawing.Point(744, 94);
             this.comboBoxBattery.Name = "comboBoxBattery";
             this.comboBoxBattery.Size = new System.Drawing.Size(100, 21);
             this.comboBoxBattery.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -221,9 +247,11 @@
             // 
             this.comboBoxWorkstat.DisplayMember = "Text";
             this.comboBoxWorkstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxWorkstat.DropDownHeight = 1;
             this.comboBoxWorkstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWorkstat.Enabled = false;
             this.comboBoxWorkstat.FormattingEnabled = true;
+            this.comboBoxWorkstat.IntegralHeight = false;
             this.comboBoxWorkstat.ItemHeight = 15;
             this.comboBoxWorkstat.Items.AddRange(new object[] {
             this.comboItem1,
@@ -235,6 +263,7 @@
             this.comboBoxWorkstat.Size = new System.Drawing.Size(100, 21);
             this.comboBoxWorkstat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxWorkstat.TabIndex = 21;
+            this.comboBoxWorkstat.SelectedIndexChanged += new System.EventHandler(this.comboBoxWorkstat_SelectedIndexChanged);
             // 
             // comboItem1
             // 
@@ -260,9 +289,11 @@
             // 
             this.comboBoxType.DisplayMember = "Text";
             this.comboBoxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxType.DropDownHeight = 1;
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.Enabled = false;
             this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.IntegralHeight = false;
             this.comboBoxType.ItemHeight = 15;
             this.comboBoxType.Items.AddRange(new object[] {
             this.comboItem4,
@@ -302,7 +333,7 @@
             // 
             // 
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(35, 49);
+            this.labelX9.Location = new System.Drawing.Point(39, 49);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(81, 18);
             this.labelX9.TabIndex = 5;
@@ -328,7 +359,7 @@
             // 
             this.TextBoxUserid.Border.Class = "TextBoxBorder";
             this.TextBoxUserid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxUserid.Location = new System.Drawing.Point(638, 133);
+            this.TextBoxUserid.Location = new System.Drawing.Point(744, 140);
             this.TextBoxUserid.Name = "TextBoxUserid";
             this.TextBoxUserid.Size = new System.Drawing.Size(206, 21);
             this.TextBoxUserid.TabIndex = 18;
@@ -341,7 +372,7 @@
             // 
             this.TextBoxsOutcur.Border.Class = "TextBoxBorder";
             this.TextBoxsOutcur.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsOutcur.Location = new System.Drawing.Point(148, 184);
+            this.TextBoxsOutcur.Location = new System.Drawing.Point(148, 127);
             this.TextBoxsOutcur.Name = "TextBoxsOutcur";
             this.TextBoxsOutcur.ReadOnly = true;
             this.TextBoxsOutcur.Size = new System.Drawing.Size(100, 21);
@@ -354,7 +385,7 @@
             // 
             this.TextBoxsAddr.Border.Class = "TextBoxBorder";
             this.TextBoxsAddr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsAddr.Location = new System.Drawing.Point(148, 103);
+            this.TextBoxsAddr.Location = new System.Drawing.Point(148, 154);
             this.TextBoxsAddr.Name = "TextBoxsAddr";
             this.TextBoxsAddr.ReadOnly = true;
             this.TextBoxsAddr.Size = new System.Drawing.Size(474, 21);
@@ -367,7 +398,7 @@
             // 
             this.TextBoxsTotaldegree.Border.Class = "TextBoxBorder";
             this.TextBoxsTotaldegree.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsTotaldegree.Location = new System.Drawing.Point(522, 155);
+            this.TextBoxsTotaldegree.Location = new System.Drawing.Point(522, 98);
             this.TextBoxsTotaldegree.Name = "TextBoxsTotaldegree";
             this.TextBoxsTotaldegree.ReadOnly = true;
             this.TextBoxsTotaldegree.Size = new System.Drawing.Size(100, 21);
@@ -380,7 +411,7 @@
             // 
             // 
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(68, 73);
+            this.labelX16.Location = new System.Drawing.Point(64, 73);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(56, 18);
             this.labelX16.TabIndex = 11;
@@ -393,7 +424,7 @@
             // 
             // 
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(35, 180);
+            this.labelX12.Location = new System.Drawing.Point(39, 128);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(81, 18);
             this.labelX12.TabIndex = 9;
@@ -406,7 +437,7 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(426, 155);
+            this.labelX14.Location = new System.Drawing.Point(430, 101);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(68, 18);
             this.labelX14.TabIndex = 11;
@@ -419,7 +450,7 @@
             // 
             // 
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(638, 66);
+            this.labelX15.Location = new System.Drawing.Point(744, 73);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(81, 18);
             this.labelX15.TabIndex = 11;
@@ -433,7 +464,7 @@
             // 
             this.TextBoxsPosition.Border.Class = "TextBoxBorder";
             this.TextBoxsPosition.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsPosition.Location = new System.Drawing.Point(148, 130);
+            this.TextBoxsPosition.Location = new System.Drawing.Point(148, 181);
             this.TextBoxsPosition.Name = "TextBoxsPosition";
             this.TextBoxsPosition.ReadOnly = true;
             this.TextBoxsPosition.Size = new System.Drawing.Size(474, 21);
@@ -446,7 +477,7 @@
             // 
             // 
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(389, 179);
+            this.labelX13.Location = new System.Drawing.Point(393, 128);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(105, 18);
             this.labelX13.TabIndex = 11;
@@ -459,7 +490,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(68, 106);
+            this.labelX11.Location = new System.Drawing.Point(64, 157);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(56, 18);
             this.labelX11.TabIndex = 9;
@@ -472,7 +503,7 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(638, 15);
+            this.labelX6.Location = new System.Drawing.Point(744, 22);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(93, 18);
             this.labelX6.TabIndex = 11;
@@ -486,7 +517,7 @@
             // 
             this.TextBoxDevid1.Border.Class = "TextBoxBorder";
             this.TextBoxDevid1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevid1.Location = new System.Drawing.Point(638, 165);
+            this.TextBoxDevid1.Location = new System.Drawing.Point(744, 172);
             this.TextBoxDevid1.Name = "TextBoxDevid1";
             this.TextBoxDevid1.Size = new System.Drawing.Size(206, 21);
             this.TextBoxDevid1.TabIndex = 13;
@@ -499,7 +530,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(101, 133);
+            this.labelX4.Location = new System.Drawing.Point(89, 184);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(31, 18);
             this.labelX4.TabIndex = 11;
@@ -512,7 +543,7 @@
             // 
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(638, 114);
+            this.labelX8.Location = new System.Drawing.Point(744, 121);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(81, 18);
             this.labelX8.TabIndex = 12;
@@ -526,7 +557,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(35, 153);
+            this.labelX3.Location = new System.Drawing.Point(39, 101);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(81, 18);
             this.labelX3.TabIndex = 8;
@@ -539,7 +570,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(445, 76);
+            this.labelX7.Location = new System.Drawing.Point(448, 76);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(50, 18);
             this.labelX7.TabIndex = 10;
@@ -552,7 +583,7 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(426, 49);
+            this.labelX10.Location = new System.Drawing.Point(430, 49);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(68, 18);
             this.labelX10.TabIndex = 8;
@@ -578,7 +609,7 @@
             // 
             this.TextBoxsOutvol.Border.Class = "TextBoxBorder";
             this.TextBoxsOutvol.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxsOutvol.Location = new System.Drawing.Point(148, 157);
+            this.TextBoxsOutvol.Location = new System.Drawing.Point(148, 100);
             this.TextBoxsOutvol.Name = "TextBoxsOutvol";
             this.TextBoxsOutvol.ReadOnly = true;
             this.TextBoxsOutvol.Size = new System.Drawing.Size(100, 21);
@@ -657,18 +688,19 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Color = System.Drawing.Color.Lime;
+            series1.CustomProperties = "EmptyPointValue=Zero";
             series1.Legend = "Legend1";
             series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series1.Name = "Series1";
             series1.ToolTip = "#VALX\\n#VAL";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(615, 195);
+            this.chart1.Size = new System.Drawing.Size(646, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
-            title1.Text = "电压状态表";
+            title1.Text = "电压状态表（单位：伏特）";
             title1.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Shadow;
             this.chart1.Titles.Add(title1);
             // 
@@ -678,6 +710,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.groupPanel2);
             this.panelEx1.Controls.Add(this.TextBoxDevid);
             this.panelEx1.Controls.Add(this.comboBoxRelaystat);
             this.panelEx1.Controls.Add(this.comboBoxWorkstat);
@@ -709,9 +742,9 @@
             this.panelEx1.Controls.Add(this.labelX13);
             this.panelEx1.Controls.Add(this.labelX15);
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
-            this.panelEx1.Location = new System.Drawing.Point(18, 70);
+            this.panelEx1.Location = new System.Drawing.Point(18, 97);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(675, 226);
+            this.panelEx1.Size = new System.Drawing.Size(706, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -720,6 +753,137 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 23;
+            // 
+            // groupPanel2
+            // 
+            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.flowLayoutPanel1);
+            this.groupPanel2.Location = new System.Drawing.Point(644, 17);
+            this.groupPanel2.Name = "groupPanel2";
+            this.groupPanel2.Size = new System.Drawing.Size(216, 98);
+            // 
+            // 
+            // 
+            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel2.Style.BackColorGradientAngle = 90;
+            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderBottomWidth = 1;
+            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderLeftWidth = 1;
+            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderRightWidth = 1;
+            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderTopWidth = 1;
+            this.groupPanel2.Style.CornerDiameter = 4;
+            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel2.TabIndex = 23;
+            this.groupPanel2.Text = "工作状态";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 74);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BOCOM.IVX.Properties.Resources.充电桩充电;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BOCOM.IVX.Properties.Resources.充电桩待机;
+            this.pictureBox2.Location = new System.Drawing.Point(55, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BOCOM.IVX.Properties.Resources.充电桩故障;
+            this.pictureBox3.Location = new System.Drawing.Point(107, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::BOCOM.IVX.Properties.Resources.充电桩离线;
+            this.pictureBox4.Location = new System.Drawing.Point(159, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(3, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "充电";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(55, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "待机";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(107, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "故障";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(159, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "离线";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelEx2
             // 
@@ -731,9 +895,9 @@
             this.panelEx2.Controls.Add(this.TextBoxDevidSearch);
             this.panelEx2.Controls.Add(this.btnSearch);
             this.panelEx2.Controls.Add(this.labelX17);
-            this.panelEx2.Location = new System.Drawing.Point(18, 3);
+            this.panelEx2.Location = new System.Drawing.Point(18, 35);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(675, 43);
+            this.panelEx2.Size = new System.Drawing.Size(706, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -823,11 +987,11 @@
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(615, 195);
+            this.chart2.Size = new System.Drawing.Size(646, 195);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart1";
             title2.Name = "Title1";
-            title2.Text = "电流状态表";
+            title2.Text = "电流状态表（单位：安培）";
             title2.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Shadow;
             this.chart2.Titles.Add(title2);
             // 
@@ -871,11 +1035,11 @@
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(615, 195);
+            this.chart3.Size = new System.Drawing.Size(646, 195);
             this.chart3.TabIndex = 0;
             this.chart3.Text = "chart1";
             title3.Name = "Title1";
-            title3.Text = "电量状态表";
+            title3.Text = "电量状态表（单位：度）";
             title3.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Shadow;
             this.chart3.Titles.Add(title3);
             // 
@@ -920,7 +1084,7 @@
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(615, 195);
+            this.chart4.Size = new System.Drawing.Size(646, 195);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart1";
             title4.Name = "Title1";
@@ -933,6 +1097,7 @@
             this.chart5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart5.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chartArea5.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
             chartArea5.AxisX.IsLabelAutoFit = false;
             chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             chartArea5.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -969,7 +1134,7 @@
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart5.Series.Add(series5);
-            this.chart5.Size = new System.Drawing.Size(615, 195);
+            this.chart5.Size = new System.Drawing.Size(646, 195);
             this.chart5.TabIndex = 0;
             this.chart5.Text = "chart1";
             title5.Name = "Title1";
@@ -984,14 +1149,15 @@
             this.groupPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelX19);
             this.groupPanel1.Controls.Add(this.panelEx3);
             this.groupPanel1.Controls.Add(this.panelEx2);
             this.groupPanel1.Controls.Add(this.panelEx1);
+            this.groupPanel1.DrawTitleBox = false;
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(724, 1403);
+            this.groupPanel1.Size = new System.Drawing.Size(791, 1403);
             // 
             // 
             // 
@@ -1008,7 +1174,7 @@
             this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderTopWidth = 1;
             this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
@@ -1021,7 +1187,20 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "充电桩信息";
+            // 
+            // labelX19
+            // 
+            this.labelX19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX19.Location = new System.Drawing.Point(0, 0);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(121, 23);
+            this.labelX19.TabIndex = 26;
+            this.labelX19.Text = "充电桩查询：";
             // 
             // panelEx3
             // 
@@ -1040,9 +1219,9 @@
             this.panelEx3.Controls.Add(this.chart1);
             this.panelEx3.Controls.Add(this.chart3);
             this.panelEx3.Controls.Add(this.chart2);
-            this.panelEx3.Location = new System.Drawing.Point(18, 313);
+            this.panelEx3.Location = new System.Drawing.Point(18, 338);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(675, 1056);
+            this.panelEx3.Size = new System.Drawing.Size(706, 1056);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -1226,7 +1405,7 @@
             // 
             this.TextBoxDevid.Border.Class = "TextBoxBorder";
             this.TextBoxDevid.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TextBoxDevid.Location = new System.Drawing.Point(148, 13);
+            this.TextBoxDevid.Location = new System.Drawing.Point(148, 17);
             this.TextBoxDevid.MaxLength = 19;
             this.TextBoxDevid.Name = "TextBoxDevid";
             this.TextBoxDevid.ReadOnly = true;
@@ -1241,11 +1420,17 @@
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucCDZStatPanel";
-            this.Size = new System.Drawing.Size(730, 610);
+            this.Size = new System.Drawing.Size(797, 610);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
+            this.groupPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
@@ -1328,6 +1513,18 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX18;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxFlash;
+        private DevComponents.Editors.ComboItem comboItem12;
+        private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
 
     }
 }

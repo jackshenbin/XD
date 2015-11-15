@@ -71,13 +71,13 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.expandablePanel1);
             this.splitContainer1.Panel1.Controls.Add(this.ucCurrentUser1);
-            this.splitContainer1.Panel1MinSize = 185;
+            this.splitContainer1.Panel1MinSize = 250;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.superTabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(854, 401);
-            this.splitContainer1.SplitterDistance = 185;
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 3;
             // 
             // expandablePanel1
@@ -114,7 +114,7 @@
             this.btnCardRecord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCardRecord.Location = new System.Drawing.Point(29, 111);
             this.btnCardRecord.Name = "btnCardRecord";
-            this.btnCardRecord.Size = new System.Drawing.Size(113, 28);
+            this.btnCardRecord.Size = new System.Drawing.Size(190, 28);
             this.btnCardRecord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCardRecord.TabIndex = 1;
             this.btnCardRecord.Text = "卡片操作记录查询";
@@ -126,7 +126,7 @@
             this.btnRegionStat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnRegionStat.Location = new System.Drawing.Point(29, 77);
             this.btnRegionStat.Name = "btnRegionStat";
-            this.btnRegionStat.Size = new System.Drawing.Size(113, 28);
+            this.btnRegionStat.Size = new System.Drawing.Size(190, 28);
             this.btnRegionStat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRegionStat.TabIndex = 1;
             this.btnRegionStat.Text = "区域状态查询";
@@ -138,7 +138,7 @@
             this.btnTradingRecord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnTradingRecord.Location = new System.Drawing.Point(29, 43);
             this.btnTradingRecord.Name = "btnTradingRecord";
-            this.btnTradingRecord.Size = new System.Drawing.Size(113, 28);
+            this.btnTradingRecord.Size = new System.Drawing.Size(190, 28);
             this.btnTradingRecord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnTradingRecord.TabIndex = 1;
             this.btnTradingRecord.Text = "交易记录查询";
@@ -146,8 +146,6 @@
             // 
             // ucCurrentUser1
             // 
-            this.ucCurrentUser1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucCurrentUser1.BackgroundImage")));
-            this.ucCurrentUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ucCurrentUser1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucCurrentUser1.Location = new System.Drawing.Point(0, 0);
             this.ucCurrentUser1.Name = "ucCurrentUser1";

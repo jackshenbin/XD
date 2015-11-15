@@ -37,12 +37,12 @@ namespace XDTCPProtocol
         public event Action<SetServiceStateRet> OnReceiveSetServiceState;
 
 
-        public void Open(string ip, int port)
+        public bool Open(string ip, int port)
         {
             m_tcpManager.OnConnectFail += m_tcpManager_OnConnectFail;
             m_tcpManager.OnConnectSuccess += m_tcpManager_OnConnectSuccess;
             m_tcpManager.OnReceiveData += m_tcpManager_OnReceiveData;
-            m_tcpManager.NewTcpHelper(ip, port);
+            return m_tcpManager.NewTcpHelper(ip, port);
             //m_tcpManager.OnSendData += m_tcpManager_OnSendData;
 
         }

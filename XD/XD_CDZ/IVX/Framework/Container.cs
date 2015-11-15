@@ -9,7 +9,6 @@ using BOCOM.IVX.Interfaces;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
-using BOCOM.IVX.Customization;
 using System.IO;
 using System.Windows.Forms;
 using BOCOM.DataModel;
@@ -28,7 +27,6 @@ namespace BOCOM.IVX.Framework
         // private VASearchService m_VASearchLogic;
         private EventAggregator m_evtAggregator = null;
 
-        private CacheManager m_cacheMgr = null;
 
         private CompositionContainer m_MEFContainer = null;
 
@@ -98,7 +96,6 @@ namespace BOCOM.IVX.Framework
             this.m_evtAggregator = new EventAggregator();
             m_eventSubscribers = new List<IEventAggregatorSubscriber>();
 
-            m_cacheMgr = new CacheManager();
 
             var cataLog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             m_MEFContainer = new CompositionContainer(cataLog);

@@ -171,6 +171,9 @@
     <StartupObject>BOCOM.IVX.Program2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\ThirdParty\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar.Design">
       <HintPath>..\..\ThirdParty\DevComponents.DotNetBar.Design.dll</HintPath>
     </Reference>
@@ -208,18 +211,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootStrapper\CmdlineStartup.cs" />
-    <Compile Include="BootStrapper\NormalStartup.cs" />
-    <Compile Include="BootStrapper\OCXStartup.cs" />
-    <Compile Include="BootStrapper\Startup.cs" />
-    <Compile Include="BootStrapper\StartupFactory.cs" />
-    <Compile Include="Common\Constant.cs" />
-    <Compile Include="Common\Exceptions.cs" />
-    <Compile Include="Common\FTP.cs" />
+    <Compile Include="Common\ExcelExport.cs" />
     <Compile Include="Common\SDKCallExceptionHandler.cs" />
-    <Compile Include="Common\TextUtil.cs" />
-    <Compile Include="Common\UIUtil.cs" />
-    <Compile Include="Common\Utils.cs" />
     <Compile Include="Controls\GridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -235,7 +228,6 @@
     <Compile Include="Controls\ucHttpTreeControl.Designer.cs">
       <DependentUpon>ucHttpTreeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Framework\ICommand.cs" />
     <Compile Include="Framework\IEventAggregatorSubscriber.cs" />
     <Compile Include="Framework\VVMDataBindings.cs" />
     <Compile Include="Interfaces\IInteractionService.cs" />
@@ -256,6 +248,12 @@
     </Compile>
     <Compile Include="Views\Content\formDevSetting.Designer.cs">
       <DependentUpon>formDevSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\formEditUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Content\formEditUserInfo.Designer.cs">
+      <DependentUpon>formEditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Content\formMoneyCharge.cs">
       <SubType>Form</SubType>
@@ -401,15 +399,9 @@
     <Compile Include="Views\Content\ucCurrentUser.Designer.cs">
       <DependentUpon>ucCurrentUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customization\BaseStyle.cs" />
-    <Compile Include="Customization\NeuterStyle.cs" />
-    <Compile Include="Customization\ShanghaiPoliceStyle.cs" />
-    <Compile Include="Framework\CacheManager.cs" />
     <Compile Include="Framework\Container.cs" />
     <Compile Include="Framework\Environment.cs" />
-    <Compile Include="Framework\SearchEvent.cs" />
     <Compile Include="Framework\UIEvent.cs" />
-    <Compile Include="Framework\VAServerEvent.cs" />
     <Compile Include="Views\Content\ucDeviceManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -456,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\formDevSetting.resx">
       <DependentUpon>formDevSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Content\formEditUserInfo.resx">
+      <DependentUpon>formEditUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Content\formMoneyCharge.resx">
       <DependentUpon>formMoneyCharge.cs</DependentUpon>
@@ -609,6 +604,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IVX.ico" />
+    <None Include="Resources\userheadbk.jpg" />
+    <None Include="Resources\充电桩充电.png" />
+    <None Include="Resources\充电桩待机.png" />
+    <None Include="Resources\充电桩故障.png" />
+    <None Include="Resources\充电桩离线.png" />
     <Content Include="xd.ico" />
     <None Include="Resources\bg_menu_cur.gif" />
     <Content Include="Resources\loading_2.gif" />
@@ -843,7 +843,7 @@
       <Name>Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataModel\DataModel.csproj">
-      <Project>{8E287254-C9B9-49F0-8D3B-3CD59C5DBEFA}</Project>
+      <Project>{8e287254-c9b9-49f0-8d3b-3cd59c5dbefa}</Project>
       <Name>DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Log4Net\MyLog4Net.csproj">

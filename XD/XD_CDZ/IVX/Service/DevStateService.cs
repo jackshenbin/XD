@@ -20,6 +20,7 @@ namespace BOCOM.IVX.Service
         public event EventHandler OnSetDevID;
         public event EventHandler OnSetServiceState;
         public event EventHandler OnSetBlackList;
+        public event EventHandler OnDevStateChanged;
 
         DataTable m_devStatTable;
 
@@ -40,7 +41,7 @@ namespace BOCOM.IVX.Service
                     DevType = (byte)r["DevType"],
                     FactoryID = r["FactoryID"].ToString(),
                     IsOnline = (byte)(((bool)r["IsOnline"])?1:0),
-                    LianJieQueRenKaiGuanZhuangTai = (bool)(r["LianJieQueRenKaiGuanZhuangTai"]),
+                    LianJieQueRenKaiGuanZhuangTai = (uint)(r["LianJieQueRenKaiGuanZhuangTai"]),
                     ServiceStat = (byte)r["ServiceStat"],
                     ShiFouLianJieDianChi = (bool)(r["ShiFouLianJieDianChi"]),
                     ShuChuJiDianQiZhuangTai = (bool)(r["ShuChuJiDianQiZhuangTai"]),
@@ -67,7 +68,7 @@ namespace BOCOM.IVX.Service
                     m_devStatTable.Columns.Add("ChongDianShuChuDianYa", typeof(double));
                     m_devStatTable.Columns.Add("ChongDianShuChuDianLiu", typeof(double));
                     m_devStatTable.Columns.Add("ShuChuJiDianQiZhuangTai", typeof(bool));
-                    m_devStatTable.Columns.Add("LianJieQueRenKaiGuanZhuangTai", typeof(bool));
+                    m_devStatTable.Columns.Add("LianJieQueRenKaiGuanZhuangTai", typeof(uint));
                     m_devStatTable.Columns.Add("ShiFouLianJieDianChi", typeof(bool));
                     m_devStatTable.Columns.Add("WorkStat", typeof(UInt16));
                     m_devStatTable.Columns.Add("DevType", typeof(byte));
@@ -108,10 +109,10 @@ namespace BOCOM.IVX.Service
                                , 0//ChongDianShuChuDianYa
                                , 0//ChongDianShuChuDianLiu
                                , false//ShuChuJiDianQiZhuangTai
-                               , false//LianJieQueRenKaiGuanZhuangTai
+                               , 0//LianJieQueRenKaiGuanZhuangTai
                                , false//ShiFouLianJieDianChi
                                , 0//WorkStat
-                               , 0//DevType
+                               , Convert.ToInt32( item["pile_type"].ToString())//DevType
                                , 0//YouGongZongDianDu
                                , item["vender_id"].ToString()//FactoryID
                                , item["software_ver"].ToString()//DevSoftVersion
@@ -129,27 +130,33 @@ namespace BOCOM.IVX.Service
         public void Start()
         {
             xd = new XdTcpHelper();
-            xd.OnConnected += xd_OnConnected;
-            xd.OnDisConnected += xd_OnDisConnected;
-            xd.OnReceiveData += xd_OnReceiveData;
-            xd.Open(Framework.Environment.TCPIP, Framework.Environment.TCPPORT);
-            //xd.Open("127.0.0.1", 9999);
-            xd.OnReceiveLogin += xd_OnReceiveLogin;
-            xd.OnReceiveGetDevChargeInfo += xd_OnReceiveGetDevChargeInfo;
-            xd.OnReceiveGetDevVersion += xd_OnReceiveGetDevVersion;
-            xd.OnReceiveNoteDevChargeStatus += xd_OnReceiveNoteDevChargeStatus;
-            xd.OnReceiveNoteDevStatus += xd_OnReceiveNoteDevStatus;
-            xd.OnReceiveSubscribrDevChargeStatus += xd_OnReceiveSubscribrDevChargeStatus;
-            xd.OnReceiveSubscribrDevStatus += xd_OnReceiveSubscribrDevStatus;
-            xd.OnReceiveSetDevParam += xd_OnReceiveSetDevParamRet;
-            xd.OnReceiveGetDevParam += xd_OnReceiveGetDevParam;
-            xd.OnReceiveGetChargePrice += xd_OnReceiveGetChargePrice;
-            xd.OnReceiveSetChargePrice += xd_OnReceiveSetChargePrice;
-            xd.OnReceiveSetBlackList += xd_OnReceiveSetBlackList;
-            xd.OnReceiveSetDevID += xd_OnReceiveSetDevID;
-            xd.OnReceiveSetServiceState += xd_OnReceiveSetServiceState;
-            Login();
-
+            if (xd.Open(Framework.Environment.TCPIP, Framework.Environment.TCPPORT))
+            {
+                xd.OnConnected += xd_OnConnected;
+                xd.OnDisConnected += xd_OnDisConnected;
+                xd.OnReceiveData += xd_OnReceiveData;
+                //xd.Open("127.0.0.1", 9999);
+                xd.OnReceiveLogin += xd_OnReceiveLogin;
+                xd.OnReceiveGetDevChargeInfo += xd_OnReceiveGetDevChargeInfo;
+                xd.OnReceiveGetDevVersion += xd_OnReceiveGetDevVersion;
+                xd.OnReceiveNoteDevChargeStatus += xd_OnReceiveNoteDevChargeStatus;
+                xd.OnReceiveNoteDevStatus += xd_OnReceiveNoteDevStatus;
+                xd.OnReceiveSubscribrDevChargeStatus += xd_OnReceiveSubscribrDevChargeStatus;
+                xd.OnReceiveSubscribrDevStatus += xd_OnReceiveSubscribrDevStatus;
+                xd.OnReceiveSetDevParam += xd_OnReceiveSetDevParamRet;
+                xd.OnReceiveGetDevParam += xd_OnReceiveGetDevParam;
+                xd.OnReceiveGetChargePrice += xd_OnReceiveGetChargePrice;
+                xd.OnReceiveSetChargePrice += xd_OnReceiveSetChargePrice;
+                xd.OnReceiveSetBlackList += xd_OnReceiveSetBlackList;
+                xd.OnReceiveSetDevID += xd_OnReceiveSetDevID;
+                xd.OnReceiveSetServiceState += xd_OnReceiveSetServiceState;
+                Login();
+            }
+            else
+            {
+                throw new Exception("无法连接管理服务器！");
+ 
+            }
         }
 
         void xd_OnReceiveSetServiceState(SetServiceStateRet obj)
@@ -218,7 +225,7 @@ namespace BOCOM.IVX.Service
                    , 0//ChongDianShuChuDianYa
                    , 0//ChongDianShuChuDianLiu
                    , false//ShuChuJiDianQiZhuangTai
-                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , 0//LianJieQueRenKaiGuanZhuangTai
                    , false//ShiFouLianJieDianChi
                    , 0//WorkStat
                    , 0//DevType
@@ -257,7 +264,7 @@ namespace BOCOM.IVX.Service
                    , 0//ChongDianShuChuDianYa
                    , 0//ChongDianShuChuDianLiu
                    , false//ShuChuJiDianQiZhuangTai
-                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , 0//LianJieQueRenKaiGuanZhuangTai
                    , false//ShiFouLianJieDianChi
                    , 0//WorkStat
                    , 0//DevType
@@ -289,11 +296,13 @@ namespace BOCOM.IVX.Service
             System.Diagnostics.Trace.WriteLine(msg + System.Environment.NewLine);
             row["ChongDianShuChuDianLiu"] = obj.ChongDianShuChuDianLiu / 100d;
             row["ChongDianShuChuDianYa"] = obj.ChongDianShuChuDianYa / 10d;
-            row["LianJieQueRenKaiGuanZhuangTai"] = obj.LianJieQueRenKaiGuanZhuangTai == 1;
+            row["LianJieQueRenKaiGuanZhuangTai"] = obj.LianJieQueRenKaiGuanZhuangTai;
             row["ShiFouLianJieDianChi"] = obj.ShiFouLianJieDianChi == 1;
             row["ShuChuJiDianQiZhuangTai"] = obj.ShuChuJiDianQiZhuangTai == 1;
             row["WorkStat"] = obj.WorkStat;
             row["YouGongZongDianDu"] = obj.YouGongZongDianDu / 10d;
+            if (OnDevStateChanged != null)
+                OnDevStateChanged(new string(obj.DevID), null);
         }
 
         void xd_OnReceiveGetDevVersion(GetDevVersionRet obj)
@@ -308,7 +317,7 @@ namespace BOCOM.IVX.Service
                    , 0//ChongDianShuChuDianYa
                    , 0//ChongDianShuChuDianLiu
                    , false//ShuChuJiDianQiZhuangTai
-                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , 0//LianJieQueRenKaiGuanZhuangTai
                    , false//ShiFouLianJieDianChi
                    , 0//WorkStat
                    , 0//DevType
@@ -347,7 +356,7 @@ namespace BOCOM.IVX.Service
                    , 0//ChongDianShuChuDianYa
                    , 0//ChongDianShuChuDianLiu
                    , false//ShuChuJiDianQiZhuangTai
-                   , false//LianJieQueRenKaiGuanZhuangTai
+                   , 0//LianJieQueRenKaiGuanZhuangTai
                    , false//ShiFouLianJieDianChi
                    , 0//WorkStat
                    , 0//DevType
@@ -441,6 +450,24 @@ namespace BOCOM.IVX.Service
         {
             if (xd != null)
             {
+                xd.OnConnected -= xd_OnConnected;
+                xd.OnDisConnected -= xd_OnDisConnected;
+                xd.OnReceiveData -= xd_OnReceiveData;
+                xd.OnReceiveLogin -= xd_OnReceiveLogin;
+                xd.OnReceiveGetDevChargeInfo -= xd_OnReceiveGetDevChargeInfo;
+                xd.OnReceiveGetDevVersion -= xd_OnReceiveGetDevVersion;
+                xd.OnReceiveNoteDevChargeStatus -= xd_OnReceiveNoteDevChargeStatus;
+                xd.OnReceiveNoteDevStatus -= xd_OnReceiveNoteDevStatus;
+                xd.OnReceiveSubscribrDevChargeStatus -= xd_OnReceiveSubscribrDevChargeStatus;
+                xd.OnReceiveSubscribrDevStatus -= xd_OnReceiveSubscribrDevStatus;
+                xd.OnReceiveSetDevParam -= xd_OnReceiveSetDevParamRet;
+                xd.OnReceiveGetDevParam -= xd_OnReceiveGetDevParam;
+                xd.OnReceiveGetChargePrice -= xd_OnReceiveGetChargePrice;
+                xd.OnReceiveSetChargePrice -= xd_OnReceiveSetChargePrice;
+                xd.OnReceiveSetBlackList -= xd_OnReceiveSetBlackList;
+                xd.OnReceiveSetDevID -= xd_OnReceiveSetDevID;
+                xd.OnReceiveSetServiceState -= xd_OnReceiveSetServiceState;
+
                 xd.Close();
                 xd = null;
             }
@@ -464,6 +491,7 @@ namespace BOCOM.IVX.Service
         {
             xd.SendSubscribeDevStatus();
             xd.SendSubscribeDevChargeStatus();
+            DataTable tb = DevStatTable;
             return true;
         }
 
@@ -734,6 +762,13 @@ namespace BOCOM.IVX.Service
         {
             xd.SendSetBlackList(devID, blackList);
             return true;
+        }
+
+        public void DeleteDev(string devID)
+        {
+            DataRow r = m_devStatTable.Rows.Find(devID);
+            if (r != null)
+                r.Delete();
         }
     }
 }

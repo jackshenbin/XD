@@ -10,6 +10,8 @@
 <link href="Style/css-all.css" rel="stylesheet" type="text/css" />
 <link href="Style/login.css" rel="stylesheet" type="text/css" />
 
+
+
     <title>电动汽车充换电监控系统</title>
 
     <style type="text/css">
@@ -27,16 +29,24 @@
             float: left;
             background: url(images/login_btnover.jpg);
         }
-
+        
     </style>
 </head>
+    <script type="text/javascript" src="config.js"></script>
     <script type="text/javascript">
-        var ServerDBIP = "121.40.88.117";
-        var ServerClientVer = "1.0.0.10";
+        //var ServerDBIP = "121.40.88.117";
+        //var ServerClientVer = "1.0.0.11";
 
         function switchwnd(index) {
-            //alert("VdaSwitchForm index:" + index);
+            //alert("1 VdaSwitchForm index:" + index);
             XDSDK.VdaSwitchForm(index);
+            document.getElementById("switchwnd0").className = "";
+            document.getElementById("switchwnd1").className = "";
+            document.getElementById("switchwnd2").className = "";
+            document.getElementById("switchwnd3").className = "";
+            document.getElementById("switchwnd4").className = "";
+            document.getElementById("switchwnd" + index).className = "cur";
+            //alert("2 VdaSwitchForm index:" + index);
         }
 
         function initocx(us, ps) {
@@ -63,8 +73,7 @@
 
                 document.getElementById("xdsdkform").style.height = 0;
                 document.getElementById("versionckeck").innerHTML = "<li>控件未加载</li>"
-                    + "<li>首次使用请先<a href='./ocx/iesetup.exe'>下载IE设置工具iesetup.exe</a></li>"
-                    + "<li>然后再<a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 解压后运行regcom.bat</li>"
+                    + "<li>首次使用请 <a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 并在关闭浏览器后运行。</li>"
                 return false;
             }
         }
@@ -130,7 +139,7 @@
                 //alert("1.1");
                 document.getElementById("XDSDK").style.height = 0;
                     document.getElementById("versionckeck").innerHTML = "<li>控件版本不匹配</li>"
-                        + "<li><a href='./ocx/XD_CDZ.exe'>请下载最新控件XD_CDZ.exe</a> 解压后运行regcom.bat，并重启浏览器</li>"
+                        + "<li><a href='./ocx/XD_CDZ.exe'>请下载最新控件XD_CDZ.exe</a> 并在关闭浏览器后运行</li>"
 return false;
                 }
                 return true;
@@ -138,8 +147,7 @@ return false;
                 //alert("2"+e);
                 document.getElementById("xdsdkform").style.height = 0;
                 document.getElementById("versionckeck").innerHTML = "<li>控件未加载</li>"
-                    + "<li>首次使用请先<a href='./ocx/iesetup.exe'>下载IE设置工具iesetup.exe</a></li>"
-                    + "<li>然后再<a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 解压后运行regcom.bat</li>"
+                    + "<li>首次使用请 <a href='./ocx/XD_CDZ.exe'>下载控件XD_CDZ.exe</a> 并在关闭浏览器后运行。</li>"
                 return false;
             }
 
@@ -165,8 +173,8 @@ return false;
 
 			  </div>
 		 </div>
-
-	</div>
+            <b style="color:white">1.0.0.12</b>
+    </div>
 
     <div id="mainpage" style="display:none">
     <table  align="center" width="100%">
@@ -185,11 +193,11 @@ return false;
                                     <div class="lc"></div>
                                     <div class="cc" id="mymenu" runat="server">
                                         <ul>
-                                            <li class="nobg"><a onclick="switchwnd(0)" href="#">网站首页</a></li>
-                                            <li><a onclick="switchwnd(3)" href="#">充电桩管理</a></li>
-                                            <li><a onclick="switchwnd(2)" href="#">智能卡管理</a></li>
-                                            <li><a onclick="switchwnd(4)" href="#">综合查询</a></li>
-                                            <li><a onclick="switchwnd(1)" href="#">系统管理</a></li>
+                                            <li><a onclick="switchwnd(0)" href="#" class="cur" id="switchwnd0">网站首页</a></li>
+                                            <li><a onclick="switchwnd(3)" href="#" id="switchwnd3">充电桩管理</a></li>
+                                            <li><a onclick="switchwnd(2)" href="#" id="switchwnd2">智能卡管理</a></li>
+                                            <li><a onclick="switchwnd(4)" href="#" id="switchwnd4">综合查询</a></li>
+                                            <li><a onclick="switchwnd(1)" href="#" id="switchwnd1">系统管理</a></li>
                                             <li><a>服务支持</a></li>
                                             <li><a>关于我们</a></li>
                                         </ul>

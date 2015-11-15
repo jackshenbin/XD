@@ -15,7 +15,7 @@ namespace BOCOM.DataModel
         public double ChongDianShuChuDianYa { get; set; }//充电输出电压 精确到小数点后一位
         public double ChongDianShuChuDianLiu { get; set; }//充电输出电流 精确到小数点后二位
         public bool ShuChuJiDianQiZhuangTai { get; set; }//输出继电器状态 布尔型, 变化上传;0关（未输出），1开（输出）
-        public bool LianJieQueRenKaiGuanZhuangTai { get; set; }//连接确认开关状态 布尔型, 变化上传;0关（未好），1开（好）
+        public uint LianJieQueRenKaiGuanZhuangTai { get; set; }//连接确认开关状态 布尔型, 变化上传;0关（未好），1开（好）
         public bool ShiFouLianJieDianChi { get; set; }//是否连接电池 布尔型, 变化上传，0：否，1：是
         public UInt16 WorkStat { get; set; }//工作状态 0离线，1故障 2待机，3工作
         public byte DevType { get; set; }//0x02：单相交流离散桩 0x12：三相相交流离散桩 0x03：三相直流离散桩 0x13：单相直流离散桩

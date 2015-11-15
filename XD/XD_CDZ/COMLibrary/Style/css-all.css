@@ -42,7 +42,7 @@ li {color: #0066cc;text-decoration:none;font-size:20px;
 #menu .cc li.nobg{float:left;width:122px;height:35px;background:none;}
 #menu .cc li a{display:block;width:122px;height:35px;line-height:35px;font-size:12px;color:#FFF;text-align:center;font-weight:bold;}
 #menu .cc li a:hover{background:url(../images/bg_menu_cur.gif) center no-repeat;text-decoration:none;}
-#menu .cc li a.cur{display:block;width:122px;height:33px;line-height:33px;font-size:12px;color:#FFF;text-align:center;font-weight:bold;background:url(../images/bg_menu_cur.gif) right no-repeat;}
+#menu .cc li a.cur{background:url(../images/bg_menu_cur.gif) center no-repeat;text-decoration:none;}
 
 #ocxcheck li a{color:#000000; text-decoration:none;font-size:20px;}
 #ocxcheck li a:visited{color: #000000;text-decoration:none;font-size:20px;}

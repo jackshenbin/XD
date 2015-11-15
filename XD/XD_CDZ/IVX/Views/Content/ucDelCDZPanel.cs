@@ -106,7 +106,7 @@ namespace BOCOM.IVX.Views.Content
             }
             else
             {
-                labelSearchStat.Text = "无此卡号记录";
+                labelSearchStat.Text = "无此桩号记录";
             }
 
         }
@@ -144,7 +144,7 @@ namespace BOCOM.IVX.Views.Content
                 sms_comm.ExecuteNonQuery();
                 labelRet.Text = "注销充电桩成功";
                 labelRet.ForeColor = Color.Blue;
-
+                Framework.Container.Instance.DevStateService.DeleteDev(TextBoxDevid.Value);
             }
             catch (MySqlException)
             {
@@ -155,6 +155,7 @@ namespace BOCOM.IVX.Views.Content
 
             if (DelDevComplete != null)
                 DelDevComplete(null, null);
+            
         }
 
 

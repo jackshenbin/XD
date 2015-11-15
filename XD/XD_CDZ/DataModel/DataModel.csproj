@@ -70,70 +70,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BreakRegion.cs" />
-    <Compile Include="BriefMouseClickInfo.cs" />
-    <Compile Include="BriefMoveobjInfo.cs" />
-    <Compile Include="BriefPlayParam.cs" />
-    <Compile Include="CameraGroupInfo.cs" />
-    <Compile Include="CameraInfo.cs" />
-    <Compile Include="CaseInfo.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Constant.cs" />
-    <Compile Include="DownloadInfo.cs" />
-    <Compile Include="FilterCondition.cs" />
-    <Compile Include="ICacheItem.cs" />
-    <Compile Include="IVAResultRecord.cs" />
-    <Compile Include="StreamVAFileInfo.cs" />
-    <Compile Include="LocalVAFileInfo.cs" />
-    <Compile Include="LocalVideoFileImportInfo.cs" />
-    <Compile Include="LogDetailCat.cs" />
     <Compile Include="LoginToken.cs" />
-    <Compile Include="LogRecord.cs" />
-    <Compile Include="LogResInfo.cs" />
-    <Compile Include="LogSearchParam.cs" />
-    <Compile Include="LogSearchResultSummary.cs" />
-    <Compile Include="Miscellaneous.cs" />
-    <Compile Include="ModelExtension.cs" />
-    <Compile Include="NotifyPropertyChangedModel.cs" />
-    <Compile Include="PageInfo.cs" />
-    <Compile Include="PageInfoBase.cs" />
-    <Compile Include="PassLine.cs" />
+    <Compile Include="Miscellaneous.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NetStoreVideoImportInfo.cs" />
-    <Compile Include="RemoteVideoFileImportInfo.cs" />
-    <Compile Include="SearchImageInfo.cs" />
-    <Compile Include="SearchItem.cs" />
-    <Compile Include="SearchItemResult.cs" />
-    <Compile Include="SearchPara.cs" />
-    <Compile Include="SearchParaBase.cs" />
-    <Compile Include="SearchResultPropertyAttribute.cs" />
-    <Compile Include="SearchResultRecord.cs" />
-    <Compile Include="SearchResultSummary.cs" />
-    <Compile Include="SearchSession.cs" />
-    <Compile Include="ServerInfo.cs" />
-    <Compile Include="SortInfo.cs" />
-    <Compile Include="TaskInfo.cs" />
-    <Compile Include="TaskType.cs" />
-    <Compile Include="TaskUnitAnalyseStatus.cs" />
-    <Compile Include="TaskUnitInfo.cs" />
     <Compile Include="TimeRange.cs" />
     <Compile Include="UIFunctionEnum.cs" />
-    <Compile Include="UserGroupInfo.cs" />
-    <Compile Include="UserInfo.cs" />
-    <Compile Include="VehicleTypeInfo.cs" />
-    <Compile Include="VideoAnalyseInfo.cs" />
-    <Compile Include="VideoPictureResource.cs" />
     <Compile Include="CDZDevStatusInfo.cs" />
-    <Compile Include="VideoStatusInfo.cs" />
-    <Compile Include="VideoSupplierDeviceInfo.cs" />
-    <Compile Include="VodInfo.cs" />
-    <Compile Include="CompareImageInfo.cs" />
-    <Compile Include="LogSearchResultInfo.cs" />
-    <Compile Include="ResourceUpdateInfo.cs" />
-    <Compile Include="NormalSearchResultRecord.cs" />
-    <Compile Include="CarSearchResultRecord.cs" />
-    <Compile Include="FaceSearchResultRecord.cs" />
-    <Compile Include="CompareSearchResultRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

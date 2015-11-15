@@ -37,21 +37,35 @@ namespace BOCOM.IVX.Views.Content
             }
 
         }
+        private void UnCheckAllButton()
+        {
+            btnRegionStat.Checked = false;
+            btnCardRecord.Checked = false;
+            btnTradingRecord.Checked = false;
+
+        }
 
         private void btnTradingRecord_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnTradingRecord.Checked = true;
+
             superTabControl1.SelectedTab = superTabItem1;
 
         }
 
         private void btnCardRecord_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnCardRecord.Checked = true;
             superTabControl1.SelectedTab = superTabItem3;
 
         }
 
         private void btnRegionStat_Click(object sender, EventArgs e)
         {
+            UnCheckAllButton();
+            btnRegionStat.Checked = true;
             superTabControl1.SelectedTab = superTabItem2;
             ucRegionStatRecordPanel1.InitWnd();
         }

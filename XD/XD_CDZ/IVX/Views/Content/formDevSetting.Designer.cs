@@ -626,7 +626,7 @@
             this.doubleInputValleyPrice.ShowUpDown = true;
             this.doubleInputValleyPrice.Size = new System.Drawing.Size(127, 21);
             this.doubleInputValleyPrice.TabIndex = 28;
-            this.doubleInputValleyPrice.Value = 50D;
+            this.doubleInputValleyPrice.Value = 1D;
             // 
             // doubleInputFlatPrice
             // 
@@ -643,7 +643,7 @@
             this.doubleInputFlatPrice.ShowUpDown = true;
             this.doubleInputFlatPrice.Size = new System.Drawing.Size(127, 21);
             this.doubleInputFlatPrice.TabIndex = 28;
-            this.doubleInputFlatPrice.Value = 50D;
+            this.doubleInputFlatPrice.Value = 1D;
             // 
             // doubleInputPeakPrice
             // 
@@ -660,7 +660,7 @@
             this.doubleInputPeakPrice.ShowUpDown = true;
             this.doubleInputPeakPrice.Size = new System.Drawing.Size(127, 21);
             this.doubleInputPeakPrice.TabIndex = 28;
-            this.doubleInputPeakPrice.Value = 50D;
+            this.doubleInputPeakPrice.Value = 1D;
             // 
             // doubleInputTaperPrice
             // 
@@ -677,7 +677,7 @@
             this.doubleInputTaperPrice.ShowUpDown = true;
             this.doubleInputTaperPrice.Size = new System.Drawing.Size(127, 21);
             this.doubleInputTaperPrice.TabIndex = 28;
-            this.doubleInputTaperPrice.Value = 50D;
+            this.doubleInputTaperPrice.Value = 1D;
             // 
             // buttonSetChargeValue
             // 
