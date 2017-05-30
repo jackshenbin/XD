@@ -40,11 +40,6 @@
             this.comboBoxBattery = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem8 = new DevComponents.Editors.ComboItem();
-            this.comboBoxWorkstat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboItem9 = new DevComponents.Editors.ComboItem();
             this.comboBoxType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
@@ -86,6 +81,20 @@
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelRet = new DevComponents.DotNetBar.LabelX();
             this.buttonDel = new DevComponents.DotNetBar.ButtonX();
+            this.comboBoxWorkstat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem9 = new DevComponents.Editors.ComboItem();
+            this.comboItem20 = new DevComponents.Editors.ComboItem();
+            this.comboItem21 = new DevComponents.Editors.ComboItem();
+            this.comboItem22 = new DevComponents.Editors.ComboItem();
+            this.comboItem23 = new DevComponents.Editors.ComboItem();
+            this.comboItem24 = new DevComponents.Editors.ComboItem();
+            this.comboItem19 = new DevComponents.Editors.ComboItem();
+            this.comboItem15 = new DevComponents.Editors.ComboItem();
+            this.comboItem17 = new DevComponents.Editors.ComboItem();
+            this.comboItem18 = new DevComponents.Editors.ComboItem();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -179,45 +188,6 @@
             // 
             this.comboItem8.Text = "是";
             this.comboItem8.Value = "1";
-            // 
-            // comboBoxWorkstat
-            // 
-            this.comboBoxWorkstat.DisplayMember = "Text";
-            this.comboBoxWorkstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxWorkstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWorkstat.Enabled = false;
-            this.comboBoxWorkstat.FormattingEnabled = true;
-            this.comboBoxWorkstat.ItemHeight = 15;
-            this.comboBoxWorkstat.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3,
-            this.comboItem9});
-            this.comboBoxWorkstat.Location = new System.Drawing.Point(148, 73);
-            this.comboBoxWorkstat.Name = "comboBoxWorkstat";
-            this.comboBoxWorkstat.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxWorkstat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxWorkstat.TabIndex = 21;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "离线";
-            this.comboItem1.Value = "0";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "故障";
-            this.comboItem2.Value = "1";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "待机";
-            this.comboItem3.Value = "2";
-            // 
-            // comboItem9
-            // 
-            this.comboItem9.Text = "工作";
-            this.comboItem9.Value = "3";
             // 
             // comboBoxType
             // 
@@ -593,9 +563,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.comboBoxWorkstat);
             this.panelEx1.Controls.Add(this.TextBoxDevid);
             this.panelEx1.Controls.Add(this.comboBoxRelaystat);
-            this.panelEx1.Controls.Add(this.comboBoxWorkstat);
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Controls.Add(this.comboBoxConnstat);
             this.panelEx1.Controls.Add(this.TextBoxsFactoryid);
@@ -626,7 +596,7 @@
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
             this.panelEx1.Location = new System.Drawing.Point(18, 92);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(686, 226);
+            this.panelEx1.Size = new System.Drawing.Size(684, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -665,7 +635,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(18, 32);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(686, 43);
+            this.panelEx2.Size = new System.Drawing.Size(684, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -814,6 +784,95 @@
             this.buttonDel.Text = "充电桩注销";
             this.buttonDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // comboBoxWorkstat
+            // 
+            this.comboBoxWorkstat.DisplayMember = "Text";
+            this.comboBoxWorkstat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxWorkstat.DropDownHeight = 1;
+            this.comboBoxWorkstat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWorkstat.Enabled = false;
+            this.comboBoxWorkstat.FormattingEnabled = true;
+            this.comboBoxWorkstat.IntegralHeight = false;
+            this.comboBoxWorkstat.ItemHeight = 15;
+            this.comboBoxWorkstat.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2,
+            this.comboItem3,
+            this.comboItem9,
+            this.comboItem20,
+            this.comboItem21,
+            this.comboItem22,
+            this.comboItem23,
+            this.comboItem24,
+            this.comboItem19,
+            this.comboItem15,
+            this.comboItem17,
+            this.comboItem18});
+            this.comboBoxWorkstat.Location = new System.Drawing.Point(148, 73);
+            this.comboBoxWorkstat.Name = "comboBoxWorkstat";
+            this.comboBoxWorkstat.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxWorkstat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxWorkstat.TabIndex = 23;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "离线";
+            this.comboItem1.Value = "0";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "故障";
+            this.comboItem2.Value = "1";
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "待机";
+            this.comboItem3.Value = "2";
+            // 
+            // comboItem9
+            // 
+            this.comboItem9.Text = "充电";
+            this.comboItem9.Value = "3";
+            // 
+            // comboItem20
+            // 
+            this.comboItem20.Text = "comboItem20";
+            // 
+            // comboItem21
+            // 
+            this.comboItem21.Text = "comboItem21";
+            // 
+            // comboItem22
+            // 
+            this.comboItem22.Text = "comboItem22";
+            // 
+            // comboItem23
+            // 
+            this.comboItem23.Text = "comboItem23";
+            // 
+            // comboItem24
+            // 
+            this.comboItem24.Text = "comboItem24";
+            // 
+            // comboItem19
+            // 
+            this.comboItem19.Text = "comboItem19";
+            // 
+            // comboItem15
+            // 
+            this.comboItem15.Text = "暂停";
+            this.comboItem15.Value = "10";
+            // 
+            // comboItem17
+            // 
+            this.comboItem17.Text = "维护";
+            this.comboItem17.Value = "11";
+            // 
+            // comboItem18
+            // 
+            this.comboItem18.Text = "测试";
+            this.comboItem18.Value = "12";
+            // 
             // ucDelCDZPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -844,10 +903,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxBattery;
         private DevComponents.Editors.ComboItem comboItem7;
         private DevComponents.Editors.ComboItem comboItem8;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxWorkstat;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
-        private DevComponents.Editors.ComboItem comboItem3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxType;
         private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.ComboItem comboItem5;
@@ -877,7 +932,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsSIM;
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsVersion;
         private DevComponents.DotNetBar.Controls.TextBoxX TextBoxsFactoryid;
-        private DevComponents.Editors.ComboItem comboItem9;
         private DevComponents.Editors.ComboItem comboItem16;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
@@ -890,6 +944,20 @@
         private DevComponents.DotNetBar.ButtonX buttonDel;
         private DevComponents.DotNetBar.LabelX labelRet;
         private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxWorkstat;
+        private DevComponents.Editors.ComboItem comboItem1;
+        private DevComponents.Editors.ComboItem comboItem2;
+        private DevComponents.Editors.ComboItem comboItem3;
+        private DevComponents.Editors.ComboItem comboItem9;
+        private DevComponents.Editors.ComboItem comboItem20;
+        private DevComponents.Editors.ComboItem comboItem21;
+        private DevComponents.Editors.ComboItem comboItem22;
+        private DevComponents.Editors.ComboItem comboItem23;
+        private DevComponents.Editors.ComboItem comboItem24;
+        private DevComponents.Editors.ComboItem comboItem19;
+        private DevComponents.Editors.ComboItem comboItem15;
+        private DevComponents.Editors.ComboItem comboItem17;
+        private DevComponents.Editors.ComboItem comboItem18;
 
     }
 }

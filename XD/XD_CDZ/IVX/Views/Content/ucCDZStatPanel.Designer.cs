@@ -125,8 +125,17 @@
             this.buttonSearchGraph = new DevComponents.DotNetBar.ButtonX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.comboItem15 = new DevComponents.Editors.ComboItem();
+            this.comboItem17 = new DevComponents.Editors.ComboItem();
+            this.comboItem18 = new DevComponents.Editors.ComboItem();
             this.TextBoxDevidSearch = new BOCOM.IVX.Controls.ucCardIDTextBox();
             this.TextBoxDevid = new BOCOM.IVX.Controls.ucCardIDTextBox();
+            this.comboItem19 = new DevComponents.Editors.ComboItem();
+            this.comboItem20 = new DevComponents.Editors.ComboItem();
+            this.comboItem21 = new DevComponents.Editors.ComboItem();
+            this.comboItem22 = new DevComponents.Editors.ComboItem();
+            this.comboItem23 = new DevComponents.Editors.ComboItem();
+            this.comboItem24 = new DevComponents.Editors.ComboItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -257,7 +266,16 @@
             this.comboItem1,
             this.comboItem2,
             this.comboItem3,
-            this.comboItem9});
+            this.comboItem9,
+            this.comboItem20,
+            this.comboItem21,
+            this.comboItem22,
+            this.comboItem23,
+            this.comboItem24,
+            this.comboItem19,
+            this.comboItem15,
+            this.comboItem17,
+            this.comboItem18});
             this.comboBoxWorkstat.Location = new System.Drawing.Point(148, 73);
             this.comboBoxWorkstat.Name = "comboBoxWorkstat";
             this.comboBoxWorkstat.Size = new System.Drawing.Size(100, 21);
@@ -282,7 +300,7 @@
             // 
             // comboItem9
             // 
-            this.comboItem9.Text = "工作";
+            this.comboItem9.Text = "充电";
             this.comboItem9.Value = "3";
             // 
             // comboBoxType
@@ -696,7 +714,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(646, 195);
+            this.chart1.Size = new System.Drawing.Size(627, 195);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -744,7 +762,7 @@
             this.panelEx1.Controls.Add(this.TextBoxsPosition);
             this.panelEx1.Location = new System.Drawing.Point(18, 97);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(706, 226);
+            this.panelEx1.Size = new System.Drawing.Size(687, 226);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -897,7 +915,7 @@
             this.panelEx2.Controls.Add(this.labelX17);
             this.panelEx2.Location = new System.Drawing.Point(18, 35);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(706, 43);
+            this.panelEx2.Size = new System.Drawing.Size(687, 43);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -987,7 +1005,7 @@
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(646, 195);
+            this.chart2.Size = new System.Drawing.Size(627, 195);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart1";
             title2.Name = "Title1";
@@ -1035,7 +1053,7 @@
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(646, 195);
+            this.chart3.Size = new System.Drawing.Size(627, 195);
             this.chart3.TabIndex = 0;
             this.chart3.Text = "chart1";
             title3.Name = "Title1";
@@ -1084,7 +1102,7 @@
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(646, 195);
+            this.chart4.Size = new System.Drawing.Size(627, 195);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart1";
             title4.Name = "Title1";
@@ -1134,7 +1152,7 @@
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart5.Series.Add(series5);
-            this.chart5.Size = new System.Drawing.Size(646, 195);
+            this.chart5.Size = new System.Drawing.Size(627, 195);
             this.chart5.TabIndex = 0;
             this.chart5.Text = "chart1";
             title5.Name = "Title1";
@@ -1157,7 +1175,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(791, 1403);
+            this.groupPanel1.Size = new System.Drawing.Size(774, 1403);
             // 
             // 
             // 
@@ -1221,7 +1239,7 @@
             this.panelEx3.Controls.Add(this.chart2);
             this.panelEx3.Location = new System.Drawing.Point(18, 338);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(706, 1056);
+            this.panelEx3.Size = new System.Drawing.Size(687, 1056);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -1383,6 +1401,21 @@
             this.labelX18.TabIndex = 6;
             this.labelX18.Text = "开始时间";
             // 
+            // comboItem15
+            // 
+            this.comboItem15.Text = "暂停";
+            this.comboItem15.Value = "10";
+            // 
+            // comboItem17
+            // 
+            this.comboItem17.Text = "维护";
+            this.comboItem17.Value = "11";
+            // 
+            // comboItem18
+            // 
+            this.comboItem18.Text = "测试";
+            this.comboItem18.Value = "12";
+            // 
             // TextBoxDevidSearch
             // 
             // 
@@ -1414,13 +1447,37 @@
             this.TextBoxDevid.Value = "";
             this.TextBoxDevid.WatermarkEnabled = false;
             // 
+            // comboItem19
+            // 
+            this.comboItem19.Text = "comboItem19";
+            // 
+            // comboItem20
+            // 
+            this.comboItem20.Text = "comboItem20";
+            // 
+            // comboItem21
+            // 
+            this.comboItem21.Text = "comboItem21";
+            // 
+            // comboItem22
+            // 
+            this.comboItem22.Text = "comboItem22";
+            // 
+            // comboItem23
+            // 
+            this.comboItem23.Text = "comboItem23";
+            // 
+            // comboItem24
+            // 
+            this.comboItem24.Text = "comboItem24";
+            // 
             // ucCDZStatPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.Controls.Add(this.groupPanel1);
             this.Name = "ucCDZStatPanel";
-            this.Size = new System.Drawing.Size(797, 610);
+            this.Size = new System.Drawing.Size(780, 610);
             this.Load += new System.EventHandler(this.ucCDZStatPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelEx1.ResumeLayout(false);
@@ -1525,6 +1582,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private DevComponents.Editors.ComboItem comboItem15;
+        private DevComponents.Editors.ComboItem comboItem17;
+        private DevComponents.Editors.ComboItem comboItem18;
+        private DevComponents.Editors.ComboItem comboItem20;
+        private DevComponents.Editors.ComboItem comboItem21;
+        private DevComponents.Editors.ComboItem comboItem22;
+        private DevComponents.Editors.ComboItem comboItem23;
+        private DevComponents.Editors.ComboItem comboItem24;
+        private DevComponents.Editors.ComboItem comboItem19;
 
     }
 }

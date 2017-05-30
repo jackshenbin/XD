@@ -63,7 +63,10 @@ namespace BOCOM.IVX.Views.Content
             tRoleWorkStat.Rows.Add(0, "离线");
             tRoleWorkStat.Rows.Add(1, "故障");
             tRoleWorkStat.Rows.Add(2, "待机");
-            tRoleWorkStat.Rows.Add(3, "工作");
+            tRoleWorkStat.Rows.Add(3, "充电");
+            tRoleWorkStat.Rows.Add(10, "暂停");
+            tRoleWorkStat.Rows.Add(11, "维护");
+            tRoleWorkStat.Rows.Add(12, "测试");
 
             sms_ds.Tables.Add(tRoleWorkStat);
 

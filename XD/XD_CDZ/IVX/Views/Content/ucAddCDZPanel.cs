@@ -72,11 +72,10 @@ namespace BOCOM.IVX.Views.Content
             if (!ShowInfo())
                 return;
 
-            string sms_sqlstr = string.Format("INSERT INTO `hd_pile_info_t` VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}','{8}','{9}')"
+            string sms_sqlstr = string.Format("INSERT INTO `hd_pile_info_t` (`dev_id`,`user_id`,`vender_id`,`pile_type`,`sim_id`,`address`,`position`,`date_time`,`node_id`) VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}','{8}')"
                 , TextBoxDevid.Value
                 , TextBoxUserid.Text
                 , TextBoxsFactoryid.Text
-                , "0"
                 , comboBoxType.SelectedIndex+1
                 , TextBoxsSIM.Text
                 , TextBoxsAddr.Text

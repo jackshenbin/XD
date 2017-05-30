@@ -2,3 +2,4 @@ C:\Users\jack\Documents\GitHub\XD\XD\XD发布\MyLog4Net.dll
 C:\Users\jack\Documents\GitHub\XD\XD\XD发布\MyLog4Net.pdb
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Log4Net\obj\x86\Release\MyLog4Net.dll
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Log4Net\obj\x86\Release\MyLog4Net.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Log4Net\obj\x86\Release\MyLog4Net.csprojResolveAssemblyReference.cache

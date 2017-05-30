@@ -85,10 +85,14 @@ namespace BOCOM.IVX.Views.Content
                     comboBoxConnstat.SelectedIndex = int.Parse(r["conn_state"].ToString());
                     TextBoxsTotaldegree.Text = r["total_degree"].ToString();
                     comboBoxBattery.SelectedIndex = int.Parse(r["battery"].ToString());
-                    comboBoxWorkstat.SelectedIndex = int.Parse(r["work_state"].ToString());
+                    //comboBoxWorkstat.SelectedIndex = int.Parse(r["work_state"].ToString());
 
 
                 }
+                BOCOM.DataModel.CDZDevStatusInfo info = Framework.Container.Instance.DevStateService.GetDevByID(TextBoxDevid.Value);
+                if (info != null)
+                    comboBoxWorkstat.SelectedIndex = info.WorkStat;
+
             }
         }
 

@@ -26,9 +26,9 @@ namespace BOCOM.IVX.Service
 
         public CDZDevStatusInfo GetDevByID(string devID)
         {
-            if (m_devStatTable == null)
+            if (DevStatTable == null)
                 return null;
-            DataRow r = m_devStatTable.Rows.Find(devID);
+            DataRow r = DevStatTable.Rows.Find(devID);
             if (r != null)
             {
                 return new CDZDevStatusInfo()
@@ -104,14 +104,14 @@ namespace BOCOM.IVX.Service
                 {
                     m_devStatTable.Rows.Add(item["dev_id"].ToString()//DevID
                                , item["user_id"].ToString()//UserID
-                               , false//IsOnline
+                               , item["is_online"].ToString() == "1"//false//IsOnline
                                , 0//ServiceStat
                                , 0//ChongDianShuChuDianYa
                                , 0//ChongDianShuChuDianLiu
                                , false//ShuChuJiDianQiZhuangTai
                                , 0//LianJieQueRenKaiGuanZhuangTai
                                , false//ShiFouLianJieDianChi
-                               , 0//WorkStat
+                               , Convert.ToInt32( item["work_state"].ToString())//0//WorkStat
                                , Convert.ToInt32( item["pile_type"].ToString())//DevType
                                , 0//YouGongZongDianDu
                                , item["vender_id"].ToString()//FactoryID
@@ -215,6 +215,9 @@ namespace BOCOM.IVX.Service
 
         void xd_OnReceiveNoteDevStatus(DevStatusNote obj)
         {
+            if (DevStatTable == null)
+                return;
+
             DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
             if (row == null)
             {
@@ -254,6 +257,10 @@ namespace BOCOM.IVX.Service
 
         void xd_OnReceiveNoteDevChargeStatus(DevChargeStatusNote obj)
         {
+            if (DevStatTable == null)
+                return;
+
+
             DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
             if (row == null)
             {
@@ -307,6 +314,10 @@ namespace BOCOM.IVX.Service
 
         void xd_OnReceiveGetDevVersion(GetDevVersionRet obj)
         {
+            if (DevStatTable == null)
+                return;
+
+
             DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
             if (row == null)
             {
@@ -346,6 +357,10 @@ namespace BOCOM.IVX.Service
 
         void xd_OnReceiveGetDevChargeInfo(GetDevChargeInfoRet obj)
         {
+            if (DevStatTable == null)
+                return;
+
+
             DataRow row = m_devStatTable.Rows.Find(new string(obj.DevID));
             if (row == null)
             {
@@ -766,6 +781,10 @@ namespace BOCOM.IVX.Service
 
         public void DeleteDev(string devID)
         {
+            if (DevStatTable == null)
+                return;
+
+
             DataRow r = m_devStatTable.Rows.Find(devID);
             if (r != null)
                 r.Delete();

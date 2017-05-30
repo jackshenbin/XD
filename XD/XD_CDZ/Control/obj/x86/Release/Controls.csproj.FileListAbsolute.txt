@@ -4,3 +4,4 @@ C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Control\obj\x86\Release\BOCOM.IVX.Co
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Control\obj\x86\Release\Controls.csproj.GenerateResource.Cache
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Control\obj\x86\Release\Controls.dll
 C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Control\obj\x86\Release\Controls.pdb
+C:\Users\jack\Documents\GitHub\XD\XD\XD_CDZ\Control\obj\x86\Release\Controls.csprojResolveAssemblyReference.cache

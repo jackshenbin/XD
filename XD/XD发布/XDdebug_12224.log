@@ -1,0 +1,19 @@
+2016-03-19 17:30:31,375 [1] DEBUG - COMLibrary begin OcxLoader
+2016-03-19 17:30:31,547 [1] INFO  - Container.Cleanup ...
+2016-03-19 17:30:31,548 [1] INFO  - Container.Cleanup: UnSubscribeEvents ... 
+2016-03-19 17:30:31,575 [1] INFO  - Container.Cleanup ...
+2016-03-19 17:30:31,575 [1] DEBUG - COMLibrary finish OcxLoader
+2016-03-19 17:39:03,673 [1] DEBUG - COMLibrary  VdaGetVersion 
+2016-03-19 17:39:03,675 [1] DEBUG - COMLibrary  VdaInitialization 
+2016-03-19 17:39:05,620 [1] DEBUG - m_tcpManager_SendeData ret:58 44 01 29 00 00 01 00 00 00 00 61 64 6D 69 6E 00 00 00 00 00 00 00 00 00 00 00 01 31 30 42 46 34 38 33 45 44 35 41 43 00 00 00 00 FF 04 
+2016-03-19 17:39:06,021 [1] DEBUG - COMLibrary finish VdaInitialization 
+2016-03-19 17:39:08,388 [1] DEBUG - COMLibrary VdaSwitchForm 
+2016-03-19 17:39:08,525 [1] DEBUG - COMLibrary finish VdaSwitchForm 
+2016-03-19 17:39:10,352 [1] DEBUG - COMLibrary VdaSwitchForm 
+2016-03-19 17:39:10,403 [1] DEBUG - COMLibrary finish VdaSwitchForm 
+2016-03-19 17:39:12,043 [1] DEBUG - COMLibrary VdaSwitchForm 
+2016-03-19 17:39:12,091 [1] DEBUG - COMLibrary finish VdaSwitchForm 
+2016-03-19 17:39:15,763 [1] DEBUG - COMLibrary VdaSwitchForm 
+2016-03-19 17:39:15,770 [1] DEBUG - COMLibrary finish VdaSwitchForm 
+2016-03-19 17:39:19,317 [1] DEBUG - COMLibrary VdaSwitchForm 
+2016-03-19 17:39:19,325 [1] DEBUG - COMLibrary finish VdaSwitchForm 
